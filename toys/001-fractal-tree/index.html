@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#001 Fractal Tree 分形樹 | Awesome Web Toys</title>
+    <meta name="description" content="互動式分形樹生成器 - 滑鼠控制角度、滾輪調整深度、點擊生成新樹">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 操作提示面板 -->
+    <div id="controls">
+        <h1>🌳 分形樹 Fractal Tree</h1>
+        <div class="info">
+            <p><span class="key">滑鼠移動</span> 控制分支角度</p>
+            <p><span class="key">滾輪</span> 調整遞迴深度</p>
+            <p><span class="key">點擊</span> 生成新的隨機樹</p>
+            <p><span class="key">雙指縮放</span> 調整深度 (觸控)</p>
+        </div>
+        <div class="stats">
+            <span>深度: <strong id="depth-display">10</strong></span>
+            <span>角度: <strong id="angle-display">25°</strong></span>
+        </div>
+    </div>
+
+    <!-- 深度調節滑桿 (觸控裝置用) -->
+    <div id="depth-slider-container">
+        <label for="depth-slider">深度</label>
+        <input type="range" id="depth-slider" min="3" max="14" value="10">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
