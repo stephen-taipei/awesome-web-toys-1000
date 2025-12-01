@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#012 Mouse Trail 滑鼠軌跡 | Awesome Web Toys</title>
+    <meta name="description" content="滑鼠軌跡 - 移動滑鼠產生絢麗粒子尾巴，多種風格可選">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>✨ 滑鼠軌跡 Mouse Trail</h1>
+
+        <!-- 風格選擇 -->
+        <div class="control-group">
+            <label class="section-label">軌跡風格</label>
+            <div class="style-options">
+                <button class="style-btn active" data-style="firework">
+                    <span class="style-icon">🎆</span>
+                    <span class="style-name">煙火</span>
+                </button>
+                <button class="style-btn" data-style="stardust">
+                    <span class="style-icon">⭐</span>
+                    <span class="style-name">星塵</span>
+                </button>
+                <button class="style-btn" data-style="ink">
+                    <span class="style-icon">🖌️</span>
+                    <span class="style-name">墨水</span>
+                </button>
+                <button class="style-btn" data-style="neon">
+                    <span class="style-icon">💡</span>
+                    <span class="style-name">霓虹</span>
+                </button>
+                <button class="style-btn" data-style="fire">
+                    <span class="style-icon">🔥</span>
+                    <span class="style-name">火焰</span>
+                </button>
+                <button class="style-btn" data-style="magic">
+                    <span class="style-icon">🪄</span>
+                    <span class="style-name">魔法</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>粒子密度: <span id="density-display">3</span></label>
+            <input type="range" id="density-slider" min="1" max="8" value="3" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>軌跡長度: <span id="length-display">1.0</span>s</label>
+            <input type="range" id="length-slider" min="0.3" max="3" value="1" step="0.1">
+        </div>
+
+        <div class="control-group">
+            <label>粒子大小: <span id="size-display">1.0</span>x</label>
+            <input type="range" id="size-slider" min="0.5" max="2" value="1" step="0.1">
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>拖尾殘影</span>
+                <label class="toggle">
+                    <input type="checkbox" id="trail-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>粒子旋轉</span>
+                <label class="toggle">
+                    <input type="checkbox" id="spin-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 控制按鈕 -->
+        <div class="button-group">
+            <button id="clear-btn" class="action-btn">
+                <span class="icon">🗑️</span>
+                <span class="text">清除畫布</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>活躍粒子:</span>
+                <strong id="particle-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>滑鼠軌跡</h2>
+        <p>移動滑鼠或觸控螢幕，產生絢麗的粒子尾巴效果。</p>
+        <div class="interaction-hints">
+            <div class="hint">🖱️ 移動滑鼠 - 產生粒子軌跡</div>
+            <div class="hint">👆 觸控滑動 - 觸控裝置支援</div>
+            <div class="hint">🎨 選擇風格 - 切換不同視覺效果</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
