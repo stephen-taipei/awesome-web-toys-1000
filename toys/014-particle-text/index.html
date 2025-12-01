@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#014 Particle Text 粒子文字 | Awesome Web Toys</title>
+    <meta name="description" content="粒子文字 - 輸入文字轉換為粒子組成，滑鼠靠近粒子會散開再聚合">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>✍️ 粒子文字 Particle Text</h1>
+
+        <!-- 文字輸入 -->
+        <div class="control-group">
+            <label class="section-label">輸入文字</label>
+            <input type="text" id="text-input" value="HELLO" maxlength="10" placeholder="輸入文字...">
+            <button id="apply-btn" class="apply-btn">套用文字</button>
+        </div>
+
+        <div class="control-group">
+            <label>粒子密度: <span id="density-display">3</span></label>
+            <input type="range" id="density-slider" min="2" max="6" value="3" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>粒子大小: <span id="size-display">2</span></label>
+            <input type="range" id="size-slider" min="1" max="5" value="2" step="0.5">
+        </div>
+
+        <div class="control-group">
+            <label>影響半徑: <span id="radius-display">100</span>px</label>
+            <input type="range" id="radius-slider" min="50" max="200" value="100" step="10">
+        </div>
+
+        <div class="control-group">
+            <label>回彈力度: <span id="spring-display">0.1</span></label>
+            <input type="range" id="spring-slider" min="0.02" max="0.2" value="0.1" step="0.01">
+        </div>
+
+        <!-- 顏色主題 -->
+        <div class="control-group">
+            <label class="section-label">顏色主題</label>
+            <div class="color-options">
+                <button class="color-btn active" data-color="gradient" title="漸層">
+                    <span class="color-preview gradient"></span>
+                </button>
+                <button class="color-btn" data-color="neon" title="霓虹">
+                    <span class="color-preview neon"></span>
+                </button>
+                <button class="color-btn" data-color="fire" title="火焰">
+                    <span class="color-preview fire"></span>
+                </button>
+                <button class="color-btn" data-color="mono" title="單色">
+                    <span class="color-preview mono"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>連線效果</span>
+                <label class="toggle">
+                    <input type="checkbox" id="lines-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>滑鼠吸引</span>
+                <label class="toggle">
+                    <input type="checkbox" id="attract-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>粒子數量:</span>
+                <strong id="particle-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>粒子文字效果</h2>
+        <p>文字被解析為像素點，每個點由一個粒子代表。</p>
+        <div class="interaction-hints">
+            <div class="hint">🖱️ 移動滑鼠 - 粒子散開</div>
+            <div class="hint">✋ 移開滑鼠 - 粒子聚合回原位</div>
+            <div class="hint">⌨️ 輸入文字 - 即時更新粒子</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
