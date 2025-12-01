@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#004 Sierpinski Triangle 謝爾賓斯基三角形 | Awesome Web Toys</title>
+    <meta name="description" content="混沌遊戲生成謝爾賓斯基三角形 - 觀察隨機點如何逐漸形成美麗的分形圖案">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🔺 謝爾賓斯基三角形</h1>
+        <p class="subtitle">Sierpinski Triangle</p>
+
+        <div class="control-group">
+            <label>頂點數量</label>
+            <div class="vertex-buttons">
+                <button class="vertex-btn active" data-vertices="3">3</button>
+                <button class="vertex-btn" data-vertices="4">4</button>
+                <button class="vertex-btn" data-vertices="5">5</button>
+                <button class="vertex-btn" data-vertices="6">6</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>移動比例: <span id="ratio-display">0.50</span></label>
+            <input type="range" id="ratio-slider" min="0.3" max="0.7" step="0.01" value="0.5">
+        </div>
+
+        <div class="control-group">
+            <label>繪製速度: <span id="speed-display">500</span> 點/幀</label>
+            <input type="range" id="speed-slider" min="10" max="2000" step="10" value="500">
+        </div>
+
+        <div class="control-group checkbox-group">
+            <label>
+                <input type="checkbox" id="restriction-toggle">
+                <span>禁止連續選同一頂點</span>
+            </label>
+        </div>
+
+        <div class="button-group">
+            <button id="play-btn" class="action-btn playing">
+                <span class="icon">⏸</span>
+                <span class="text">暫停</span>
+            </button>
+            <button id="reset-btn" class="action-btn">
+                <span class="icon">↺</span>
+                <span class="text">重置</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>已繪製點數:</span>
+                <strong id="points-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>混沌遊戲 Chaos Game</h2>
+        <ol>
+            <li>設定多邊形的頂點</li>
+            <li>從任意位置開始</li>
+            <li>隨機選擇一個頂點</li>
+            <li>移動到「當前位置」與「頂點」的中點</li>
+            <li>重複步驟 3-4，逐漸形成分形！</li>
+        </ol>
+        <p class="tip">💡 試試調整頂點數量和移動比例，觀察不同的分形圖案</p>
+    </div>
+
+    <!-- 預設圖案選擇 -->
+    <div id="presets">
+        <button class="preset-btn active" data-preset="sierpinski" title="謝爾賓斯基三角形">
+            <svg viewBox="0 0 40 40"><polygon points="20,5 35,35 5,35" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <button class="preset-btn" data-preset="square" title="正方形分形">
+            <svg viewBox="0 0 40 40"><rect x="5" y="5" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <button class="preset-btn" data-preset="pentagon" title="五角星分形">
+            <svg viewBox="0 0 40 40"><polygon points="20,3 26,15 39,15 29,24 33,37 20,29 7,37 11,24 1,15 14,15" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <button class="preset-btn" data-preset="hexagon" title="六邊形分形">
+            <svg viewBox="0 0 40 40"><polygon points="20,3 35,11 35,29 20,37 5,29 5,11" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
