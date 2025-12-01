@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#007 Barnsley Fern 巴恩斯利蕨 | Awesome Web Toys</title>
+    <meta name="description" content="巴恩斯利蕨分形生成器 - 使用 IFS 迭代函數系統觀察自然界的分形之美">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🌿 巴恩斯利蕨 Barnsley Fern</h1>
+
+        <div class="control-group">
+            <label>繪製速度: <span id="speed-display">1000</span> 點/幀</label>
+            <input type="range" id="speed-slider" min="100" max="5000" value="1000" step="100">
+        </div>
+
+        <!-- 機率權重調整 -->
+        <div class="control-group">
+            <label class="section-label">變換機率權重</label>
+
+            <div class="prob-row">
+                <span class="prob-label" style="color: #4ade80;">f1 莖幹</span>
+                <input type="range" class="prob-slider" data-transform="0" min="0" max="20" value="1">
+                <span class="prob-value" id="prob-0">1%</span>
+            </div>
+
+            <div class="prob-row">
+                <span class="prob-label" style="color: #22d3ee;">f2 主葉</span>
+                <input type="range" class="prob-slider" data-transform="1" min="50" max="95" value="85">
+                <span class="prob-value" id="prob-1">85%</span>
+            </div>
+
+            <div class="prob-row">
+                <span class="prob-label" style="color: #a78bfa;">f3 左葉</span>
+                <input type="range" class="prob-slider" data-transform="2" min="0" max="20" value="7">
+                <span class="prob-value" id="prob-2">7%</span>
+            </div>
+
+            <div class="prob-row">
+                <span class="prob-label" style="color: #f472b6;">f4 右葉</span>
+                <input type="range" class="prob-slider" data-transform="3" min="0" max="20" value="7">
+                <span class="prob-value" id="prob-3">7%</span>
+            </div>
+        </div>
+
+        <!-- 預設蕨類 -->
+        <div class="control-group">
+            <label class="section-label">預設蕨類</label>
+            <div class="preset-buttons">
+                <button class="preset-btn active" data-preset="classic" title="經典蕨">經典</button>
+                <button class="preset-btn" data-preset="cyclosorus" title="蹄蓋蕨">蹄蓋蕨</button>
+                <button class="preset-btn" data-preset="modified" title="變形蕨">變形</button>
+                <button class="preset-btn" data-preset="fishbone" title="魚骨蕨">魚骨</button>
+            </div>
+        </div>
+
+        <!-- 播放控制 -->
+        <div class="button-group">
+            <button id="play-btn" class="action-btn playing">
+                <span class="icon">⏸</span>
+                <span class="text">暫停</span>
+            </button>
+            <button id="reset-btn" class="action-btn">
+                <span class="icon">↺</span>
+                <span class="text">重置</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>已繪製點數:</span>
+                <strong id="points-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- IFS 說明面板 -->
+    <div id="info-panel">
+        <h2>迭代函數系統 IFS</h2>
+        <p>巴恩斯利蕨由 4 個仿射變換組成：</p>
+        <div class="transform-list">
+            <div class="transform-item">
+                <span class="dot" style="background: #4ade80;"></span>
+                <span>f1: 莖幹（收縮到基部）</span>
+            </div>
+            <div class="transform-item">
+                <span class="dot" style="background: #22d3ee;"></span>
+                <span>f2: 主葉（連續向上複製）</span>
+            </div>
+            <div class="transform-item">
+                <span class="dot" style="background: #a78bfa;"></span>
+                <span>f3: 左側小葉</span>
+            </div>
+            <div class="transform-item">
+                <span class="dot" style="background: #f472b6;"></span>
+                <span>f4: 右側小葉</span>
+            </div>
+        </div>
+        <p class="tip">💡 調整機率權重可以改變蕨的形態！</p>
+    </div>
+
+    <!-- 顏色選擇 -->
+    <div id="color-selector">
+        <button class="color-btn active" data-color="green" title="自然綠">
+            <span class="color-preview" style="background: linear-gradient(135deg, #22c55e, #86efac);"></span>
+        </button>
+        <button class="color-btn" data-color="autumn" title="秋色">
+            <span class="color-preview" style="background: linear-gradient(135deg, #f59e0b, #fcd34d);"></span>
+        </button>
+        <button class="color-btn" data-color="purple" title="夢幻紫">
+            <span class="color-preview" style="background: linear-gradient(135deg, #8b5cf6, #c4b5fd);"></span>
+        </button>
+        <button class="color-btn" data-color="rainbow" title="彩虹">
+            <span class="color-preview" style="background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f);"></span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
