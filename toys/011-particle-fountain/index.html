@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#011 Particle Fountain 粒子噴泉 | Awesome Web Toys</title>
+    <meta name="description" content="粒子噴泉 - 滑鼠控制噴射方向，物理模擬的華麗粒子效果">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>⛲ 粒子噴泉 Particle Fountain</h1>
+
+        <div class="control-group">
+            <label>發射速率: <span id="rate-display">50</span>/幀</label>
+            <input type="range" id="rate-slider" min="10" max="150" value="50" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>初速度: <span id="velocity-display">12</span></label>
+            <input type="range" id="velocity-slider" min="5" max="25" value="12" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>重力: <span id="gravity-display">0.3</span></label>
+            <input type="range" id="gravity-slider" min="0.1" max="0.8" value="0.3" step="0.05">
+        </div>
+
+        <div class="control-group">
+            <label>粒子大小: <span id="size-display">3</span></label>
+            <input type="range" id="size-slider" min="1" max="8" value="3" step="0.5">
+        </div>
+
+        <!-- 顏色主題 -->
+        <div class="control-group">
+            <label class="section-label">顏色主題</label>
+            <div class="color-options">
+                <button class="color-btn active" data-color="rainbow" title="彩虹">
+                    <span class="color-preview rainbow"></span>
+                </button>
+                <button class="color-btn" data-color="fire" title="火焰">
+                    <span class="color-preview fire"></span>
+                </button>
+                <button class="color-btn" data-color="ocean" title="海洋">
+                    <span class="color-preview ocean"></span>
+                </button>
+                <button class="color-btn" data-color="neon" title="霓虹">
+                    <span class="color-preview neon"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 噴泉模式 -->
+        <div class="control-group">
+            <label class="section-label">噴泉模式</label>
+            <div class="mode-buttons">
+                <button class="mode-btn active" data-mode="follow">跟隨滑鼠</button>
+                <button class="mode-btn" data-mode="fixed">固定向上</button>
+                <button class="mode-btn" data-mode="spread">四散模式</button>
+            </div>
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>拖尾效果</span>
+                <label class="toggle">
+                    <input type="checkbox" id="trail-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>發光效果</span>
+                <label class="toggle">
+                    <input type="checkbox" id="glow-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>活躍粒子:</span>
+                <strong id="particle-display">0</strong>
+            </div>
+            <div class="stat-row">
+                <span>FPS:</span>
+                <strong id="fps-display">60</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>粒子噴泉</h2>
+        <p>模擬水噴泉的物理效果，每個粒子都受重力影響。</p>
+        <div class="interaction-hints">
+            <div class="hint">🖱️ 移動滑鼠 - 控制噴射方向</div>
+            <div class="hint">🖱️ 點擊 - 切換顏色主題</div>
+            <div class="hint">⚙️ 滾輪 - 調整發射速率</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
