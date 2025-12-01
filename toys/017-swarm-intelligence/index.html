@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#017 Swarm Intelligence 群體智能 | Awesome Web Toys</title>
+    <meta name="description" content="群體智能 - Boids 演算法模擬鳥群飛行，觀察分離、對齊、聚集三大規則">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🐦 群體智能 Swarm Intelligence</h1>
+
+        <div class="control-group">
+            <label>個體數量: <span id="count-display">150</span></label>
+            <input type="range" id="count-slider" min="50" max="400" value="150" step="10">
+        </div>
+
+        <!-- Boids 三大規則 -->
+        <div class="control-group rules-section">
+            <label class="section-label">Boids 規則權重</label>
+
+            <div class="rule-row">
+                <span class="rule-name">🔀 分離 Separation</span>
+                <input type="range" id="separation-slider" min="0" max="3" value="1.5" step="0.1">
+                <span class="rule-value" id="separation-display">1.5</span>
+            </div>
+
+            <div class="rule-row">
+                <span class="rule-name">➡️ 對齊 Alignment</span>
+                <input type="range" id="alignment-slider" min="0" max="3" value="1.0" step="0.1">
+                <span class="rule-value" id="alignment-display">1.0</span>
+            </div>
+
+            <div class="rule-row">
+                <span class="rule-name">🎯 聚集 Cohesion</span>
+                <input type="range" id="cohesion-slider" min="0" max="3" value="1.0" step="0.1">
+                <span class="rule-value" id="cohesion-display">1.0</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>感知半徑: <span id="perception-display">50</span>px</label>
+            <input type="range" id="perception-slider" min="20" max="100" value="50" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>最大速度: <span id="speed-display">4</span></label>
+            <input type="range" id="speed-slider" min="2" max="8" value="4" step="0.5">
+        </div>
+
+        <!-- 滑鼠互動 -->
+        <div class="control-group">
+            <label class="section-label">滑鼠互動</label>
+            <div class="mouse-options">
+                <button class="mouse-btn active" data-mode="none">無</button>
+                <button class="mouse-btn" data-mode="attract">吸引</button>
+                <button class="mouse-btn" data-mode="repel">驅散</button>
+            </div>
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>顯示軌跡</span>
+                <label class="toggle">
+                    <input type="checkbox" id="trail-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>顯示感知範圍</span>
+                <label class="toggle">
+                    <input type="checkbox" id="perception-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 預設情境 -->
+        <div class="control-group">
+            <label class="section-label">預設情境</label>
+            <div class="preset-buttons">
+                <button class="preset-btn" data-preset="flock">鳥群</button>
+                <button class="preset-btn" data-preset="school">魚群</button>
+                <button class="preset-btn" data-preset="swarm">蟲群</button>
+                <button class="preset-btn" data-preset="chaos">混亂</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>個體數:</span>
+                <strong id="boid-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>Boids 演算法</h2>
+        <p>由 Craig Reynolds 於 1986 年提出，模擬鳥群行為的經典演算法。</p>
+        <div class="rules-explanation">
+            <div class="rule-item">
+                <strong>分離</strong> - 避免與鄰近個體過於靠近
+            </div>
+            <div class="rule-item">
+                <strong>對齊</strong> - 朝向鄰近個體的平均方向
+            </div>
+            <div class="rule-item">
+                <strong>聚集</strong> - 朝向鄰近個體的中心移動
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
