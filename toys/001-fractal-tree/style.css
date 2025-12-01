@@ -1,0 +1,225 @@
+/**
+ * Fractal Tree 分形樹 - 樣式表
+ *
+ * 設計原則：
+ * - 深色背景突顯樹的視覺效果
+ * - 半透明控制面板不干擾主視覺
+ * - 響應式設計適配各種螢幕尺寸
+ */
+
+/* === 重置與基礎樣式 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #0a0a0f;
+}
+
+/* === 主畫布 === */
+#canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    touch-action: none; /* 防止觸控時頁面縮放 */
+}
+
+/* === 控制面板 === */
+#controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px 24px;
+    color: #fff;
+    max-width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#controls:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+#controls h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #7dd3a8;
+    letter-spacing: -0.02em;
+}
+
+/* === 操作說明 === */
+#controls .info {
+    margin-bottom: 16px;
+}
+
+#controls .info p {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#controls .key {
+    display: inline-block;
+    background: rgba(125, 211, 168, 0.2);
+    color: #7dd3a8;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+/* === 狀態顯示 === */
+#controls .stats {
+    display: flex;
+    gap: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#controls .stats strong {
+    color: #7dd3a8;
+    font-weight: 600;
+}
+
+/* === 深度滑桿 (行動裝置) === */
+#depth-slider-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: none; /* 預設隱藏，JS 在觸控裝置上顯示 */
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+}
+
+#depth-slider-container label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+#depth-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 150px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+#depth-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #7dd3a8;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(125, 211, 168, 0.4);
+}
+
+#depth-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #7dd3a8;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(125, 211, 168, 0.4);
+}
+
+/* === 響應式設計 === */
+
+/* 平板與小螢幕 */
+@media (max-width: 768px) {
+    #controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+        padding: 16px;
+    }
+
+    #controls h1 {
+        font-size: 1.1rem;
+    }
+
+    #controls .info p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    #depth-slider-container {
+        display: flex;
+    }
+}
+
+/* 手機橫向 */
+@media (max-height: 500px) {
+    #controls {
+        top: 10px;
+        left: 10px;
+        padding: 12px 16px;
+    }
+
+    #controls h1 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    #controls .info {
+        display: none;
+    }
+
+    #controls .stats {
+        padding-top: 8px;
+    }
+}
+
+/* === 動畫效果 === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#controls {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* === 觸控反饋 === */
+@media (hover: none) {
+    #canvas {
+        cursor: pointer;
+    }
+}
