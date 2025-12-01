@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#016 Particle Wave 粒子波浪 | Awesome Web Toys</title>
+    <meta name="description" content="粒子波浪 - 粒子排列成網格產生波浪動畫，滑鼠移動產生漣漪效果">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🌊 粒子波浪 Particle Wave</h1>
+
+        <div class="control-group">
+            <label>網格密度: <span id="density-display">30</span></label>
+            <input type="range" id="density-slider" min="15" max="60" value="30" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>波浪振幅: <span id="amplitude-display">30</span></label>
+            <input type="range" id="amplitude-slider" min="10" max="60" value="30" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>波浪頻率: <span id="frequency-display">0.03</span></label>
+            <input type="range" id="frequency-slider" min="0.01" max="0.08" value="0.03" step="0.005">
+        </div>
+
+        <div class="control-group">
+            <label>波浪速度: <span id="speed-display">0.05</span></label>
+            <input type="range" id="speed-slider" min="0.01" max="0.1" value="0.05" step="0.01">
+        </div>
+
+        <!-- 波浪模式 -->
+        <div class="control-group">
+            <label class="section-label">波浪模式</label>
+            <div class="mode-options">
+                <button class="mode-btn active" data-mode="horizontal">水平波</button>
+                <button class="mode-btn" data-mode="radial">圓形波</button>
+                <button class="mode-btn" data-mode="diagonal">斜向波</button>
+            </div>
+        </div>
+
+        <!-- 顏色主題 -->
+        <div class="control-group">
+            <label class="section-label">顏色主題</label>
+            <div class="color-options">
+                <button class="color-btn active" data-color="ocean" title="海洋">
+                    <span class="color-preview ocean"></span>
+                </button>
+                <button class="color-btn" data-color="sunset" title="日落">
+                    <span class="color-preview sunset"></span>
+                </button>
+                <button class="color-btn" data-color="aurora" title="極光">
+                    <span class="color-preview aurora"></span>
+                </button>
+                <button class="color-btn" data-color="mono" title="單色">
+                    <span class="color-preview mono"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>滑鼠漣漪</span>
+                <label class="toggle">
+                    <input type="checkbox" id="ripple-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>連線效果</span>
+                <label class="toggle">
+                    <input type="checkbox" id="lines-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>高度著色</span>
+                <label class="toggle">
+                    <input type="checkbox" id="height-color-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>粒子數量:</span>
+                <strong id="particle-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>正弦波動畫</h2>
+        <p>粒子高度由正弦函數決定：y = A·sin(ωx + φ)</p>
+        <div class="interaction-hints">
+            <div class="hint">🖱️ 移動滑鼠 - 產生漣漪波紋</div>
+            <div class="hint">🌊 波浪模式 - 改變波的傳播方向</div>
+            <div class="hint">🎨 高度著色 - 根據高度變換顏色</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
