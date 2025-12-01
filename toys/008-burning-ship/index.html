@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#008 Burning Ship 燃燒船分形 | Awesome Web Toys</title>
+    <meta name="description" content="燃燒船分形探索器 - 使用 WebGL 即時渲染，探索這個神秘的船形分形結構">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🔥 燃燒船分形 Burning Ship</h1>
+
+        <div class="control-group">
+            <label>最大迭代: <span id="iteration-display">256</span></label>
+            <input type="range" id="iteration-slider" min="64" max="1024" value="256" step="64">
+        </div>
+
+        <!-- 顏色主題 -->
+        <div class="control-group">
+            <label class="section-label">顏色主題</label>
+            <div class="color-options">
+                <button class="color-btn active" data-color="fire" title="烈焰">
+                    <span class="color-preview fire"></span>
+                </button>
+                <button class="color-btn" data-color="ocean" title="深海">
+                    <span class="color-preview ocean"></span>
+                </button>
+                <button class="color-btn" data-color="neon" title="霓虹">
+                    <span class="color-preview neon"></span>
+                </button>
+                <button class="color-btn" data-color="grayscale" title="灰階">
+                    <span class="color-preview grayscale"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 興趣點導覽 -->
+        <div class="control-group">
+            <label class="section-label">興趣點導覽</label>
+            <div class="poi-buttons">
+                <button class="poi-btn" data-poi="overview" title="全景">全景</button>
+                <button class="poi-btn" data-poi="ship" title="船身">船身</button>
+                <button class="poi-btn" data-poi="antenna" title="天線">天線</button>
+                <button class="poi-btn" data-poi="spiral" title="螺旋">螺旋</button>
+                <button class="poi-btn" data-poi="miniship" title="迷你船">迷你船</button>
+            </div>
+        </div>
+
+        <!-- 控制按鈕 -->
+        <div class="button-group">
+            <button id="reset-btn" class="action-btn">
+                <span class="icon">↺</span>
+                <span class="text">重置視圖</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>中心點:</span>
+                <strong id="center-display">-0.4, -0.5</strong>
+            </div>
+            <div class="stat-row">
+                <span>縮放倍率:</span>
+                <strong id="zoom-display">1.0x</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>燃燒船分形</h2>
+        <p>由 Michael Michelitsch 和 Otto Rössler 於 1992 年發現。</p>
+        <div class="formula">
+            <p>迭代公式：</p>
+            <code>z<sub>n+1</sub> = (|Re(z<sub>n</sub>)| + i|Im(z<sub>n</sub>)|)² + c</code>
+        </div>
+        <p class="tip">💡 滾輪縮放，拖曳平移，點擊設定中心</p>
+    </div>
+
+    <!-- 載入提示 -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <span>渲染中...</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
