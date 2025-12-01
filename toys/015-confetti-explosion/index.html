@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#015 Confetti Explosion 彩帶爆炸 | Awesome Web Toys</title>
+    <meta name="description" content="彩帶爆炸 - 點擊螢幕任意位置產生彩帶爆炸效果，3D 旋轉飄落">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 點擊提示 -->
+    <div id="click-hint">
+        <span>👆 點擊任意位置</span>
+    </div>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🎊 彩帶爆炸 Confetti Explosion</h1>
+
+        <div class="control-group">
+            <label>爆炸數量: <span id="count-display">100</span></label>
+            <input type="range" id="count-slider" min="30" max="300" value="100" step="10">
+        </div>
+
+        <div class="control-group">
+            <label>爆炸力度: <span id="power-display">15</span></label>
+            <input type="range" id="power-slider" min="5" max="30" value="15" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>重力: <span id="gravity-display">0.3</span></label>
+            <input type="range" id="gravity-slider" min="0.1" max="0.8" value="0.3" step="0.05">
+        </div>
+
+        <!-- 形狀選擇 -->
+        <div class="control-group">
+            <label class="section-label">彩帶形狀</label>
+            <div class="shape-options">
+                <button class="shape-btn active" data-shape="mixed" title="混合">
+                    <span class="shape-icon">🎯</span>
+                    <span class="shape-name">混合</span>
+                </button>
+                <button class="shape-btn" data-shape="rect" title="長方形">
+                    <span class="shape-icon">▬</span>
+                    <span class="shape-name">長方形</span>
+                </button>
+                <button class="shape-btn" data-shape="circle" title="圓形">
+                    <span class="shape-icon">●</span>
+                    <span class="shape-name">圓形</span>
+                </button>
+                <button class="shape-btn" data-shape="star" title="星形">
+                    <span class="shape-icon">★</span>
+                    <span class="shape-name">星形</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 顏色主題 -->
+        <div class="control-group">
+            <label class="section-label">顏色主題</label>
+            <div class="color-options">
+                <button class="color-btn active" data-color="party" title="派對">
+                    <span class="color-preview party"></span>
+                </button>
+                <button class="color-btn" data-color="gold" title="金色">
+                    <span class="color-preview gold"></span>
+                </button>
+                <button class="color-btn" data-color="pastel" title="粉彩">
+                    <span class="color-preview pastel"></span>
+                </button>
+                <button class="color-btn" data-color="neon" title="霓虹">
+                    <span class="color-preview neon"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>3D 旋轉</span>
+                <label class="toggle">
+                    <input type="checkbox" id="rotate-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>空氣阻力</span>
+                <label class="toggle">
+                    <input type="checkbox" id="drag-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 控制按鈕 -->
+        <div class="button-group">
+            <button id="burst-btn" class="action-btn primary">
+                <span class="icon">💥</span>
+                <span class="text">中央爆發</span>
+            </button>
+            <button id="clear-btn" class="action-btn">
+                <span class="icon">🗑️</span>
+                <span class="text">清除</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>彩帶數量:</span>
+                <strong id="particle-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>彩帶爆炸效果</h2>
+        <p>模擬派對彩帶的 3D 旋轉與飄落物理效果。</p>
+        <div class="interaction-hints">
+            <div class="hint">🖱️ 點擊任意位置 - 觸發爆炸</div>
+            <div class="hint">📱 觸控螢幕 - 同樣有效</div>
+            <div class="hint">🔄 3D 旋轉 - 模擬紙片翻轉</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
