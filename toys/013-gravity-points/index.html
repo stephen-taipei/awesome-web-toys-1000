@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#013 Gravity Points 重力點 | Awesome Web Toys</title>
+    <meta name="description" content="重力點 - 點擊創建重力中心，粒子被吸引或排斥，模擬 N-body 引力系統">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🌌 重力點 Gravity Points</h1>
+
+        <!-- 重力類型選擇 -->
+        <div class="control-group">
+            <label class="section-label">點擊放置</label>
+            <div class="gravity-type-selector">
+                <button class="type-btn active" data-type="attract">
+                    <span class="type-icon attract">⊕</span>
+                    <span class="type-name">吸引</span>
+                </button>
+                <button class="type-btn" data-type="repel">
+                    <span class="type-icon repel">⊖</span>
+                    <span class="type-name">排斥</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>引力強度: <span id="strength-display">1.0</span></label>
+            <input type="range" id="strength-slider" min="0.2" max="3" value="1" step="0.1">
+        </div>
+
+        <div class="control-group">
+            <label>粒子數量: <span id="particle-count-display">500</span></label>
+            <input type="range" id="particle-count-slider" min="100" max="2000" value="500" step="100">
+        </div>
+
+        <div class="control-group">
+            <label>粒子大小: <span id="size-display">2</span></label>
+            <input type="range" id="size-slider" min="1" max="5" value="2" step="0.5">
+        </div>
+
+        <!-- 特效開關 -->
+        <div class="control-group">
+            <div class="toggle-row">
+                <span>軌跡顯示</span>
+                <label class="toggle">
+                    <input type="checkbox" id="trail-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>速度著色</span>
+                <label class="toggle">
+                    <input type="checkbox" id="velocity-color-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="toggle-row">
+                <span>顯示力場</span>
+                <label class="toggle">
+                    <input type="checkbox" id="field-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 控制按鈕 -->
+        <div class="button-group">
+            <button id="clear-points-btn" class="action-btn">
+                <span class="icon">🗑️</span>
+                <span class="text">清除重力點</span>
+            </button>
+            <button id="reset-btn" class="action-btn">
+                <span class="icon">↺</span>
+                <span class="text">重置粒子</span>
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>重力點:</span>
+                <strong id="gravity-point-display">0</strong>
+            </div>
+            <div class="stat-row">
+                <span>活躍粒子:</span>
+                <strong id="particle-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>N-body 重力模擬</h2>
+        <p>模擬牛頓萬有引力定律：F = G·m₁·m₂/r²</p>
+        <div class="interaction-hints">
+            <div class="hint">🖱️ 左鍵點擊 - 放置重力點</div>
+            <div class="hint">🖱️ 右鍵點擊 - 刪除最近的重力點</div>
+            <div class="hint">⊕ 吸引 - 粒子被拉向重力點</div>
+            <div class="hint">⊖ 排斥 - 粒子被推離重力點</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

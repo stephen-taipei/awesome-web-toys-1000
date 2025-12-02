@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Image 粒子圖像 | Awesome Web Toys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div class="controls">
+        <h1>Particle Image</h1>
+        <h2>粒子圖像</h2>
+
+        <div class="control-group">
+            <label>上傳圖片</label>
+            <input type="file" id="imageInput" accept="image/*">
+            <button id="uploadBtn" class="file-btn">選擇圖片</button>
+        </div>
+
+        <div class="control-group">
+            <label>預設圖像</label>
+            <div class="preset-buttons">
+                <button class="preset-btn active" data-preset="heart">愛心</button>
+                <button class="preset-btn" data-preset="star">星星</button>
+                <button class="preset-btn" data-preset="spiral">螺旋</button>
+                <button class="preset-btn" data-preset="wave">波浪</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>粒子密度: <span id="densityValue">4</span></label>
+            <input type="range" id="density" min="2" max="8" value="4" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>粒子大小: <span id="particleSizeValue">3</span></label>
+            <input type="range" id="particleSize" min="1" max="8" value="3" step="0.5">
+        </div>
+
+        <div class="control-group">
+            <label>影響半徑: <span id="mouseRadiusValue">100</span></label>
+            <input type="range" id="mouseRadius" min="50" max="200" value="100" step="10">
+        </div>
+
+        <div class="control-group">
+            <label>推力強度: <span id="forceValue">5</span></label>
+            <input type="range" id="force" min="1" max="15" value="5" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>回復速度: <span id="returnSpeedValue">0.05</span></label>
+            <input type="range" id="returnSpeed" min="0.01" max="0.15" value="0.05" step="0.01">
+        </div>
+
+        <div class="control-group">
+            <label>阻尼係數: <span id="frictionValue">0.85</span></label>
+            <input type="range" id="friction" min="0.7" max="0.95" value="0.85" step="0.01">
+        </div>
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="colorful" checked>
+                保持原色
+            </label>
+        </div>
+
+        <div class="control-group">
+            <label>單色色調</label>
+            <input type="color" id="monoColor" value="#00ffff">
+        </div>
+
+        <button id="resetBtn" class="reset-btn">重置粒子</button>
+    </div>
+
+    <!-- 資訊面板 -->
+    <div class="info-panel">
+        <h3>關於粒子圖像</h3>
+        <p>將圖片轉換為由粒子組成的互動式影像。</p>
+        <ul>
+            <li><strong>圖像採樣</strong> - 按照密度間隔採樣像素</li>
+            <li><strong>粒子生成</strong> - 每個採樣點生成一個帶顏色的粒子</li>
+            <li><strong>滑鼠推開</strong> - 滑鼠靠近時粒子被推散</li>
+            <li><strong>彈簧復原</strong> - 粒子以彈簧物理回到原位</li>
+        </ul>
+        <p class="formula">F = -k × (x - x₀) - c × v</p>
+        <p class="hint">移動滑鼠與粒子互動</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

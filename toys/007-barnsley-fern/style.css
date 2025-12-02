@@ -1,0 +1,388 @@
+/**
+ * Barnsley Fern 巴恩斯利蕨 - 樣式表
+ *
+ * 設計原則：
+ * - 自然綠色主題呼應蕨類植物
+ * - 機率權重調整器直觀展示
+ * - 深色背景突顯分形細節
+ */
+
+/* === 重置與基礎樣式 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #0a1210;
+}
+
+/* === 主畫布 === */
+#canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center bottom, #0f1f1a 0%, #0a1210 100%);
+}
+
+/* === 控制面板 === */
+#controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(10, 18, 16, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    width: 280px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#controls h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #4ade80;
+}
+
+/* === 控制項群組 === */
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group > label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.control-group > label span {
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.section-label {
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px !important;
+}
+
+/* === 滑桿 === */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(34, 197, 94, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #4ade80;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(74, 222, 128, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #4ade80;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* === 機率調整列 === */
+.prob-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.prob-row:last-child {
+    margin-bottom: 0;
+}
+
+.prob-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.prob-slider {
+    flex: 1;
+    height: 4px !important;
+}
+
+.prob-value {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    width: 35px;
+    text-align: right;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+/* === 預設按鈕 === */
+.preset-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.preset-btn {
+    flex: 1;
+    padding: 8px 4px;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.preset-btn:hover {
+    border-color: rgba(34, 197, 94, 0.6);
+    color: #fff;
+}
+
+.preset-btn.active {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: #4ade80;
+    color: #4ade80;
+}
+
+/* === 按鈕群組 === */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.action-btn .icon {
+    font-size: 1rem;
+}
+
+#play-btn.playing {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+
+/* === 統計資訊 === */
+.stats {
+    padding-top: 12px;
+    border-top: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-row strong {
+    color: #4ade80;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+/* === 說明面板 === */
+#info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(10, 18, 16, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #fff;
+    max-width: 280px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    z-index: 100;
+}
+
+#info-panel h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #86efac;
+    margin-bottom: 10px;
+}
+
+#info-panel p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.transform-list {
+    margin-bottom: 10px;
+}
+
+.transform-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+}
+
+.transform-item .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+#info-panel .tip {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(34, 197, 94, 0.2);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* === 顏色選擇器 === */
+#color-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    background: rgba(10, 18, 16, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    z-index: 100;
+}
+
+.color-btn {
+    width: 36px;
+    height: 36px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    padding: 3px;
+    transition: all 0.2s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    border-color: #4ade80;
+}
+
+.color-preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* === 響應式設計 === */
+@media (max-width: 768px) {
+    #controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        padding: 16px;
+    }
+
+    #controls h1 {
+        font-size: 1rem;
+    }
+
+    .prob-label {
+        width: 50px;
+        font-size: 0.7rem;
+    }
+
+    #info-panel {
+        display: none;
+    }
+
+    #color-selector {
+        top: auto;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-height: 700px) {
+    #info-panel {
+        display: none;
+    }
+
+    .control-group:has(.prob-row) {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+}
+
+/* === 動畫 === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#controls, #info-panel, #color-selector {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* === 發光效果 === */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(74, 222, 128, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(74, 222, 128, 0.5); }
+}
+
+#play-btn.playing {
+    animation: glow 2s ease-in-out infinite;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#003 Julia Set Gallery 茱莉亞集合畫廊 | Awesome Web Toys</title>
+    <meta name="description" content="互動式茱莉亞集合畫廊 - 拖曳控制 c 參數，即時預覽無限變化的分形之美">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- c 參數控制區 (小型曼德博預覽) -->
+    <div id="c-picker">
+        <canvas id="mandelbrot-preview"></canvas>
+        <div class="c-marker" id="c-marker"></div>
+        <div class="c-value">
+            <span>c = </span>
+            <strong id="c-display">-0.7 + 0.27i</strong>
+        </div>
+    </div>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🎨 茱莉亞集合 Julia Set</h1>
+        <div class="info">
+            <p><span class="key">左側面板</span> 拖曳選擇 c 值</p>
+            <p><span class="key">主畫布拖曳</span> 平移視角</p>
+            <p><span class="key">滾輪</span> 縮放探索</p>
+            <p><span class="key">R</span> 重置視角</p>
+        </div>
+        <div class="stats">
+            <div class="stat-row">
+                <span>縮放:</span>
+                <strong id="zoom-display">1x</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 預設畫廊 -->
+    <div id="gallery">
+        <label>經典圖案</label>
+        <div class="gallery-items">
+            <button class="gallery-item active" data-cr="-0.7" data-ci="0.27015" title="螺旋">
+                <span class="preview" style="background: linear-gradient(135deg, #1a1a2e, #4a90a4);"></span>
+            </button>
+            <button class="gallery-item" data-cr="-0.8" data-ci="0.156" title="海馬谷">
+                <span class="preview" style="background: linear-gradient(135deg, #2d1b4e, #8b5cf6);"></span>
+            </button>
+            <button class="gallery-item" data-cr="-0.4" data-ci="0.6" title="兔子">
+                <span class="preview" style="background: linear-gradient(135deg, #1e3a5f, #3b82f6);"></span>
+            </button>
+            <button class="gallery-item" data-cr="0.285" data-ci="0.01" title="星塵">
+                <span class="preview" style="background: linear-gradient(135deg, #1a1a1a, #fbbf24);"></span>
+            </button>
+            <button class="gallery-item" data-cr="-0.835" data-ci="-0.2321" title="閃電">
+                <span class="preview" style="background: linear-gradient(135deg, #0f172a, #06b6d4);"></span>
+            </button>
+            <button class="gallery-item" data-cr="-0.70176" data-ci="-0.3842" title="雪花">
+                <span class="preview" style="background: linear-gradient(135deg, #1e1e2e, #a78bfa);"></span>
+            </button>
+            <button class="gallery-item" data-cr="0.355" data-ci="0.355" title="對稱">
+                <span class="preview" style="background: linear-gradient(135deg, #1f2937, #10b981);"></span>
+            </button>
+            <button class="gallery-item" data-cr="-0.54" data-ci="0.54" title="漩渦">
+                <span class="preview" style="background: linear-gradient(135deg, #27272a, #f472b6);"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 配色方案 -->
+    <div id="palette-selector">
+        <button class="palette-btn active" data-palette="0" title="經典">
+            <span class="palette-preview classic"></span>
+        </button>
+        <button class="palette-btn" data-palette="1" title="火焰">
+            <span class="palette-preview fire"></span>
+        </button>
+        <button class="palette-btn" data-palette="2" title="海洋">
+            <span class="palette-preview ocean"></span>
+        </button>
+        <button class="palette-btn" data-palette="3" title="霓虹">
+            <span class="palette-preview neon"></span>
+        </button>
+    </div>
+
+    <!-- Vertex Shader -->
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        attribute vec2 a_position;
+        void main() {
+            gl_Position = vec4(a_position, 0.0, 1.0);
+        }
+    </script>
+
+    <!-- Fragment Shader - Julia Set -->
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        precision highp float;
+
+        uniform vec2 u_resolution;
+        uniform vec2 u_center;
+        uniform float u_zoom;
+        uniform vec2 u_c;
+        uniform int u_maxIter;
+        uniform int u_palette;
+
+        // 配色函數
+        vec3 palette(float t, int paletteType) {
+            if (paletteType == 0) {
+                // 經典藍黃
+                return vec3(
+                    9.0 * (1.0 - t) * t * t * t,
+                    15.0 * (1.0 - t) * (1.0 - t) * t * t,
+                    8.5 * (1.0 - t) * (1.0 - t) * (1.0 - t) * t
+                );
+            } else if (paletteType == 1) {
+                // 火焰
+                return vec3(
+                    min(1.0, t * 3.0),
+                    max(0.0, min(1.0, (t - 0.33) * 3.0)),
+                    max(0.0, min(1.0, (t - 0.66) * 3.0))
+                );
+            } else if (paletteType == 2) {
+                // 海洋
+                return vec3(
+                    t * t * 0.4,
+                    t * 0.7,
+                    0.4 + t * 0.6
+                );
+            } else {
+                // 霓虹
+                float h = t * 6.0;
+                float x = 1.0 - abs(mod(h, 2.0) - 1.0);
+                if (h < 1.0) return vec3(1.0, x, 0.0);
+                if (h < 2.0) return vec3(x, 1.0, 0.0);
+                if (h < 3.0) return vec3(0.0, 1.0, x);
+                if (h < 4.0) return vec3(0.0, x, 1.0);
+                if (h < 5.0) return vec3(x, 0.0, 1.0);
+                return vec3(1.0, 0.0, x);
+            }
+        }
+
+        void main() {
+            // 計算複數座標
+            vec2 uv = gl_FragCoord.xy / u_resolution;
+            float aspect = u_resolution.x / u_resolution.y;
+
+            float scale = 3.0 / u_zoom;
+            vec2 z = vec2(
+                (uv.x - 0.5) * scale * aspect + u_center.x,
+                (uv.y - 0.5) * scale + u_center.y
+            );
+
+            // Julia 集合迭代
+            int iter = 0;
+            float zx = z.x;
+            float zy = z.y;
+
+            for (int i = 0; i < 500; i++) {
+                if (i >= u_maxIter) break;
+
+                float zx2 = zx * zx;
+                float zy2 = zy * zy;
+
+                if (zx2 + zy2 > 4.0) break;
+
+                float newZx = zx2 - zy2 + u_c.x;
+                zy = 2.0 * zx * zy + u_c.y;
+                zx = newZx;
+
+                iter++;
+            }
+
+            // 著色
+            if (iter == u_maxIter) {
+                gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+            } else {
+                // 平滑著色
+                float smoothIter = float(iter) + 1.0 - log2(log2(zx * zx + zy * zy));
+                float t = mod(smoothIter / 50.0, 1.0);
+                vec3 color = palette(t, u_palette);
+                gl_FragColor = vec4(color, 1.0);
+            }
+        }
+    </script>
+
+    <!-- Fragment Shader - Mandelbrot Preview -->
+    <script id="mandelbrot-shader" type="x-shader/x-fragment">
+        precision highp float;
+
+        uniform vec2 u_resolution;
+
+        void main() {
+            vec2 uv = gl_FragCoord.xy / u_resolution;
+
+            // 曼德博集合範圍：實部 -2.5 到 1，虛部 -1.2 到 1.2
+            float cx = uv.x * 3.5 - 2.5;
+            float cy = uv.y * 2.4 - 1.2;
+
+            float zx = 0.0;
+            float zy = 0.0;
+            int iter = 0;
+            const int maxIter = 100;
+
+            for (int i = 0; i < maxIter; i++) {
+                float zx2 = zx * zx;
+                float zy2 = zy * zy;
+
+                if (zx2 + zy2 > 4.0) break;
+
+                zy = 2.0 * zx * zy + cy;
+                zx = zx2 - zy2 + cx;
+                iter++;
+            }
+
+            if (iter == maxIter) {
+                gl_FragColor = vec4(0.15, 0.15, 0.2, 1.0);
+            } else {
+                float t = float(iter) / float(maxIter);
+                gl_FragColor = vec4(
+                    0.1 + t * 0.3,
+                    0.1 + t * 0.4,
+                    0.2 + t * 0.5,
+                    1.0
+                );
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

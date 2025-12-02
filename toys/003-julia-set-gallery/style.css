@@ -1,0 +1,354 @@
+/**
+ * Julia Set Gallery 茱莉亞集合畫廊 - 樣式表
+ *
+ * 設計原則：
+ * - 深色主題突顯分形細節
+ * - c 參數選擇器作為核心互動元素
+ * - 預設畫廊快速切換經典圖案
+ */
+
+/* === 重置與基礎樣式 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #000;
+}
+
+/* === 主畫布 === */
+#canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    touch-action: none;
+}
+
+#canvas:active {
+    cursor: grabbing;
+}
+
+/* === c 參數選擇器 === */
+#c-picker {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#mandelbrot-preview {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    cursor: crosshair;
+    display: block;
+}
+
+.c-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: rgba(100, 181, 246, 0.5);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(100, 181, 246, 0.8);
+    transition: box-shadow 0.2s ease;
+}
+
+.c-value {
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+.c-value strong {
+    color: #64b5f6;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 0.75rem;
+}
+
+/* === 控制面板 === */
+#controls {
+    position: fixed;
+    top: 180px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 16px 20px;
+    color: #fff;
+    width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#controls h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #a78bfa;
+    letter-spacing: -0.02em;
+}
+
+#controls .info {
+    margin-bottom: 12px;
+}
+
+#controls .info p {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#controls .key {
+    display: inline-block;
+    background: rgba(167, 139, 250, 0.2);
+    color: #a78bfa;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+#controls .stats {
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+}
+
+#controls .stat-row {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#controls .stat-row strong {
+    color: #a78bfa;
+    font-weight: 500;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+/* === 預設畫廊 === */
+#gallery {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+}
+
+#gallery label {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.gallery-items {
+    display: flex;
+    gap: 8px;
+}
+
+.gallery-item {
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 3px;
+    background: transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery-item.active {
+    border-color: #a78bfa;
+}
+
+.gallery-item .preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* === 配色方案選擇器 === */
+#palette-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+}
+
+.palette-btn {
+    width: 32px;
+    height: 32px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 2px;
+    background: transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.palette-btn:hover {
+    transform: scale(1.1);
+}
+
+.palette-btn.active {
+    border-color: #a78bfa;
+}
+
+.palette-preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.palette-preview.classic {
+    background: linear-gradient(90deg, #000 0%, #00f 25%, #0ff 50%, #ff0 75%, #fff 100%);
+}
+
+.palette-preview.fire {
+    background: linear-gradient(90deg, #000 0%, #300 20%, #f00 40%, #f80 60%, #ff0 80%, #fff 100%);
+}
+
+.palette-preview.ocean {
+    background: linear-gradient(90deg, #001 0%, #006 25%, #0af 50%, #0ff 75%, #fff 100%);
+}
+
+.palette-preview.neon {
+    background: linear-gradient(90deg, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+}
+
+/* === 響應式設計 === */
+@media (max-width: 768px) {
+    #c-picker {
+        top: 10px;
+        left: 10px;
+        width: 150px;
+        padding: 10px;
+    }
+
+    #mandelbrot-preview {
+        height: 90px;
+    }
+
+    #controls {
+        top: 140px;
+        left: 10px;
+        width: 150px;
+        padding: 12px;
+    }
+
+    #controls h1 {
+        font-size: 0.9rem;
+    }
+
+    #controls .info {
+        display: none;
+    }
+
+    #gallery {
+        bottom: 10px;
+        padding: 10px 12px;
+    }
+
+    .gallery-item {
+        width: 35px;
+        height: 35px;
+    }
+
+    #palette-selector {
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+    }
+
+    .palette-btn {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-height: 500px) {
+    #c-picker {
+        width: 120px;
+    }
+
+    #mandelbrot-preview {
+        height: 70px;
+    }
+
+    #controls {
+        display: none;
+    }
+
+    #gallery {
+        bottom: 5px;
+    }
+
+    .gallery-item {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* === 動畫 === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#c-picker, #controls, #gallery, #palette-selector {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(100, 181, 246, 0.8); }
+    50% { box-shadow: 0 0 20px rgba(100, 181, 246, 1); }
+}
+
+.c-marker.dragging {
+    animation: pulse 0.5s ease-in-out infinite;
+}

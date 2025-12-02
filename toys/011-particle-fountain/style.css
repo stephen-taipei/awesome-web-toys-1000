@@ -1,0 +1,363 @@
+/**
+ * Particle Fountain 粒子噴泉 - 樣式表
+ *
+ * 設計原則：
+ * - 深色背景突顯粒子效果
+ * - 水藍色系呼應噴泉主題
+ * - 簡潔的控制面板
+ */
+
+/* === 重置與基礎樣式 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #050a10;
+}
+
+/* === 主畫布 === */
+#canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+/* === 控制面板 === */
+#controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(5, 10, 16, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    width: 280px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#controls h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #38bdf8;
+}
+
+/* === 控制項群組 === */
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group > label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.control-group > label span {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.section-label {
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px !important;
+}
+
+/* === 滑桿 === */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(56, 189, 248, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #38bdf8;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(56, 189, 248, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #38bdf8;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* === 顏色選項 === */
+.color-options {
+    display: flex;
+    gap: 8px;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    padding: 3px;
+    transition: all 0.2s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    border-color: #38bdf8;
+}
+
+.color-preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.color-preview.rainbow {
+    background: linear-gradient(135deg, #ef4444 0%, #f59e0b 25%, #22c55e 50%, #3b82f6 75%, #a855f7 100%);
+}
+
+.color-preview.fire {
+    background: linear-gradient(135deg, #fcd34d 0%, #f97316 50%, #dc2626 100%);
+}
+
+.color-preview.ocean {
+    background: linear-gradient(135deg, #67e8f9 0%, #06b6d4 50%, #0284c7 100%);
+}
+
+.color-preview.neon {
+    background: linear-gradient(135deg, #f472b6 0%, #a855f7 50%, #06b6d4 100%);
+}
+
+/* === 模式按鈕 === */
+.mode-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 8px 4px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-btn:hover {
+    border-color: rgba(56, 189, 248, 0.6);
+    color: #fff;
+}
+
+.mode-btn.active {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
+/* === 切換開關 === */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(56, 189, 248, 0.2);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle input:checked + .toggle-slider {
+    background: #38bdf8;
+}
+
+.toggle input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+
+/* === 統計資訊 === */
+.stats {
+    padding-top: 12px;
+    border-top: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-row strong {
+    color: #38bdf8;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+/* === 說明面板 === */
+#info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(5, 10, 16, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #fff;
+    max-width: 280px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    z-index: 100;
+}
+
+#info-panel h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7dd3fc;
+    margin-bottom: 10px;
+}
+
+#info-panel p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.interaction-hints {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* === 響應式設計 === */
+@media (max-width: 768px) {
+    #controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        padding: 16px;
+    }
+
+    #controls h1 {
+        font-size: 1rem;
+    }
+
+    .mode-buttons {
+        flex-wrap: wrap;
+    }
+
+    .mode-btn {
+        flex: 0 0 calc(50% - 3px);
+    }
+
+    #info-panel {
+        display: none;
+    }
+}
+
+@media (max-height: 700px) {
+    #info-panel {
+        display: none;
+    }
+}
+
+/* === 動畫 === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#controls, #info-panel {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* === 噴泉發光效果 === */
+@keyframes fountainGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+}
+
+#controls:hover {
+    animation: fountainGlow 2s ease-in-out infinite;
+}

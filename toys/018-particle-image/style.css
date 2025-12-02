@@ -1,0 +1,356 @@
+/* ===================================
+   Particle Image 粒子圖像
+   粒子系統 #8 - Canvas 2D 圖像採樣
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    color: #e0e0e0;
+}
+
+/* 主畫布 */
+canvas {
+    display: block;
+    background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0f 100%);
+}
+
+/* 控制面板 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 15, 25, 0.92);
+    padding: 20px;
+    border-radius: 16px;
+    min-width: 240px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.controls h1 {
+    font-size: 1.4em;
+    margin-bottom: 4px;
+    color: #00ffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    font-weight: 600;
+}
+
+.controls h2 {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 18px;
+    font-weight: normal;
+}
+
+/* 控制項群組 */
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85em;
+    color: #aaa;
+}
+
+.control-group label span {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+/* 滑桿樣式 */
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(90deg, #1a1a2e, #2a2a4e);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #00ffff, #0088aa);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #00ffff, #0088aa);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* 核取方塊樣式 */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #00ffff;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/* 顏色選擇器 */
+input[type="color"] {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 檔案上傳按鈕 */
+input[type="file"] {
+    display: none;
+}
+
+.file-btn {
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #2a2a4e, #1a1a2e);
+    color: #00ffff;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s;
+}
+
+.file-btn:hover {
+    background: linear-gradient(135deg, #3a3a5e, #2a2a4e);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+/* 預設按鈕 */
+.preset-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.preset-btn {
+    padding: 8px 12px;
+    background: rgba(30, 30, 50, 0.8);
+    color: #aaa;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.3s;
+}
+
+.preset-btn:hover {
+    background: rgba(50, 50, 80, 0.8);
+    color: #fff;
+}
+
+.preset-btn.active {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 136, 170, 0.2));
+    color: #00ffff;
+    border-color: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* 重置按鈕 */
+.reset-btn {
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-top: 8px;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(135deg, #ff5252, #e74c3c);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+    transform: translateY(-1px);
+}
+
+/* 資訊面板 */
+.info-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(15, 15, 25, 0.92);
+    padding: 18px;
+    border-radius: 12px;
+    max-width: 280px;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.info-panel h3 {
+    color: #00ffff;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.info-panel p {
+    font-size: 0.85em;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.info-panel ul {
+    list-style: none;
+    font-size: 0.8em;
+    color: #888;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.info-panel li strong {
+    color: #00ffff;
+}
+
+.info-panel .formula {
+    font-family: 'Courier New', monospace;
+    color: #ff6b9d;
+    background: rgba(255, 107, 157, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.85em;
+    margin: 10px 0;
+}
+
+.info-panel .hint {
+    color: #666;
+    font-size: 0.75em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .controls {
+        top: auto;
+        bottom: 70px;
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        max-height: 50vh;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .controls h1 {
+        font-size: 1.2em;
+    }
+
+    .info-panel {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+    }
+
+    .preset-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .controls {
+        max-height: 45vh;
+    }
+
+    .preset-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* 捲軸樣式 */
+.controls::-webkit-scrollbar {
+    width: 6px;
+}
+
+.controls::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.controls::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.controls::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+/* 載入中狀態 */
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ffff;
+    font-size: 1.2em;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 粒子數量顯示 */
+.particle-count {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(15, 15, 25, 0.8);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    color: #888;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.particle-count span {
+    color: #00ffff;
+    font-weight: bold;
+}

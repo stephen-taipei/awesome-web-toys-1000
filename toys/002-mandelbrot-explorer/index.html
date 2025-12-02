@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#002 Mandelbrot Explorer 曼德博集合探索器 | Awesome Web Toys</title>
+    <meta name="description" content="互動式曼德博集合探索器 - 拖曳平移、滾輪縮放，無限探索分形之美">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 載入指示器 -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <span>渲染中...</span>
+    </div>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🔬 曼德博集合 Mandelbrot Set</h1>
+        <div class="info">
+            <p><span class="key">拖曳</span> 平移視角</p>
+            <p><span class="key">滾輪</span> 縮放探索</p>
+            <p><span class="key">點擊</span> 設定新中心</p>
+            <p><span class="key">R</span> 重置視角</p>
+        </div>
+        <div class="stats">
+            <div class="stat-row">
+                <span>中心:</span>
+                <strong id="center-display">-0.5 + 0i</strong>
+            </div>
+            <div class="stat-row">
+                <span>縮放:</span>
+                <strong id="zoom-display">1x</strong>
+            </div>
+            <div class="stat-row">
+                <span>迭代:</span>
+                <strong id="iter-display">100</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 配色方案選擇器 -->
+    <div id="palette-selector">
+        <label>配色方案</label>
+        <div class="palette-options">
+            <button class="palette-btn active" data-palette="classic" title="經典">
+                <span class="palette-preview classic"></span>
+            </button>
+            <button class="palette-btn" data-palette="fire" title="火焰">
+                <span class="palette-preview fire"></span>
+            </button>
+            <button class="palette-btn" data-palette="ocean" title="海洋">
+                <span class="palette-preview ocean"></span>
+            </button>
+            <button class="palette-btn" data-palette="rainbow" title="彩虹">
+                <span class="palette-preview rainbow"></span>
+            </button>
+            <button class="palette-btn" data-palette="grayscale" title="灰階">
+                <span class="palette-preview grayscale"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 迭代次數滑桿 -->
+    <div id="iter-slider-container">
+        <label for="iter-slider">迭代次數</label>
+        <input type="range" id="iter-slider" min="50" max="500" value="100" step="10">
+    </div>
+
+    <!-- 座標提示 -->
+    <div id="cursor-info">
+        <span id="cursor-pos">0 + 0i</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

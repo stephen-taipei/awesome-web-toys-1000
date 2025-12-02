@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>#006 Dragon Curve 龍形曲線 | Awesome Web Toys</title>
+    <meta name="description" content="龍形曲線分形動畫 - 觀察 L-System 如何生成神秘的龍形圖案">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主畫布 -->
+    <canvas id="canvas"></canvas>
+
+    <!-- 控制面板 -->
+    <div id="controls">
+        <h1>🐉 龍形曲線 Dragon Curve</h1>
+
+        <div class="control-group">
+            <label>迭代次數: <span id="iteration-display">10</span></label>
+            <input type="range" id="iteration-slider" min="1" max="17" value="10" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>繪製速度</label>
+            <div class="speed-buttons">
+                <button class="speed-btn" data-speed="0.5">0.5x</button>
+                <button class="speed-btn active" data-speed="1">1x</button>
+                <button class="speed-btn" data-speed="2">2x</button>
+                <button class="speed-btn" data-speed="5">5x</button>
+                <button class="speed-btn" data-speed="0">即時</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>線條顏色</label>
+            <div class="color-options">
+                <button class="color-btn active" data-color="gradient" title="漸層">
+                    <span class="color-preview gradient"></span>
+                </button>
+                <button class="color-btn" data-color="rainbow" title="彩虹">
+                    <span class="color-preview rainbow"></span>
+                </button>
+                <button class="color-btn" data-color="fire" title="火焰">
+                    <span class="color-preview fire"></span>
+                </button>
+                <button class="color-btn" data-color="ice" title="冰霜">
+                    <span class="color-preview ice"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 播放控制 -->
+        <div class="playback-controls">
+            <button id="restart-btn" class="playback-btn" title="重新開始">
+                <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+            </button>
+            <button id="play-btn" class="playback-btn primary" title="播放/暫停">
+                <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button id="reverse-btn" class="playback-btn" title="倒轉">
+                <svg viewBox="0 0 24 24"><path d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/></svg>
+            </button>
+        </div>
+
+        <!-- 進度條 -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="current-segment">0</span> / <span id="total-segments">0</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>線段數:</span>
+                <strong id="segments-display">0</strong>
+            </div>
+            <div class="stat-row">
+                <span>總長度:</span>
+                <strong id="length-display">0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 說明面板 -->
+    <div id="info-panel">
+        <h2>折紙龍 Paper Folding Dragon</h2>
+        <p>龍形曲線可以用折紙來理解：</p>
+        <ol>
+            <li>取一條長紙條</li>
+            <li>對折，再對折...</li>
+            <li>展開，每個折痕都變成 90°</li>
+            <li>就得到龍形曲線！</li>
+        </ol>
+        <p class="formula">
+            L-System 規則：<br>
+            <code>X → X+YF+</code><br>
+            <code>Y → -FX-Y</code>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+/**
+ * Particle Text 粒子文字 - 樣式表
+ *
+ * 設計原則：
+ * - 深色背景突顯粒子效果
+ * - 文字輸入框設計
+ * - 漸層色彩主題
+ */
+
+/* === 重置與基礎樣式 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #0a0a0f;
+}
+
+/* === 主畫布 === */
+#canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+/* === 控制面板 === */
+#controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(10, 10, 15, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    width: 280px;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#controls h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #f472b6;
+}
+
+/* === 控制項群組 === */
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group > label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.control-group > label span {
+    color: #f472b6;
+    font-weight: 600;
+}
+
+.section-label {
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px !important;
+}
+
+/* === 文字輸入 === */
+#text-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    outline: none;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+#text-input:focus {
+    border-color: #f472b6;
+    background: rgba(236, 72, 153, 0.1);
+}
+
+#text-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.apply-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.apply-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+.apply-btn:active {
+    transform: translateY(0);
+}
+
+/* === 滑桿 === */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(236, 72, 153, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #ec4899;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #ec4899;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* === 顏色選項 === */
+.color-options {
+    display: flex;
+    gap: 8px;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    padding: 3px;
+    transition: all 0.2s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    border-color: #ec4899;
+}
+
+.color-preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.color-preview.gradient {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%);
+}
+
+.color-preview.neon {
+    background: linear-gradient(135deg, #00ff87 0%, #60efff 50%, #ff00ff 100%);
+}
+
+.color-preview.fire {
+    background: linear-gradient(135deg, #fcd34d 0%, #f97316 50%, #dc2626 100%);
+}
+
+.color-preview.mono {
+    background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 50%, #4b5563 100%);
+}
+
+/* === 切換開關 === */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(236, 72, 153, 0.2);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle input:checked + .toggle-slider {
+    background: #ec4899;
+}
+
+.toggle input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+
+/* === 統計資訊 === */
+.stats {
+    padding-top: 12px;
+    border-top: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-row strong {
+    color: #f472b6;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+/* === 說明面板 === */
+#info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(10, 10, 15, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #fff;
+    max-width: 280px;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    z-index: 100;
+}
+
+#info-panel h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fbcfe8;
+    margin-bottom: 10px;
+}
+
+#info-panel p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.interaction-hints {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* === 響應式設計 === */
+@media (max-width: 768px) {
+    #controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        padding: 16px;
+    }
+
+    #controls h1 {
+        font-size: 1rem;
+    }
+
+    #info-panel {
+        display: none;
+    }
+}
+
+@media (max-height: 700px) {
+    #info-panel {
+        display: none;
+    }
+}
+
+/* === 動畫 === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#controls, #info-panel {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* === 粉紅發光效果 === */
+@keyframes pinkGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(236, 72, 153, 0.4); }
+}
+
+#controls:hover {
+    animation: pinkGlow 2s ease-in-out infinite;
+}
