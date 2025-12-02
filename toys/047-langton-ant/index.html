@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langton's Ant 蘭頓螞蟻 - Web Toys #047</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="antCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Langton's Ant</h1>
+            <h2>蘭頓螞蟻</h2>
+
+            <div class="control-group">
+                <label for="ruleSet">規則集:</label>
+                <select id="ruleSet">
+                    <option value="RL">RL (經典)</option>
+                    <option value="RLR">RLR</option>
+                    <option value="LLRR">LLRR</option>
+                    <option value="LRRRRRLLR">LRRRRRLLR (對稱)</option>
+                    <option value="RRLLLRLLLRRR">RRLLLRLLLRRR (高速公路)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="cellSize">細胞大小: <span id="cellSizeValue">4</span></label>
+                <input type="range" id="cellSize" min="1" max="10" value="4" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="speed">速度: <span id="speedValue">100</span></label>
+                <input type="range" id="speed" min="1" max="1000" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="antCount">螞蟻數量: <span id="antCountValue">1</span></label>
+                <input type="range" id="antCount" min="1" max="10" value="1" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="classic">經典</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="gradient">漸層</option>
+                    <option value="neon">霓虹</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">簡單規則產生複雜行為</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>步數: <span id="stepDisplay">0</span></span>
+            <span>規則: <span id="ruleDisplay">RL</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
