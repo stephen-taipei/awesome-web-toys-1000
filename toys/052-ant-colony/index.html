@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ant Colony 螞蟻群落 - Web Toys #052</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="antCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Ant Colony</h1>
+            <h2>螞蟻群落</h2>
+
+            <div class="control-group">
+                <label for="antCount">螞蟻數量: <span id="antCountValue">100</span></label>
+                <input type="range" id="antCount" min="20" max="300" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="foodCount">食物源: <span id="foodCountValue">5</span></label>
+                <input type="range" id="foodCount" min="1" max="10" value="5" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="pheromoneStrength">費洛蒙強度: <span id="pheromoneStrengthValue">1.0</span></label>
+                <input type="range" id="pheromoneStrength" min="0.5" max="2" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="evaporationRate">蒸發率: <span id="evaporationRateValue">0.02</span></label>
+                <input type="range" id="evaporationRate" min="0.005" max="0.1" value="0.02" step="0.005">
+            </div>
+
+            <div class="control-group">
+                <label for="showPheromones">顯示費洛蒙:</label>
+                <select id="showPheromones">
+                    <option value="both">全部</option>
+                    <option value="food">食物軌跡</option>
+                    <option value="home">巢穴軌跡</option>
+                    <option value="none">隱藏</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">點擊放置食物源</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>螞蟻: <span id="countDisplay">100</span></span>
+            <span>已收集: <span id="foodDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
