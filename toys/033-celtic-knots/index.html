@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celtic Knots 凱爾特結 - Web Toys #033</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="knotCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Celtic Knots</h1>
+            <h2>凱爾特結</h2>
+
+            <div class="control-group">
+                <label for="pattern">圖案類型:</label>
+                <select id="pattern">
+                    <option value="triquetra">三角結</option>
+                    <option value="quaternary">四元結</option>
+                    <option value="spiral">螺旋結</option>
+                    <option value="interlace">交織結</option>
+                    <option value="shield">盾牌結</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="complexity">複雜度: <span id="complexityValue">3</span></label>
+                <input type="range" id="complexity" min="1" max="5" value="3" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="scale">縮放: <span id="scaleValue">1.0</span></label>
+                <input type="range" id="scale" min="0.5" max="2" value="1" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="lineWidth">線條寬度: <span id="lineWidthValue">12</span></label>
+                <input type="range" id="lineWidth" min="4" max="24" value="12" step="2">
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">顏色方案:</label>
+                <select id="colorScheme">
+                    <option value="gold">金色</option>
+                    <option value="green">翠綠</option>
+                    <option value="silver">銀色</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="bronze">青銅</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="animate">
+                    <input type="checkbox" id="animate" checked> 啟用動畫
+                </label>
+            </div>
+
+            <p class="hint">探索凱爾特藝術的交織之美</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span id="patternName">三角結</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
