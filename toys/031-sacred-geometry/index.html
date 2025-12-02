@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Geometry 神聖幾何 - Web Toys #031</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="geometryCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Sacred Geometry</h1>
+            <h2>神聖幾何</h2>
+
+            <div class="control-group">
+                <label for="pattern">圖案類型:</label>
+                <select id="pattern">
+                    <option value="flowerOfLife">生命之花</option>
+                    <option value="seedOfLife">生命種子</option>
+                    <option value="metatron">梅塔特隆立方</option>
+                    <option value="sriYantra">斯里揚特拉</option>
+                    <option value="torus">環面</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="complexity">複雜度: <span id="complexityValue">3</span></label>
+                <input type="range" id="complexity" min="1" max="7" value="3" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="scale">縮放: <span id="scaleValue">1.0</span></label>
+                <input type="range" id="scale" min="0.5" max="2" value="1" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="rotation">旋轉速度: <span id="rotationValue">0.5</span></label>
+                <input type="range" id="rotation" min="0" max="2" value="0.5" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">顏色方案:</label>
+                <select id="colorScheme">
+                    <option value="gold">金色</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="cosmic">宇宙</option>
+                    <option value="mono">單色</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="showGuides">
+                    <input type="checkbox" id="showGuides" checked> 顯示輔助線
+                </label>
+            </div>
+
+            <p class="hint">互動式神聖幾何圖形，探索宇宙的數學之美</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span id="patternName">生命之花</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
