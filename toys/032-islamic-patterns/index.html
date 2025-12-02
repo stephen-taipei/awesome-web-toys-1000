@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Patterns 伊斯蘭圖案 - Web Toys #032</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="patternCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Islamic Patterns</h1>
+            <h2>伊斯蘭圖案</h2>
+
+            <div class="control-group">
+                <label for="pattern">圖案類型:</label>
+                <select id="pattern">
+                    <option value="eightfold">八角星</option>
+                    <option value="sixfold">六角星</option>
+                    <option value="twelvefold">十二角星</option>
+                    <option value="girih">吉里赫瓷磚</option>
+                    <option value="zellige">澤利赫馬賽克</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="complexity">複雜度: <span id="complexityValue">3</span></label>
+                <input type="range" id="complexity" min="1" max="6" value="3" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="tileSize">瓷磚大小: <span id="tileSizeValue">100</span></label>
+                <input type="range" id="tileSize" min="50" max="200" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="rotation">旋轉速度: <span id="rotationValue">0.2</span></label>
+                <input type="range" id="rotation" min="0" max="1" value="0.2" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">顏色方案:</label>
+                <select id="colorScheme">
+                    <option value="moroccan">摩洛哥</option>
+                    <option value="persian">波斯</option>
+                    <option value="ottoman">鄂圖曼</option>
+                    <option value="andalusian">安達盧斯</option>
+                    <option value="mono">單色</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="showGrid">
+                    <input type="checkbox" id="showGrid"> 顯示網格
+                </label>
+            </div>
+
+            <p class="hint">探索伊斯蘭幾何藝術的無限之美</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span id="patternName">八角星</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
