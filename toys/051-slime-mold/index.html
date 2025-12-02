@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slime Mold 黏菌模擬 - Web Toys #051</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="slimeCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Slime Mold</h1>
+            <h2>黏菌模擬</h2>
+
+            <div class="control-group">
+                <label for="agentCount">代理數量: <span id="agentCountValue">5000</span></label>
+                <input type="range" id="agentCount" min="1000" max="20000" value="5000" step="500">
+            </div>
+
+            <div class="control-group">
+                <label for="sensorAngle">感測角度: <span id="sensorAngleValue">45</span>°</label>
+                <input type="range" id="sensorAngle" min="10" max="90" value="45" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="sensorDistance">感測距離: <span id="sensorDistanceValue">9</span></label>
+                <input type="range" id="sensorDistance" min="3" max="30" value="9" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="turnSpeed">轉向速度: <span id="turnSpeedValue">45</span>°</label>
+                <input type="range" id="turnSpeed" min="10" max="90" value="45" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="decayRate">衰減率: <span id="decayRateValue">0.9</span></label>
+                <input type="range" id="decayRate" min="0.8" max="0.99" value="0.9" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="green">綠色</option>
+                    <option value="blue">藍色</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="heat">熱圖</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">模擬黏菌的自組織行為</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>代理: <span id="countDisplay">5000</span></span>
+            <span>幀率: <span id="fpsDisplay">60</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
