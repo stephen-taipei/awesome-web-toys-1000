@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curl Noise 捲曲噪聲 - Web Toys #024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="curlCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Curl Noise</h1>
+            <h2>捲曲噪聲</h2>
+
+            <div class="control-group">
+                <label for="particleCount">粒子數量: <span id="particleCountValue">8000</span></label>
+                <input type="range" id="particleCount" min="2000" max="20000" value="8000" step="1000">
+            </div>
+
+            <div class="control-group">
+                <label for="noiseScale">噪聲尺度: <span id="noiseScaleValue">0.004</span></label>
+                <input type="range" id="noiseScale" min="0.001" max="0.01" value="0.004" step="0.001">
+            </div>
+
+            <div class="control-group">
+                <label for="speed">流動速度: <span id="speedValue">1.5</span></label>
+                <input type="range" id="speed" min="0.5" max="4" value="1.5" step="0.25">
+            </div>
+
+            <div class="control-group">
+                <label for="evolution">演化速度: <span id="evolutionValue">0.0005</span></label>
+                <input type="range" id="evolution" min="0" max="0.002" value="0.0005" step="0.0001">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="velocity">速度漸層</option>
+                    <option value="position">位置漸層</option>
+                    <option value="age">生命漸層</option>
+                    <option value="smoke">煙霧效果</option>
+                    <option value="neon">霓虹光</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="clearBtn">清除畫布</button>
+                <button id="randomBtn">隨機種子</button>
+            </div>
+
+            <p class="hint">使用 Curl Noise 產生無發散流場，粒子永不相交的優雅運動</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>粒子: <span id="particleDisplay">8000</span></span>
+            <span>FPS: <span id="fpsDisplay">60</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
