@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Life 粒子生命 - Web Toys #050</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="particleCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Particle Life</h1>
+            <h2>粒子生命</h2>
+
+            <div class="control-group">
+                <label for="particleCount">粒子數量: <span id="particleCountValue">500</span></label>
+                <input type="range" id="particleCount" min="100" max="1500" value="500" step="50">
+            </div>
+
+            <div class="control-group">
+                <label for="colorCount">顏色種類: <span id="colorCountValue">4</span></label>
+                <input type="range" id="colorCount" min="2" max="8" value="4" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="forceRange">力場範圍: <span id="forceRangeValue">80</span></label>
+                <input type="range" id="forceRange" min="30" max="150" value="80" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="friction">摩擦力: <span id="frictionValue">0.1</span></label>
+                <input type="range" id="friction" min="0" max="0.5" value="0.1" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="preset">預設配置:</label>
+                <select id="preset">
+                    <option value="random">隨機</option>
+                    <option value="symmetric">對稱</option>
+                    <option value="chains">鏈狀</option>
+                    <option value="orbits">軌道</option>
+                    <option value="chaos">混沌</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="randomizeBtn">隨機規則</button>
+            </div>
+
+            <div class="button-group">
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">觀察粒子間的湧現行為</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>粒子: <span id="countDisplay">500</span></span>
+            <span>種類: <span id="typeDisplay">4</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
