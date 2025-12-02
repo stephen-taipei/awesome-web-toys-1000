@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrot Set 曼德博集合 - Web Toys #042</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="mandelbrotCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Mandelbrot Set</h1>
+            <h2>曼德博集合</h2>
+
+            <div class="control-group">
+                <label for="maxIterations">最大迭代: <span id="maxIterationsValue">100</span></label>
+                <input type="range" id="maxIterations" min="20" max="500" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">顏色方案:</label>
+                <select id="colorScheme">
+                    <option value="classic">經典</option>
+                    <option value="fire">火焰</option>
+                    <option value="ocean">海洋</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="grayscale">灰階</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="smoothing">
+                    <input type="checkbox" id="smoothing" checked> 平滑著色
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重設視角</button>
+            </div>
+
+            <div class="zoom-info">
+                <p>縮放: <span id="zoomLevel">1x</span></p>
+                <p>中心: (<span id="centerX">-0.5</span>, <span id="centerY">0</span>)</p>
+            </div>
+
+            <p class="hint">滾輪縮放，拖曳平移，雙擊放大</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>迭代: <span id="iterDisplay">100</span></span>
+            <span>縮放: <span id="zoomDisplay">1x</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
