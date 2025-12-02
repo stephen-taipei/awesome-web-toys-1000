@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Simulation 重力模擬 - Web Toys #054</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="gravityCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Gravity Simulation</h1>
+            <h2>重力模擬</h2>
+
+            <div class="control-group">
+                <label for="bodyCount">天體數量: <span id="bodyCountValue">50</span></label>
+                <input type="range" id="bodyCount" min="10" max="200" value="50" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="gravity">重力常數: <span id="gravityValue">1.0</span></label>
+                <input type="range" id="gravity" min="0.1" max="3" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="trailLength">軌跡長度: <span id="trailLengthValue">50</span></label>
+                <input type="range" id="trailLength" min="0" max="200" value="50" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="preset">預設場景:</label>
+                <select id="preset">
+                    <option value="random">隨機分布</option>
+                    <option value="solar">太陽系</option>
+                    <option value="binary">雙星系統</option>
+                    <option value="cluster">星團</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="mass">質量</option>
+                    <option value="velocity">速度</option>
+                    <option value="rainbow">彩虹</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">點擊創建新天體<br>拖曳設定初速</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>天體: <span id="countDisplay">50</span></span>
+            <span>時間: <span id="timeDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
