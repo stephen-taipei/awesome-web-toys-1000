@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Tree 碎形樹 - Web Toys #040</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="treeCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Fractal Tree</h1>
+            <h2>碎形樹</h2>
+
+            <div class="control-group">
+                <label for="depth">遞迴深度: <span id="depthValue">10</span></label>
+                <input type="range" id="depth" min="1" max="14" value="10" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="angle">分支角度: <span id="angleValue">25</span>°</label>
+                <input type="range" id="angle" min="5" max="60" value="25" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="lengthRatio">長度比例: <span id="lengthRatioValue">0.7</span></label>
+                <input type="range" id="lengthRatio" min="0.5" max="0.9" value="0.7" step="0.05">
+            </div>
+
+            <div class="control-group">
+                <label for="windSpeed">風力: <span id="windSpeedValue">0</span></label>
+                <input type="range" id="windSpeed" min="-30" max="30" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="natural">自然</option>
+                    <option value="autumn">秋天</option>
+                    <option value="cherry">櫻花</option>
+                    <option value="rainbow">彩虹</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="animate">
+                    <input type="checkbox" id="animate" checked> 啟用風動
+                </label>
+            </div>
+
+            <p class="hint">觀看碎形樹隨風搖曳</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>深度: <span id="depthDisplay">10</span></span>
+            <span>分支: <span id="branchDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
