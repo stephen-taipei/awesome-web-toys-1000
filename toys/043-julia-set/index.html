@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Set 茱莉亞集合 - Web Toys #043</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="juliaCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Julia Set</h1>
+            <h2>茱莉亞集合</h2>
+
+            <div class="control-group">
+                <label for="preset">預設參數:</label>
+                <select id="preset">
+                    <option value="custom">自訂</option>
+                    <option value="dendrite">樹枝狀</option>
+                    <option value="rabbit">兔子</option>
+                    <option value="siegel">西格爾盤</option>
+                    <option value="dragon">龍形</option>
+                    <option value="spiral">螺旋</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="realC">實部 (cR): <span id="realCValue">-0.7</span></label>
+                <input type="range" id="realC" min="-1.5" max="1.5" value="-0.7" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="imagC">虛部 (cI): <span id="imagCValue">0.27</span></label>
+                <input type="range" id="imagC" min="-1.5" max="1.5" value="0.27" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="maxIterations">最大迭代: <span id="maxIterationsValue">100</span></label>
+                <input type="range" id="maxIterations" min="20" max="300" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">顏色方案:</label>
+                <select id="colorScheme">
+                    <option value="electric">電光</option>
+                    <option value="sunset">夕陽</option>
+                    <option value="aurora">極光</option>
+                    <option value="cosmic">宇宙</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="animate">
+                    <input type="checkbox" id="animate"> 動態變化
+                </label>
+            </div>
+
+            <p class="hint">調整 c 值探索不同的茱莉亞集合</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>c = <span id="cDisplay">-0.7 + 0.27i</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
