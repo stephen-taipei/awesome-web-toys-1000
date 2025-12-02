@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Flow 梯度流 - Web Toys #029</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="gradientCanvas"></canvas>
+        <canvas id="drawCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Gradient Flow</h1>
+            <h2>梯度流</h2>
+
+            <div class="control-group">
+                <label for="particleCount">粒子數量: <span id="particleCountValue">4000</span></label>
+                <input type="range" id="particleCount" min="1000" max="10000" value="4000" step="500">
+            </div>
+
+            <div class="control-group">
+                <label for="brushSize">筆刷大小: <span id="brushSizeValue">60</span></label>
+                <input type="range" id="brushSize" min="20" max="150" value="60" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="flowSpeed">流動速度: <span id="flowSpeedValue">2</span></label>
+                <input type="range" id="flowSpeed" min="0.5" max="5" value="2" step="0.5">
+            </div>
+
+            <div class="control-group">
+                <label for="brushColor">筆刷顏色:</label>
+                <div class="color-picker">
+                    <input type="color" id="brushColor" value="#ff6600">
+                    <div class="preset-colors">
+                        <button class="color-btn" data-color="#ff0000"></button>
+                        <button class="color-btn" data-color="#ff6600"></button>
+                        <button class="color-btn" data-color="#ffff00"></button>
+                        <button class="color-btn" data-color="#00ff00"></button>
+                        <button class="color-btn" data-color="#00ffff"></button>
+                        <button class="color-btn" data-color="#0066ff"></button>
+                        <button class="color-btn" data-color="#ff00ff"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="gradientMode">梯度模式:</label>
+                <select id="gradientMode">
+                    <option value="ascend">上升流（亮→暗）</option>
+                    <option value="descend">下降流（暗→亮）</option>
+                    <option value="both">雙向流</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="clearGradientBtn">清除梯度</button>
+                <button id="clearCanvasBtn">清除畫布</button>
+            </div>
+
+            <p class="hint">繪製顏色區域，粒子沿顏色梯度方向流動</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>粒子: <span id="particleDisplay">4000</span></span>
+            <span>FPS: <span id="fpsDisplay">60</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
