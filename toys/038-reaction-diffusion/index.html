@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Diffusion 反應擴散 - Web Toys #038</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="reactionCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Reaction Diffusion</h1>
+            <h2>反應擴散</h2>
+
+            <div class="control-group">
+                <label for="feedRate">進料率 (f): <span id="feedRateValue">0.055</span></label>
+                <input type="range" id="feedRate" min="0.01" max="0.1" value="0.055" step="0.001">
+            </div>
+
+            <div class="control-group">
+                <label for="killRate">消耗率 (k): <span id="killRateValue">0.062</span></label>
+                <input type="range" id="killRate" min="0.04" max="0.08" value="0.062" step="0.001">
+            </div>
+
+            <div class="control-group">
+                <label for="preset">預設圖案:</label>
+                <select id="preset">
+                    <option value="custom">自訂</option>
+                    <option value="mitosis">細胞分裂</option>
+                    <option value="coral">珊瑚</option>
+                    <option value="fingerprint">指紋</option>
+                    <option value="spots">斑點</option>
+                    <option value="waves">波浪</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="grayscale">灰階</option>
+                    <option value="heatmap">熱圖</option>
+                    <option value="ocean">海洋</option>
+                    <option value="neon">霓虹</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="brushSize">筆刷大小: <span id="brushSizeValue">20</span></label>
+                <input type="range" id="brushSize" min="5" max="50" value="20" step="5">
+            </div>
+
+            <div class="button-group">
+                <button id="clearBtn">清除</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">在畫布上繪製以注入化學物質B</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>f: <span id="fDisplay">0.055</span></span>
+            <span>k: <span id="kDisplay">0.062</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
