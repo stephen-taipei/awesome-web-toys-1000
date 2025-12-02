@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Simulation 銀河模擬 - Web Toys #019</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="galaxyCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Galaxy Simulation</h1>
+            <h2>銀河模擬</h2>
+
+            <div class="control-group">
+                <label for="armCount">旋臂數量: <span id="armCountValue">2</span></label>
+                <input type="range" id="armCount" min="1" max="6" value="2" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="starCount">星星密度: <span id="starCountValue">15000</span></label>
+                <input type="range" id="starCount" min="5000" max="30000" value="15000" step="1000">
+            </div>
+
+            <div class="control-group">
+                <label for="armSpread">旋臂擴散: <span id="armSpreadValue">0.5</span></label>
+                <input type="range" id="armSpread" min="0.1" max="1.5" value="0.5" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="rotationSpeed">旋轉速度: <span id="rotationSpeedValue">0.2</span></label>
+                <input type="range" id="rotationSpeed" min="0.05" max="1" value="0.2" step="0.05">
+            </div>
+
+            <div class="control-group">
+                <label for="coreSize">核心大小: <span id="coreSizeValue">0.3</span></label>
+                <input type="range" id="coreSize" min="0.1" max="0.6" value="0.3" step="0.05">
+            </div>
+
+            <div class="button-group">
+                <button id="regenerateBtn">重新生成</button>
+                <button id="supernovaBtn">超新星爆炸</button>
+            </div>
+
+            <p class="hint">點擊畫面任意位置產生超新星爆炸</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>FPS: <span id="fpsDisplay">60</span></span>
+            <span>Stars: <span id="starDisplay">15000</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
