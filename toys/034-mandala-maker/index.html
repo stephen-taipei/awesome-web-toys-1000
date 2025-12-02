@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandala Maker 曼陀羅生成器 - Web Toys #034</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="mandalaCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Mandala Maker</h1>
+            <h2>曼陀羅生成器</h2>
+
+            <div class="control-group">
+                <label for="symmetry">對稱軸數: <span id="symmetryValue">8</span></label>
+                <input type="range" id="symmetry" min="4" max="16" value="8" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="layers">層數: <span id="layersValue">5</span></label>
+                <input type="range" id="layers" min="2" max="10" value="5" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="brushSize">筆刷大小: <span id="brushSizeValue">4</span></label>
+                <input type="range" id="brushSize" min="1" max="12" value="4" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">顏色方案:</label>
+                <select id="colorScheme">
+                    <option value="rainbow">彩虹</option>
+                    <option value="sunset">夕陽</option>
+                    <option value="ocean">海洋</option>
+                    <option value="forest">森林</option>
+                    <option value="galaxy">銀河</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="mirror">
+                    <input type="checkbox" id="mirror" checked> 鏡射模式
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button id="clearBtn">清除</button>
+                <button id="generateBtn">隨機生成</button>
+            </div>
+
+            <p class="hint">在畫布上繪製，創造獨特的曼陀羅圖案</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>對稱: <span id="symmetryDisplay">8</span>軸</span>
+            <span>層: <span id="layersDisplay">5</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
