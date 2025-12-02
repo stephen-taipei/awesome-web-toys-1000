@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-System 林登麥爾系統 - Web Toys #039</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="lsystemCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>L-System</h1>
+            <h2>林登麥爾系統</h2>
+
+            <div class="control-group">
+                <label for="preset">預設圖案:</label>
+                <select id="preset">
+                    <option value="tree">分形樹</option>
+                    <option value="koch">科赫曲線</option>
+                    <option value="sierpinski">謝爾賓斯基</option>
+                    <option value="dragon">龍形曲線</option>
+                    <option value="plant">植物</option>
+                    <option value="hilbert">希爾伯特曲線</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="iterations">迭代次數: <span id="iterationsValue">5</span></label>
+                <input type="range" id="iterations" min="1" max="8" value="5" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="angle">旋轉角度: <span id="angleValue">25</span>°</label>
+                <input type="range" id="angle" min="5" max="90" value="25" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="length">線段長度: <span id="lengthValue">10</span></label>
+                <input type="range" id="length" min="2" max="30" value="10" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="gradient">漸層</option>
+                    <option value="depth">深度</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="mono">單色</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="generateBtn">重新生成</button>
+            </div>
+
+            <p class="hint">探索自相似的分形之美</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>迭代: <span id="iterDisplay">5</span></span>
+            <span>線段: <span id="segmentDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
