@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strange Attractor 奇異吸引子 - Web Toys #044</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="attractorCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Strange Attractor</h1>
+            <h2>奇異吸引子</h2>
+
+            <div class="control-group">
+                <label for="attractorType">吸引子類型:</label>
+                <select id="attractorType">
+                    <option value="lorenz">洛倫茲</option>
+                    <option value="rossler">羅斯勒</option>
+                    <option value="thomas">托馬斯</option>
+                    <option value="aizawa">艾澤瓦</option>
+                    <option value="halvorsen">哈爾沃森</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="speed">模擬速度: <span id="speedValue">1.0</span></label>
+                <input type="range" id="speed" min="0.1" max="3" value="1" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="trailLength">軌跡長度: <span id="trailLengthValue">5000</span></label>
+                <input type="range" id="trailLength" min="1000" max="20000" value="5000" step="1000">
+            </div>
+
+            <div class="control-group">
+                <label for="rotationSpeed">旋轉速度: <span id="rotationSpeedValue">0.5</span></label>
+                <input type="range" id="rotationSpeed" min="0" max="2" value="0.5" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="velocity">速度漸層</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="depth">深度</option>
+                    <option value="mono">單色</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+            </div>
+
+            <p class="hint">混沌系統的美麗軌跡</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>類型: <span id="typeDisplay">洛倫茲</span></span>
+            <span>點數: <span id="pointsDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
