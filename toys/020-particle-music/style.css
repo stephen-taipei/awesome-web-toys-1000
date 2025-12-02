@@ -1,0 +1,323 @@
+/**
+ * Particle Music 粒子音樂 - 樣式表
+ * Web Toys #020
+ *
+ * 音樂視覺化風格設計
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* 主畫布 */
+#particleCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* 控制面板 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(20, 20, 40, 0.9);
+    border: 1px solid rgba(255, 150, 100, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 260px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(255, 150, 100, 0.15);
+}
+
+.controls h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, #ff9966, #ff6699);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.controls h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+/* 控制項群組 */
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.control-group label span {
+    color: #ff9966;
+    font-weight: 600;
+}
+
+/* 滑桿樣式 */
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 150, 100, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9966, #ff6699);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 153, 102, 0.6);
+    transition: transform 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9966, #ff6699);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 153, 102, 0.6);
+}
+
+/* 下拉選單 */
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 150, 100, 0.3);
+    border-radius: 6px;
+    background: rgba(30, 30, 50, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #ff9966;
+    box-shadow: 0 0 10px rgba(255, 153, 102, 0.3);
+}
+
+select option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+/* 按鈕群組 */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startBtn {
+    background: linear-gradient(135deg, #22aa44, #44dd66);
+    color: #fff;
+}
+
+#startBtn:hover {
+    background: linear-gradient(135deg, #33bb55, #55ee77);
+    box-shadow: 0 0 20px rgba(68, 221, 102, 0.5);
+}
+
+#startBtn.active {
+    background: linear-gradient(135deg, #aa4422, #dd6644);
+}
+
+#startBtn.active:hover {
+    background: linear-gradient(135deg, #bb5533, #ee7755);
+    box-shadow: 0 0 20px rgba(221, 102, 68, 0.5);
+}
+
+#resetBtn {
+    background: linear-gradient(135deg, #4466aa, #6688dd);
+    color: #fff;
+}
+
+#resetBtn:hover {
+    background: linear-gradient(135deg, #5577bb, #7799ee);
+    box-shadow: 0 0 20px rgba(102, 136, 221, 0.5);
+}
+
+/* 提示文字 */
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.4;
+}
+
+/* 鋼琴視覺化 */
+.piano-visual {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+}
+
+.piano-keys {
+    display: flex;
+    gap: 2px;
+    height: 100%;
+}
+
+.piano-key {
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+    border-radius: 0 0 4px 4px;
+    transition: all 0.1s ease;
+    position: relative;
+}
+
+.piano-key.black {
+    width: 28px;
+    height: 40px;
+    background: linear-gradient(180deg, #333 0%, #111 100%);
+    margin: 0 -14px;
+    z-index: 1;
+}
+
+.piano-key.active {
+    background: linear-gradient(180deg, #ff9966 0%, #ff6699 100%);
+    box-shadow: 0 0 20px rgba(255, 153, 102, 0.8);
+    transform: scaleY(0.95);
+}
+
+.piano-key.black.active {
+    background: linear-gradient(180deg, #ff6699 0%, #ff3366 100%);
+}
+
+/* 資訊面板 */
+.info-panel {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    background: rgba(20, 20, 40, 0.7);
+    border: 1px solid rgba(255, 150, 100, 0.2);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 20px;
+}
+
+.info-panel span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.info-panel span span {
+    color: #ff9966;
+    font-weight: 600;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .controls {
+        top: auto;
+        bottom: 160px;
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        padding: 16px;
+    }
+
+    .controls h1 {
+        font-size: 1.2rem;
+    }
+
+    .control-group {
+        margin-bottom: 12px;
+    }
+
+    .piano-visual {
+        height: 60px;
+    }
+
+    .piano-key {
+        width: 30px;
+        height: 45px;
+    }
+
+    .piano-key.black {
+        width: 20px;
+        height: 30px;
+        margin: 0 -10px;
+    }
+
+    .info-panel {
+        bottom: 80px;
+        left: 10px;
+        right: 10px;
+        justify-content: center;
+    }
+}
+
+/* 粒子發光效果動畫 */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(255, 150, 100, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 150, 100, 0.3);
+    }
+}
+
+.controls {
+    animation: glow 3s ease-in-out infinite;
+}
