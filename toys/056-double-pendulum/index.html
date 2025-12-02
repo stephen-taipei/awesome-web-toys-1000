@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Pendulum 雙擺 - Web Toys #056</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="pendulumCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Double Pendulum</h1>
+            <h2>雙擺混沌</h2>
+
+            <div class="control-group">
+                <label for="pendulumCount">雙擺數量: <span id="pendulumCountValue">3</span></label>
+                <input type="range" id="pendulumCount" min="1" max="10" value="3" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="length1">上擺長度: <span id="length1Value">150</span></label>
+                <input type="range" id="length1" min="50" max="250" value="150" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="length2">下擺長度: <span id="length2Value">150</span></label>
+                <input type="range" id="length2" min="50" max="250" value="150" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="gravity">重力: <span id="gravityValue">1.0</span></label>
+                <input type="range" id="gravity" min="0.1" max="2" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="trailLength">軌跡長度: <span id="trailLengthValue">500</span></label>
+                <input type="range" id="trailLength" min="0" max="2000" value="500" step="100">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="rainbow">彩虹</option>
+                    <option value="velocity">速度</option>
+                    <option value="gradient">漸層</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">混沌系統的敏感依賴性</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>雙擺: <span id="countDisplay">3</span></span>
+            <span>時間: <span id="timeDisplay">0.0</span>s</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
