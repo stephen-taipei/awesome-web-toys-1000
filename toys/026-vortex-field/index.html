@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex Field 漩渦場 - Web Toys #026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="vortexCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Vortex Field</h1>
+            <h2>漩渦場</h2>
+
+            <div class="control-group">
+                <label for="particleCount">粒子數量: <span id="particleCountValue">5000</span></label>
+                <input type="range" id="particleCount" min="1000" max="15000" value="5000" step="500">
+            </div>
+
+            <div class="control-group">
+                <label for="vortexStrength">漩渦強度: <span id="vortexStrengthValue">5</span></label>
+                <input type="range" id="vortexStrength" min="1" max="15" value="5" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="vortexRadius">漩渦半徑: <span id="vortexRadiusValue">150</span></label>
+                <input type="range" id="vortexRadius" min="50" max="300" value="150" step="25">
+            </div>
+
+            <div class="control-group">
+                <label for="trailLength">軌跡長度: <span id="trailLengthValue">0.95</span></label>
+                <input type="range" id="trailLength" min="0.85" max="0.99" value="0.95" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="speed">速度漸層</option>
+                    <option value="direction">方向漸層</option>
+                    <option value="vortex">漩渦顏色</option>
+                    <option value="galaxy">銀河</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="addCWBtn">+ 順時針</button>
+                <button id="addCCWBtn">+ 逆時針</button>
+            </div>
+            <div class="button-group">
+                <button id="clearVortexBtn">清除漩渦</button>
+                <button id="clearCanvasBtn">清除畫布</button>
+            </div>
+
+            <p class="hint">點擊創建順時針或逆時針漩渦，粒子被捲入螺旋運動</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>粒子: <span id="particleDisplay">5000</span></span>
+            <span>漩渦: <span id="vortexDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
