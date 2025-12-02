@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flocking 鳥群飛行 - Web Toys #049</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="flockCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Flocking</h1>
+            <h2>鳥群飛行</h2>
+
+            <div class="control-group">
+                <label for="birdCount">鳥群數量: <span id="birdCountValue">150</span></label>
+                <input type="range" id="birdCount" min="30" max="300" value="150" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="predatorCount">掠食者: <span id="predatorCountValue">1</span></label>
+                <input type="range" id="predatorCount" min="0" max="5" value="1" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="windStrength">風力: <span id="windStrengthValue">0.0</span></label>
+                <input type="range" id="windStrength" min="0" max="1" value="0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="fearRadius">恐懼範圍: <span id="fearRadiusValue">100</span></label>
+                <input type="range" id="fearRadius" min="50" max="200" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="trailLength">軌跡長度: <span id="trailLengthValue">0</span></label>
+                <input type="range" id="trailLength" min="0" max="20" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="timeOfDay">時間:</label>
+                <select id="timeOfDay">
+                    <option value="day">白天</option>
+                    <option value="sunset">黃昏</option>
+                    <option value="night">夜晚</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">觀察群體的自然逃避行為</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>鳥群: <span id="countDisplay">150</span></span>
+            <span>掠食者: <span id="predatorDisplay">1</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
