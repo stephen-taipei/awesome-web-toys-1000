@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierpinski 謝爾賓斯基三角形 - Web Toys #041</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="sierpinskiCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Sierpinski</h1>
+            <h2>謝爾賓斯基三角形</h2>
+
+            <div class="control-group">
+                <label for="fractalType">分形類型:</label>
+                <select id="fractalType">
+                    <option value="triangle">三角形</option>
+                    <option value="carpet">地毯</option>
+                    <option value="gasket">墊片</option>
+                    <option value="pentagon">五邊形</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="depth">遞迴深度: <span id="depthValue">6</span></label>
+                <input type="range" id="depth" min="1" max="8" value="6" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="rotation">旋轉角度: <span id="rotationValue">0</span>°</label>
+                <input type="range" id="rotation" min="0" max="360" value="0" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="depth">深度漸層</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="neon">霓虹</option>
+                    <option value="mono">單色</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="animate">
+                    <input type="checkbox" id="animate"> 啟用動畫
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button id="generateBtn">重新生成</button>
+            </div>
+
+            <p class="hint">探索自相似的無限結構</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>深度: <span id="depthDisplay">6</span></span>
+            <span>形狀: <span id="shapeDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
