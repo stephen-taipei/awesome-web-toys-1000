@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Flow 音訊流場 - Web Toys #030</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="flowCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Audio Flow</h1>
+            <h2>音訊流場</h2>
+
+            <div class="control-group">
+                <button id="micBtn" class="mic-btn">
+                    <span class="mic-icon">🎤</span>
+                    <span class="mic-text">啟動麥克風</span>
+                </button>
+            </div>
+
+            <div class="control-group">
+                <label for="particleCount">粒子數量: <span id="particleCountValue">5000</span></label>
+                <input type="range" id="particleCount" min="1000" max="15000" value="5000" step="500">
+            </div>
+
+            <div class="control-group">
+                <label for="sensitivity">靈敏度: <span id="sensitivityValue">2</span></label>
+                <input type="range" id="sensitivity" min="0.5" max="5" value="2" step="0.5">
+            </div>
+
+            <div class="control-group">
+                <label for="baseSpeed">基礎速度: <span id="baseSpeedValue">1</span></label>
+                <input type="range" id="baseSpeed" min="0.5" max="3" value="1" step="0.25">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顏色模式:</label>
+                <select id="colorMode">
+                    <option value="frequency">頻率漸層</option>
+                    <option value="volume">音量漸層</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="fire">火焰</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="clearBtn">清除畫布</button>
+            </div>
+
+            <p class="hint">麥克風輸入控制流場強度，音量影響粒子速度和密度</p>
+        </div>
+
+        <!-- 音量指示器 -->
+        <div class="volume-meter">
+            <div class="volume-bar" id="volumeBar"></div>
+            <div class="volume-label">音量</div>
+        </div>
+
+        <!-- 頻譜顯示 -->
+        <div class="spectrum" id="spectrum"></div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>粒子: <span id="particleDisplay">5000</span></span>
+            <span>音量: <span id="volumeDisplay">0</span>%</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
