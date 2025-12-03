@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tone Generator 音調產生器 - Web Toys #092</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="toneCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Tone Generator</h1>
+            <h2>音調產生器</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">播放</button>
+            </div>
+
+            <div class="control-group freq-display">
+                <span id="freqDisplay">440</span>
+                <span class="hz-label">Hz</span>
+            </div>
+
+            <div class="control-group">
+                <label for="frequency">頻率:</label>
+                <input type="range" id="frequency" min="20" max="2000" value="440">
+            </div>
+
+            <div class="control-group">
+                <label for="waveform">波形:</label>
+                <select id="waveform">
+                    <option value="sine" selected>正弦波</option>
+                    <option value="triangle">三角波</option>
+                    <option value="sawtooth">鋸齒波</option>
+                    <option value="square">方波</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="preset">預設頻率:</label>
+                <select id="preset">
+                    <option value="">-- 選擇 --</option>
+                    <option value="261.63">C4 (261.63 Hz)</option>
+                    <option value="440">A4 (440 Hz)</option>
+                    <option value="523.25">C5 (523.25 Hz)</option>
+                    <option value="1000">1 kHz 測試音</option>
+                    <option value="100">低音 100 Hz</option>
+                    <option value="50">次聲波 50 Hz</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">30</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="30">
+            </div>
+
+            <p class="hint">調整頻率和波形<br>Space 播放/停止<br>↑↓ 微調頻率</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>波形: <span id="waveDisplay">正弦波</span></span>
+            <span>音符: <span id="noteDisplay">A4</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
