@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chimes 風鈴聲 - Web Toys #080</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="chimeCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Wind Chimes</h1>
+            <h2>風鈴聲</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="material">材質:</label>
+                <select id="material">
+                    <option value="metal" selected>金屬</option>
+                    <option value="bamboo">竹製</option>
+                    <option value="glass">玻璃</option>
+                    <option value="ceramic">陶瓷</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="windSpeed">風速: <span id="windSpeedValue">微風</span></label>
+                <input type="range" id="windSpeed" min="10" max="100" value="40">
+            </div>
+
+            <div class="control-group">
+                <label for="tuning">音階:</label>
+                <select id="tuning">
+                    <option value="pentatonic" selected>五聲音階</option>
+                    <option value="major">大調音階</option>
+                    <option value="minor">小調音階</option>
+                    <option value="chromatic">半音音階</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="chimeCount">風鈴數量: <span id="chimeCountValue">5</span></label>
+                <input type="range" id="chimeCount" min="3" max="12" value="5">
+            </div>
+
+            <div class="control-group">
+                <label for="reverb">殘響: <span id="reverbValue">中等</span></label>
+                <input type="range" id="reverb" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group timer-group">
+                <label for="timer">定時器:</label>
+                <select id="timer">
+                    <option value="0">關閉</option>
+                    <option value="15">15 分鐘</option>
+                    <option value="30">30 分鐘</option>
+                    <option value="60">1 小時</option>
+                </select>
+                <div class="timer-display" id="timerDisplay"></div>
+            </div>
+
+            <p class="hint">點擊畫面可手動觸發風鈴<br>Space 播放/暫停</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>材質: <span id="materialDisplay">金屬</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
