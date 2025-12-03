@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chord Progression 和弦進行 - Web Toys #070</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="chordCanvas"></canvas>
+
+        <!-- 和弦顯示 -->
+        <div class="chord-display">
+            <div class="current-chord" id="currentChord">--</div>
+            <div class="chord-notes" id="chordNotes">--</div>
+        </div>
+
+        <!-- 和弦格子 -->
+        <div class="chord-grid" id="chordGrid"></div>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Chord Progression</h1>
+            <h2>和弦進行</h2>
+
+            <div class="control-group">
+                <label for="key">調性:</label>
+                <select id="key">
+                    <option value="C">C 大調</option>
+                    <option value="G">G 大調</option>
+                    <option value="D">D 大調</option>
+                    <option value="A">A 大調</option>
+                    <option value="E">E 大調</option>
+                    <option value="F">F 大調</option>
+                    <option value="Am">A 小調</option>
+                    <option value="Em">E 小調</option>
+                    <option value="Dm">D 小調</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="preset">預設進行:</label>
+                <select id="preset">
+                    <option value="pop">流行 (I-V-vi-IV)</option>
+                    <option value="jazz">爵士 (ii-V-I)</option>
+                    <option value="blues">藍調 (I-IV-I-V)</option>
+                    <option value="rock">搖滾 (I-IV-V-I)</option>
+                    <option value="sad">感傷 (vi-IV-I-V)</option>
+                    <option value="custom">自訂</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="tempo">速度: <span id="tempoValue">80</span> BPM</label>
+                <input type="range" id="tempo" min="40" max="160" value="80" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="voicing">聲部:</label>
+                <select id="voicing">
+                    <option value="piano">鋼琴</option>
+                    <option value="pad">合成墊</option>
+                    <option value="organ">風琴</option>
+                </select>
+            </div>
+
+            <div class="control-group transport">
+                <button id="playBtn">播放</button>
+                <button id="stopBtn">停止</button>
+            </div>
+
+            <p class="hint">點擊和弦格子選擇和弦</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>調性: <span id="keyDisplay">C</span></span>
+            <span>小節: <span id="barDisplay">1</span>/4</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
