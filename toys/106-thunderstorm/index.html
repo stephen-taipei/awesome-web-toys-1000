@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunderstorm 雷暴 - Web Toys #106</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="stormCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Thunderstorm</h1>
+            <h2>雷暴</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="intensity">風暴強度: <span id="intensityValue">中等</span></label>
+                <input type="range" id="intensity" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="thunder">雷聲頻率: <span id="thunderValue">中等</span></label>
+                <input type="range" id="thunder" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="rain">雨量: <span id="rainValue">中等</span></label>
+                <input type="range" id="rain" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="wind">風聲: <span id="windValue">中等</span></label>
+                <input type="range" id="wind" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">感受雷暴的震撼力量<br>大自然的壯觀演出</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>強度: <span id="stormDisplay">中等</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
