@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theremin 特雷門琴 - Web Toys #088</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="thereminCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Theremin</h1>
+            <h2>特雷門琴</h2>
+
+            <div class="control-group">
+                <label for="waveform">波形:</label>
+                <select id="waveform">
+                    <option value="sine" selected>正弦波</option>
+                    <option value="triangle">三角波</option>
+                    <option value="sawtooth">鋸齒波</option>
+                    <option value="square">方波</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="vibrato">顫音: <span id="vibratoValue">中等</span></label>
+                <input type="range" id="vibrato" min="0" max="100" value="40">
+            </div>
+
+            <div class="control-group">
+                <label for="portamento">滑音: <span id="portamentoValue">中等</span></label>
+                <input type="range" id="portamento" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">移動滑鼠/手指控制音高和音量<br>X軸 = 音高, Y軸 = 音量<br>經典電子樂器</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>頻率: <span id="freqDisplay">--</span> Hz</span>
+            <span>音量: <span id="levelDisplay">--</span>%</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
