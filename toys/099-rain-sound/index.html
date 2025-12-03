@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain Sound 雨聲 - Web Toys #099</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="rainCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Rain Sound</h1>
+            <h2>雨聲</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="rainType">雨型:</label>
+                <select id="rainType">
+                    <option value="light" selected>細雨</option>
+                    <option value="moderate">中雨</option>
+                    <option value="heavy">大雨</option>
+                    <option value="storm">暴風雨</option>
+                    <option value="drizzle">毛毛雨</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="intensity">強度: <span id="intensityValue">中等</span></label>
+                <input type="range" id="intensity" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="thunder">雷聲: <span id="thunderValue">關閉</span></label>
+                <input type="range" id="thunder" min="0" max="100" value="0">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">沉浸式雨聲體驗<br>適合專注工作或入睡</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>雨型: <span id="rainDisplay">細雨</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
