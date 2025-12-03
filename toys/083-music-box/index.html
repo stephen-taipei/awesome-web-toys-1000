@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Box 音樂盒 - Web Toys #083</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="musicBoxCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Music Box</h1>
+            <h2>音樂盒</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">播放</button>
+            </div>
+
+            <div class="control-group">
+                <label for="melody">曲目:</label>
+                <select id="melody">
+                    <option value="twinkle" selected>小星星</option>
+                    <option value="canon">卡農</option>
+                    <option value="furElise">乃愛麗絲</option>
+                    <option value="moonlight">月光</option>
+                    <option value="swan">天鵝湖</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="tempo">速度: <span id="tempoValue">中等</span></label>
+                <input type="range" id="tempo" min="30" max="150" value="80">
+            </div>
+
+            <div class="control-group">
+                <label for="reverb">殘響: <span id="reverbValue">中等</span></label>
+                <input type="range" id="reverb" min="0" max="100" value="40">
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="loop" checked>
+                    循環播放
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">經典音樂盒旋律<br>Space 播放/暫停</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>曲目: <span id="melodyDisplay">小星星</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
