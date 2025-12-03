@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Physics 彈簧物理 - Web Toys #057</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="springCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Spring Physics</h1>
+            <h2>彈簧物理</h2>
+
+            <div class="control-group">
+                <label for="nodeCount">節點數量: <span id="nodeCountValue">20</span></label>
+                <input type="range" id="nodeCount" min="5" max="50" value="20" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="stiffness">彈簧剛度: <span id="stiffnessValue">0.3</span></label>
+                <input type="range" id="stiffness" min="0.05" max="0.8" value="0.3" step="0.05">
+            </div>
+
+            <div class="control-group">
+                <label for="damping">阻尼係數: <span id="dampingValue">0.95</span></label>
+                <input type="range" id="damping" min="0.8" max="0.99" value="0.95" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="gravity">重力: <span id="gravityValue">0.5</span></label>
+                <input type="range" id="gravity" min="0" max="2" value="0.5" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="preset">預設模式:</label>
+                <select id="preset">
+                    <option value="chain">彈簧鏈</option>
+                    <option value="web">蜘蛛網</option>
+                    <option value="bridge">吊橋</option>
+                    <option value="grid">網格</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">拖曳節點來互動</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>節點: <span id="nodeDisplay">20</span></span>
+            <span>彈簧: <span id="springDisplay">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
