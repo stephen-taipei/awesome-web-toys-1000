@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibetan Bells 西藏鐘 - Web Toys #082</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="bellCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Tibetan Bells</h1>
+            <h2>西藏鐘 (丁夏)</h2>
+
+            <div class="control-group">
+                <label for="bellType">鐘的類型:</label>
+                <select id="bellType">
+                    <option value="tingsha" selected>丁夏 (冥想鐘)</option>
+                    <option value="ghanta">金剛鈴</option>
+                    <option value="temple">寺院鐘</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="pitch">音高: <span id="pitchValue">中音</span></label>
+                <input type="range" id="pitch" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="decay">延音: <span id="decayValue">中等</span></label>
+                <input type="range" id="decay" min="10" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="interval">自動敲擊間隔:</label>
+                <select id="interval">
+                    <option value="0">手動</option>
+                    <option value="3">3 秒</option>
+                    <option value="5">5 秒</option>
+                    <option value="10">10 秒</option>
+                    <option value="30">30 秒</option>
+                    <option value="60">1 分鐘</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="bell-info">
+                <p>丁夏是藏傳佛教中用於冥想開始與結束的鐘聲，清澈悠長的聲音有助於集中注意力</p>
+            </div>
+
+            <p class="hint">點擊敲擊鐘聲<br>Space 敲擊</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>類型: <span id="typeDisplay">丁夏</span></span>
+            <span>頻率: <span id="freqDisplay">--</span> Hz</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
