@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tone Generator 音調產生器 - Web Toys #072</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="toneCanvas"></canvas>
+
+        <!-- 頻率顯示 -->
+        <div class="frequency-display">
+            <div class="freq-value" id="freqDisplay">440</div>
+            <div class="freq-unit">Hz</div>
+            <div class="note-name" id="noteName">A4</div>
+        </div>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Tone Generator</h1>
+            <h2>音調產生器</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">播放</button>
+            </div>
+
+            <div class="control-group">
+                <label for="frequency">頻率: <span id="frequencyValue">440</span> Hz</label>
+                <input type="range" id="frequency" min="20" max="2000" value="440" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="freqInput">精確輸入:</label>
+                <input type="number" id="freqInput" min="20" max="20000" value="440" step="0.1">
+            </div>
+
+            <div class="control-group preset-buttons">
+                <button data-freq="261.63">C4</button>
+                <button data-freq="329.63">E4</button>
+                <button data-freq="392">G4</button>
+                <button data-freq="440">A4</button>
+                <button data-freq="523.25">C5</button>
+            </div>
+
+            <div class="control-group">
+                <label for="waveform">波形:</label>
+                <select id="waveform">
+                    <option value="sine">正弦波</option>
+                    <option value="square">方波</option>
+                    <option value="sawtooth">鋸齒波</option>
+                    <option value="triangle">三角波</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50" step="1">
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="sweep"> 頻率掃描
+                </label>
+            </div>
+
+            <div class="control-group sweep-controls" id="sweepControls">
+                <label for="sweepMin">起始: <span id="sweepMinValue">100</span> Hz</label>
+                <input type="range" id="sweepMin" min="20" max="1000" value="100" step="10">
+
+                <label for="sweepMax">結束: <span id="sweepMaxValue">1000</span> Hz</label>
+                <input type="range" id="sweepMax" min="100" max="5000" value="1000" step="100">
+
+                <label for="sweepDuration">時間: <span id="sweepDurationValue">5</span> 秒</label>
+                <input type="range" id="sweepDuration" min="1" max="30" value="5" step="1">
+            </div>
+
+            <p class="hint">產生精確頻率的測試音</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>波形: <span id="waveDisplay">正弦波</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
