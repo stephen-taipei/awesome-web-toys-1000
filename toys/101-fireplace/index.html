@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireplace 壁爐聲 - Web Toys #101</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="fireCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Fireplace</h1>
+            <h2>壁爐聲</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">點燃</button>
+            </div>
+
+            <div class="control-group">
+                <label for="fireSize">火焰大小: <span id="fireSizeValue">中等</span></label>
+                <input type="range" id="fireSize" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="crackle">噼啪聲: <span id="crackleValue">中等</span></label>
+                <input type="range" id="crackle" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="woodType">木材類型:</label>
+                <select id="woodType">
+                    <option value="oak" selected>橡木</option>
+                    <option value="pine">松木</option>
+                    <option value="birch">樺木</option>
+                    <option value="cedar">雪松</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">溫暖的壁爐聲<br>營造舒適的居家氛圍</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">熄滅</span></span>
+            <span>木材: <span id="woodDisplay">橡木</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

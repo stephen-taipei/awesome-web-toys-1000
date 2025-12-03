@@ -1,0 +1,202 @@
+/**
+ * Fireplace 壁爐聲 - 樣式表
+ * Web Toys #101
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0505;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fireCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 控制面板 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 8, 5, 0.95);
+    border: 1px solid rgba(255, 150, 50, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 280px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(255, 150, 50, 0.15);
+    z-index: 100;
+}
+
+.controls h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, #ff9030, #ffb060);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.controls h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.control-group label span {
+    color: #ff9030;
+    font-weight: 600;
+}
+
+.play-btn {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #804020, #a05030);
+    color: #fff;
+}
+
+.play-btn:hover {
+    box-shadow: 0 0 25px rgba(255, 150, 50, 0.5);
+    transform: translateY(-2px);
+}
+
+.play-btn.playing {
+    background: linear-gradient(135deg, #c06020, #e08040);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 20px rgba(255, 100, 30, 0.4); }
+    to { box-shadow: 0 0 35px rgba(255, 150, 50, 0.6); }
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 150, 50, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9030, #ffb060);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 150, 50, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9030, #ffb060);
+    cursor: pointer;
+    border: none;
+}
+
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 150, 50, 0.3);
+    border-radius: 6px;
+    background: rgba(20, 12, 8, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #ff9030;
+}
+
+select option {
+    background: #140c08;
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+.info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 8, 5, 0.7);
+    border: 1px solid rgba(255, 150, 50, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.info-panel span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.info-panel span span {
+    color: #ff9030;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        padding: 14px;
+    }
+}
