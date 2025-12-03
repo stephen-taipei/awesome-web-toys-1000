@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Drum 鋼鼓 - Web Toys #087</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="steelDrumCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Steel Drum</h1>
+            <h2>鋼鼓</h2>
+
+            <div class="control-group">
+                <label for="scale">音階:</label>
+                <select id="scale">
+                    <option value="caribbean" selected>加勒比海</option>
+                    <option value="major">C 大調</option>
+                    <option value="minor">A 小調</option>
+                    <option value="calypso">卡利普索</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="reverb">殘響: <span id="reverbValue">中等</span></label>
+                <input type="range" id="reverb" min="0" max="100" value="45">
+            </div>
+
+            <div class="control-group">
+                <label for="brightness">明亮度: <span id="brightnessValue">中等</span></label>
+                <input type="range" id="brightness" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="key-hint">
+                <p>數字鍵 1-9, 0 對應音區</p>
+            </div>
+
+            <p class="hint">點擊鼓面音區演奏<br>熱帶加勒比海風情</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>音階: <span id="scaleDisplay">加勒比海</span></span>
+            <span>最後音符: <span id="noteDisplay">--</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
