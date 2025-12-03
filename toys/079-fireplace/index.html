@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireplace 壁爐聲 - Web Toys #079</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="fireCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Fireplace</h1>
+            <h2>壁爐聲</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">點燃壁爐</button>
+            </div>
+
+            <div class="control-group">
+                <label for="intensity">火焰強度: <span id="intensityValue">中等</span></label>
+                <input type="range" id="intensity" min="20" max="100" value="60">
+            </div>
+
+            <div class="control-group">
+                <label for="crackle">劈啪程度: <span id="crackleValue">適中</span></label>
+                <input type="range" id="crackle" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="embers" checked>
+                    火星飛濺
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="woodPop">
+                    木頭爆裂聲
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group timer-group">
+                <label for="timer">定時器:</label>
+                <select id="timer">
+                    <option value="0">關閉</option>
+                    <option value="15">15 分鐘</option>
+                    <option value="30">30 分鐘</option>
+                    <option value="60">1 小時</option>
+                    <option value="120">2 小時</option>
+                </select>
+                <div class="timer-display" id="timerDisplay"></div>
+            </div>
+
+            <p class="hint">溫暖舒適的壁爐聲<br>Space 播放/暫停</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">熄滅</span></span>
+            <span>火焰: <span id="fireDisplay">--</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
