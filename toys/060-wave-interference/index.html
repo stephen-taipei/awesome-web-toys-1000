@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Interference 波干涉 - Web Toys #060</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="waveCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Wave Interference</h1>
+            <h2>波干涉</h2>
+
+            <div class="control-group">
+                <label for="sourceCount">波源數量: <span id="sourceCountValue">2</span></label>
+                <input type="range" id="sourceCount" min="1" max="6" value="2" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="frequency">頻率: <span id="frequencyValue">0.1</span></label>
+                <input type="range" id="frequency" min="0.02" max="0.3" value="0.1" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label for="wavelength">波長: <span id="wavelengthValue">30</span></label>
+                <input type="range" id="wavelength" min="10" max="80" value="30" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="amplitude">振幅: <span id="amplitudeValue">1.0</span></label>
+                <input type="range" id="amplitude" min="0.2" max="2" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顯示模式:</label>
+                <select id="colorMode">
+                    <option value="heatmap">熱圖</option>
+                    <option value="grayscale">灰階</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="contour">等高線</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">重置波源</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">點擊添加/移動波源</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>波源: <span id="sourceDisplay">2</span></span>
+            <span>時間: <span id="timeDisplay">0.0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
