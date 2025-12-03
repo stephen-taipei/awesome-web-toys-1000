@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Visualizer 聲音視覺化 - Web Toys #062</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="visualizerCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Sound Visualizer</h1>
+            <h2>聲音視覺化</h2>
+
+            <div class="control-group">
+                <button id="startBtn" class="start-btn">開始麥克風</button>
+            </div>
+
+            <div class="control-group">
+                <label for="visualMode">視覺模式:</label>
+                <select id="visualMode">
+                    <option value="bars">頻譜柱狀</option>
+                    <option value="circle">環形頻譜</option>
+                    <option value="waveform">波形圖</option>
+                    <option value="particles">粒子響應</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="colorScheme">色彩風格:</label>
+                <select id="colorScheme">
+                    <option value="rainbow">彩虹</option>
+                    <option value="fire">火焰</option>
+                    <option value="ocean">海洋</option>
+                    <option value="neon">霓虹</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="sensitivity">靈敏度: <span id="sensitivityValue">1.0</span></label>
+                <input type="range" id="sensitivity" min="0.5" max="3" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="smoothing">平滑度: <span id="smoothingValue">0.8</span></label>
+                <input type="range" id="smoothing" min="0" max="0.95" value="0.8" step="0.05">
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="showMirror"> 鏡像效果
+                </label>
+            </div>
+
+            <p class="hint">需要麥克風權限</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">未啟動</span></span>
+            <span>音量: <span id="volumeDisplay">0</span> dB</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
