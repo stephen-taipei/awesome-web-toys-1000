@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theremin 特雷門琴 - Web Toys #069</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="thereminCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Theremin</h1>
+            <h2>特雷門琴</h2>
+
+            <div class="control-group">
+                <label for="waveform">波形:</label>
+                <select id="waveform">
+                    <option value="sine">正弦波</option>
+                    <option value="triangle">三角波</option>
+                    <option value="sawtooth">鋸齒波</option>
+                    <option value="square">方波</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="minFreq">最低頻率: <span id="minFreqValue">100</span> Hz</label>
+                <input type="range" id="minFreq" min="50" max="500" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="maxFreq">最高頻率: <span id="maxFreqValue">2000</span> Hz</label>
+                <input type="range" id="maxFreq" min="500" max="4000" value="2000" step="100">
+            </div>
+
+            <div class="control-group">
+                <label for="vibrato">顫音強度: <span id="vibratoValue">0</span></label>
+                <input type="range" id="vibrato" min="0" max="20" value="0" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="reverb">殘響: <span id="reverbValue">0.3</span></label>
+                <input type="range" id="reverb" min="0" max="1" value="0.3" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="showGuides" checked> 顯示音階參考線
+                </label>
+            </div>
+
+            <p class="hint">移動滑鼠/手指演奏<br>X軸=音高，Y軸=音量</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>頻率: <span id="freqDisplay">-- Hz</span></span>
+            <span>音量: <span id="volumeDisplay">--%</span></span>
+            <span>音符: <span id="noteDisplay">--</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
