@@ -1,0 +1,258 @@
+/**
+ * Synthesizer 合成器 - 樣式表
+ * Web Toys #067
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0a1a;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#synthCanvas {
+    flex: 1;
+    width: 100%;
+}
+
+/* 鍵盤 */
+.keyboard {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px;
+    background: linear-gradient(to bottom, #1a1025, #0f0a1a);
+    padding: 20px;
+    position: relative;
+}
+
+.key {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    user-select: none;
+}
+
+.key.white {
+    width: 50px;
+    height: 160px;
+    background: linear-gradient(to bottom, #fff, #e8e8e8);
+    border: 1px solid #999;
+    border-radius: 0 0 6px 6px;
+    margin: 0 2px;
+    z-index: 1;
+}
+
+.key.white:hover {
+    background: linear-gradient(to bottom, #fff, #ddd);
+}
+
+.key.white.active {
+    background: linear-gradient(to bottom, #c8a0ff, #a080d0);
+    transform: translateY(3px);
+}
+
+.key.black {
+    width: 30px;
+    height: 100px;
+    background: linear-gradient(to bottom, #333, #111);
+    border: 1px solid #000;
+    border-radius: 0 0 4px 4px;
+    margin: 0 -15px;
+    z-index: 2;
+}
+
+.key.black:hover {
+    background: linear-gradient(to bottom, #444, #222);
+}
+
+.key.black.active {
+    background: linear-gradient(to bottom, #8040c0, #6030a0);
+    transform: translateY(2px);
+}
+
+.key-label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #666;
+    pointer-events: none;
+}
+
+.key.black .key-label {
+    color: #888;
+    bottom: 5px;
+}
+
+/* 控制面板 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(20, 15, 35, 0.9);
+    border: 1px solid rgba(180, 100, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 260px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(180, 100, 255, 0.15);
+}
+
+.controls h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, #b464ff, #64b4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.controls h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+.control-group {
+    margin-bottom: 14px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.control-group label span {
+    color: #c080ff;
+    font-weight: 600;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(180, 100, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b464ff, #64b4ff);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(180, 100, 255, 0.6);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b464ff, #64b4ff);
+    cursor: pointer;
+    border: none;
+}
+
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(180, 100, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(25, 15, 40, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #c080ff;
+}
+
+select option {
+    background: #140f23;
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.4;
+}
+
+.info-panel {
+    position: fixed;
+    bottom: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20, 15, 35, 0.7);
+    border: 1px solid rgba(180, 100, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 20px;
+}
+
+.info-panel span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.info-panel span span {
+    color: #c080ff;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        padding: 14px;
+    }
+
+    .keyboard {
+        height: 150px;
+    }
+
+    .key.white {
+        width: 35px;
+        height: 120px;
+    }
+
+    .key.black {
+        width: 22px;
+        height: 75px;
+        margin: 0 -11px;
+    }
+
+    .info-panel {
+        bottom: 170px;
+    }
+}
