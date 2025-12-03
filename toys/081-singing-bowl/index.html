@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singing Bowl 頌缽 - Web Toys #081</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="bowlCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Singing Bowl</h1>
+            <h2>頌缽</h2>
+
+            <div class="control-group">
+                <label for="bowlSize">缽的尺寸:</label>
+                <select id="bowlSize">
+                    <option value="small">小型 (高音)</option>
+                    <option value="medium" selected>中型 (中音)</option>
+                    <option value="large">大型 (低音)</option>
+                    <option value="xlarge">特大 (極低音)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="material">材質:</label>
+                <select id="material">
+                    <option value="bronze" selected>青銅</option>
+                    <option value="brass">黃銅</option>
+                    <option value="crystal">水晶</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="technique">演奏方式:</label>
+                <select id="technique">
+                    <option value="strike" selected>敲擊</option>
+                    <option value="rim">繞缽邊</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="decay">延音長度: <span id="decayValue">中等</span></label>
+                <input type="range" id="decay" min="1" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="bowl-info">
+                <p>頌缽音療有助於冥想放鬆、減壓、改善睡眠品質</p>
+            </div>
+
+            <p class="hint">點擊缽身敲擊<br>拖曳缽邊繞缽</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>尺寸: <span id="sizeDisplay">中型</span></span>
+            <span>頻率: <span id="freqDisplay">--</span> Hz</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
