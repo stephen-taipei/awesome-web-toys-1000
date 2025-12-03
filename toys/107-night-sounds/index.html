@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Sounds 夜晚聲音 - Web Toys #107</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="nightCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Night Sounds</h1>
+            <h2>夜晚聲音</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="crickets">蟋蟀: <span id="cricketsValue">中等</span></label>
+                <input type="range" id="crickets" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="owls">貓頭鷹: <span id="owlsValue">偶爾</span></label>
+                <input type="range" id="owls" min="0" max="100" value="30">
+            </div>
+
+            <div class="control-group">
+                <label for="frogs">青蛙: <span id="frogsValue">中等</span></label>
+                <input type="range" id="frogs" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="wind">微風: <span id="windValue">輕微</span></label>
+                <input type="range" id="wind" min="0" max="100" value="30">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">寧靜的夏夜<br>蟲鳴與自然的交響</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>時間: <span id="timeDisplay">深夜</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
