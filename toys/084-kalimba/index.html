@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalimba 拇指琴 - Web Toys #084</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="kalimbaCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Kalimba</h1>
+            <h2>拇指琴</h2>
+
+            <div class="control-group">
+                <label for="tuning">音階:</label>
+                <select id="tuning">
+                    <option value="c" selected>C 大調</option>
+                    <option value="g">G 大調</option>
+                    <option value="am">A 小調</option>
+                    <option value="pentatonic">五聲音階</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="tines">琴鍵數量: <span id="tinesValue">17</span></label>
+                <input type="range" id="tines" min="8" max="21" value="17">
+            </div>
+
+            <div class="control-group">
+                <label for="reverb">殘響: <span id="reverbValue">中等</span></label>
+                <input type="range" id="reverb" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="key-hint">
+                <p>鍵盤對應: A S D F G H J K L</p>
+            </div>
+
+            <p class="hint">點擊琴鍵或使用鍵盤演奏<br>溫暖療癒的音色</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>音階: <span id="tuningDisplay">C 大調</span></span>
+            <span>最後音符: <span id="noteDisplay">--</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
