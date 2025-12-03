@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbeat 心跳聲 - Web Toys #098</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="heartCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Heartbeat</h1>
+            <h2>心跳聲</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="heartRate">心率: <span id="heartRateValue">60</span> BPM</label>
+                <input type="range" id="heartRate" min="40" max="180" value="60">
+            </div>
+
+            <div class="control-group">
+                <label for="intensity">強度: <span id="intensityValue">正常</span></label>
+                <input type="range" id="intensity" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="rhythm">節律:</label>
+                <select id="rhythm">
+                    <option value="normal" selected>正常心律</option>
+                    <option value="athletic">運動員心率</option>
+                    <option value="excited">興奮心率</option>
+                    <option value="relaxed">放鬆心率</option>
+                    <option value="irregular">心律不齊</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">模擬真實心跳聲<br>可用於冥想或放鬆</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>心率: <span id="bpmDisplay">60</span> BPM</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
