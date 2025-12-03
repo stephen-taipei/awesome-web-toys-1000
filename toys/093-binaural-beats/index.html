@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binaural Beats 雙耳節拍 - Web Toys #093</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="binauralCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Binaural Beats</h1>
+            <h2>雙耳節拍</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="preset">腦波模式:</label>
+                <select id="preset">
+                    <option value="delta">Delta (0.5-4Hz) - 深度睡眠</option>
+                    <option value="theta">Theta (4-8Hz) - 冥想放鬆</option>
+                    <option value="alpha" selected>Alpha (8-14Hz) - 放鬆專注</option>
+                    <option value="beta">Beta (14-30Hz) - 警覺思考</option>
+                    <option value="gamma">Gamma (30-50Hz) - 高度專注</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="baseFreq">基礎頻率: <span id="baseFreqValue">200</span> Hz</label>
+                <input type="range" id="baseFreq" min="100" max="500" value="200">
+            </div>
+
+            <div class="control-group">
+                <label for="beatFreq">節拍頻率: <span id="beatFreqValue">10</span> Hz</label>
+                <input type="range" id="beatFreq" min="1" max="50" value="10">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">30</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="30">
+            </div>
+
+            <div class="warning">
+                <p>請使用耳機以獲得最佳效果</p>
+            </div>
+
+            <p class="hint">左右耳會聽到略微不同的頻率<br>大腦會感知兩者的差異頻率</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>左耳: <span id="leftFreq">195</span> Hz</span>
+            <span>右耳: <span id="rightFreq">205</span> Hz</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
