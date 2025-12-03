@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Noise 白噪音 - Web Toys #073</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="noiseCanvas"></canvas>
+
+        <!-- 噪音類型顯示 -->
+        <div class="noise-display">
+            <div class="noise-icon" id="noiseIcon"></div>
+            <div class="noise-name" id="noiseName">白噪音</div>
+        </div>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>White Noise</h1>
+            <h2>白噪音</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">播放</button>
+            </div>
+
+            <div class="control-group">
+                <label for="noiseType">噪音類型:</label>
+                <select id="noiseType">
+                    <option value="white">白噪音</option>
+                    <option value="pink">粉紅噪音</option>
+                    <option value="brown">棕噪音</option>
+                    <option value="blue">藍噪音</option>
+                    <option value="violet">紫噪音</option>
+                </select>
+            </div>
+
+            <div class="control-group noise-info">
+                <p id="noiseDescription">白噪音：全頻段等能量分布，幫助集中注意力</p>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="lowpass">低通濾波: <span id="lowpassValue">20000</span> Hz</label>
+                <input type="range" id="lowpass" min="200" max="20000" value="20000" step="100">
+            </div>
+
+            <div class="control-group">
+                <label for="highpass">高通濾波: <span id="highpassValue">20</span> Hz</label>
+                <input type="range" id="highpass" min="20" max="2000" value="20" step="10">
+            </div>
+
+            <div class="control-group timer-group">
+                <label for="timer">定時器:</label>
+                <select id="timer">
+                    <option value="0">關閉</option>
+                    <option value="5">5 分鐘</option>
+                    <option value="15">15 分鐘</option>
+                    <option value="30">30 分鐘</option>
+                    <option value="60">1 小時</option>
+                    <option value="120">2 小時</option>
+                </select>
+                <div class="timer-display" id="timerDisplay"></div>
+            </div>
+
+            <p class="hint">放鬆、專注、睡眠輔助</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>類型: <span id="typeDisplay">白噪音</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

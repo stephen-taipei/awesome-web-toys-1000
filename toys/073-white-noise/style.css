@@ -1,0 +1,268 @@
+/**
+ * White Noise 白噪音 - 樣式表
+ * Web Toys #073
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a14;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#noiseCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 噪音類型顯示 */
+.noise-display {
+    text-align: center;
+    z-index: 10;
+}
+
+.noise-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.noise-icon.playing {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    }
+}
+
+.noise-icon.white { border-color: rgba(255, 255, 255, 0.4); }
+.noise-icon.pink { border-color: rgba(255, 150, 200, 0.4); }
+.noise-icon.brown { border-color: rgba(180, 120, 80, 0.4); }
+.noise-icon.blue { border-color: rgba(100, 150, 255, 0.4); }
+.noise-icon.violet { border-color: rgba(180, 100, 255, 0.4); }
+
+.noise-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 控制面板 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 15, 25, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 280px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.controls h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.controls h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.control-group label span {
+    color: #a0a0a0;
+    font-weight: 600;
+}
+
+.noise-info {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.noise-info p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
+
+.play-btn {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #404040, #606060);
+    color: #fff;
+}
+
+.play-btn:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.play-btn.playing {
+    background: linear-gradient(135deg, #606060, #808080);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    background: rgba(20, 20, 30, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+select option {
+    background: #141420;
+}
+
+.timer-group .timer-display {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.4;
+}
+
+.info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 15, 25, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 20px;
+}
+
+.info-panel span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.info-panel span span {
+    color: #a0a0a0;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        padding: 14px;
+    }
+
+    .noise-icon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .noise-name {
+        font-size: 1.8rem;
+    }
+}
