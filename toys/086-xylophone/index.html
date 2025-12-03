@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xylophone 木琴 - Web Toys #086</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="xylophoneCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Xylophone</h1>
+            <h2>木琴</h2>
+
+            <div class="control-group">
+                <label for="scale">音階:</label>
+                <select id="scale">
+                    <option value="major" selected>C 大調</option>
+                    <option value="minor">A 小調</option>
+                    <option value="pentatonic">五聲音階</option>
+                    <option value="chromatic">半音階</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="octaves">八度: <span id="octavesValue">2</span></label>
+                <input type="range" id="octaves" min="1" max="3" value="2">
+            </div>
+
+            <div class="control-group">
+                <label for="reverb">殘響: <span id="reverbValue">中等</span></label>
+                <input type="range" id="reverb" min="0" max="100" value="40">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="key-hint">
+                <p>鍵盤: A S D F G H J K</p>
+            </div>
+
+            <p class="hint">點擊琴鍵或使用鍵盤演奏<br>清脆明亮的木質音色</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>音階: <span id="scaleDisplay">C 大調</span></span>
+            <span>最後音符: <span id="noteDisplay">--</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
