@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Visualizer 音樂視覺化 - Web Toys #063</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="visualizerCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Music Visualizer</h1>
+            <h2>音樂視覺化</h2>
+
+            <div class="control-group">
+                <label for="audioFile">選擇音樂檔案:</label>
+                <input type="file" id="audioFile" accept="audio/*">
+            </div>
+
+            <div class="control-group audio-controls">
+                <button id="playBtn" disabled>播放</button>
+                <button id="stopBtn" disabled>停止</button>
+            </div>
+
+            <div class="control-group">
+                <label for="visualMode">視覺模式:</label>
+                <select id="visualMode">
+                    <option value="spectrum">頻譜山脈</option>
+                    <option value="orbital">軌道環繞</option>
+                    <option value="tunnel">隧道穿越</option>
+                    <option value="fractal">分形樹</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="colorTheme">色彩主題:</label>
+                <select id="colorTheme">
+                    <option value="sunset">日落</option>
+                    <option value="aurora">極光</option>
+                    <option value="neon">霓虹</option>
+                    <option value="ocean">海洋</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="intensity">強度: <span id="intensityValue">1.0</span></label>
+                <input type="range" id="intensity" min="0.5" max="2" value="1.0" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">80</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="80" step="1">
+            </div>
+
+            <p class="hint">支援 MP3、WAV、OGG 格式</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">等待音樂</span></span>
+            <span>時間: <span id="timeDisplay">0:00</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
