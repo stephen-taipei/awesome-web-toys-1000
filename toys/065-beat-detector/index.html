@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Detector 節拍偵測 - Web Toys #065</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="beatCanvas"></canvas>
+
+        <!-- 節拍指示器 -->
+        <div class="beat-indicator" id="beatIndicator"></div>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Beat Detector</h1>
+            <h2>節拍偵測</h2>
+
+            <div class="control-group">
+                <button id="startBtn" class="start-btn">開始麥克風</button>
+            </div>
+
+            <div class="control-group">
+                <label for="visualStyle">視覺風格:</label>
+                <select id="visualStyle">
+                    <option value="pulse">脈衝波紋</option>
+                    <option value="bars">節奏柱狀</option>
+                    <option value="particles">粒子爆發</option>
+                    <option value="waveform">波形律動</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="sensitivity">靈敏度: <span id="sensitivityValue">1.5</span></label>
+                <input type="range" id="sensitivity" min="1" max="3" value="1.5" step="0.1">
+            </div>
+
+            <div class="control-group">
+                <label for="threshold">閾值: <span id="thresholdValue">0.5</span></label>
+                <input type="range" id="threshold" min="0.2" max="1" value="0.5" step="0.05">
+            </div>
+
+            <div class="control-group">
+                <label for="decay">衰減: <span id="decayValue">0.95</span></label>
+                <input type="range" id="decay" min="0.9" max="0.99" value="0.95" step="0.01">
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="autoColor" checked> 自動變色
+                </label>
+            </div>
+
+            <p class="hint">偵測音樂節拍並產生視覺效果</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">未啟動</span></span>
+            <span>BPM: <span id="bpmDisplay">--</span></span>
+            <span>節拍: <span id="beatCount">0</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
