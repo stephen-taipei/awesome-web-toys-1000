@@ -1,0 +1,210 @@
+/**
+ * Ocean Waves 海浪聲 - 樣式表
+ * Web Toys #077
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a1520;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#oceanCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 控制面板 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(10, 25, 40, 0.95);
+    border: 1px solid rgba(64, 150, 200, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 280px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(64, 150, 200, 0.15);
+    z-index: 100;
+}
+
+.controls h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, #4096c8, #64c8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.controls h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+.control-group {
+    margin-bottom: 16px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.control-group label span {
+    color: #64c8ff;
+    font-weight: 600;
+}
+
+.control-group label input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #4096c8;
+}
+
+.play-btn {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #2070a0, #4096c8);
+    color: #fff;
+}
+
+.play-btn:hover {
+    box-shadow: 0 0 25px rgba(64, 150, 200, 0.5);
+    transform: translateY(-2px);
+}
+
+.play-btn.playing {
+    background: linear-gradient(135deg, #206080, #306890);
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(64, 150, 200, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4096c8, #64c8ff);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(64, 150, 200, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4096c8, #64c8ff);
+    cursor: pointer;
+    border: none;
+}
+
+select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(64, 150, 200, 0.3);
+    border-radius: 6px;
+    background: rgba(10, 30, 50, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #64c8ff;
+}
+
+select option {
+    background: #0a1e32;
+}
+
+.timer-group .timer-display {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #64c8ff;
+    text-align: center;
+    font-weight: 600;
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.4;
+}
+
+.info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 25, 40, 0.7);
+    border: 1px solid rgba(64, 150, 200, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.info-panel span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.info-panel span span {
+    color: #64c8ff;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        padding: 14px;
+    }
+}
