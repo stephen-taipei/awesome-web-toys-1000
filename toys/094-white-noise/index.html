@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Noise 白噪音 - Web Toys #094</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="noiseCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>White Noise</h1>
+            <h2>白噪音</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">播放</button>
+            </div>
+
+            <div class="control-group">
+                <label for="noiseType">噪音類型:</label>
+                <select id="noiseType">
+                    <option value="white" selected>白噪音 (全頻)</option>
+                    <option value="pink">粉紅噪音 (自然)</option>
+                    <option value="brown">棕噪音 (低沉)</option>
+                    <option value="blue">藍噪音 (高頻)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="lowcut">低頻截止: <span id="lowcutValue">20</span> Hz</label>
+                <input type="range" id="lowcut" min="20" max="500" value="20">
+            </div>
+
+            <div class="control-group">
+                <label for="highcut">高頻截止: <span id="highcutValue">20000</span> Hz</label>
+                <input type="range" id="highcut" min="1000" max="20000" value="20000">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">30</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="30">
+            </div>
+
+            <p class="hint">適合專注工作、睡眠或遮蔽環境噪音<br>Space 播放/停止</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>類型: <span id="typeDisplay">白噪音</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
