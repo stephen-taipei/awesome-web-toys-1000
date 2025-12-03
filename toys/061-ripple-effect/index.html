@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Effect 漣漪效果 - Web Toys #061</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="rippleCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Ripple Effect</h1>
+            <h2>漣漪效果</h2>
+
+            <div class="control-group">
+                <label for="rippleSpeed">波速: <span id="rippleSpeedValue">5</span></label>
+                <input type="range" id="rippleSpeed" min="1" max="15" value="5" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="damping">阻尼: <span id="dampingValue">0.98</span></label>
+                <input type="range" id="damping" min="0.9" max="0.999" value="0.98" step="0.001">
+            </div>
+
+            <div class="control-group">
+                <label for="rippleStrength">漣漪強度: <span id="rippleStrengthValue">500</span></label>
+                <input type="range" id="rippleStrength" min="100" max="1000" value="500" step="50">
+            </div>
+
+            <div class="control-group">
+                <label for="colorMode">顯示模式:</label>
+                <select id="colorMode">
+                    <option value="water">水波</option>
+                    <option value="rainbow">彩虹</option>
+                    <option value="monochrome">單色</option>
+                    <option value="thermal">熱感</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="autoRipple"> 自動產生漣漪
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button id="resetBtn">清除</button>
+                <button id="pauseBtn">暫停</button>
+            </div>
+
+            <p class="hint">點擊畫面產生漣漪</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>漣漪數: <span id="rippleCount">0</span></span>
+            <span>FPS: <span id="fpsDisplay">60</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
