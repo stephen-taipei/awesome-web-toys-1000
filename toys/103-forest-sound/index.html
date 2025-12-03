@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Sound 森林聲 - Web Toys #103</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="forestCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Forest Sound</h1>
+            <h2>森林聲</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">開始</button>
+            </div>
+
+            <div class="control-group">
+                <label for="timeOfDay">時段:</label>
+                <select id="timeOfDay">
+                    <option value="morning" selected>清晨</option>
+                    <option value="day">白天</option>
+                    <option value="evening">黃昏</option>
+                    <option value="night">夜晚</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="birds">鳥鳴: <span id="birdsValue">中等</span></label>
+                <input type="range" id="birds" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="insects">蟲鳴: <span id="insectsValue">中等</span></label>
+                <input type="range" id="insects" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="rustling">樹葉沙沙: <span id="rustlingValue">中等</span></label>
+                <input type="range" id="rustling" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <p class="hint">沉浸在森林的懷抱中<br>聆聽大自然的交響曲</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>時段: <span id="timeDisplay">清晨</span></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
