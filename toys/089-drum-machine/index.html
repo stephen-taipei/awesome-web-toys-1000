@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Machine 鼓機 - Web Toys #089</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="drumCanvas"></canvas>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h1>Drum Machine</h1>
+            <h2>鼓機</h2>
+
+            <div class="control-group">
+                <button id="playBtn" class="play-btn">播放</button>
+            </div>
+
+            <div class="control-group">
+                <label for="pattern">節奏:</label>
+                <select id="pattern">
+                    <option value="basic" selected>基本節奏</option>
+                    <option value="rock">搖滾</option>
+                    <option value="hiphop">嘻哈</option>
+                    <option value="house">浩室</option>
+                    <option value="dnb">Drum & Bass</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="tempo">速度: <span id="tempoValue">120</span> BPM</label>
+                <input type="range" id="tempo" min="60" max="200" value="120">
+            </div>
+
+            <div class="control-group">
+                <label for="swing">搖擺: <span id="swingValue">0</span>%</label>
+                <input type="range" id="swing" min="0" max="100" value="0">
+            </div>
+
+            <div class="control-group">
+                <label for="volume">音量: <span id="volumeValue">50</span>%</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+
+            <div class="key-hint">
+                <p>Q W E R T Y U I = 鼓組</p>
+            </div>
+
+            <p class="hint">點擊方格編輯節奏<br>Space 播放/暫停</p>
+        </div>
+
+        <!-- 資訊面板 -->
+        <div class="info-panel">
+            <span>狀態: <span id="statusDisplay">停止</span></span>
+            <span>拍子: <span id="beatDisplay">1</span>/16</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
