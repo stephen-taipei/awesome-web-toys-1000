@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Pop 氣球爆破</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Balloon Pop 氣球爆破</h1>
+        <p class="hint">點擊氣球使其爆破，或用針戳破</p>
+
+        <div class="control-group">
+            <label>氣球彈性: <span id="elasticityValue">0.95</span></label>
+            <input type="range" id="elasticitySlider" min="0.8" max="0.99" value="0.95" step="0.01">
+        </div>
+
+        <div class="control-group">
+            <label>氣壓: <span id="pressureValue">1.0</span></label>
+            <input type="range" id="pressureSlider" min="0.5" max="2.0" value="1.0" step="0.1">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>爆破數:</span>
+                <span id="popCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>存活氣球:</span>
+                <span id="balloonCount">0</span>
+            </div>
+        </div>
+
+        <button id="addBtn">添加氣球</button>
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
