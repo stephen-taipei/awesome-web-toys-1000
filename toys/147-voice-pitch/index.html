@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Pitch 聲音音高</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Voice Pitch 聲音音高</h1>
+        <p class="hint">偵測你的聲音音高</p>
+
+        <div class="control-group">
+            <label>平滑度: <span id="smoothValue">0.9</span></label>
+            <input type="range" id="smoothSlider" min="0.7" max="0.98" value="0.9" step="0.01">
+        </div>
+
+        <div class="control-group">
+            <label>最小音量: <span id="thresholdValue">0.01</span></label>
+            <input type="range" id="thresholdSlider" min="0.005" max="0.05" value="0.01" step="0.005">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>頻率:</span>
+                <span id="frequency">-- Hz</span>
+            </div>
+            <div class="stat-row">
+                <span>音符:</span>
+                <span id="note">--</span>
+            </div>
+            <div class="stat-row">
+                <span>偏差:</span>
+                <span id="cents">-- cents</span>
+            </div>
+        </div>
+
+        <button id="startBtn">開始偵測</button>
+        <button id="demoBtn">演示模式</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

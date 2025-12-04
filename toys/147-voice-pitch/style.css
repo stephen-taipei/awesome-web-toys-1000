@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f172a;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 220px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #93c5fd;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #bfdbfe;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    accent-color: #3b82f6;
+}
+
+.stats {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+    margin-bottom: 10px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #bfdbfe;
+    margin-bottom: 5px;
+}
+
+.stat-row span:last-child {
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:first-of-type {
+    margin-right: 4%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+}
+
+button#demoBtn {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+}
