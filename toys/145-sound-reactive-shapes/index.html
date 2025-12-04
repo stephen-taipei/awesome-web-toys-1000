@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Reactive Shapes 聲音反應圖形</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Sound Reactive 聲音反應圖形</h1>
+        <p class="hint">圖形隨音頻節奏變化</p>
+
+        <div class="control-group">
+            <label>圖形類型:</label>
+            <select id="shapeType">
+                <option value="polygon">多邊形</option>
+                <option value="flower">花朵</option>
+                <option value="star">星形</option>
+                <option value="spiral">螺旋</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>邊數: <span id="sidesValue">6</span></label>
+            <input type="range" id="sidesSlider" min="3" max="12" value="6" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>反應度: <span id="reactValue">1.0</span></label>
+            <input type="range" id="reactSlider" min="0.5" max="2" value="1" step="0.1">
+        </div>
+
+        <div class="control-group">
+            <label>旋轉速度: <span id="rotateValue">0.5</span></label>
+            <input type="range" id="rotateSlider" min="0" max="2" value="0.5" step="0.1">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>低頻能量:</span>
+                <span id="bassLevel">0%</span>
+            </div>
+            <div class="stat-row">
+                <span>高頻能量:</span>
+                <span id="trebleLevel">0%</span>
+            </div>
+        </div>
+
+        <button id="startBtn">使用麥克風</button>
+        <button id="demoBtn">演示模式</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
