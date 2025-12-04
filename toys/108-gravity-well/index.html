@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Well 重力井</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Gravity Well 重力井</h1>
+        <p class="hint">點擊放置質量點，觀察時空彎曲</p>
+
+        <div class="control-group">
+            <label>質量大小</label>
+            <input type="range" id="massSlider" min="1" max="10" value="5" step="0.5">
+            <span id="massValue">5</span>
+        </div>
+
+        <div class="control-group">
+            <label>網格密度</label>
+            <input type="range" id="gridSlider" min="10" max="40" value="20" step="2">
+            <span id="gridValue">20</span>
+        </div>
+
+        <div class="control-group">
+            <label>粒子數量</label>
+            <input type="range" id="particleSlider" min="0" max="500" value="200" step="50">
+            <span id="particleValue">200</span>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="showGrid" checked>
+                顯示網格
+            </label>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="showParticles" checked>
+                顯示粒子
+            </label>
+        </div>
+
+        <button id="clearBtn">清除全部</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
