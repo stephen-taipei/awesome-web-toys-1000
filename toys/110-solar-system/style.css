@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+    display: block;
+    cursor: grab;
+}
+
+canvas:active {
+    cursor: grabbing;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 200px;
+    border: 1px solid rgba(255, 200, 100, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffa500, #ff6b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.control-group {
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: calc(100% - 40px);
+    vertical-align: middle;
+    accent-color: #ffa500;
+}
+
+.control-group span {
+    display: inline-block;
+    width: 35px;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #ffa500;
+}
+
+.control-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #ffa500;
+}
+
+.control-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #ffa500, #ff6b00);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 165, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.info-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 200px;
+    border: 1px solid rgba(255, 200, 100, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.info-panel h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffa500;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.info-row .label {
+    color: #888;
+}
+
+.info-row .value {
+    color: #fff;
+}
