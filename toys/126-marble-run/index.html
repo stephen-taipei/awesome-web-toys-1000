@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marble Run 彈珠軌道</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Marble Run 彈珠軌道</h1>
+        <p class="hint">點擊添加軌道元件，按空白鍵釋放彈珠</p>
+
+        <div class="control-group">
+            <label>元件類型:</label>
+            <div class="type-buttons">
+                <button class="type-btn active" data-type="ramp">斜坡</button>
+                <button class="type-btn" data-type="funnel">漏斗</button>
+                <button class="type-btn" data-type="bumper">彈簧</button>
+                <button class="type-btn" data-type="spinner">旋轉</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>重力: <span id="gravityValue">0.3</span></label>
+            <input type="range" id="gravitySlider" min="0.1" max="0.8" value="0.3" step="0.05">
+        </div>
+
+        <div class="control-group">
+            <label>彈性: <span id="bounceValue">0.6</span></label>
+            <input type="range" id="bounceSlider" min="0.3" max="1" value="0.6" step="0.05">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>彈珠數:</span>
+                <span id="marbleCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>軌道元件:</span>
+                <span id="trackCount">0</span>
+            </div>
+        </div>
+
+        <button id="dropBtn">釋放彈珠 (空白鍵)</button>
+        <button id="resetBtn">清除全部</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
