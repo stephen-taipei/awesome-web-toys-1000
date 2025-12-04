@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Waves 海浪模擬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Ocean Waves 海浪模擬</h1>
+
+        <div class="control-group">
+            <label>風速</label>
+            <input type="range" id="windSlider" min="0" max="10" value="5">
+        </div>
+
+        <div class="control-group">
+            <label>浪高</label>
+            <input type="range" id="heightSlider" min="10" max="80" value="40">
+        </div>
+
+        <div class="control-group">
+            <label>波長</label>
+            <input type="range" id="wavelengthSlider" min="50" max="200" value="100">
+        </div>
+
+        <div class="control-group">
+            <label>時間</label>
+            <select id="timeSelect">
+                <option value="day">白天</option>
+                <option value="sunset">黃昏</option>
+                <option value="night">夜晚</option>
+                <option value="storm">暴風雨</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="showFoam" checked>
+                顯示浪花
+            </label>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="showReflection" checked>
+                水面反射
+            </label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
