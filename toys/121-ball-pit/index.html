@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Pit 球池</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Ball Pit 球池</h1>
+        <p class="hint">點擊添加球，搖晃手機或拖曳畫面</p>
+
+        <div class="control-group">
+            <label>球數量: <span id="ballCount">50</span></label>
+            <input type="range" id="countSlider" min="10" max="200" value="50">
+        </div>
+
+        <div class="control-group">
+            <label>球大小</label>
+            <input type="range" id="sizeSlider" min="10" max="40" value="20">
+        </div>
+
+        <div class="control-group">
+            <label>彈性</label>
+            <input type="range" id="bounceSlider" min="0.3" max="0.95" value="0.7" step="0.05">
+        </div>
+
+        <div class="control-group">
+            <label>重力</label>
+            <input type="range" id="gravitySlider" min="0.1" max="1" value="0.5" step="0.1">
+        </div>
+
+        <button id="shakeBtn">搖晃!</button>
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
