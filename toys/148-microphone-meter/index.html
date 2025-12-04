@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microphone Meter 麥克風音量計</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Mic Meter 麥克風音量計</h1>
+        <p class="hint">即時顯示麥克風音量</p>
+
+        <div class="control-group">
+            <label>顯示模式:</label>
+            <select id="displayMode">
+                <option value="vu">VU 表</option>
+                <option value="led">LED 條</option>
+                <option value="analog">類比表</option>
+                <option value="waveform">波形</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>平滑度: <span id="smoothValue">0.85</span></label>
+            <input type="range" id="smoothSlider" min="0.5" max="0.98" value="0.85" step="0.01">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>當前音量:</span>
+                <span id="currentLevel">-∞ dB</span>
+            </div>
+            <div class="stat-row">
+                <span>峰值:</span>
+                <span id="peakLevel">-∞ dB</span>
+            </div>
+            <div class="stat-row">
+                <span>平均:</span>
+                <span id="avgLevel">-∞ dB</span>
+            </div>
+        </div>
+
+        <button id="startBtn">開始</button>
+        <button id="resetBtn">重置峰值</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
