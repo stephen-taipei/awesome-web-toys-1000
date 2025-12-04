@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink Drop 墨滴擴散</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Ink Drop 墨滴擴散</h1>
+        <p class="hint">點擊滴入彩色墨水</p>
+
+        <div class="control-group">
+            <label>墨滴大小</label>
+            <input type="range" id="dropSizeSlider" min="5" max="30" value="15">
+        </div>
+
+        <div class="control-group">
+            <label>擴散速度</label>
+            <input type="range" id="spreadSlider" min="1" max="10" value="5">
+        </div>
+
+        <div class="control-group">
+            <label>水流強度</label>
+            <input type="range" id="flowSlider" min="0" max="5" value="2">
+        </div>
+
+        <div class="color-buttons">
+            <button class="color-btn" data-color="crimson" style="background: crimson;"></button>
+            <button class="color-btn" data-color="royalblue" style="background: royalblue;"></button>
+            <button class="color-btn" data-color="gold" style="background: gold;"></button>
+            <button class="color-btn" data-color="limegreen" style="background: limegreen;"></button>
+            <button class="color-btn" data-color="purple" style="background: purple;"></button>
+            <button class="color-btn active" data-color="random" style="background: linear-gradient(135deg, red, yellow, green, blue, purple);"></button>
+        </div>
+
+        <button id="clearBtn">清除畫布</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
