@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubber Band 橡皮筋</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Rubber Band 橡皮筋</h1>
+        <p class="hint">拖曳節點拉伸橡皮筋</p>
+
+        <div class="control-group">
+            <label>彈性: <span id="elasticityValue">0.1</span></label>
+            <input type="range" id="elasticitySlider" min="0.02" max="0.2" value="0.1" step="0.01">
+        </div>
+
+        <div class="control-group">
+            <label>阻尼: <span id="dampingValue">0.95</span></label>
+            <input type="range" id="dampingSlider" min="0.85" max="0.99" value="0.95" step="0.01">
+        </div>
+
+        <div class="control-group">
+            <label>節點數: <span id="nodesValue">20</span></label>
+            <input type="range" id="nodesSlider" min="10" max="40" value="20" step="2">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>張力:</span>
+                <span id="tension">0</span>
+            </div>
+            <div class="stat-row">
+                <span>長度:</span>
+                <span id="length">0</span>
+            </div>
+        </div>
+
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
