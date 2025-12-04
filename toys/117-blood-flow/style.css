@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a0a0a;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(30, 10, 10, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 200px;
+    border: 1px solid rgba(200, 50, 50, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ff4444;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #aa6666;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #cc8888;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: calc(100% - 35px);
+    vertical-align: middle;
+    accent-color: #cc3333;
+}
+
+.control-group span {
+    display: inline-block;
+    width: 30px;
+    text-align: right;
+    font-size: 0.8rem;
+    color: #ff6666;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 8px;
+    background: rgba(50, 20, 20, 0.8);
+    border: 1px solid #cc3333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: #ff4444;
+}
+
+.info-panel {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(200, 50, 50, 0.3);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: #cc8888;
+}
+
+.info-row span:last-child {
+    color: #ff6666;
+    font-weight: bold;
+}

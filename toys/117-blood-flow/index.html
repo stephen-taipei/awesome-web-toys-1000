@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Flow 血流模擬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Blood Flow 血流模擬</h1>
+        <p class="hint">觀察血管中的血液流動</p>
+
+        <div class="control-group">
+            <label>血流速度</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+        </div>
+
+        <div class="control-group">
+            <label>血管直徑</label>
+            <input type="range" id="diameterSlider" min="50" max="150" value="100">
+        </div>
+
+        <div class="control-group">
+            <label>縮放比例</label>
+            <input type="range" id="zoomSlider" min="1" max="5" value="1" step="0.5">
+            <span id="zoomValue">1x</span>
+        </div>
+
+        <div class="control-group">
+            <label>顯示模式</label>
+            <select id="viewSelect">
+                <option value="normal">正常視圖</option>
+                <option value="cells">細胞視圖</option>
+                <option value="plasma">血漿視圖</option>
+            </select>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-row">
+                <span>紅血球:</span>
+                <span id="rbcCount">0</span>
+            </div>
+            <div class="info-row">
+                <span>白血球:</span>
+                <span id="wbcCount">0</span>
+            </div>
+            <div class="info-row">
+                <span>血小板:</span>
+                <span id="plateletCount">0</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
