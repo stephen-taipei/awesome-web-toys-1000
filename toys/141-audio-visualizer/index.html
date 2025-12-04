@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer 音頻視覺化</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Audio Visualizer 音頻視覺化</h1>
+        <p class="hint">點擊開始使用麥克風輸入</p>
+
+        <div class="control-group">
+            <label>視覺模式:</label>
+            <select id="modeSelect">
+                <option value="circular">圓形</option>
+                <option value="bars">條形</option>
+                <option value="wave">波浪</option>
+                <option value="particles">粒子</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>靈敏度: <span id="sensitivityValue">1.0</span></label>
+            <input type="range" id="sensitivitySlider" min="0.5" max="3" value="1" step="0.1">
+        </div>
+
+        <div class="control-group">
+            <label>色相: <span id="hueValue">180</span>°</label>
+            <input type="range" id="hueSlider" min="0" max="360" value="180" step="1">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>音量:</span>
+                <span id="volumeLevel">0%</span>
+            </div>
+            <div class="stat-row">
+                <span>主頻率:</span>
+                <span id="dominantFreq">0 Hz</span>
+            </div>
+        </div>
+
+        <button id="startBtn">開始</button>
+        <button id="demoBtn">演示模式</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
