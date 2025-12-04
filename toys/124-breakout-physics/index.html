@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Physics 打磚塊物理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Breakout Physics 打磚塊物理</h1>
+        <p class="hint">移動滑鼠控制擋板</p>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>分數:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat-row">
+                <span>剩餘磚塊:</span>
+                <span id="brickCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>生命:</span>
+                <span id="lives">3</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>球速: <span id="speedValue">5</span></label>
+            <input type="range" id="speedSlider" min="3" max="10" value="5" step="0.5">
+        </div>
+
+        <button id="resetBtn">重新開始</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
