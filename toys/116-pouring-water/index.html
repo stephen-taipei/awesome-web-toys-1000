@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pouring Water 倒水模擬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Pouring Water 倒水模擬</h1>
+        <p class="hint">點擊並拖曳杯子傾斜倒水</p>
+
+        <div class="control-group">
+            <label>液體顏色</label>
+            <select id="liquidSelect">
+                <option value="water">清水</option>
+                <option value="juice">橙汁</option>
+                <option value="wine">紅酒</option>
+                <option value="milk">牛奶</option>
+                <option value="coffee">咖啡</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>粒子數量</label>
+            <input type="range" id="particleSlider" min="50" max="300" value="150">
+        </div>
+
+        <div class="control-group">
+            <label>重力強度</label>
+            <input type="range" id="gravitySlider" min="0.2" max="1" value="0.5" step="0.1">
+        </div>
+
+        <button id="refillBtn">重新裝滿</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
