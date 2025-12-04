@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinball Machine 彈珠台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="controls">
+        <h1>Pinball Machine 彈珠台</h1>
+        <p class="hint">A/D 或 左右鍵 控制擋板<br>空白鍵發射彈珠</p>
+
+        <div class="stats">
+            <div class="stat-row score">
+                <span>分數:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat-row">
+                <span>最高分:</span>
+                <span id="highScore">0</span>
+            </div>
+            <div class="stat-row">
+                <span>剩餘球:</span>
+                <span id="balls">3</span>
+            </div>
+        </div>
+
+        <button id="launchBtn">發射 (空白鍵)</button>
+        <button id="resetBtn">重新開始</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
