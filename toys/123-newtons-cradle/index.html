@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Cradle 牛頓擺</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Newton's Cradle 牛頓擺</h1>
+        <p class="hint">點擊並拖曳球體來釋放</p>
+
+        <div class="control-group">
+            <label>球數: <span id="ballCountValue">5</span></label>
+            <input type="range" id="ballCountSlider" min="3" max="9" value="5" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>重力: <span id="gravityValue">0.5</span></label>
+            <input type="range" id="gravitySlider" min="0.1" max="1" value="0.5" step="0.05">
+        </div>
+
+        <div class="control-group">
+            <label>阻尼: <span id="dampingValue">0.999</span></label>
+            <input type="range" id="dampingSlider" min="0.99" max="1" value="0.999" step="0.001">
+        </div>
+
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
