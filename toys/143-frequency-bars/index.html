@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Bars 頻譜條形圖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Frequency Bars 頻譜條形圖</h1>
+        <p class="hint">顯示音頻頻率分佈</p>
+
+        <div class="control-group">
+            <label>顯示模式:</label>
+            <select id="displayMode">
+                <option value="bars">條形</option>
+                <option value="mirror">鏡像</option>
+                <option value="circular">圓形</option>
+                <option value="3d">3D 透視</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>條數: <span id="barCountValue">64</span></label>
+            <input type="range" id="barCountSlider" min="16" max="128" value="64" step="8">
+        </div>
+
+        <div class="control-group">
+            <label>平滑度: <span id="smoothValue">0.8</span></label>
+            <input type="range" id="smoothSlider" min="0.5" max="0.95" value="0.8" step="0.05">
+        </div>
+
+        <div class="control-group">
+            <label>色彩模式:</label>
+            <select id="colorMode">
+                <option value="rainbow">彩虹</option>
+                <option value="fire">火焰</option>
+                <option value="ocean">海洋</option>
+                <option value="neon">霓虹</option>
+            </select>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>峰值頻率:</span>
+                <span id="peakFreq">0 Hz</span>
+            </div>
+            <div class="stat-row">
+                <span>能量:</span>
+                <span id="energyLevel">0%</span>
+            </div>
+        </div>
+
+        <button id="startBtn">使用麥克風</button>
+        <button id="demoBtn">演示模式</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
