@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viscosity 黏度比較</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Viscosity 黏度比較</h1>
+        <p class="hint">點擊傾斜容器，觀察不同液體的流動特性</p>
+
+        <div class="tubes-container">
+            <div class="tube-wrapper">
+                <canvas id="tube1" class="tube"></canvas>
+                <div class="tube-label">水 Water</div>
+                <div class="viscosity-value">黏度: 1 cP</div>
+            </div>
+            <div class="tube-wrapper">
+                <canvas id="tube2" class="tube"></canvas>
+                <div class="tube-label">橄欖油 Olive Oil</div>
+                <div class="viscosity-value">黏度: 84 cP</div>
+            </div>
+            <div class="tube-wrapper">
+                <canvas id="tube3" class="tube"></canvas>
+                <div class="tube-label">蜂蜜 Honey</div>
+                <div class="viscosity-value">黏度: 2,000 cP</div>
+            </div>
+            <div class="tube-wrapper">
+                <canvas id="tube4" class="tube"></canvas>
+                <div class="tube-label">糖漿 Syrup</div>
+                <div class="viscosity-value">黏度: 10,000 cP</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="tiltBtn">傾斜容器</button>
+            <button id="resetBtn">重置</button>
+        </div>
+
+        <div class="info-panel">
+            <h2>什麼是黏度？</h2>
+            <p>黏度是液體抵抗流動的能力。黏度越高，液體流動越慢。</p>
+            <p>單位：cP (centipoise)</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
