@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygon Collision 多邊形碰撞</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Polygon Collision 多邊形碰撞</h1>
+        <p class="hint">點擊添加多邊形，拖曳移動</p>
+
+        <div class="control-group">
+            <label>邊數: <span id="sidesValue">5</span></label>
+            <input type="range" id="sidesSlider" min="3" max="8" value="5" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>大小: <span id="sizeValue">40</span></label>
+            <input type="range" id="sizeSlider" min="20" max="80" value="40" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>重力: <span id="gravityValue">0.3</span></label>
+            <input type="range" id="gravitySlider" min="0" max="1" value="0.3" step="0.05">
+        </div>
+
+        <div class="control-group">
+            <label>彈性: <span id="bounceValue">0.7</span></label>
+            <input type="range" id="bounceSlider" min="0.1" max="1" value="0.7" step="0.05">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>多邊形數:</span>
+                <span id="polyCount">0</span>
+            </div>
+        </div>
+
+        <button id="shakeBtn">搖晃</button>
+        <button id="resetBtn">清除</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
