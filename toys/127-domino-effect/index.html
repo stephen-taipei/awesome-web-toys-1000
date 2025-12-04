@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino Effect 多米諾骨牌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Domino Effect 多米諾骨牌</h1>
+        <p class="hint">點擊放置骨牌，按空白鍵推倒第一張</p>
+
+        <div class="control-group">
+            <label>排列模式:</label>
+            <div class="mode-buttons">
+                <button class="mode-btn active" data-mode="single">單個</button>
+                <button class="mode-btn" data-mode="line">直線</button>
+                <button class="mode-btn" data-mode="curve">曲線</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>骨牌間距: <span id="spacingValue">30</span></label>
+            <input type="range" id="spacingSlider" min="20" max="50" value="30" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>重力: <span id="gravityValue">0.5</span></label>
+            <input type="range" id="gravitySlider" min="0.2" max="1" value="0.5" step="0.1">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>骨牌數:</span>
+                <span id="dominoCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>倒下數:</span>
+                <span id="fallenCount">0</span>
+            </div>
+        </div>
+
+        <button id="pushBtn">推倒！(空白鍵)</button>
+        <button id="resetBtn">重新排列</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

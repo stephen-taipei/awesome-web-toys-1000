@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #1a2a1a 0%, #0f1a0f 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+    display: block;
+    cursor: crosshair;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(20, 35, 20, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 200px;
+    border: 1px solid rgba(100, 200, 100, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #7dce82, #4caf50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #6a9a6a;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #8ac88a;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    accent-color: #7dce82;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 8px;
+    background: rgba(100, 200, 100, 0.2);
+    border: 1px solid rgba(100, 200, 100, 0.3);
+    border-radius: 4px;
+    color: #8ac88a;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-btn:hover {
+    background: rgba(100, 200, 100, 0.3);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, #7dce82, #4caf50);
+    color: #0f1a0f;
+    font-weight: bold;
+}
+
+.stats {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(100, 200, 100, 0.2);
+    margin-bottom: 10px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #8ac88a;
+    margin-bottom: 5px;
+}
+
+.stat-row span:last-child {
+    color: #7dce82;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #7dce82, #4caf50);
+    border: none;
+    border-radius: 6px;
+    color: #0f1a0f;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(100, 200, 100, 0.4);
+}
+
+button#resetBtn {
+    background: linear-gradient(135deg, #666, #444);
+    color: #fff;
+}
