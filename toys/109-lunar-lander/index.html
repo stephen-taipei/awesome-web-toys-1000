@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Lander 登月小艇</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="hud">
+        <div class="hud-item">
+            <span class="label">高度</span>
+            <span id="altitude" class="value">1000</span>
+            <span class="unit">m</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">垂直速度</span>
+            <span id="velocity" class="value">0</span>
+            <span class="unit">m/s</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">水平速度</span>
+            <span id="hVelocity" class="value">0</span>
+            <span class="unit">m/s</span>
+        </div>
+        <div class="hud-item fuel">
+            <span class="label">燃料</span>
+            <div class="fuel-bar">
+                <div id="fuelBar" class="fuel-fill"></div>
+            </div>
+            <span id="fuelPercent" class="value">100%</span>
+        </div>
+    </div>
+
+    <div class="controls-hint">
+        <p>方向鍵 / WASD 控制</p>
+        <p>↑ / W: 主推進器 | ← → / A D: 側向推進器</p>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <button id="restartBtn" class="restart-btn" style="display: none;">重新開始</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

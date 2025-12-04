@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+canvas {
+    display: block;
+}
+
+.hud {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 20, 0, 0.8);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid #0f0;
+    color: #0f0;
+}
+
+.hud-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.hud-item:last-child {
+    margin-bottom: 0;
+}
+
+.hud-item .label {
+    width: 80px;
+    color: #0a0;
+}
+
+.hud-item .value {
+    min-width: 60px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.hud-item .unit {
+    margin-left: 5px;
+    color: #0a0;
+    font-size: 0.8rem;
+}
+
+.hud-item.fuel {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fuel-bar {
+    width: 100%;
+    height: 15px;
+    background: #030;
+    border: 1px solid #0f0;
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.fuel-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #0f0, #0a0);
+    transition: width 0.1s;
+}
+
+.controls-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 20, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #0f0;
+    color: #0f0;
+    font-size: 0.8rem;
+}
+
+.controls-hint p {
+    margin: 3px 0;
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 0 20px currentColor;
+}
+
+.message.success {
+    color: #0f0;
+}
+
+.message.failure {
+    color: #f00;
+}
+
+.restart-btn {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    background: transparent;
+    border: 2px solid #0f0;
+    color: #0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.restart-btn:hover {
+    background: #0f0;
+    color: #000;
+}
+
+/* Warning colors */
+.warning {
+    color: #ff0 !important;
+}
+
+.danger {
+    color: #f00 !important;
+}
