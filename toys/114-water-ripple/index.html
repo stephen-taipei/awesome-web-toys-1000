@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Ripple 水波漣漪</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Water Ripple 水波漣漪</h1>
+        <p class="hint">點擊水面產生漣漪</p>
+
+        <div class="control-group">
+            <label>波紋強度</label>
+            <input type="range" id="strengthSlider" min="50" max="500" value="200">
+        </div>
+
+        <div class="control-group">
+            <label>阻尼係數</label>
+            <input type="range" id="dampingSlider" min="0.9" max="0.999" value="0.98" step="0.001">
+        </div>
+
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="rainMode">
+                下雨模式
+            </label>
+        </div>
+
+        <div class="control-group">
+            <label>水面顏色</label>
+            <select id="colorSelect">
+                <option value="blue">藍色池塘</option>
+                <option value="dark">深色湖泊</option>
+                <option value="sunset">夕陽倒影</option>
+                <option value="neon">霓虹水面</option>
+            </select>
+        </div>
+
+        <button id="clearBtn">平靜水面</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

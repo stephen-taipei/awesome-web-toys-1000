@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #001020;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+    display: block;
+    cursor: pointer;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 30, 60, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 200px;
+    border: 1px solid rgba(100, 180, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #6ab7ff;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #8cc4ff;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    accent-color: #4facfe;
+}
+
+.control-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #4facfe;
+}
+
+.control-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 8px;
+    background: rgba(0, 50, 100, 0.8);
+    border: 1px solid #4facfe;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: #00f2fe;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(79, 172, 254, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
