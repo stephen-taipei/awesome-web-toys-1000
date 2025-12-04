@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Collision 連續碰撞偵測</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Continuous Collision 連續碰撞</h1>
+        <p class="hint">觀察高速物體的碰撞偵測，防止穿透</p>
+
+        <div class="control-group">
+            <label>物體速度: <span id="speedValue">20</span></label>
+            <input type="range" id="speedSlider" min="5" max="50" value="20" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>物體數量: <span id="countValue">5</span></label>
+            <input type="range" id="countSlider" min="1" max="15" value="5" step="1">
+        </div>
+
+        <div class="control-group">
+            <label>碰撞模式:</label>
+            <div class="mode-buttons">
+                <button class="mode-btn active" data-mode="ccd">CCD 連續</button>
+                <button class="mode-btn" data-mode="discrete">離散偵測</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>碰撞次數:</span>
+                <span id="collisionCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>穿透次數:</span>
+                <span id="tunnelCount">0</span>
+            </div>
+        </div>
+
+        <button id="fireBtn">發射！</button>
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

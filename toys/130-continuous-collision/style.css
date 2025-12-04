@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(20, 20, 40, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 220px;
+    border: 1px solid rgba(255, 150, 50, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #ff9650, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #aa8866;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #ccaa88;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    accent-color: #ff9650;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 8px 5px;
+    background: rgba(255, 150, 80, 0.2);
+    border: 1px solid rgba(255, 150, 80, 0.3);
+    border-radius: 4px;
+    color: #ccaa88;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 150, 80, 0.3);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, #ff9650, #ff6b35);
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+.stats {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 150, 80, 0.2);
+    margin-bottom: 10px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #ccaa88;
+    margin-bottom: 5px;
+}
+
+.stat-row span:last-child {
+    color: #ff9650;
+    font-weight: bold;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #ff9650, #ff6b35);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:first-of-type {
+    margin-right: 4%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 150, 80, 0.4);
+}
+
+button#resetBtn {
+    background: linear-gradient(135deg, #666, #444);
+}
