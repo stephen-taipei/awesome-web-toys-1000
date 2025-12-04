@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bungee Jump 高空彈跳</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Bungee Jump 高空彈跳</h1>
+        <p class="hint">按空白鍵跳下！</p>
+
+        <div class="control-group">
+            <label>繩索長度: <span id="lengthValue">300</span></label>
+            <input type="range" id="lengthSlider" min="200" max="500" value="300" step="20">
+        </div>
+
+        <div class="control-group">
+            <label>繩索彈性: <span id="elasticityValue">0.02</span></label>
+            <input type="range" id="elasticitySlider" min="0.01" max="0.05" value="0.02" step="0.005">
+        </div>
+
+        <div class="control-group">
+            <label>阻尼: <span id="dampingValue">0.98</span></label>
+            <input type="range" id="dampingSlider" min="0.95" max="0.995" value="0.98" step="0.005">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>最大速度:</span>
+                <span id="maxSpeed">0</span>
+            </div>
+            <div class="stat-row">
+                <span>最低點:</span>
+                <span id="lowestPoint">0</span>
+            </div>
+            <div class="stat-row">
+                <span>彈跳次數:</span>
+                <span id="bounceCount">0</span>
+            </div>
+        </div>
+
+        <button id="jumpBtn">跳！(空白鍵)</button>
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
