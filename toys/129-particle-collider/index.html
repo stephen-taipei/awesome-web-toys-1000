@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Collider 粒子對撞</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <h1>Particle Collider 粒子對撞</h1>
+        <p class="hint">點擊發射粒子，觀察對撞產生新粒子</p>
+
+        <div class="control-group">
+            <label>粒子能量: <span id="energyValue">50</span></label>
+            <input type="range" id="energySlider" min="20" max="100" value="50" step="5">
+        </div>
+
+        <div class="control-group">
+            <label>軌道半徑: <span id="radiusValue">200</span></label>
+            <input type="range" id="radiusSlider" min="100" max="300" value="200" step="20">
+        </div>
+
+        <div class="stats">
+            <div class="stat-row">
+                <span>碰撞次數:</span>
+                <span id="collisionCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>產生粒子:</span>
+                <span id="particleCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span>總能量:</span>
+                <span id="totalEnergy">0</span>
+            </div>
+        </div>
+
+        <button id="collideBtn">對撞！</button>
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
