@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彈簧網格 | Spring Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>彈簧網格</h1>
+            <p class="subtitle">Spring Grid - 彈簧連結波動模擬</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>彈性</label>
+                <input type="range" id="stiffness" min="10" max="100" value="50">
+                <span id="stiffnessValue">50</span>
+            </div>
+            <div class="control-group">
+                <label>阻尼</label>
+                <input type="range" id="damping" min="80" max="100" value="95">
+                <span id="dampingValue">95</span>
+            </div>
+            <div class="control-group">
+                <label>網格密度</label>
+                <input type="range" id="density" min="8" max="25" value="15">
+                <span id="densityValue">15</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="waveBtn">產生波紋</button>
+                <button id="shakeBtn">搖晃</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 點擊或拖曳：擾動網格</li>
+                <li>🌊 波紋：從中心產生波</li>
+                <li>🔗 觀察波動在網格中傳遞</li>
+                <li>⚡ 調整參數改變波動效果</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
