@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軟糖熊 | Gummy Bear</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>軟糖熊</h1>
+            <p class="subtitle">Gummy Bear - Q彈軟糖物理</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>Q彈度</label>
+                <input type="range" id="jiggle" min="20" max="100" value="75">
+                <span id="jiggleValue">75</span>
+            </div>
+            <div class="control-group">
+                <label>黏性</label>
+                <input type="range" id="stickiness" min="80" max="100" value="90">
+                <span id="stickinessValue">90</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="bounceBtn">彈跳</button>
+                <button id="colorBtn">換顏色</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：捏壓軟糖熊</li>
+                <li>🐻 觀察Q彈變形</li>
+                <li>🎨 換顏色：不同口味</li>
+                <li>⚡ 調整Q彈度改變彈性</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
