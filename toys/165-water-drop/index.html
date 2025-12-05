@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水滴 | Water Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>水滴</h1>
+            <p class="subtitle">Water Drop - 表面張力模擬</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>表面張力</label>
+                <input type="range" id="tension" min="20" max="100" value="70">
+                <span id="tensionValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>黏度</label>
+                <input type="range" id="viscosity" min="80" max="100" value="92">
+                <span id="viscosityValue">92</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="dropBtn">滴落</button>
+                <button id="mergeBtn">合併</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：推動水滴</li>
+                <li>💧 觀察水滴變形</li>
+                <li>🔄 合併：水滴融合</li>
+                <li>⚡ 調整張力改變形狀</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
