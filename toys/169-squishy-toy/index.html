@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捏捏樂 | Squishy Toy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>捏捏樂</h1>
+            <p class="subtitle">Squishy Toy - 慢回彈玩具</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>軟度</label>
+                <input type="range" id="softness" min="20" max="100" value="80">
+                <span id="softnessValue">80</span>
+            </div>
+            <div class="control-group">
+                <label>回彈速度</label>
+                <input type="range" id="recovery" min="10" max="100" value="30">
+                <span id="recoveryValue">30</span>
+            </div>
+            <div class="control-group">
+                <label>形狀</label>
+                <input type="range" id="shape" min="0" max="2" value="0">
+                <span id="shapeValue">貓咪</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="squishBtn">用力捏</button>
+                <button id="pokeBtn">戳一下</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 按住拖曳：捏壓玩具</li>
+                <li>🐱 觀察慢回彈效果</li>
+                <li>🎯 調整回彈速度</li>
+                <li>⚡ 切換不同造型</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
