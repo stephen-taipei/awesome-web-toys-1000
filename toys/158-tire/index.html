@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輪胎物理 | Tire Physics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>輪胎物理</h1>
+            <p class="subtitle">Tire Physics - 充氣輪胎模擬</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>氣壓</label>
+                <input type="range" id="pressure" min="30" max="150" value="80">
+                <span id="pressureValue">80</span>
+            </div>
+            <div class="control-group">
+                <label>彈性</label>
+                <input type="range" id="bounce" min="20" max="100" value="60">
+                <span id="bounceValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="dropBtn">從高處落下</button>
+                <button id="pushBtn">推一把</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：移動輪胎</li>
+                <li>⬇️ 落下：觀察輪胎變形和彈跳</li>
+                <li>➡️ 推動：讓輪胎滾動</li>
+                <li>🎈 調整氣壓：改變輪胎硬度</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
