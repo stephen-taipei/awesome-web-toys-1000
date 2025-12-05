@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彈跳城堡 | Bouncy Castle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>彈跳城堡</h1>
+            <p class="subtitle">Bouncy Castle - 充氣城堡物理</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>充氣量</label>
+                <input type="range" id="inflation" min="30" max="100" value="70">
+                <span id="inflationValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>彈力</label>
+                <input type="range" id="bounce" min="30" max="100" value="80">
+                <span id="bounceValue">80</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="jumpBtn">跳躍！</button>
+                <button id="addBallBtn">加入球</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 點擊城堡：產生彈跳</li>
+                <li>🏰 觀察城堡的充氣變形</li>
+                <li>⚽ 加入球在城堡上彈跳</li>
+                <li>🎈 調整充氣量改變彈性</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
