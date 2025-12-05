@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 布料模擬 | 3D Cloth Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>3D 布料模擬</h1>
+            <p class="subtitle">3D Cloth Simulation</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>風力強度</label>
+                <input type="range" id="windStrength" min="0" max="100" value="30">
+                <span id="windStrengthValue">30</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="200" value="98">
+                <span id="gravityValue">98</span>
+            </div>
+            <div class="control-group">
+                <label>阻尼</label>
+                <input type="range" id="damping" min="90" max="100" value="98">
+                <span id="dampingValue">98</span>
+            </div>
+            <div class="control-group">
+                <label>布料大小</label>
+                <select id="clothSize">
+                    <option value="15">小 (15x15)</option>
+                    <option value="25" selected>中 (25x25)</option>
+                    <option value="35">大 (35x35)</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置布料</button>
+                <button id="dropBtn">放開左上角</button>
+                <button id="windToggle">開啟風力</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳滑鼠：旋轉視角</li>
+                <li>🖱️ 右鍵拖曳/雙指：平移視角</li>
+                <li>⚙️ 滾輪：縮放視角</li>
+                <li>👆 點擊布料：與布料互動</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
