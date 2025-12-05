@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軟體球 | Blob Physics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>軟體球</h1>
+            <p class="subtitle">Blob Physics</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>軟度</label>
+                <input type="range" id="softness" min="10" max="100" value="50">
+                <span id="softnessValue">50</span>
+            </div>
+            <div class="control-group">
+                <label>壓力</label>
+                <input type="range" id="pressure" min="50" max="200" value="100">
+                <span id="pressureValue">100</span>
+            </div>
+            <div class="control-group">
+                <label>阻尼</label>
+                <input type="range" id="damping" min="90" max="100" value="97">
+                <span id="dampingValue">97</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="addBlobBtn">新增球</button>
+                <button id="rainbowBtn">彩虹模式</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：推動軟體球</li>
+                <li>👆 點擊空白處：產生吸引力</li>
+                <li>⚙️ 調整參數：改變球的物理特性</li>
+                <li>🌈 彩虹模式：多彩漸變效果</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
