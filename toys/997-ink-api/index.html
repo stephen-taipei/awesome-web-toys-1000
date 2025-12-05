@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy 997 - Ink API Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ink API (Low Latency) Demo</h1>
+            <p>Experience ultra-low latency drawing using the Ink API (if supported) vs standard Canvas.</p>
+        </header>
+
+        <div class="toolbar">
+            <div class="tool-group">
+                <label>Color:</label>
+                <input type="color" id="colorPicker" value="#000000">
+            </div>
+            <div class="tool-group">
+                <label>Size:</label>
+                <input type="range" id="sizePicker" min="1" max="20" value="3">
+                <span id="sizeValue">3px</span>
+            </div>
+            <div class="tool-group">
+                <button id="clearBtn">Clear Canvas</button>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="drawCanvas"></canvas>
+            <div class="status-overlay" id="statusOverlay">
+                Ink API Status: <span id="inkStatus">Checking...</span>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>How it works</h3>
+            <p>The <a href="https://wicg.github.io/ink-enhancement/" target="_blank">Ink API</a> allows browsers to interface directly with the OS compositor to render strokes with lower latency than the main thread allows. This is especially noticeable with stylus input.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
