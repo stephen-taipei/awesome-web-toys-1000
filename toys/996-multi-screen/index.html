@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy 996 - Multi-Screen Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Multi-Screen Window Manager</h1>
+            <p>Detects connected displays and allows placing windows on specific screens using the Window Management API.</p>
+        </header>
+
+        <div class="controls">
+            <button id="scanBtn">Scan Displays</button>
+            <div id="status">Click "Scan" to request permission.</div>
+        </div>
+
+        <div id="screensContainer" class="screens-grid">
+            <!-- Screens will be visualized here -->
+        </div>
+    </div>
+    
+    <!-- Template for a screen visualization -->
+    <template id="screenTemplate">
+        <div class="screen-card">
+            <div class="screen-header">
+                <span class="screen-name">Display 1</span>
+                <span class="screen-id">ID: ...</span>
+            </div>
+            <div class="screen-preview">
+                <div class="screen-res">1920 x 1080</div>
+                <div class="screen-pos">0, 0</div>
+            </div>
+            <div class="screen-actions">
+                <button class="open-btn">Open Window Here</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

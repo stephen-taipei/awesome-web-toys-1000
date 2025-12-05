@@ -1,0 +1,147 @@
+:root {
+    --primary: #0984e3;
+    --bg: #2d3436;
+    --card-bg: #dfe6e9;
+    --text: #2d3436;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#scanBtn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background 0.2s;
+}
+
+#scanBtn:hover {
+    transform: scale(1.05);
+    background-color: #0769b5;
+}
+
+#status {
+    margin-top: 15px;
+    color: #b2bec3;
+}
+
+.screens-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.screen-card {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-radius: 15px;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.screen-card.current {
+    border: 4px solid var(--primary);
+}
+
+.screen-card.current::after {
+    content: 'CURRENT';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+}
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.screen-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.screen-id {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.screen-preview {
+    background: #636e72;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.screen-res {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.screen-pos {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.screen-actions button {
+    width: 100%;
+    padding: 10px;
+    background: var(--text);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.screen-actions button:hover {
+    background: black;
+}
