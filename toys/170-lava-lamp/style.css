@@ -1,0 +1,211 @@
+/* 熔岩燈 - 樣式表 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+    min-height: 100vh;
+    color: #e0b0ff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #ff6b00, #ff9500, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #b388ff;
+    font-size: 0.9rem;
+}
+
+.canvas-container {
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a2e 50%, #0d0d0d 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 40px rgba(255, 107, 0, 0.2),
+        inset 0 0 60px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.canvas-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    pointer-events: none;
+    border-radius: 16px;
+}
+
+#canvas {
+    display: block;
+    width: 100%;
+    height: 500px;
+    cursor: pointer;
+}
+
+.controls {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-size: 0.85rem;
+    color: #ffcc00;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    background: rgba(255, 107, 0, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #ff6b00, #ff9500);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.control-group span {
+    font-size: 0.8rem;
+    color: #ff9500;
+    text-align: right;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff6b0022, #ff950022);
+    border: 1px solid #ff6b0044;
+    border-radius: 8px;
+    color: #ffcc00;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button-group button:hover {
+    background: linear-gradient(135deg, #ff6b0044, #ff950044);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 107, 0, 0.3);
+}
+
+.button-group button:active {
+    transform: translateY(0);
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.instructions h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #ff9500;
+}
+
+.instructions ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.instructions li {
+    font-size: 0.85rem;
+    color: #b388ff;
+    padding: 8px 12px;
+    background: rgba(255, 107, 0, 0.1);
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #canvas {
+        height: 400px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}
