@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy 998 - Local Font Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Local Font Explorer</h1>
+            <p>Explore fonts installed on your system using the Local Font Access API.</p>
+        </header>
+
+        <div class="controls">
+            <button id="accessBtn">Access Local Fonts</button>
+            <div id="status"></div>
+        </div>
+
+        <div class="main-content" id="mainContent" style="display: none;">
+            <div class="preview-area">
+                <textarea id="previewText" rows="3">The quick brown fox jumps over the lazy dog.</textarea>
+                <div class="font-controls">
+                    <label for="fontSize">Size: <span id="sizeVal">32</span>px</label>
+                    <input type="range" id="fontSize" min="12" max="72" value="32">
+                </div>
+            </div>
+
+            <div class="font-list-container">
+                <h3>Available Fonts (<span id="fontCount">0</span>)</h3>
+                <input type="text" id="searchFont" placeholder="Search fonts...">
+                <ul id="fontList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

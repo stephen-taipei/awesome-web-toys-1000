@@ -1,0 +1,145 @@
+:root {
+    --primary: #6c5ce7;
+    --bg: #dfe6e9;
+    --text: #2d3436;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 0;
+    color: var(--primary);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #5849c2;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#status {
+    margin-top: 10px;
+    color: #636e72;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.preview-area {
+    border: 1px solid #b2bec3;
+    border-radius: 8px;
+    padding: 20px;
+    background: #f5f6fa;
+}
+
+textarea {
+    width: 100%;
+    font-size: 32px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit; /* Default */
+    min-height: 100px;
+}
+
+.font-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.font-list-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+}
+
+#searchFont {
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+}
+
+li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1f2f6;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: #f0f3ff;
+}
+
+li.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.font-meta {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
