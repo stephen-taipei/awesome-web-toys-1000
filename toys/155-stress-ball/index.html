@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>減壓球 | Stress Ball</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>減壓球</h1>
+            <p class="subtitle">Stress Ball - 擠壓釋放壓力</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div class="stress-meter">
+                <div class="meter-label">壓力釋放</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="stressMeter"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>回彈速度</label>
+                <input type="range" id="recovery" min="10" max="100" value="50">
+                <span id="recoveryValue">50</span>
+            </div>
+            <div class="control-group">
+                <label>柔軟度</label>
+                <input type="range" id="softness" min="20" max="100" value="60">
+                <span id="softnessValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>形變程度</label>
+                <input type="range" id="deformation" min="30" max="100" value="70">
+                <span id="deformationValue">70</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="textureBtn">切換材質</button>
+                <button id="colorBtn">換顏色</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 按住拖曳：擠壓減壓球</li>
+                <li>💆 放開後會慢慢恢復原狀</li>
+                <li>🎯 多點擠壓效果更佳</li>
+                <li>😌 觀察壓力釋放計量表</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
