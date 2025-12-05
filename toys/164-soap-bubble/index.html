@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肥皂泡 | Soap Bubble</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>肥皂泡</h1>
+            <p class="subtitle">Soap Bubble - 彩虹薄膜物理</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>表面張力</label>
+                <input type="range" id="tension" min="20" max="100" value="60">
+                <span id="tensionValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>氣壓</label>
+                <input type="range" id="pressure" min="20" max="100" value="70">
+                <span id="pressureValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>風力</label>
+                <input type="range" id="wind" min="0" max="100" value="30">
+                <span id="windValue">30</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="blowBtn">吹一口氣</button>
+                <button id="popBtn">戳破！</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：推動肥皂泡</li>
+                <li>🌈 觀察彩虹薄膜效果</li>
+                <li>💨 吹氣讓泡泡飄動</li>
+                <li>💥 戳破看泡泡爆裂</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
