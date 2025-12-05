@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡皮鴨 | Rubber Duck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>橡皮鴨</h1>
+            <p class="subtitle">Rubber Duck - 浴缸小鴨物理</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>軟度</label>
+                <input type="range" id="softness" min="20" max="100" value="60">
+                <span id="softnessValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>浮力</label>
+                <input type="range" id="buoyancy" min="20" max="100" value="70">
+                <span id="buoyancyValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>水波</label>
+                <input type="range" id="wave" min="0" max="100" value="40">
+                <span id="waveValue">40</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="squeakBtn">呱呱叫</button>
+                <button id="splashBtn">潑水</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：推動小鴨</li>
+                <li>🦆 觀察軟體變形</li>
+                <li>🌊 潑水讓小鴨晃動</li>
+                <li>🔊 按壓發出呱呱聲</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
