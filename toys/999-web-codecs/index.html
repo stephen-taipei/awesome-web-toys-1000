@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy 999 - Web Codecs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Codecs API Demo</h1>
+        <p>Real-time encoding and decoding of canvas frames.</p>
+        
+        <div class="canvas-container">
+            <div class="panel">
+                <h3>Source (Canvas)</h3>
+                <canvas id="srcCanvas" width="320" height="240"></canvas>
+            </div>
+            <div class="arrow">➜</div>
+            <div class="panel">
+                <h3>Decoded (Canvas)</h3>
+                <canvas id="dstCanvas" width="320" height="240"></canvas>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn">Start Pipeline</button>
+            <button id="stopBtn" disabled>Stop</button>
+        </div>
+        
+        <div id="status" class="status">Ready. WebCodecs API supported: <span id="support">Checking...</span></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
