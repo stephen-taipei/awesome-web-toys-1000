@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡皮筋彈弓 | Rubber Band Slingshot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>橡皮筋彈弓</h1>
+            <p class="subtitle">Rubber Band Slingshot - 波動與彈射物理</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>彈力</label>
+                <input type="range" id="elasticity" min="20" max="100" value="60">
+                <span id="elasticityValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>阻尼</label>
+                <input type="range" id="damping" min="80" max="100" value="95">
+                <span id="dampingValue">95</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="addBallBtn">添加球</button>
+                <button id="clearBallsBtn">清除球</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳橡皮筋中心向後拉</li>
+                <li>🎯 放開發射球體</li>
+                <li>🎈 調整彈力改變發射力道</li>
+                <li>⚡ 觀察波動傳遞效果</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
