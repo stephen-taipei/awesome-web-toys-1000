@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麵團 | Dough</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>麵團</h1>
+            <p class="subtitle">Dough - 揉捏塑形</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>黏度</label>
+                <input type="range" id="stickiness" min="20" max="100" value="60">
+                <span id="stickinessValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>柔軟度</label>
+                <input type="range" id="softness" min="20" max="100" value="70">
+                <span id="softnessValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>塑性</label>
+                <input type="range" id="plasticity" min="0" max="100" value="50">
+                <span id="plasticityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重新開始</button>
+                <button id="flattenBtn">壓平</button>
+                <button id="rollBtn">搓圓</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：揉捏拉扯麵團</li>
+                <li>👆 按住拖曳：塑形麵團</li>
+                <li>🫓 壓平：將麵團壓扁</li>
+                <li>⚪ 搓圓：讓麵團恢復圓形</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
