@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>史萊姆 | Slime Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>史萊姆</h1>
+            <p class="subtitle">Slime Simulation</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>黏度</label>
+                <input type="range" id="viscosity" min="10" max="100" value="60">
+                <span id="viscosityValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>彈性</label>
+                <input type="range" id="elasticity" min="10" max="100" value="40">
+                <span id="elasticityValue">40</span>
+            </div>
+            <div class="control-group">
+                <label>表面張力</label>
+                <input type="range" id="tension" min="10" max="100" value="50">
+                <span id="tensionValue">50</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="40">
+                <span id="gravityValue">40</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="splitBtn">分裂</button>
+                <button id="colorBtn">變換顏色</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳：拉伸史萊姆</li>
+                <li>👆 長按拖曳：可將史萊姆拉開分離</li>
+                <li>🔄 分離的史萊姆會自動融合</li>
+                <li>🎨 變換顏色：切換史萊姆外觀</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
