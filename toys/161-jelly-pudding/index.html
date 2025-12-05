@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>果凍布丁 | Jelly Pudding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>果凍布丁</h1>
+            <p class="subtitle">Jelly Pudding - Q彈軟體物理</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>Q彈度</label>
+                <input type="range" id="jiggle" min="20" max="100" value="70">
+                <span id="jiggleValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>黏稠度</label>
+                <input type="range" id="viscosity" min="80" max="100" value="92">
+                <span id="viscosityValue">92</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="0" max="100" value="50">
+                <span id="gravityValue">50</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="pokeBtn">戳一下</button>
+                <button id="shakeBtn">搖晃盤子</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 點擊或拖曳：戳動布丁</li>
+                <li>🍮 觀察Q彈晃動效果</li>
+                <li>🍽️ 搖晃盤子讓布丁跳舞</li>
+                <li>⚡ 調整參數改變質地</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
