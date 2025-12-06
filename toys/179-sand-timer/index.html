@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沙漏 | Sand Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>沙漏</h1>
+            <p class="subtitle">Sand Timer - 時間之沙</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>沙粒數量</label>
+                <input type="range" id="sandCount" min="100" max="1000" value="500">
+                <span id="sandCountValue">500</span>
+            </div>
+            <div class="control-group">
+                <label>流速</label>
+                <input type="range" id="flowRate" min="1" max="10" value="5">
+                <span id="flowRateValue">5</span>
+            </div>
+            <div class="control-group">
+                <label>沙色</label>
+                <input type="range" id="sandColor" min="0" max="3" value="0">
+                <span id="sandColorValue">金沙</span>
+            </div>
+            <div class="button-group">
+                <button id="flipBtn">翻轉</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 點擊翻轉沙漏</li>
+                <li>⏳ 觀看沙粒落下</li>
+                <li>🎨 更換沙子顏色</li>
+                <li>⚡ 調整流速快慢</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
