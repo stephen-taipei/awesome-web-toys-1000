@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雪花球 | Snow Globe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>雪花球</h1>
+            <p class="subtitle">Snow Globe - 冬日夢境</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>雪花數量</label>
+                <input type="range" id="snowCount" min="50" max="500" value="200">
+                <span id="snowCountValue">200</span>
+            </div>
+            <div class="control-group">
+                <label>雪花大小</label>
+                <input type="range" id="snowSize" min="1" max="10" value="4">
+                <span id="snowSizeValue">4</span>
+            </div>
+            <div class="control-group">
+                <label>場景</label>
+                <input type="range" id="scene" min="0" max="2" value="0">
+                <span id="sceneValue">雪人</span>
+            </div>
+            <div class="button-group">
+                <button id="shakeBtn">搖一搖</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 點擊或拖曳搖晃雪球</li>
+                <li>❄️ 觀察雪花飄落</li>
+                <li>🎄 切換不同場景</li>
+                <li>✨ 調整雪花效果</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
