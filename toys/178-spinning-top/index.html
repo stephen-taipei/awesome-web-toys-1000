@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陀螺 | Spinning Top</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>陀螺</h1>
+            <p class="subtitle">Spinning Top - 旋轉之舞</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>初始轉速</label>
+                <input type="range" id="spinSpeed" min="10" max="100" value="70">
+                <span id="spinSpeedValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>摩擦力</label>
+                <input type="range" id="friction" min="1" max="50" value="10">
+                <span id="frictionValue">10</span>
+            </div>
+            <div class="control-group">
+                <label>陀螺樣式</label>
+                <input type="range" id="style" min="0" max="2" value="0">
+                <span id="styleValue">傳統</span>
+            </div>
+            <div class="button-group">
+                <button id="spinBtn">旋轉！</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳旋轉啟動陀螺</li>
+                <li>🌀 觀看進動效果</li>
+                <li>⚙️ 調整轉速與摩擦力</li>
+                <li>🎨 切換不同樣式</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
