@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音樂盒 | Music Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>音樂盒</h1>
+            <p class="subtitle">Music Box - 機械之美</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>轉速</label>
+                <input type="range" id="speed" min="10" max="100" value="50">
+                <span id="speedValue">50</span>
+            </div>
+            <div class="control-group">
+                <label>曲目</label>
+                <input type="range" id="melody" min="0" max="2" value="0">
+                <span id="melodyValue">小星星</span>
+            </div>
+            <div class="control-group">
+                <label>音高</label>
+                <input type="range" id="pitch" min="-12" max="12" value="0">
+                <span id="pitchValue">0</span>
+            </div>
+            <div class="button-group">
+                <button id="playBtn">播放</button>
+                <button id="stopBtn">停止</button>
+                <button id="windBtn">上發條</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🎵 點擊播放啟動音樂盒</li>
+                <li>⚙️ 觀看滾筒與音梳</li>
+                <li>🎼 切換不同曲目</li>
+                <li>🔧 上發條增加動力</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
