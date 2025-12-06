@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電漿球 | Plasma Ball</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>電漿球</h1>
+            <p class="subtitle">Plasma Ball - 特斯拉線圈</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>電壓</label>
+                <input type="range" id="voltage" min="10" max="100" value="70">
+                <span id="voltageValue">70</span>
+            </div>
+            <div class="control-group">
+                <label>電弧數量</label>
+                <input type="range" id="arcCount" min="3" max="12" value="6">
+                <span id="arcCountValue">6</span>
+            </div>
+            <div class="control-group">
+                <label>色調</label>
+                <input type="range" id="hue" min="0" max="360" value="280">
+                <span id="hueValue">280°</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="pulseBtn">脈衝</button>
+                <button id="colorBtn">換色</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 觸摸玻璃球吸引電弧</li>
+                <li>⚡ 調整電壓控制強度</li>
+                <li>🎨 改變電漿顏色</li>
+                <li>💥 脈衝釋放強力電弧</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
