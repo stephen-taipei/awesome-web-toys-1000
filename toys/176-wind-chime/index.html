@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>風鈴 | Wind Chime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>風鈴</h1>
+            <p class="subtitle">Wind Chime - 清風之音</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>風力</label>
+                <input type="range" id="windForce" min="0" max="100" value="30">
+                <span id="windForceValue">30</span>
+            </div>
+            <div class="control-group">
+                <label>管數</label>
+                <input type="range" id="tubeCount" min="3" max="8" value="5">
+                <span id="tubeCountValue">5</span>
+            </div>
+            <div class="control-group">
+                <label>材質</label>
+                <input type="range" id="material" min="0" max="2" value="0">
+                <span id="materialValue">金屬</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="gustBtn">陣風</button>
+                <button id="muteBtn">靜音</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 點擊或拖曳推動風鈴</li>
+                <li>🎵 聆聽碰撞的聲音</li>
+                <li>💨 調整風力大小</li>
+                <li>🔔 切換不同材質音色</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
