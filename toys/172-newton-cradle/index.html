@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牛頓擺 | Newton's Cradle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>牛頓擺</h1>
+            <p class="subtitle">Newton's Cradle - 動量守恆</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>球數量</label>
+                <input type="range" id="ballCount" min="3" max="7" value="5">
+                <span id="ballCountValue">5</span>
+            </div>
+            <div class="control-group">
+                <label>重力</label>
+                <input type="range" id="gravity" min="20" max="100" value="60">
+                <span id="gravityValue">60</span>
+            </div>
+            <div class="control-group">
+                <label>能量損耗</label>
+                <input type="range" id="damping" min="0" max="50" value="5">
+                <span id="dampingValue">5%</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="pullOneBtn">拉一顆</button>
+                <button id="pullTwoBtn">拉兩顆</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 拖曳端球：開始擺動</li>
+                <li>⚡ 觀察動量傳遞</li>
+                <li>🔢 調整球的數量</li>
+                <li>🎯 體驗能量守恆</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
