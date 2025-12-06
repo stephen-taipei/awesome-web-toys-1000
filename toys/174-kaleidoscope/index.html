@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萬花筒 | Kaleidoscope</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>萬花筒</h1>
+            <p class="subtitle">Kaleidoscope - 對稱之美</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>鏡片數</label>
+                <input type="range" id="segments" min="3" max="12" value="6">
+                <span id="segmentsValue">6</span>
+            </div>
+            <div class="control-group">
+                <label>旋轉速度</label>
+                <input type="range" id="speed" min="0" max="100" value="30">
+                <span id="speedValue">30</span>
+            </div>
+            <div class="control-group">
+                <label>縮放</label>
+                <input type="range" id="zoom" min="50" max="150" value="100">
+                <span id="zoomValue">100%</span>
+            </div>
+            <div class="button-group">
+                <button id="resetBtn">重置</button>
+                <button id="randomBtn">隨機圖案</button>
+                <button id="colorBtn">換色</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>操作說明</h3>
+            <ul>
+                <li>🖱️ 移動滑鼠改變圖案</li>
+                <li>🔮 調整鏡片數量</li>
+                <li>🌀 控制旋轉速度</li>
+                <li>✨ 隨機生成圖案</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
