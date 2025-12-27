@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Propulsion 火箭推進 - Web Toy 199</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rocket Propulsion</h1>
+            <p class="subtitle">火箭推進原理模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="rocketCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>推進控制</h3>
+                <div class="control-row">
+                    <button id="thrustBtn" class="thrust-btn">點火 🚀</button>
+                </div>
+                <div class="control-row">
+                    <label>推力</label>
+                    <input type="range" id="thrustSlider" min="10" max="100" value="50">
+                    <span id="thrustValue">50%</span>
+                </div>
+                <div class="control-row">
+                    <label>燃料</label>
+                    <div class="fuel-bar">
+                        <div class="fuel-fill" id="fuelFill"></div>
+                    </div>
+                    <span id="fuelValue">100%</span>
+                </div>
+            </div>
+            <div class="stats-box">
+                <h4>飛行數據</h4>
+                <div class="stat-row"><span>高度:</span><span id="altitude">0 m</span></div>
+                <div class="stat-row"><span>速度:</span><span id="velocity">0 m/s</span></div>
+                <div class="stat-row"><span>加速度:</span><span id="acceleration">0 m/s²</span></div>
+                <div class="stat-row"><span>質量:</span><span id="mass">1000 kg</span></div>
+            </div>
+            <div class="info-box">
+                <h4>牛頓第三定律</h4>
+                <p>火箭向後噴射氣體產生反作用力推動火箭前進。推力與噴射質量和速度成正比。</p>
+                <p class="formula">F = ṁ × vₑ</p>
+            </div>
+        </div>
+        <footer><p>按住點火按鈕發射火箭 | Web Toy #199</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
