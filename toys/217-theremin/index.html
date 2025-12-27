@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theremin 特雷門琴 - Web Toy 217</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Theremin</h1>
+            <p class="subtitle">虛擬特雷門琴</p>
+        </header>
+        <div class="theremin-area" id="thereminArea">
+            <div class="frequency-display">
+                <span id="freqValue">440</span> Hz
+            </div>
+            <div class="volume-display">
+                Vol: <span id="volValue">0</span>%
+            </div>
+            <div class="axis-label x-label">音高 →</div>
+            <div class="axis-label y-label">↓ 音量</div>
+            <canvas id="visualizer"></canvas>
+            <div class="hand-indicator" id="handIndicator"></div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音色設定</h3>
+                <div class="control-row">
+                    <label>波形</label>
+                    <select id="waveType">
+                        <option value="sine" selected>正弦波</option>
+                        <option value="triangle">三角波</option>
+                        <option value="sawtooth">鋸齒波</option>
+                    </select>
+                </div>
+                <div class="control-row">
+                    <label>顫音</label>
+                    <input type="range" id="vibratoSlider" min="0" max="10" step="1" value="3">
+                </div>
+            </div>
+        </div>
+        <footer><p>在區域內移動滑鼠或觸控演奏 | Web Toy #217</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
