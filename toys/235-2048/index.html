@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 數字合併 - Web Toy 235</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2048</h1>
+            <p class="subtitle">合併相同數字</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">最高: <span id="highScore">0</span></div>
+        </div>
+        <div class="game-grid" id="gameGrid"></div>
+        <div class="controls">
+            <button class="control-btn" data-dir="up">↑</button>
+            <div class="control-row">
+                <button class="control-btn" data-dir="left">←</button>
+                <button class="control-btn" data-dir="down">↓</button>
+                <button class="control-btn" data-dir="right">→</button>
+            </div>
+        </div>
+        <button id="newGameBtn">新遊戲</button>
+        <footer><p>滑動或使用方向鍵移動 | Web Toy #235</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
