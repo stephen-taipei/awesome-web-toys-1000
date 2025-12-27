@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Oscilloscope 音頻示波器 - Web Toy 208</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Audio Oscilloscope</h1>
+            <p class="subtitle">音頻示波器</p>
+        </header>
+        <div class="oscilloscope">
+            <canvas id="scopeCanvas"></canvas>
+            <div class="scope-controls">
+                <div class="knob-group">
+                    <label>時間軸</label>
+                    <input type="range" id="timebaseSlider" min="1" max="10" value="5">
+                </div>
+                <div class="knob-group">
+                    <label>電壓</label>
+                    <input type="range" id="voltageSlider" min="0.5" max="2" step="0.1" value="1">
+                </div>
+            </div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>輸入源</h3>
+                <div class="control-row">
+                    <button id="micBtn" class="source-btn">麥克風</button>
+                    <button id="toneBtn" class="source-btn active">測試音</button>
+                </div>
+                <div class="control-row">
+                    <label>頻率</label>
+                    <input type="range" id="freqSlider" min="100" max="2000" value="440">
+                    <span id="freqValue">440 Hz</span>
+                </div>
+                <div class="control-row">
+                    <label>波形</label>
+                    <select id="waveSelect">
+                        <option value="sine">正弦波</option>
+                        <option value="square">方波</option>
+                        <option value="triangle">三角波</option>
+                        <option value="sawtooth">鋸齒波</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>顯示設定</h3>
+                <div class="control-row">
+                    <label>觸發</label>
+                    <input type="range" id="triggerSlider" min="0" max="100" value="50">
+                    <span id="triggerValue">50%</span>
+                </div>
+                <div class="control-row">
+                    <input type="checkbox" id="gridCheck" checked>
+                    <label>顯示網格</label>
+                </div>
+                <div class="control-row">
+                    <input type="checkbox" id="phosphorCheck">
+                    <label>磷光效果</label>
+                </div>
+            </div>
+        </div>
+        <footer><p>經典示波器風格的音頻波形顯示 | Web Toy #208</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
