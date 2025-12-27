@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownian Motion 布朗運動 - Web Toy 192</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Brownian Motion</h1>
+            <p class="subtitle">布朗運動模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="brownianCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>調整參數</h3>
+                <div class="control-row">
+                    <label>溫度</label>
+                    <input type="range" id="tempSlider" min="100" max="500" value="300">
+                    <span id="tempValue">300 K</span>
+                </div>
+                <div class="control-row">
+                    <label>粒子數</label>
+                    <input type="range" id="particleSlider" min="50" max="500" value="200">
+                    <span id="particleValue">200</span>
+                </div>
+                <div class="control-row">
+                    <label>追蹤</label>
+                    <input type="checkbox" id="traceCheck" checked>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>布朗運動</h4>
+                <p>花粉顆粒在液體中的隨機運動，由愛因斯坦在1905年解釋為分子碰撞的結果。</p>
+                <p class="formula">⟨x²⟩ = 2Dt</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="resetBtn">重置</button>
+            <button id="clearTraceBtn">清除軌跡</button>
+        </div>
+        <footer><p>觀察大粒子在小分子碰撞下的隨機運動 | Web Toy #192</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
