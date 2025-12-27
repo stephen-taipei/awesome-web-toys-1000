@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise Generator 噪音產生器 - Web Toy 220</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Noise Generator</h1>
+            <p class="subtitle">白噪音與色彩噪音產生器</p>
+        </header>
+        <div class="noise-display">
+            <div class="current-noise" id="currentNoise">White Noise</div>
+            <div class="noise-desc" id="noiseDesc">平衡的全頻譜噪音</div>
+            <canvas id="visualizer"></canvas>
+        </div>
+        <div class="noise-types">
+            <button class="noise-btn active" data-type="white">
+                <span class="color-dot white"></span>
+                <span class="name">白噪音</span>
+                <span class="desc">全頻譜平衡</span>
+            </button>
+            <button class="noise-btn" data-type="pink">
+                <span class="color-dot pink"></span>
+                <span class="name">粉紅噪音</span>
+                <span class="desc">自然舒緩</span>
+            </button>
+            <button class="noise-btn" data-type="brown">
+                <span class="color-dot brown"></span>
+                <span class="name">棕噪音</span>
+                <span class="desc">低頻深沉</span>
+            </button>
+            <button class="noise-btn" data-type="blue">
+                <span class="color-dot blue"></span>
+                <span class="name">藍噪音</span>
+                <span class="desc">高頻清脆</span>
+            </button>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音量控制</h3>
+                <div class="control-row">
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.3">
+                    <span id="volumeValue">30%</span>
+                </div>
+            </div>
+            <div class="play-control">
+                <button id="playBtn">▶ 播放</button>
+            </div>
+        </div>
+        <footer><p>選擇噪音類型放鬆心情 | Web Toy #220</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
