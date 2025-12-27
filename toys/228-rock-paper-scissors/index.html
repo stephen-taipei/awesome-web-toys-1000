@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors 猜拳 - Web Toy 228</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <p class="subtitle">剪刀石頭布</p>
+        </header>
+        <div class="score-board">
+            <div class="player">
+                <span class="label">你</span>
+                <span class="score" id="playerScore">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="player">
+                <span class="label">電腦</span>
+                <span class="score" id="computerScore">0</span>
+            </div>
+        </div>
+        <div class="battle-area">
+            <div class="hand player-hand" id="playerHand">❓</div>
+            <div class="result" id="result">選擇你的招式</div>
+            <div class="hand computer-hand" id="computerHand">❓</div>
+        </div>
+        <div class="choices">
+            <button class="choice-btn" data-choice="rock">✊<span>石頭</span></button>
+            <button class="choice-btn" data-choice="paper">✋<span>布</span></button>
+            <button class="choice-btn" data-choice="scissors">✌️<span>剪刀</span></button>
+        </div>
+        <button id="resetBtn">重置分數</button>
+        <footer><p>石頭剪刀布猜拳遊戲 | Web Toy #228</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
