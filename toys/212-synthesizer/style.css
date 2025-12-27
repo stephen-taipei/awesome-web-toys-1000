@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #9b59b6, #3498db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.keyboard { display: flex; justify-content: center; gap: 3px; margin: 30px 0; padding: 20px; background: #111; border-radius: 15px; overflow-x: auto; }
+.key { position: relative; cursor: pointer; transition: all 0.1s; user-select: none; }
+.key.white { width: 50px; height: 180px; background: linear-gradient(180deg, #eee 0%, #fff 100%); border-radius: 0 0 8px 8px; border: 1px solid #999; }
+.key.black { width: 35px; height: 110px; background: linear-gradient(180deg, #333 0%, #111 100%); border-radius: 0 0 5px 5px; margin: 0 -17px; z-index: 1; }
+.key.white:active, .key.white.active { background: linear-gradient(180deg, #ddd 0%, #bbb 100%); transform: translateY(2px); }
+.key.black:active, .key.black.active { background: linear-gradient(180deg, #444 0%, #222 100%); transform: translateY(2px); }
+.key-label { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 0.8rem; color: #666; }
+.key.black .key-label { color: #888; bottom: 8px; }
+.controls-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+.control-group { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.control-group h3 { font-size: 1.1rem; margin-bottom: 15px; color: #9b59b6; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+.control-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.control-row label { min-width: 60px; color: #aaa; }
+.control-row input[type="range"] { flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.2); -webkit-appearance: none; }
+.control-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, #9b59b6, #3498db); cursor: pointer; }
+.control-row select { flex: 1; padding: 10px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; }
+footer { text-align: center; padding: 20px; color: #666; }
