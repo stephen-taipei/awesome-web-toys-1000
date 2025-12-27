@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout 打磚塊 - Web Toy 232</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Breakout</h1>
+            <p class="subtitle">經典打磚塊</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">生命: <span id="lives">3</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-over" id="gameOver">
+                <h2 id="endTitle">遊戲結束</h2>
+                <p>分數: <span id="finalScore">0</span></p>
+                <button id="restartBtn">再玩一次</button>
+            </div>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <footer><p>移動滑鼠或觸控控制擋板 | Web Toy #232</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
