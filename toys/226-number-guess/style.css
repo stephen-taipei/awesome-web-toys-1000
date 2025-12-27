@@ -1,0 +1,33 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 500px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #9b59b6, #3498db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.game-area { padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 20px 0; text-align: center; }
+.range-info { font-size: 1.2rem; color: #aaa; margin-bottom: 25px; }
+.range-info span { color: #9b59b6; font-weight: bold; }
+.input-area { display: flex; gap: 10px; justify-content: center; margin-bottom: 25px; }
+#guessInput { width: 150px; padding: 15px; font-size: 1.5rem; text-align: center; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #fff; outline: none; }
+#guessInput:focus { background: rgba(255,255,255,0.15); }
+#guessBtn { padding: 15px 30px; border: none; border-radius: 10px; background: linear-gradient(135deg, #9b59b6, #3498db); color: #fff; font-size: 1.2rem; cursor: pointer; transition: transform 0.2s; }
+#guessBtn:hover { transform: scale(1.05); }
+.feedback { font-size: 1.5rem; font-weight: bold; min-height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.feedback.higher { color: #e74c3c; }
+.feedback.lower { color: #3498db; }
+.feedback.correct { color: #2ecc71; font-size: 2rem; }
+.attempts { color: #888; margin-bottom: 15px; }
+.attempts span { color: #f39c12; font-weight: bold; }
+.history { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; min-height: 40px; }
+.history-item { padding: 5px 12px; border-radius: 15px; font-size: 0.9rem; }
+.history-item.higher { background: rgba(231,76,60,0.3); color: #e74c3c; }
+.history-item.lower { background: rgba(52,152,219,0.3); color: #3498db; }
+.history-item.correct { background: rgba(46,204,113,0.3); color: #2ecc71; }
+.difficulty-panel { padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin: 20px 0; }
+.difficulty-panel h3 { text-align: center; color: #9b59b6; margin-bottom: 15px; }
+.difficulty-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.diff-btn { padding: 10px 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 25px; background: transparent; color: #fff; cursor: pointer; transition: all 0.2s; }
+.diff-btn:hover, .diff-btn.active { border-color: #9b59b6; background: rgba(155,89,182,0.2); }
+#restartBtn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #aaa; font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+#restartBtn:hover { background: rgba(255,255,255,0.2); color: #fff; }
+footer { text-align: center; padding: 20px; color: #666; }
