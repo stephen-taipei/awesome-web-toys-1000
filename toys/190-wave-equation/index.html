@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Equation 波動方程 - Web Toy 190</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wave Equation</h1>
+            <p class="subtitle">1D 與 2D 波動方程視覺化</p>
+        </header>
+        <div class="canvas-container">
+            <canvas id="waveCanvas"></canvas>
+        </div>
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="1d">1D 波動</button>
+            <button class="mode-btn" data-mode="2d">2D 波動</button>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>波動參數</h3>
+                <div class="control-row">
+                    <label>波速</label>
+                    <input type="range" id="waveSpeed" min="0.1" max="2" step="0.1" value="1">
+                    <span id="waveSpeedValue">1.0</span>
+                </div>
+                <div class="control-row">
+                    <label>阻尼</label>
+                    <input type="range" id="damping" min="0" max="0.1" step="0.01" value="0.01">
+                    <span id="dampingValue">0.01</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="dropBtn">投下石子</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+        <div class="info-box">
+            <h4>波動方程</h4>
+            <p class="formula">∂²u/∂t² = c² ∇²u</p>
+        </div>
+        <footer><p>點擊畫布產生波動 | Web Toy #190</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
