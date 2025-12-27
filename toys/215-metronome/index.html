@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronome 節拍器 - Web Toy 215</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Metronome</h1>
+            <p class="subtitle">視覺節拍器</p>
+        </header>
+        <div class="metronome-display">
+            <div class="pendulum-container">
+                <div class="pendulum" id="pendulum">
+                    <div class="arm"></div>
+                    <div class="weight"></div>
+                </div>
+            </div>
+            <div class="beat-indicator">
+                <div class="beat" id="beat1">1</div>
+                <div class="beat" id="beat2">2</div>
+                <div class="beat" id="beat3">3</div>
+                <div class="beat" id="beat4">4</div>
+            </div>
+            <div class="bpm-display">
+                <span id="bpmValue">120</span>
+                <span class="bpm-label">BPM</span>
+            </div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>速度控制</h3>
+                <div class="tempo-presets">
+                    <button class="preset-btn" data-bpm="60">Largo</button>
+                    <button class="preset-btn" data-bpm="90">Andante</button>
+                    <button class="preset-btn active" data-bpm="120">Moderato</button>
+                    <button class="preset-btn" data-bpm="140">Allegro</button>
+                    <button class="preset-btn" data-bpm="180">Presto</button>
+                </div>
+                <div class="control-row">
+                    <input type="range" id="bpmSlider" min="40" max="220" value="120">
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>節拍設定</h3>
+                <div class="control-row">
+                    <label>拍號</label>
+                    <select id="timeSignature">
+                        <option value="2">2/4</option>
+                        <option value="3">3/4</option>
+                        <option value="4" selected>4/4</option>
+                        <option value="6">6/8</option>
+                    </select>
+                </div>
+            </div>
+            <div class="play-control">
+                <button id="playBtn">▶ 開始</button>
+            </div>
+        </div>
+        <footer><p>調整速度開始練習 | Web Toy #215</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
