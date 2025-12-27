@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entropy 熵 - Web Toy 198</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Entropy</h1>
+            <p class="subtitle">熵與混亂度模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="entropyCanvas"></canvas>
+        </div>
+        <div class="entropy-meter">
+            <span>有序</span>
+            <div class="meter-bar">
+                <div class="meter-fill" id="entropyFill"></div>
+            </div>
+            <span>混亂</span>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>控制面板</h3>
+                <div class="control-row">
+                    <button id="orderBtn">整理</button>
+                    <button id="shuffleBtn">打亂</button>
+                </div>
+                <div class="control-row">
+                    <label>速度</label>
+                    <input type="range" id="speedSlider" min="0.1" max="2" step="0.1" value="1">
+                    <span id="speedValue">1.0x</span>
+                </div>
+                <div class="control-row">
+                    <label>粒子數</label>
+                    <input type="range" id="particleSlider" min="50" max="300" value="150">
+                    <span id="particleValue">150</span>
+                </div>
+            </div>
+            <div class="stats-box">
+                <h4>熵統計</h4>
+                <div class="stat-row"><span>熵值 S:</span><span id="entropyValue">0.00</span></div>
+                <div class="stat-row"><span>混亂度:</span><span id="disorder">0%</span></div>
+                <div class="stat-row"><span>微狀態:</span><span id="microstates">1</span></div>
+            </div>
+            <div class="info-box">
+                <h4>熱力學第二定律</h4>
+                <p>孤立系統的熵永遠不會減少。自然界傾向於從有序走向混亂。</p>
+                <p class="formula">S = k ln W</p>
+            </div>
+        </div>
+        <footer><p>觀察系統從有序到混亂的不可逆過程 | Web Toy #198</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
