@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris 俄羅斯方塊 - Web Toy 236</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tetris</h1>
+            <p class="subtitle">經典俄羅斯方塊</p>
+        </header>
+        <div class="game-layout">
+            <div class="game-wrapper">
+                <canvas id="gameCanvas"></canvas>
+            </div>
+            <div class="side-panel">
+                <div class="info-box">
+                    <span class="label">分數</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="info-box">
+                    <span class="label">行數</span>
+                    <span class="value" id="lines">0</span>
+                </div>
+                <div class="info-box">
+                    <span class="label">下一個</span>
+                    <canvas id="nextCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="ctrl-btn" id="rotateBtn">↻</button>
+            <div class="control-row">
+                <button class="ctrl-btn" id="leftBtn">←</button>
+                <button class="ctrl-btn" id="downBtn">↓</button>
+                <button class="ctrl-btn" id="rightBtn">→</button>
+            </div>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <footer><p>方向鍵控制移動 | Web Toy #236</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
