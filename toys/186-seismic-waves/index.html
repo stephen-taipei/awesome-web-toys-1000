@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seismic Waves 地震波 - Web Toy 186</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Seismic Waves</h1>
+            <p class="subtitle">地震波傳播模擬</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="seismicCanvas"></canvas>
+            <div class="legend">
+                <div class="legend-item p-wave">
+                    <span class="color-dot"></span>
+                    <span>P波 (縱波)</span>
+                </div>
+                <div class="legend-item s-wave">
+                    <span class="color-dot"></span>
+                    <span>S波 (橫波)</span>
+                </div>
+                <div class="legend-item surface-wave">
+                    <span class="color-dot"></span>
+                    <span>表面波</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>地震參數</h3>
+                <div class="control-row">
+                    <label>震源深度</label>
+                    <input type="range" id="depth" min="10" max="200" value="50">
+                    <span id="depthValue">50 km</span>
+                </div>
+                <div class="control-row">
+                    <label>地震規模</label>
+                    <input type="range" id="magnitude" min="3" max="9" step="0.1" value="6">
+                    <span id="magnitudeValue">M 6.0</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>波速設定</h3>
+                <div class="control-row">
+                    <label>P波速度</label>
+                    <input type="range" id="pSpeed" min="4" max="14" step="0.5" value="8">
+                    <span id="pSpeedValue">8 km/s</span>
+                </div>
+                <div class="control-row">
+                    <label>S波速度</label>
+                    <input type="range" id="sSpeed" min="2" max="8" step="0.5" value="4.5">
+                    <span id="sSpeedValue">4.5 km/s</span>
+                </div>
+            </div>
+
+            <div class="control-group wave-toggle">
+                <h3>波型顯示</h3>
+                <div class="toggle-buttons">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="showP" checked>
+                        <span class="toggle-text p-text">P波</span>
+                    </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" id="showS" checked>
+                        <span class="toggle-text s-text">S波</span>
+                    </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" id="showSurface" checked>
+                        <span class="toggle-text surface-text">表面波</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="quakeBtn">觸發地震</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="wave-info-grid">
+                <div class="wave-card p-card">
+                    <h4>P波（Primary Wave）</h4>
+                    <p>最快到達的波，為縱波。質點沿傳播方向前後振動，可穿透固體、液體。</p>
+                    <div class="wave-stats">
+                        <span>速度：5-14 km/s</span>
+                    </div>
+                </div>
+                <div class="wave-card s-card">
+                    <h4>S波（Secondary Wave）</h4>
+                    <p>第二到達的波，為橫波。質點垂直於傳播方向振動，只能穿透固體。</p>
+                    <div class="wave-stats">
+                        <span>速度：3-8 km/s</span>
+                    </div>
+                </div>
+                <div class="wave-card surface-card">
+                    <h4>表面波（Surface Wave）</h4>
+                    <p>沿地表傳播，造成最大破壞。包含 Love 波和 Rayleigh 波。</p>
+                    <div class="wave-stats">
+                        <span>速度：2-5 km/s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>點擊畫布設定震源位置 | 觀察 P波、S波、表面波的傳播 | Web Toy #186</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
