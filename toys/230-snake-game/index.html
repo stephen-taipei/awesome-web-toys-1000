@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game 貪吃蛇 - Web Toy 230</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Snake Game</h1>
+            <p class="subtitle">經典貪吃蛇</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">最高: <span id="highScore">0</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-over" id="gameOver">
+                <h2>遊戲結束!</h2>
+                <p>分數: <span id="finalScore">0</span></p>
+                <button id="restartBtn">再玩一次</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="control-btn" data-dir="up">↑</button>
+            <div class="control-row">
+                <button class="control-btn" data-dir="left">←</button>
+                <button class="control-btn" data-dir="down">↓</button>
+                <button class="control-btn" data-dir="right">→</button>
+            </div>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <footer><p>使用方向鍵或按鈕控制 | Web Toy #230</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
