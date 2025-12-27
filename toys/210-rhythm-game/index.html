@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Game 節奏遊戲 - Web Toy 210</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rhythm Game</h1>
+            <p class="subtitle">節奏遊戲</p>
+        </header>
+        <div class="game-area">
+            <div class="score-panel">
+                <div class="score">分數: <span id="score">0</span></div>
+                <div class="combo">連擊: <span id="combo">0</span></div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+            <div class="hit-zone">
+                <div class="lane" data-key="D">D</div>
+                <div class="lane" data-key="F">F</div>
+                <div class="lane" data-key="J">J</div>
+                <div class="lane" data-key="K">K</div>
+            </div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>遊戲控制</h3>
+                <div class="control-row">
+                    <button id="startBtn">開始遊戲</button>
+                </div>
+                <div class="control-row">
+                    <label>速度</label>
+                    <input type="range" id="speedSlider" min="1" max="3" step="0.5" value="2">
+                    <span id="speedValue">2x</span>
+                </div>
+                <div class="control-row">
+                    <label>BPM</label>
+                    <input type="range" id="bpmSlider" min="80" max="160" value="120">
+                    <span id="bpmValue">120</span>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>遊戲說明</h4>
+                <p>當音符落到白線時按下對應按鍵 (D, F, J, K)。準確度越高分數越多！</p>
+                <div class="key-hints">
+                    <span class="key">D</span>
+                    <span class="key">F</span>
+                    <span class="key">J</span>
+                    <span class="key">K</span>
+                </div>
+            </div>
+        </div>
+        <footer><p>按下 D F J K 擊中音符 | Web Toy #210</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
