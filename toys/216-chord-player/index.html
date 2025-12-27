@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chord Player 和弦播放器 - Web Toy 216</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chord Player</h1>
+            <p class="subtitle">和弦播放器</p>
+        </header>
+        <div class="chord-display">
+            <div class="current-chord" id="currentChord">C</div>
+            <div class="chord-notes" id="chordNotes">C - E - G</div>
+        </div>
+        <div class="chord-grid" id="chordGrid"></div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音色設定</h3>
+                <div class="control-row">
+                    <label>波形</label>
+                    <select id="waveType">
+                        <option value="sine">正弦波</option>
+                        <option value="triangle" selected>三角波</option>
+                        <option value="square">方波</option>
+                        <option value="sawtooth">鋸齒波</option>
+                    </select>
+                </div>
+                <div class="control-row">
+                    <label>音量</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.4">
+                </div>
+            </div>
+        </div>
+        <footer><p>點擊和弦按鈕播放 | Web Toy #216</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
