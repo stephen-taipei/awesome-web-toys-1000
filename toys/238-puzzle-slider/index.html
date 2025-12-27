@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Slider 滑塊拼圖 - Web Toy 238</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Puzzle Slider</h1>
+            <p class="subtitle">經典滑塊拼圖</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">步數: <span id="moves">0</span></div>
+            <div class="stat">時間: <span id="timer">0:00</span></div>
+        </div>
+        <div class="puzzle-grid" id="puzzleGrid"></div>
+        <div class="size-select">
+            <button class="size-btn active" data-size="3">3×3</button>
+            <button class="size-btn" data-size="4">4×4</button>
+            <button class="size-btn" data-size="5">5×5</button>
+        </div>
+        <button id="shuffleBtn">洗牌</button>
+        <footer><p>點擊方塊移動到空格 | Web Toy #238</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
