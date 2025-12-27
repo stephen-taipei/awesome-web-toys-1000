@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Machine 鼓機 - Web Toy 211</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Drum Machine</h1>
+            <p class="subtitle">節奏鼓機</p>
+        </header>
+        <div class="drum-grid" id="drumGrid"></div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>播放控制</h3>
+                <div class="control-row">
+                    <button id="playBtn">播放</button>
+                    <button id="clearBtn">清除</button>
+                </div>
+                <div class="control-row">
+                    <label>BPM</label>
+                    <input type="range" id="bpmSlider" min="60" max="180" value="120">
+                    <span id="bpmValue">120</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>預設節奏</h3>
+                <div class="control-row presets">
+                    <button class="preset-btn" data-preset="rock">搖滾</button>
+                    <button class="preset-btn" data-preset="hiphop">嘻哈</button>
+                    <button class="preset-btn" data-preset="edm">電音</button>
+                </div>
+            </div>
+        </div>
+        <footer><p>點擊格子創建節奏 | Web Toy #211</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

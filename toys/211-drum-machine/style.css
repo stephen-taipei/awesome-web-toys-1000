@@ -1,0 +1,33 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #ff6b6b, #ffd93d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.drum-grid { display: grid; gap: 3px; margin: 20px 0; background: #111; padding: 15px; border-radius: 15px; overflow-x: auto; }
+.drum-row { display: flex; gap: 3px; align-items: center; }
+.drum-label { width: 80px; font-size: 0.9rem; color: #aaa; text-align: right; padding-right: 10px; }
+.drum-cell { width: 40px; height: 40px; border-radius: 5px; cursor: pointer; transition: all 0.1s; }
+.drum-cell.off { background: rgba(255,255,255,0.1); }
+.drum-cell.on { box-shadow: 0 0 15px currentColor; }
+.drum-cell.active { transform: scale(0.9); filter: brightness(1.5); }
+.drum-cell[data-sound="kick"].on { background: #ff6b6b; }
+.drum-cell[data-sound="snare"].on { background: #ffd93d; }
+.drum-cell[data-sound="hihat"].on { background: #4ecdc4; }
+.drum-cell[data-sound="clap"].on { background: #a29bfe; }
+.playhead { position: absolute; width: 40px; height: 100%; background: rgba(255,255,255,0.2); pointer-events: none; transition: left 0.1s; }
+.controls-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+.control-group { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.control-group h3 { font-size: 1.1rem; margin-bottom: 15px; color: #ff6b6b; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+.control-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+.control-row label { min-width: 40px; color: #aaa; }
+.control-row input[type="range"] { flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.2); -webkit-appearance: none; }
+.control-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, #ff6b6b, #ffd93d); cursor: pointer; }
+.control-row span { min-width: 40px; font-family: monospace; color: #ffd93d; }
+.control-row button { flex: 1; padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
+#playBtn { background: linear-gradient(135deg, #ff6b6b, #ffd93d); color: #000; }
+#clearBtn { background: rgba(255,255,255,0.1); color: #fff; }
+.presets { flex-wrap: wrap; }
+.preset-btn { padding: 8px 15px !important; font-size: 0.9rem !important; background: rgba(255,107,107,0.2); color: #ff6b6b; }
+button:hover { transform: translateY(-2px); }
+footer { text-align: center; padding: 20px; color: #666; }
