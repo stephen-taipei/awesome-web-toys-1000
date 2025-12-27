@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 500px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71, #3498db); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.stats-bar { display: flex; justify-content: space-around; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 15px; margin: 20px 0; }
+.stat { font-size: 1rem; }
+.stat span { color: #f39c12; font-weight: bold; }
+.game-area { padding: 40px 20px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 20px 0; text-align: center; }
+.color-word { font-size: 4rem; font-weight: bold; margin-bottom: 40px; min-height: 80px; transition: color 0.2s; }
+.options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.option-btn { padding: 20px; border: none; border-radius: 12px; font-size: 1.3rem; font-weight: bold; cursor: pointer; transition: all 0.2s; color: #fff; }
+.option-btn:hover { transform: scale(1.05); }
+.option-btn:active { transform: scale(0.95); }
+.option-btn.correct { animation: correct 0.3s; }
+.option-btn.wrong { animation: wrong 0.3s; }
+@keyframes correct { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(46,204,113,0.8); } }
+@keyframes wrong { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
+#startBtn, #restartBtn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(135deg, #9b59b6, #8e44ad); color: #fff; font-size: 1.2rem; cursor: pointer; transition: transform 0.2s; }
+#startBtn:hover, #restartBtn:hover { transform: scale(1.02); }
+.result-panel { display: none; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 20px 0; text-align: center; }
+.result-panel.show { display: block; }
+.result-panel h3 { color: #f39c12; margin-bottom: 20px; font-size: 1.5rem; }
+.final-score { margin-bottom: 20px; }
+.final-score span:first-child { font-size: 4rem; font-weight: bold; display: block; color: #f39c12; }
+.final-score .label { color: #888; }
+footer { text-align: center; padding: 20px; color: #666; }
