@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacuum Chamber 真空室 - Web Toy 197</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vacuum Chamber</h1>
+            <p class="subtitle">真空室實驗模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="vacuumCanvas"></canvas>
+            <div class="pressure-gauge">
+                <div class="gauge-needle" id="gaugeNeedle"></div>
+                <div class="gauge-label">壓力計</div>
+            </div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>真空泵控制</h3>
+                <div class="control-row">
+                    <button id="pumpBtn" class="pump-btn">啟動真空泵</button>
+                </div>
+                <div class="control-row">
+                    <button id="releaseBtn" class="release-btn">釋放氣體</button>
+                </div>
+                <div class="control-row">
+                    <label>物品</label>
+                    <select id="objectSelect">
+                        <option value="balloon">氣球</option>
+                        <option value="marshmallow">棉花糖</option>
+                        <option value="shavingCream">刮鬍泡</option>
+                    </select>
+                </div>
+            </div>
+            <div class="stats-box">
+                <h4>真空狀態</h4>
+                <div class="stat-row"><span>壓力:</span><span id="pressure">1.00 atm</span></div>
+                <div class="stat-row"><span>真空度:</span><span id="vacuum">0%</span></div>
+                <div class="stat-row"><span>泵狀態:</span><span id="pumpStatus">停止</span></div>
+            </div>
+            <div class="info-box">
+                <h4>波以耳定律</h4>
+                <p>在恆溫下，氣體壓力與體積成反比。當真空室內壓力降低時，內部物體會膨脹。</p>
+                <p class="formula">P₁V₁ = P₂V₂</p>
+            </div>
+        </div>
+        <footer><p>啟動真空泵觀察物體在低壓下的變化 | Web Toy #197</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
