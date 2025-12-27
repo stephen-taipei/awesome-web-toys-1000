@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standing Wave 駐波 - Web Toy 183</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Standing Wave</h1>
+            <p class="subtitle">弦上駐波模擬</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="waveCanvas"></canvas>
+            <div class="node-labels" id="nodeLabels"></div>
+        </div>
+
+        <div class="harmonic-selector">
+            <h3>諧波選擇</h3>
+            <div class="harmonic-buttons">
+                <button class="harmonic-btn active" data-n="1">基頻 (n=1)</button>
+                <button class="harmonic-btn" data-n="2">二次諧波</button>
+                <button class="harmonic-btn" data-n="3">三次諧波</button>
+                <button class="harmonic-btn" data-n="4">四次諧波</button>
+                <button class="harmonic-btn" data-n="5">五次諧波</button>
+                <button class="harmonic-btn" data-n="6">六次諧波</button>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>波的參數</h3>
+                <div class="control-row">
+                    <label>振幅</label>
+                    <input type="range" id="amplitude" min="20" max="100" value="60">
+                    <span id="amplitudeValue">60</span>
+                </div>
+                <div class="control-row">
+                    <label>頻率</label>
+                    <input type="range" id="frequency" min="0.5" max="5" step="0.1" value="1">
+                    <span id="frequencyValue">1.0x</span>
+                </div>
+                <div class="control-row">
+                    <label>阻尼</label>
+                    <input type="range" id="damping" min="0" max="0.1" step="0.005" value="0">
+                    <span id="dampingValue">0%</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>顯示選項</h3>
+                <div class="control-row checkbox-row">
+                    <label>
+                        <input type="checkbox" id="showEnvelope" checked>
+                        顯示包絡線
+                    </label>
+                    <label>
+                        <input type="checkbox" id="showComponents" checked>
+                        顯示分量波
+                    </label>
+                </div>
+                <div class="control-row checkbox-row">
+                    <label>
+                        <input type="checkbox" id="showNodes" checked>
+                        標記節點
+                    </label>
+                    <label>
+                        <input type="checkbox" id="showAntinodes" checked>
+                        標記波腹
+                    </label>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="playBtn">暫停</button>
+                <button id="resetBtn">重置</button>
+                <button id="pluckBtn">撥弦</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="wave-info">
+                <div class="info-item">
+                    <span class="info-label">諧波數</span>
+                    <span class="info-value" id="harmonicN">n = 1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">節點數</span>
+                    <span class="info-value" id="nodeCount">2</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">波腹數</span>
+                    <span class="info-value" id="antinodeCount">1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">波長</span>
+                    <span class="info-value" id="wavelength">λ = 2L</span>
+                </div>
+            </div>
+
+            <div class="formula-section">
+                <h3>駐波公式</h3>
+                <p class="formula">y = 2A sin(kx) cos(ωt)</p>
+                <p class="explanation">駐波是由兩列振幅、頻率相同、方向相反的行波疊加形成。節點處振幅始終為零，波腹處振幅最大。</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>點擊諧波按鈕切換模式 | 使用撥弦按鈕啟動振動 | Web Toy #183</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
