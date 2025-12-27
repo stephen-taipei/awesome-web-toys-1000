@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Timer 反應測試 - Web Toy 221</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reaction Timer</h1>
+            <p class="subtitle">測試你的反應速度</p>
+        </header>
+        <div class="game-area" id="gameArea">
+            <div class="instruction" id="instruction">點擊開始</div>
+            <div class="result" id="result"></div>
+        </div>
+        <div class="stats-panel">
+            <div class="stat">
+                <span class="label">最佳成績</span>
+                <span class="value" id="bestTime">-- ms</span>
+            </div>
+            <div class="stat">
+                <span class="label">平均成績</span>
+                <span class="value" id="avgTime">-- ms</span>
+            </div>
+            <div class="stat">
+                <span class="label">測試次數</span>
+                <span class="value" id="attempts">0</span>
+            </div>
+        </div>
+        <div class="history-panel">
+            <h3>歷史記錄</h3>
+            <div class="history-list" id="historyList"></div>
+        </div>
+        <button id="resetBtn">重置記錄</button>
+        <footer><p>當畫面變綠時立即點擊 | Web Toy #221</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
