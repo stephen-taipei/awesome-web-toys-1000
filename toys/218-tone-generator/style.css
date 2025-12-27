@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 700px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #f39c12, #e74c3c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.generator-display { text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(243,156,18,0.1), rgba(231,76,60,0.1)); border-radius: 20px; margin: 20px 0; }
+.freq-display { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; }
+.freq-display input { font-size: 3rem; width: 200px; text-align: center; background: transparent; border: none; border-bottom: 3px solid #f39c12; color: #f39c12; font-weight: bold; outline: none; }
+.freq-display .unit { font-size: 2rem; color: #888; }
+.note-display { font-size: 1.5rem; color: #e74c3c; margin-bottom: 20px; }
+#waveCanvas { width: 100%; height: 100px; background: rgba(0,0,0,0.3); border-radius: 10px; }
+.preset-notes { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 20px 0; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; }
+.note-btn { padding: 15px 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 10px; background: transparent; color: #fff; font-size: 1.1rem; cursor: pointer; transition: all 0.2s; }
+.note-btn:hover { border-color: #f39c12; background: rgba(243,156,18,0.1); }
+.note-btn.active { border-color: #f39c12; background: #f39c12; color: #000; }
+.controls-panel { display: grid; gap: 20px; margin: 20px 0; }
+.control-group { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.control-group h3 { margin-bottom: 15px; color: #f39c12; text-align: center; }
+.wave-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.wave-btn { padding: 10px 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; background: transparent; color: #fff; cursor: pointer; transition: all 0.2s; }
+.wave-btn:hover, .wave-btn.active { border-color: #e74c3c; background: #e74c3c; }
+.control-row { display: flex; align-items: center; gap: 15px; }
+.control-row input[type="range"] { flex: 1; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.2); -webkit-appearance: none; }
+.control-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #f39c12, #e74c3c); cursor: pointer; }
+.control-row span { min-width: 50px; text-align: right; color: #aaa; }
+.play-control { text-align: center; }
+#playBtn { padding: 20px 60px; border: none; border-radius: 30px; font-size: 1.3rem; cursor: pointer; background: linear-gradient(135deg, #f39c12, #e74c3c); color: #fff; transition: transform 0.2s; }
+#playBtn:hover { transform: scale(1.05); }
+#playBtn.playing { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+footer { text-align: center; padding: 20px; color: #666; }
