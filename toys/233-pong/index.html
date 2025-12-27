@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong 乒乓球 - Web Toy 233</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pong</h1>
+            <p class="subtitle">經典乒乓球對戰</p>
+        </header>
+        <div class="score-board">
+            <div class="player-score">
+                <span class="label">玩家</span>
+                <span class="score" id="playerScore">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="player-score">
+                <span class="label">電腦</span>
+                <span class="score" id="cpuScore">0</span>
+            </div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <footer><p>移動滑鼠或觸控控制擋板 | Web Toy #233</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
