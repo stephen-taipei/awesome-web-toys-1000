@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #636e72, #2d3436); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.info { text-align: center; font-size: 1.2rem; margin-bottom: 10px; }
+canvas { display: block; margin: 0 auto; background: linear-gradient(to bottom, #87ceeb 0%, #87ceeb 70%, #2d3436 70%); border-radius: 15px; cursor: crosshair; }
+.controls { display: flex; gap: 10px; margin: 15px 0; }
+.test-btn, .reset-btn { flex: 1; padding: 15px; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s; }
+.test-btn { background: #00b894; color: #fff; }
+.reset-btn { background: #636e72; color: #fff; }
+.test-btn:hover, .reset-btn:hover { transform: scale(1.02); }
+.result { text-align: center; font-size: 1.1rem; min-height: 30px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

@@ -1,0 +1,10 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #a29bfe, #6c5ce7); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.score { text-align: center; font-size: 1.3rem; margin-bottom: 10px; }
+canvas { display: block; margin: 0 auto; background: linear-gradient(to bottom, #dfe6e9, #b2bec3); border-radius: 15px; cursor: pointer; }
+.result { text-align: center; font-size: 1.2rem; margin: 15px 0; min-height: 30px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
