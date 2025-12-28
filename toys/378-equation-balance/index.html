@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equation Balance 等式平衡 - Web Toy 378</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Equation Balance</h1><p class="subtitle">等式平衡</p></header>
+        <div class="balance">
+            <div class="side left">
+                <div class="plate" id="leftPlate"></div>
+                <div class="sum">= <span id="leftSum">0</span></div>
+            </div>
+            <div class="fulcrum"></div>
+            <div class="side right">
+                <div class="plate" id="rightPlate"></div>
+                <div class="sum">= <span id="rightSum">0</span></div>
+            </div>
+        </div>
+        <div class="status" id="status">拖曳數字到天平上</div>
+        <div class="numbers" id="numbers"></div>
+        <div class="score">分數: <span id="score">0</span></div>
+        <footer><p>等式平衡 | Web Toy #378</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

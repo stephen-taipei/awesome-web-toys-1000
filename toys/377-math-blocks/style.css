@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #00cec9, #81ecec); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.info { display: flex; justify-content: space-around; margin: 20px 0; }
+.target, .selected { background: rgba(255,255,255,0.2); padding: 15px 25px; border-radius: 12px; font-size: 1.1rem; }
+.target span, .selected span { font-weight: bold; font-size: 1.5rem; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
+.block { aspect-ratio: 1; background: rgba(255,255,255,0.9); color: #00cec9; border: none; border-radius: 12px; font-size: 1.8rem; font-weight: bold; cursor: pointer; transition: all 0.2s; }
+.block:hover { transform: scale(1.05); }
+.block.selected { background: #0984e3; color: #fff; transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.block.cleared { opacity: 0; transform: scale(0); pointer-events: none; }
+.result { text-align: center; font-size: 1.3rem; margin: 15px 0; min-height: 40px; }
+.score { text-align: center; font-size: 1.2rem; background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
