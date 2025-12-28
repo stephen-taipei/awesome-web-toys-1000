@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip 擲硬幣 - Web Toy 279</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Coin Flip</h1><p class="subtitle">擲硬幣決定</p></header>
+        <div class="coin-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="result" id="result">點擊硬幣</div>
+        <div class="stats">
+            <span id="headsCount">正面: 0</span>
+            <span id="tailsCount">反面: 0</span>
+        </div>
+        <div class="controls">
+            <button id="flipBtn">擲硬幣</button>
+            <button id="resetBtn">重設統計</button>
+        </div>
+        <footer><p>擲硬幣 | Web Toy #279</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

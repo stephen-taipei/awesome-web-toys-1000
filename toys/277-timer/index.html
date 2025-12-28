@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer 計時器 - Web Toy 277</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Timer</h1><p class="subtitle">倒數計時器</p></header>
+        <div class="timer-display" id="timerDisplay">00:00</div>
+        <div class="progress-ring">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="time-input">
+            <input type="number" id="minutes" min="0" max="99" value="5" placeholder="分">
+            <span>:</span>
+            <input type="number" id="seconds" min="0" max="59" value="0" placeholder="秒">
+        </div>
+        <div class="controls">
+            <button id="startBtn">開始</button>
+            <button id="resetBtn">重設</button>
+        </div>
+        <footer><p>計時器 | Web Toy #277</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
