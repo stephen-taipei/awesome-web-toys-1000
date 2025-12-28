@@ -1,0 +1,18 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2c3e50, #4ca1af); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.quote-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 20px; text-align: center; margin: 30px 0; min-height: 200px; display: flex; flex-direction: column; justify-content: center; }
+.quote-mark { font-size: 4rem; color: rgba(255,255,255,0.3); line-height: 1; margin-bottom: -20px; }
+.quote-text { font-size: 1.3rem; line-height: 1.8; margin: 20px 0; font-style: italic; }
+.quote-author { font-size: 1rem; color: rgba(255,255,255,0.7); }
+.quote-author::before { content: '— '; }
+.categories { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+.cat-btn { padding: 10px 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; background: transparent; color: #fff; cursor: pointer; transition: all 0.3s; }
+.cat-btn:hover, .cat-btn.active { background: rgba(255,255,255,0.2); border-color: #fff; }
+.controls { text-align: center; margin: 20px 0; }
+#newBtn { padding: 18px 50px; border: none; border-radius: 30px; background: #fff; color: #2c3e50; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: transform 0.3s; }
+#newBtn:hover { transform: scale(1.05); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

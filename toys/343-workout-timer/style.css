@@ -1,0 +1,22 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #ff6b6b, #ee5a24); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; text-align: center; }
+header { padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.workout-display { background: rgba(0,0,0,0.2); padding: 30px; border-radius: 20px; margin: 20px 0; }
+.phase { font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase; }
+.timer { font-size: 5rem; font-weight: bold; font-family: monospace; }
+.round { font-size: 1.2rem; margin-top: 10px; color: rgba(255,255,255,0.8); }
+.settings { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.setting { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.setting:last-child { border-bottom: none; }
+.input-group { display: flex; align-items: center; gap: 15px; }
+.adj-btn { width: 35px; height: 35px; border: none; border-radius: 50%; background: rgba(255,255,255,0.2); color: #fff; font-size: 1.2rem; cursor: pointer; }
+.adj-btn:hover { background: rgba(255,255,255,0.3); }
+.controls { display: flex; gap: 15px; margin: 20px 0; }
+.controls button { flex: 1; padding: 18px; border: none; border-radius: 15px; font-size: 1.1rem; cursor: pointer; font-weight: bold; }
+#startBtn { background: #fff; color: #ee5a24; }
+#resetBtn { background: rgba(255,255,255,0.2); color: #fff; }
+footer { padding: 15px; color: rgba(255,255,255,0.6); }
+body.resting { background: linear-gradient(135deg, #11998e, #38ef7d); }

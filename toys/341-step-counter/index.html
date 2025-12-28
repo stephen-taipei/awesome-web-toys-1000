@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Counter 步數計數器 - Web Toy 341</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Step Counter</h1><p class="subtitle">步數計數器</p></header>
+        <div class="counter-display">
+            <div class="progress-ring">
+                <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress" id="progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="steps-info">
+                    <div class="steps" id="steps">0</div>
+                    <div class="goal">/ <span id="goalDisplay">10000</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat"><span class="stat-value" id="distance">0.0</span><span class="stat-label">公里</span></div>
+            <div class="stat"><span class="stat-value" id="calories">0</span><span class="stat-label">卡路里</span></div>
+        </div>
+        <div class="controls">
+            <button id="stepBtn" class="step-btn">👟 記錄步數</button>
+            <button id="resetBtn" class="reset-btn">重置</button>
+        </div>
+        <footer><p>步數計數器 | Web Toy #341</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

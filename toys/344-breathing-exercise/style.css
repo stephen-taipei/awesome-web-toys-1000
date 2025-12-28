@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; text-align: center; }
+header { padding: 15px 0; }
+header h1 { font-size: 2.5rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.breathing-display { margin: 40px 0; display: flex; justify-content: center; }
+.circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: transform 4s ease-in-out; }
+.circle.inhale { transform: scale(1.3); }
+.circle.exhale { transform: scale(1); }
+.inner-circle { width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.instruction { font-size: 1.5rem; font-weight: bold; }
+.timer { font-size: 3rem; font-weight: bold; margin-top: 5px; }
+.patterns { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.pattern-btn { padding: 15px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: transparent; color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+.pattern-btn:hover, .pattern-btn.active { background: rgba(255,255,255,0.2); border-color: #fff; }
+.controls { margin: 20px 0; }
+#startBtn { width: 100%; padding: 18px; border: none; border-radius: 30px; background: #fff; color: #667eea; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+.cycles { font-size: 1.2rem; color: rgba(255,255,255,0.8); margin: 20px 0; }
+footer { padding: 15px; color: rgba(255,255,255,0.6); }

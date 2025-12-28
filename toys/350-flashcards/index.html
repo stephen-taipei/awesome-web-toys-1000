@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards 單字卡 - Web Toy 350</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Flashcards</h1><p class="subtitle">單字卡</p></header>
+        <div class="progress">
+            <span id="progress">1 / 10</span>
+        </div>
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard">
+                <div class="front" id="front">Hello</div>
+                <div class="back" id="back">你好</div>
+            </div>
+        </div>
+        <div class="hint">點擊卡片翻面</div>
+        <div class="controls">
+            <button id="prevBtn">◀ 上一張</button>
+            <button id="nextBtn">下一張 ▶</button>
+        </div>
+        <div class="add-card">
+            <input type="text" id="frontInput" placeholder="正面文字">
+            <input type="text" id="backInput" placeholder="背面文字">
+            <button id="addBtn">新增卡片</button>
+        </div>
+        <footer><p>單字卡 | Web Toy #350</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

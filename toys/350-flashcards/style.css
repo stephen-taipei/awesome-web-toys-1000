@@ -1,0 +1,21 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #74ebd5, #acb6e5); min-height: 100vh; color: #333; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #2d3436; }
+.subtitle { color: #636e72; }
+.progress { text-align: center; margin: 10px 0; font-size: 1.1rem; color: #636e72; }
+.flashcard-container { perspective: 1000px; margin: 20px 0; }
+.flashcard { width: 100%; height: 200px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer; }
+.flashcard.flipped { transform: rotateY(180deg); }
+.front, .back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; padding: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.front { background: #fff; color: #2d3436; }
+.back { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; transform: rotateY(180deg); }
+.hint { text-align: center; color: #636e72; font-size: 0.9rem; margin: 10px 0; }
+.controls { display: flex; gap: 15px; margin: 20px 0; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: #fff; color: #2d3436; font-size: 1rem; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+.controls button:hover { background: #f5f5f5; }
+.add-card { display: flex; flex-direction: column; gap: 10px; margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 15px; }
+.add-card input { padding: 12px; border: none; border-radius: 8px; font-size: 1rem; }
+.add-card button { padding: 12px; border: none; border-radius: 8px; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; font-size: 1rem; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #636e72; }

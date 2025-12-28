@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #ff9a9e, #fecfef); min-height: 100vh; color: #333; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; color: #e84393; }
+.subtitle { color: #888; }
+.summary-card { background: #fff; padding: 25px; border-radius: 20px; text-align: center; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.remaining .value { display: block; font-size: 3rem; font-weight: bold; color: #e84393; }
+.remaining .label { color: #888; }
+.breakdown { display: flex; justify-content: space-around; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+.breakdown .item { display: flex; flex-direction: column; gap: 5px; }
+.breakdown .consumed span:last-child { color: #e74c3c; }
+.quick-add { margin: 20px 0; }
+.quick-add h3 { margin-bottom: 15px; color: #e84393; }
+.food-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.food-btn { padding: 15px; border: none; border-radius: 15px; background: #fff; font-size: 1rem; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
+.food-btn:hover { transform: scale(1.05); }
+.food-btn:active { transform: scale(0.95); }
+.custom-add { display: flex; gap: 10px; margin: 20px 0; }
+.custom-add input { flex: 1; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; }
+.custom-add button { padding: 15px 25px; border: none; border-radius: 10px; background: #e84393; color: #fff; font-size: 1rem; cursor: pointer; }
+.reset-btn { width: 100%; padding: 15px; border: 2px solid #e84393; border-radius: 10px; background: transparent; color: #e84393; font-size: 1rem; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #888; }
