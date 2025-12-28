@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator 密碼產生器 - Web Toy 320</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Password Gen</h1><p class="subtitle">安全密碼產生器</p></header>
+        <div class="password-display">
+            <div class="password" id="password">點擊產生</div>
+            <button class="copy-btn" id="copyBtn">📋</button>
+        </div>
+        <div class="strength" id="strength"></div>
+        <div class="options">
+            <label>長度: <span id="lengthValue">16</span>
+                <input type="range" id="length" min="8" max="32" value="16">
+            </label>
+            <label><input type="checkbox" id="uppercase" checked> 大寫字母 (A-Z)</label>
+            <label><input type="checkbox" id="lowercase" checked> 小寫字母 (a-z)</label>
+            <label><input type="checkbox" id="numbers" checked> 數字 (0-9)</label>
+            <label><input type="checkbox" id="symbols" checked> 符號 (!@#$)</label>
+        </div>
+        <div class="controls">
+            <button id="generateBtn">產生密碼</button>
+        </div>
+        <footer><p>密碼產生器 | Web Toy #320</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

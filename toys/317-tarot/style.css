@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a0a2e, #2d1b4e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #ffd700; }
+.subtitle { color: #888; }
+.cards { display: flex; justify-content: center; gap: 10px; margin: 30px 0; perspective: 1000px; }
+.card { width: 80px; height: 120px; background: linear-gradient(145deg, #2d1b4e, #1a0a2e); border: 2px solid #ffd700; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 2rem; transition: transform 0.6s; transform-style: preserve-3d; }
+.card:hover { transform: translateY(-10px); }
+.card.flipped { transform: rotateY(180deg); }
+.card.selected { border-color: #ff6b6b; box-shadow: 0 0 20px rgba(255,107,107,0.5); }
+.reading { text-align: center; font-size: 1.1rem; color: #ffd700; margin: 20px 0; min-height: 100px; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 10px; }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(145deg, #ffd700, #ffb300); color: #1a0a2e; font-size: 1rem; font-weight: bold; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #666; }

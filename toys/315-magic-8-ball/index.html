@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 Ball 魔法8號球 - Web Toy 315</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Magic 8 Ball</h1><p class="subtitle">搖晃尋求答案</p></header>
+        <div class="ball-area">
+            <div class="ball" id="ball">
+                <div class="window">
+                    <div class="answer" id="answer">8</div>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <input type="text" id="questionInput" placeholder="問一個是非題...">
+        </div>
+        <div class="controls">
+            <button id="shakeBtn">搖晃!</button>
+        </div>
+        <footer><p>魔法8號球 | Web Toy #315</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
