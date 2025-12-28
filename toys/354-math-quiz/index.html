@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz 數學測驗 - Web Toy 354</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Math Quiz</h1><p class="subtitle">數學測驗</p></header>
+        <div class="stats">
+            <div class="stat">正確: <span id="correct">0</span></div>
+            <div class="stat">連續: <span id="streak">0</span></div>
+            <div class="stat">時間: <span id="time">30</span>s</div>
+        </div>
+        <div class="difficulty">
+            <button class="diff-btn active" data-diff="easy">簡單</button>
+            <button class="diff-btn" data-diff="medium">中等</button>
+            <button class="diff-btn" data-diff="hard">困難</button>
+        </div>
+        <div class="question-area">
+            <div class="question" id="question">? + ? = ?</div>
+            <input type="number" id="answer" class="answer-input" placeholder="答案">
+        </div>
+        <button id="submitBtn" class="submit-btn">提交</button>
+        <div class="result" id="result"></div>
+        <footer><p>數學測驗 | Web Toy #354</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

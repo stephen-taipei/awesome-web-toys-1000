@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2c3e50, #3498db); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.score { text-align: center; font-size: 1.3rem; margin: 15px 0; background: rgba(255,255,255,0.1); padding: 12px; border-radius: 10px; }
+.flag-display { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; text-align: center; margin: 20px 0; }
+.flag { font-size: 6rem; margin-bottom: 15px; }
+.prompt { font-size: 1.2rem; color: rgba(255,255,255,0.8); }
+.options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.option { padding: 18px 15px; border: 2px solid rgba(255,255,255,0.3); border-radius: 12px; background: transparent; color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+.option:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+.option.correct { background: #27ae60; border-color: #27ae60; }
+.option.wrong { background: #e74c3c; border-color: #e74c3c; }
+.result { text-align: center; font-size: 1.2rem; margin: 20px 0; min-height: 30px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

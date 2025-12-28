@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game 打字遊戲 - Web Toy 352</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Typing Game</h1><p class="subtitle">打字遊戲</p></header>
+        <div class="stats">
+            <div class="stat"><span id="wpm">0</span><label>WPM</label></div>
+            <div class="stat"><span id="accuracy">100</span><label>準確率%</label></div>
+            <div class="stat"><span id="time">60</span><label>秒</label></div>
+        </div>
+        <div class="text-display" id="textDisplay"></div>
+        <input type="text" id="input" class="input" placeholder="在這裡輸入..." disabled>
+        <button id="startBtn" class="start-btn">開始遊戲</button>
+        <footer><p>打字遊戲 | Web Toy #352</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
