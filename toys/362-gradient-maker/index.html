@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Maker 漸層產生器 - Web Toy 362</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Gradient Maker</h1><p class="subtitle">漸層產生器</p></header>
+        <div class="gradient-display" id="gradientDisplay"></div>
+        <div class="controls">
+            <div class="color-row">
+                <label>色彩 1</label>
+                <input type="color" id="color1" value="#6c5ce7">
+            </div>
+            <div class="color-row">
+                <label>色彩 2</label>
+                <input type="color" id="color2" value="#00cec9">
+            </div>
+            <div class="direction-row">
+                <label>方向</label>
+                <select id="direction">
+                    <option value="to right">向右 →</option>
+                    <option value="to left">向左 ←</option>
+                    <option value="to bottom">向下 ↓</option>
+                    <option value="to top">向上 ↑</option>
+                    <option value="to bottom right">右下 ↘</option>
+                    <option value="to bottom left">左下 ↙</option>
+                    <option value="to top right">右上 ↗</option>
+                    <option value="to top left">左上 ↖</option>
+                </select>
+            </div>
+        </div>
+        <div class="css-output">
+            <label>CSS 程式碼</label>
+            <code id="cssCode"></code>
+        </div>
+        <button class="copy-btn" id="copyBtn">複製 CSS</button>
+        <div class="message" id="message"></div>
+        <footer><p>漸層產生器 | Web Toy #362</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

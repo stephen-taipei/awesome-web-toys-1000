@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Wheel 色環 - Web Toy 368</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Wheel</h1><p class="subtitle">色環</p></header>
+        <div class="wheel-container">
+            <canvas id="colorWheel" width="300" height="300"></canvas>
+        </div>
+        <div class="selected-color" id="selectedColor"></div>
+        <div class="color-info">
+            <div class="info-row"><span>HEX</span><span id="hexValue">#FF0000</span></div>
+            <div class="info-row"><span>RGB</span><span id="rgbValue">255, 0, 0</span></div>
+            <div class="info-row"><span>HSL</span><span id="hslValue">0°, 100%, 50%</span></div>
+        </div>
+        <div class="message" id="message"></div>
+        <footer><p>色環 | Web Toy #368</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

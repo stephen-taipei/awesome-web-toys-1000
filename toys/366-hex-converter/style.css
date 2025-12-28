@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2d3436, #636e72); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.color-preview { height: 100px; border-radius: 15px; margin: 20px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: background-color 0.3s; }
+.input-group { background: rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 10px; margin: 10px 0; display: flex; align-items: center; gap: 15px; }
+.input-group label { width: 50px; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+.input-group input { flex: 1; background: transparent; border: none; color: #fff; font-size: 1rem; font-family: monospace; outline: none; }
+.input-group input::placeholder { color: rgba(255,255,255,0.4); }
+.message { text-align: center; margin-top: 15px; min-height: 24px; color: #e74c3c; font-size: 0.9rem; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

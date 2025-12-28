@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2d3436, #636e72); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.color-display { height: 120px; border-radius: 20px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: background-color 0.1s; }
+.hex-display { text-align: center; font-family: monospace; font-size: 1.5rem; margin-bottom: 20px; }
+.sliders { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; }
+.slider-row { display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.slider-row:last-child { border-bottom: none; }
+.slider-row .label { width: 25px; font-weight: bold; font-size: 1.2rem; }
+.slider-row.red .label { color: #e74c3c; }
+.slider-row.green .label { color: #27ae60; }
+.slider-row.blue .label { color: #3498db; }
+.slider-row input[type="range"] { flex: 1; height: 8px; -webkit-appearance: none; background: rgba(255,255,255,0.2); border-radius: 4px; outline: none; }
+.slider-row.red input::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; background: #e74c3c; border-radius: 50%; cursor: pointer; }
+.slider-row.green input::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; background: #27ae60; border-radius: 50%; cursor: pointer; }
+.slider-row.blue input::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; background: #3498db; border-radius: 50%; cursor: pointer; }
+.slider-row .value { width: 40px; text-align: right; font-family: monospace; }
+.random-btn { width: 100%; padding: 15px; margin-top: 20px; background: linear-gradient(135deg, #6c5ce7, #a29bfe); border: none; border-radius: 12px; color: #fff; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+.random-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(108,92,231,0.4); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

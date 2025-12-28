@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrast Checker 對比度檢查 - Web Toy 365</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Contrast Checker</h1><p class="subtitle">對比度檢查</p></header>
+        <div class="preview" id="preview">
+            <span class="preview-text">範例文字 Sample Text</span>
+        </div>
+        <div class="controls">
+            <div class="color-row">
+                <label>前景色</label>
+                <input type="color" id="foreground" value="#ffffff">
+            </div>
+            <div class="color-row">
+                <label>背景色</label>
+                <input type="color" id="background" value="#6c5ce7">
+            </div>
+        </div>
+        <div class="ratio-display">
+            <div class="ratio-value" id="ratioValue">8.59:1</div>
+            <div class="ratio-label">對比度</div>
+        </div>
+        <div class="wcag-results" id="wcagResults"></div>
+        <footer><p>對比度檢查 | Web Toy #365</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
