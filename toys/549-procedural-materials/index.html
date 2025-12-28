@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Materials 程序材質 - Web Toy 549</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Procedural Materials</h1><p class="subtitle">程序材質</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="materialSelect">
+                <option value="noise">噪聲</option>
+                <option value="voronoi">泰森多邊形</option>
+                <option value="fractal">碎形</option>
+                <option value="gradient">漸層</option>
+            </select>
+            <label>縮放:</label>
+            <input type="range" id="scaleSlider" min="1" max="20" value="5">
+        </div>
+        <div class="info" id="info">純數學生成的程序紋理</div>
+        <footer><p>程序材質 | Web Toy #549</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

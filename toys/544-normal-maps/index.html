@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Maps 法線貼圖 - Web Toy 544</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Normal Maps</h1><p class="subtitle">法線貼圖</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="patternSelect">
+                <option value="bumps">凹凸</option>
+                <option value="tiles">磁磚</option>
+                <option value="waves">波浪</option>
+                <option value="cracks">裂紋</option>
+            </select>
+            <label>強度:</label>
+            <input type="range" id="strengthSlider" min="0" max="100" value="50">
+        </div>
+        <div class="info" id="info">法線貼圖產生凹凸效果</div>
+        <footer><p>法線貼圖 | Web Toy #544</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

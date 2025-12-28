@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texture Mapping 貼圖映射 - Web Toy 543</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Texture Mapping</h1><p class="subtitle">貼圖映射</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="textureSelect">
+                <option value="checker">棋盤格</option>
+                <option value="brick">磚塊</option>
+                <option value="wood">木紋</option>
+                <option value="marble">大理石</option>
+            </select>
+            <select id="mappingSelect">
+                <option value="sphere">球形</option>
+                <option value="cylinder">圓柱</option>
+                <option value="planar">平面</option>
+            </select>
+        </div>
+        <div class="info" id="info">UV貼圖映射展示</div>
+        <footer><p>貼圖映射 | Web Toy #543</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
