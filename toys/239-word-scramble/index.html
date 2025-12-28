@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble 拼字遊戲 - Web Toy 239</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Word Scramble</h1>
+            <p class="subtitle">重組打亂的字母</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">連對: <span id="streak">0</span></div>
+        </div>
+        <div class="game-area">
+            <div class="scrambled" id="scrambled">WORD</div>
+            <div class="hint" id="hint">提示會顯示在這裡</div>
+            <input type="text" id="answer" placeholder="輸入答案..." autocomplete="off">
+            <button id="submitBtn">確認</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+        <div class="actions">
+            <button id="hintBtn">💡 提示</button>
+            <button id="skipBtn">⏭️ 跳過</button>
+        </div>
+        <footer><p>猜出正確的單字 | Web Toy #239</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
