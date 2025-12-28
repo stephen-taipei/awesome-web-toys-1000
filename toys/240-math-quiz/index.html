@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz 數學挑戰 - Web Toy 240</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Math Quiz</h1>
+            <p class="subtitle">快速數學挑戰</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">時間: <span id="timer">60</span>秒</div>
+            <div class="stat">連對: <span id="streak">0</span></div>
+        </div>
+        <div class="game-area">
+            <div class="question" id="question">5 + 3 = ?</div>
+            <div class="options" id="options"></div>
+            <div class="progress-bar"><div class="progress" id="progress"></div></div>
+        </div>
+        <button id="startBtn">開始挑戰</button>
+        <div class="result-panel" id="resultPanel">
+            <h3>挑戰結束!</h3>
+            <div class="final-score">
+                <span id="finalScore">0</span>
+                <span class="label">最終分數</span>
+            </div>
+            <div class="stats">答對 <span id="correct">0</span> 題</div>
+            <button id="restartBtn">再玩一次</button>
+        </div>
+        <footer><p>在時間內答對最多題目 | Web Toy #240</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
