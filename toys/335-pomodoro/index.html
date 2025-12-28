@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro 番茄鐘 - Web Toy 335</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pomodoro</h1><p class="subtitle">番茄鐘</p></header>
+        <div class="modes">
+            <button class="mode-btn active" data-mode="work">專注</button>
+            <button class="mode-btn" data-mode="short">短休</button>
+            <button class="mode-btn" data-mode="long">長休</button>
+        </div>
+        <div class="timer-display">
+            <div class="timer-circle">
+                <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress" id="progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="time" id="time">25:00</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn">開始</button>
+            <button id="resetBtn">重置</button>
+        </div>
+        <div class="sessions">完成: <span id="sessions">0</span> 個番茄</div>
+        <footer><p>番茄鐘 | Web Toy #335</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

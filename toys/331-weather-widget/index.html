@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget 天氣小工具 - Web Toy 331</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Weather Widget</h1><p class="subtitle">天氣小工具</p></header>
+        <div class="weather-card" id="weatherCard">
+            <div class="location" id="location">台北市</div>
+            <div class="weather-icon" id="weatherIcon">☀️</div>
+            <div class="temp" id="temp">25°C</div>
+            <div class="desc" id="desc">晴朗</div>
+            <div class="details">
+                <div class="detail"><span>💧</span><span id="humidity">65%</span></div>
+                <div class="detail"><span>💨</span><span id="wind">12 km/h</span></div>
+            </div>
+        </div>
+        <div class="cities">
+            <button class="city-btn active" data-city="taipei">台北</button>
+            <button class="city-btn" data-city="tokyo">東京</button>
+            <button class="city-btn" data-city="newyork">紐約</button>
+            <button class="city-btn" data-city="london">倫敦</button>
+        </div>
+        <footer><p>天氣小工具 | Web Toy #331</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

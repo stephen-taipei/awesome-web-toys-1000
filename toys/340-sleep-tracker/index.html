@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Tracker 睡眠追蹤 - Web Toy 340</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Sleep Tracker</h1><p class="subtitle">睡眠追蹤</p></header>
+        <div class="sleep-input">
+            <div class="time-input">
+                <label>入睡時間</label>
+                <input type="time" id="sleepTime" value="23:00">
+            </div>
+            <div class="time-input">
+                <label>起床時間</label>
+                <input type="time" id="wakeTime" value="07:00">
+            </div>
+            <button id="logBtn">記錄睡眠</button>
+        </div>
+        <div class="stats-card" id="statsCard">
+            <div class="stat">
+                <span class="stat-value" id="avgSleep">--</span>
+                <span class="stat-label">平均睡眠</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" id="totalLogs">0</span>
+                <span class="stat-label">記錄天數</span>
+            </div>
+        </div>
+        <div class="history" id="history"></div>
+        <footer><p>睡眠追蹤 | Web Toy #340</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

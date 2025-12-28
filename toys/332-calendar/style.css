@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2c3e50, #3498db); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; }
+.subtitle { color: #aaa; }
+.calendar { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; margin: 20px 0; }
+.cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.cal-header button { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 5px 15px; }
+.cal-header span { font-size: 1.3rem; font-weight: bold; }
+.weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 10px; }
+.weekdays span { text-align: center; font-weight: bold; color: #74b9ff; padding: 10px 0; }
+.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+.day:hover { background: rgba(255,255,255,0.2); }
+.day.today { background: #3498db; font-weight: bold; }
+.day.other-month { color: rgba(255,255,255,0.3); }
+.day.selected { background: #e74c3c; }
+footer { text-align: center; padding: 15px; color: #888; }

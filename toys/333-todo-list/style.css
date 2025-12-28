@@ -1,0 +1,21 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.add-task { display: flex; gap: 10px; margin: 20px 0; }
+.add-task input { flex: 1; padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.2); color: #fff; font-size: 1rem; }
+.add-task input::placeholder { color: rgba(255,255,255,0.6); }
+.add-task button { width: 50px; border: none; border-radius: 10px; background: #fff; color: #667eea; font-size: 1.5rem; cursor: pointer; }
+.filters { display: flex; gap: 10px; margin-bottom: 20px; }
+.filter-btn { flex: 1; padding: 10px; border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; background: transparent; color: #fff; cursor: pointer; transition: all 0.3s; }
+.filter-btn:hover, .filter-btn.active { background: rgba(255,255,255,0.2); border-color: #fff; }
+.tasks { list-style: none; }
+.task-item { display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 10px; }
+.task-item.completed .task-text { text-decoration: line-through; opacity: 0.6; }
+.task-item input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; }
+.task-text { flex: 1; }
+.delete-btn { background: none; border: none; color: #e74c3c; font-size: 1.2rem; cursor: pointer; }
+.stats { text-align: center; margin-top: 20px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

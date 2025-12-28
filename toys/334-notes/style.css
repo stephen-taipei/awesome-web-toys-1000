@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f5f5dc, #deb887); min-height: 100vh; color: #333; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #8b4513; }
+.subtitle { color: #a0522d; }
+.add-btn { width: 100%; padding: 15px; border: 2px dashed #8b4513; border-radius: 10px; background: rgba(255,255,255,0.5); color: #8b4513; font-size: 1rem; cursor: pointer; margin: 20px 0; }
+.notes { display: flex; flex-direction: column; gap: 15px; }
+.note { padding: 20px; border-radius: 5px; position: relative; box-shadow: 3px 3px 10px rgba(0,0,0,0.1); transform: rotate(-1deg); }
+.note:nth-child(even) { transform: rotate(1deg); }
+.note.yellow { background: #fff740; }
+.note.pink { background: #ff7eb9; }
+.note.blue { background: #7afcff; }
+.note.green { background: #7fff7f; }
+.note textarea { width: 100%; min-height: 100px; border: none; background: transparent; font-family: inherit; font-size: 1rem; resize: none; outline: none; }
+.note .delete { position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 1.2rem; cursor: pointer; opacity: 0.5; }
+.note .delete:hover { opacity: 1; }
+.note .color-picker { position: absolute; bottom: 5px; right: 10px; display: flex; gap: 5px; }
+.note .color-picker span { width: 15px; height: 15px; border-radius: 50%; cursor: pointer; border: 1px solid rgba(0,0,0,0.2); }
+footer { text-align: center; padding: 15px; color: #8b4513; }

@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: #888; }
+.balance-card { background: linear-gradient(135deg, #667eea, #764ba2); padding: 25px; border-radius: 20px; text-align: center; margin: 20px 0; }
+.balance-label { font-size: 0.9rem; opacity: 0.8; }
+.balance { font-size: 2.5rem; font-weight: bold; margin: 10px 0; }
+.summary { display: flex; justify-content: space-around; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); }
+.summary div { display: flex; flex-direction: column; gap: 5px; }
+.income span:last-child { color: #2ecc71; }
+.expense span:last-child { color: #e74c3c; }
+.add-transaction { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.add-transaction input { padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; }
+.type-btns { display: flex; gap: 10px; }
+.type-btn { flex: 1; padding: 12px; border: 2px solid rgba(255,255,255,0.2); border-radius: 10px; background: transparent; color: #fff; cursor: pointer; }
+.type-btn.active { background: rgba(255,255,255,0.2); border-color: #fff; }
+#addBtn { padding: 15px; border: none; border-radius: 10px; background: #667eea; color: #fff; font-size: 1rem; cursor: pointer; }
+.transactions { margin-top: 20px; }
+.transaction { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; margin-bottom: 10px; }
+.transaction.income { border-left: 4px solid #2ecc71; }
+.transaction.expense { border-left: 4px solid #e74c3c; }
+.transaction .desc { font-weight: 500; }
+.transaction .amount { font-weight: bold; }
+.transaction .delete { background: none; border: none; color: #888; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #666; }
