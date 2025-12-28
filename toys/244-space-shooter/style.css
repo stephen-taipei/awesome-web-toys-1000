@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; background: linear-gradient(90deg, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.stats-bar { display: flex; justify-content: space-around; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 15px; margin: 15px 0; }
+.stat { font-size: 1.1rem; }
+.stat span { color: #00ffff; font-weight: bold; }
+.game-wrapper { margin: 15px 0; }
+#gameCanvas { display: block; width: 100%; background: #000; border-radius: 10px; border: 2px solid #00ffff; touch-action: none; cursor: crosshair; }
+#startBtn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(135deg, #00ffff, #0088ff); color: #000; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+#startBtn.hidden { display: none; }
+.hint { text-align: center; color: #666; margin-top: 10px; font-size: 0.9rem; }
+footer { text-align: center; padding: 15px; color: #666; }
