@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Trail 3D 3D粒子軌跡 - Web Toy 555</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Particle Trail 3D</h1><p class="subtitle">3D粒子軌跡</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <label>軌跡長度:</label>
+            <input type="range" id="trailSlider" min="10" max="100" value="50">
+            <label>粒子數:</label>
+            <input type="range" id="countSlider" min="3" max="15" value="8">
+        </div>
+        <div class="info" id="info">3D空間中的粒子拖尾效果</div>
+        <footer><p>3D粒子軌跡 | Web Toy #555</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

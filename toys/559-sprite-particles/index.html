@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprite Particles 精靈粒子 - Web Toy 559</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Sprite Particles</h1><p class="subtitle">精靈粒子</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <select id="spriteSelect">
+                <option value="star">星星</option>
+                <option value="heart">愛心</option>
+                <option value="snowflake">雪花</option>
+                <option value="spark">火花</option>
+            </select>
+            <label>數量:</label>
+            <input type="range" id="countSlider" min="20" max="100" value="50">
+        </div>
+        <div class="info" id="info">使用貼圖的3D粒子效果</div>
+        <footer><p>精靈粒子 | Web Toy #559</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

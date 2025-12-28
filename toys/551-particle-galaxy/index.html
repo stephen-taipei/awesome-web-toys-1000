@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Galaxy 粒子銀河 - Web Toy 551</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Particle Galaxy</h1><p class="subtitle">粒子銀河</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <label>旋轉速度:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+            <label>粒子數:</label>
+            <input type="range" id="countSlider" min="500" max="3000" step="500" value="1500">
+        </div>
+        <div class="info" id="info">大量粒子形成旋轉銀河</div>
+        <footer><p>粒子銀河 | Web Toy #551</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

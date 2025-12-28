@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Particle Fountain 3D粒子噴泉 - Web Toy 552</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>3D Particle Fountain</h1><p class="subtitle">3D粒子噴泉</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <label>噴射力:</label>
+            <input type="range" id="powerSlider" min="1" max="10" value="5">
+            <label>擴散:</label>
+            <input type="range" id="spreadSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info" id="info">三維空間中的粒子噴泉</div>
+        <footer><p>3D粒子噴泉 | Web Toy #552</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

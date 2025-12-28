@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Cloud 點雲 - Web Toy 558</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Point Cloud</h1><p class="subtitle">點雲</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <select id="modelSelect">
+                <option value="bunny">兔子</option>
+                <option value="teapot">茶壺</option>
+                <option value="head">人頭</option>
+                <option value="dragon">龍</option>
+            </select>
+            <label>點大小:</label>
+            <input type="range" id="sizeSlider" min="1" max="5" value="2">
+        </div>
+        <div class="info" id="info">3D點雲數據顯示</div>
+        <footer><p>點雲 | Web Toy #558</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

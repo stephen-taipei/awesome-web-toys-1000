@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Editor 粒子編輯器 - Web Toy 560</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Particle Editor</h1><p class="subtitle">粒子編輯器</p></header>
+        <canvas id="canvas" width="360" height="240"></canvas>
+        <div class="controls">
+            <div class="control-row">
+                <label>發射率:</label>
+                <input type="range" id="rateSlider" min="1" max="20" value="10">
+                <label>生命:</label>
+                <input type="range" id="lifeSlider" min="1" max="10" value="5">
+            </div>
+            <div class="control-row">
+                <label>速度:</label>
+                <input type="range" id="speedSlider" min="1" max="10" value="5">
+                <label>大小:</label>
+                <input type="range" id="sizeSlider" min="1" max="10" value="5">
+            </div>
+            <div class="control-row">
+                <label>重力:</label>
+                <input type="range" id="gravitySlider" min="0" max="10" value="3">
+                <input type="color" id="colorPicker" value="#ff6b6b">
+            </div>
+        </div>
+        <div class="info" id="info">可視化編輯3D粒子系統</div>
+        <footer><p>粒子編輯器 | Web Toy #560</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
