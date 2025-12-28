@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed 打字速度 - Web Toy 241</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Typing Speed</h1>
+            <p class="subtitle">測試你的打字速度</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">WPM: <span id="wpm">0</span></div>
+            <div class="stat">準確: <span id="accuracy">100</span>%</div>
+            <div class="stat">時間: <span id="timer">60</span>秒</div>
+        </div>
+        <div class="game-area">
+            <div class="text-display" id="textDisplay"></div>
+            <textarea id="inputArea" placeholder="開始打字..." disabled></textarea>
+        </div>
+        <button id="startBtn">開始測試</button>
+        <div class="result-panel" id="resultPanel">
+            <h3>測試結果</h3>
+            <div class="result-stats">
+                <div class="result-stat"><span id="finalWpm">0</span><span>WPM</span></div>
+                <div class="result-stat"><span id="finalAccuracy">0</span><span>準確率</span></div>
+            </div>
+            <button id="restartBtn">再測一次</button>
+        </div>
+        <footer><p>盡快正確地輸入文字 | Web Toy #241</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
