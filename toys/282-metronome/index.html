@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronome 節拍器 - Web Toy 282</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Metronome</h1><p class="subtitle">精準節拍器</p></header>
+        <div class="metronome-display">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="bpm-display">
+            <span id="bpmValue">120</span> BPM
+        </div>
+        <div class="bpm-control">
+            <input type="range" id="bpmSlider" min="40" max="240" value="120">
+        </div>
+        <div class="controls">
+            <button id="startBtn">開始</button>
+            <button id="tapBtn">Tap 測速</button>
+        </div>
+        <footer><p>節拍器 | Web Toy #282</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #3d2914, #1a1108); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #d4a574; }
+.subtitle { color: #888; }
+.metronome-display { display: flex; justify-content: center; margin: 20px 0; }
+#gameCanvas { display: block; }
+.bpm-display { text-align: center; font-size: 3rem; font-weight: bold; color: #d4a574; margin: 15px 0; }
+.bpm-control { padding: 10px 0; }
+.bpm-control input { width: 100%; height: 10px; -webkit-appearance: none; background: rgba(212,165,116,0.3); border-radius: 5px; outline: none; }
+.bpm-control input::-webkit-slider-thumb { -webkit-appearance: none; width: 25px; height: 25px; background: #d4a574; border-radius: 50%; cursor: pointer; }
+.controls { display: flex; gap: 10px; margin-top: 20px; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: rgba(212,165,116,0.2); color: #d4a574; font-size: 1rem; cursor: pointer; }
+.controls button:hover { background: rgba(212,165,116,0.4); }
+footer { text-align: center; padding: 15px; color: #666; }
