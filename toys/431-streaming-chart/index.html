@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Chart 串流圖表 - Web Toy 431</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Streaming Chart</h1><p class="subtitle">串流圖表</p></header>
+        <canvas id="canvas" width="360" height="240"></canvas>
+        <div class="info" id="info">即時滾動的時間序列數據</div>
+        <div class="controls">
+            <button class="action-btn" id="toggle">⏸️ 暫停</button>
+            <button class="action-btn" id="spike">📈 加入峰值</button>
+        </div>
+        <footer><p>串流圖表 | Web Toy #431</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

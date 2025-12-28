@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Analysis 趨勢分析 - Web Toy 440</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Trend Analysis</h1><p class="subtitle">趨勢分析</p></header>
+        <canvas id="canvas" width="360" height="260"></canvas>
+        <div class="info" id="info">時間序列趨勢線和預測</div>
+        <div class="controls">
+            <button class="mode-btn active" data-mode="linear">線性</button>
+            <button class="mode-btn" data-mode="exponential">指數</button>
+            <button class="mode-btn" data-mode="moving">移動平均</button>
+        </div>
+        <footer><p>趨勢分析 | Web Toy #440</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

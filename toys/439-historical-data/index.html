@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Data 歷史數據播放 - Web Toy 439</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Historical Data</h1><p class="subtitle">歷史數據播放</p></header>
+        <canvas id="canvas" width="360" height="260"></canvas>
+        <div class="info" id="info">回放歷史數據變化過程</div>
+        <div class="controls">
+            <button class="control-btn" id="play">▶️ 播放</button>
+            <input type="range" id="speed" min="1" max="10" value="5" class="speed-slider">
+            <span id="speedLabel">速度: 5x</span>
+        </div>
+        <footer><p>歷史數據播放 | Web Toy #439</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
