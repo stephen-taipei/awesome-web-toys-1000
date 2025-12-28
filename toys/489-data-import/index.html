@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Import 數據匯入 - Web Toy 489</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Data Import</h1><p class="subtitle">數據匯入</p></header>
+        <div class="import-area" id="importArea">
+            <div class="drop-zone" id="dropZone">
+                <p>拖放 CSV/JSON 檔案到此處</p>
+                <p>或點擊選擇檔案</p>
+                <input type="file" id="fileInput" accept=".csv,.json" hidden>
+            </div>
+            <div class="sample-btns">
+                <button id="sampleCsv">載入範例 CSV</button>
+                <button id="sampleJson">載入範例 JSON</button>
+            </div>
+        </div>
+        <canvas id="canvas" width="360" height="180"></canvas>
+        <div class="info" id="info">匯入數據後顯示圖表</div>
+        <footer><p>數據匯入 | Web Toy #489</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
