@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOD Terrain LOD地形 - Web Toy 564</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>LOD Terrain</h1><p class="subtitle">LOD地形</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>視距:</label>
+            <input type="range" id="distanceSlider" min="1" max="10" value="5">
+            <label>LOD層級:</label>
+            <span id="lodLabel">3</span>
+        </div>
+        <div class="info" id="info">距離越遠細節越少的地形</div>
+        <footer><p>LOD地形 | Web Toy #564</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

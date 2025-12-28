@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heightmap Terrain 高度圖地形 - Web Toy 561</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Heightmap Terrain</h1><p class="subtitle">高度圖地形</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="mapSelect">
+                <option value="mountains">山脈</option>
+                <option value="hills">丘陵</option>
+                <option value="canyon">峽谷</option>
+                <option value="volcanic">火山</option>
+            </select>
+            <label>高度:</label>
+            <input type="range" id="heightSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info" id="info">從高度圖生成3D地形</div>
+        <footer><p>高度圖地形 | Web Toy #561</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

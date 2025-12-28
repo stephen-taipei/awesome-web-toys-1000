@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Terrain 程序地形 - Web Toy 562</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Procedural Terrain</h1><p class="subtitle">程序地形</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button id="regenerateBtn">重新生成</button>
+            <label>八度:</label>
+            <input type="range" id="octavesSlider" min="1" max="6" value="4">
+            <label>持續性:</label>
+            <input type="range" id="persistenceSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info" id="info">使用噪聲生成無限地形</div>
+        <footer><p>程序地形 | Web Toy #562</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

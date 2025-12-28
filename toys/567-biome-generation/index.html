@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biome Generation 生態群落 - Web Toy 567</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Biome Generation</h1><p class="subtitle">生態群落</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button id="regenerateBtn">重新生成</button>
+            <label>溫度:</label>
+            <input type="range" id="tempSlider" min="0" max="100" value="50">
+            <label>濕度:</label>
+            <input type="range" id="moistSlider" min="0" max="100" value="50">
+        </div>
+        <div class="info" id="info">根據溫度和濕度生成生態區</div>
+        <footer><p>生態群落 | Web Toy #567</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

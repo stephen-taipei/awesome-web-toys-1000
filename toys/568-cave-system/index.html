@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cave System 洞穴系統 - Web Toy 568</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Cave System</h1><p class="subtitle">洞穴系統</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <button id="regenerateBtn">重新生成</button>
+            <label>密度:</label>
+            <input type="range" id="densitySlider" min="30" max="70" value="50">
+            <label>層數:</label>
+            <span id="layerLabel">3</span>
+        </div>
+        <div class="info" id="info">3D程序化洞穴生成</div>
+        <footer><p>洞穴系統 | Web Toy #568</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
