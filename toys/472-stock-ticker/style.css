@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f0f23, #1a1a3e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+canvas { display: block; margin: 0 auto; background: rgba(0,0,0,0.3); border-radius: 10px; }
+.stocks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; justify-content: center; }
+.stock { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 15px; min-width: 100px; text-align: center; }
+.stock-symbol { font-weight: bold; font-size: 0.9rem; }
+.stock-price { font-size: 1.2rem; font-family: 'Courier New', monospace; margin: 5px 0; }
+.stock-change { font-size: 0.8rem; }
+.up { color: #00ff88; }
+.down { color: #ff4444; }
+.info { text-align: center; padding: 10px; margin-top: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.feed { height: 320px; overflow-y: auto; background: rgba(0,0,0,0.2); border-radius: 15px; padding: 10px; }
+.feed::-webkit-scrollbar { width: 5px; }
+.feed::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 3px; }
+.post { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; margin-bottom: 10px; animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.post-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.avatar { width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; }
+.user-info { flex: 1; }
+.username { font-weight: bold; font-size: 0.9rem; }
+.time { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+.content { font-size: 0.9rem; line-height: 1.4; }
+.actions { display: flex; gap: 15px; margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+.info { text-align: center; padding: 10px; margin-top: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
