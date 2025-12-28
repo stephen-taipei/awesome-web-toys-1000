@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Night Cycle 日夜循環 - Web Toy 537</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Day Night Cycle</h1><p class="subtitle">日夜循環</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>時間:</label>
+            <input type="range" id="timeSlider" min="0" max="24" step="0.1" value="12">
+            <span id="timeLabel">12:00</span>
+        </div>
+        <div class="info" id="info">太陽位置變化的光影效果</div>
+        <footer><p>日夜循環 | Web Toy #537</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

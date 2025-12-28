@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volumetric Light 體積光 - Web Toy 535</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Volumetric Light</h1><p class="subtitle">體積光</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>強度:</label>
+            <input type="range" id="intensity" min="0.2" max="1" step="0.1" value="0.6">
+            <label>密度:</label>
+            <input type="range" id="density" min="10" max="50" step="5" value="30">
+        </div>
+        <div class="info" id="info">上帝光線效果</div>
+        <footer><p>體積光 | Web Toy #535</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

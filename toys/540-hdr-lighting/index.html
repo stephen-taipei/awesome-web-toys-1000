@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDR Lighting 高動態範圍 - Web Toy 540</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>HDR Lighting</h1><p class="subtitle">高動態範圍</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>曝光:</label>
+            <input type="range" id="exposureSlider" min="-3" max="3" step="0.1" value="0">
+            <select id="toneMap">
+                <option value="reinhard">Reinhard</option>
+                <option value="aces">ACES</option>
+                <option value="linear">線性</option>
+            </select>
+        </div>
+        <div class="info" id="info">調整曝光值與色調映射</div>
+        <footer><p>高動態範圍 | Web Toy #540</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
