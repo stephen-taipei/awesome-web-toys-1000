@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Camera 多相機切換 - Web Toy 518</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Multi Camera</h1><p class="subtitle">多相機切換</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button class="cam-btn active" data-cam="0">正面</button>
+            <button class="cam-btn" data-cam="1">側面</button>
+            <button class="cam-btn" data-cam="2">俯視</button>
+            <button class="cam-btn" data-cam="3">追蹤</button>
+        </div>
+        <div class="info" id="info">不同視角查看3D場景</div>
+        <footer><p>多相機切換 | Web Toy #518</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
