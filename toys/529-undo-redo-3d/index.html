@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undo Redo 3D 復原重做 - Web Toy 529</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Undo Redo 3D</h1><p class="subtitle">復原重做</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button id="undoBtn">復原 (Ctrl+Z)</button>
+            <button id="redoBtn">重做 (Ctrl+Y)</button>
+            <button id="addBtn">新增物件</button>
+        </div>
+        <div class="info" id="info">拖曳物件，可復原/重做操作</div>
+        <footer><p>復原重做 | Web Toy #529</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
