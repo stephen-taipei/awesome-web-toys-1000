@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #000; min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; background: linear-gradient(90deg, #ffd700, #fff, #87ceeb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.game-wrapper { margin: 15px 0; display: flex; justify-content: center; }
+#gameCanvas { display: block; background: #000; border-radius: 50%; box-shadow: 0 0 50px rgba(100,150,255,0.2); }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 12px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+.controls button:hover { background: rgba(255,255,255,0.2); }
+footer { text-align: center; padding: 15px; color: #666; }
