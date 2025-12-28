@@ -1,0 +1,21 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f093fb, #f5576c); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #fff; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.calculator { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.input-group { margin: 15px 0; }
+.input-group label { display: block; margin-bottom: 8px; }
+.input-group input { width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1rem; }
+.result-card { background: #fff; padding: 25px; border-radius: 15px; color: #333; }
+.age-display { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+.age-item { text-align: center; padding: 15px 20px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 15px; color: #fff; }
+.age-item .num { display: block; font-size: 2.5rem; font-weight: bold; }
+.age-item .label { font-size: 0.9rem; }
+.extra-info { text-align: center; color: #666; }
+.extra-info div { margin: 8px 0; }
+.extra-info span { font-weight: bold; color: #f5576c; }
+.controls { display: flex; gap: 10px; margin-top: 20px; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: #fff; color: #f5576c; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

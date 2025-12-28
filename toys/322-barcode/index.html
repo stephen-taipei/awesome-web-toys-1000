@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode 條碼產生器 - Web Toy 322</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Barcode</h1><p class="subtitle">條碼產生器</p></header>
+        <div class="input-area">
+            <input type="text" id="codeInput" placeholder="輸入數字 (最多12位)" maxlength="12">
+        </div>
+        <div class="barcode-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="code-display" id="codeDisplay"></div>
+        <div class="controls">
+            <button id="generateBtn">產生條碼</button>
+            <button id="randomBtn">隨機</button>
+        </div>
+        <footer><p>條碼產生器 | Web Toy #322</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

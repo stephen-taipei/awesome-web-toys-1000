@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown 倒數計時 - Web Toy 329</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Countdown</h1><p class="subtitle">活動倒數計時</p></header>
+        <div class="event-input">
+            <input type="text" id="eventName" placeholder="活動名稱">
+            <input type="datetime-local" id="eventDate">
+        </div>
+        <div class="countdown-display">
+            <div class="time-block"><span class="num" id="days">00</span><span class="label">天</span></div>
+            <div class="time-block"><span class="num" id="hours">00</span><span class="label">時</span></div>
+            <div class="time-block"><span class="num" id="minutes">00</span><span class="label">分</span></div>
+            <div class="time-block"><span class="num" id="seconds">00</span><span class="label">秒</span></div>
+        </div>
+        <div class="event-title" id="eventTitle">設定你的活動</div>
+        <div class="controls">
+            <button id="setBtn">設定倒數</button>
+        </div>
+        <footer><p>倒數計時 | Web Toy #329</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

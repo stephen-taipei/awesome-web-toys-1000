@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #fff; }
+.subtitle { color: #888; }
+.event-input { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.event-input input { padding: 12px; border: 2px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; }
+.countdown-display { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+.time-block { background: rgba(255,255,255,0.1); padding: 20px 15px; border-radius: 15px; text-align: center; min-width: 70px; }
+.time-block .num { display: block; font-size: 2.5rem; font-weight: bold; color: #fff; }
+.time-block .label { font-size: 0.9rem; color: #888; }
+.event-title { text-align: center; font-size: 1.3rem; color: #fff; margin: 20px 0; }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; font-size: 1rem; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #666; }

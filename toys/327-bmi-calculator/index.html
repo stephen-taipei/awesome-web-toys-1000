@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator BMI計算 - Web Toy 327</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>BMI Calculator</h1><p class="subtitle">身體質量指數</p></header>
+        <div class="calculator">
+            <div class="input-group">
+                <label>身高 (公分)</label>
+                <input type="number" id="height" placeholder="170">
+            </div>
+            <div class="input-group">
+                <label>體重 (公斤)</label>
+                <input type="number" id="weight" placeholder="65">
+            </div>
+        </div>
+        <div class="result-card" id="resultCard">
+            <div class="bmi-value" id="bmiValue">--</div>
+            <div class="bmi-category" id="bmiCategory">輸入數據計算</div>
+            <div class="bmi-bar">
+                <div class="bmi-indicator" id="bmiIndicator"></div>
+            </div>
+            <div class="bmi-labels">
+                <span>過輕</span><span>正常</span><span>過重</span><span>肥胖</span>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="calcBtn">計算</button>
+        </div>
+        <footer><p>BMI計算 | Web Toy #327</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

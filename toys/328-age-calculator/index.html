@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator 年齡計算 - Web Toy 328</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Age Calculator</h1><p class="subtitle">年齡計算器</p></header>
+        <div class="calculator">
+            <div class="input-group">
+                <label>出生日期</label>
+                <input type="date" id="birthDate">
+            </div>
+        </div>
+        <div class="result-card" id="resultCard">
+            <div class="age-display">
+                <div class="age-item"><span class="num" id="years">0</span><span class="label">歲</span></div>
+                <div class="age-item"><span class="num" id="months">0</span><span class="label">月</span></div>
+                <div class="age-item"><span class="num" id="days">0</span><span class="label">日</span></div>
+            </div>
+            <div class="extra-info">
+                <div>總共 <span id="totalDays">0</span> 天</div>
+                <div>總共 <span id="totalWeeks">0</span> 週</div>
+                <div>下次生日還有 <span id="nextBirthday">0</span> 天</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="calcBtn">計算年齡</button>
+        </div>
+        <footer><p>年齡計算 | Web Toy #328</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

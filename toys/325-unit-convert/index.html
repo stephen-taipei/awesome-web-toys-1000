@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter 單位轉換 - Web Toy 325</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Unit Converter</h1><p class="subtitle">單位轉換器</p></header>
+        <div class="category-tabs">
+            <button class="tab active" data-cat="length">長度</button>
+            <button class="tab" data-cat="weight">重量</button>
+            <button class="tab" data-cat="temp">溫度</button>
+        </div>
+        <div class="converter">
+            <div class="input-row">
+                <input type="number" id="value1" placeholder="0">
+                <select id="unit1"></select>
+            </div>
+            <div class="swap-icon">⇅</div>
+            <div class="input-row">
+                <input type="number" id="value2" placeholder="0" readonly>
+                <select id="unit2"></select>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="swapBtn">交換</button>
+        </div>
+        <footer><p>單位轉換 | Web Toy #325</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

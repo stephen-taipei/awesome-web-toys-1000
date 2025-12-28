@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #fff; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.calculator { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.input-group { margin: 15px 0; }
+.input-group label { display: block; margin-bottom: 8px; }
+.input-group input { width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.2rem; }
+.result-card { background: #fff; padding: 25px; border-radius: 15px; text-align: center; color: #333; }
+.bmi-value { font-size: 4rem; font-weight: bold; color: #667eea; }
+.bmi-category { font-size: 1.3rem; margin: 10px 0; color: #666; }
+.bmi-bar { height: 20px; background: linear-gradient(to right, #3498db, #2ecc71, #f1c40f, #e74c3c); border-radius: 10px; margin: 20px 0; position: relative; }
+.bmi-indicator { position: absolute; width: 10px; height: 30px; background: #333; border-radius: 5px; top: -5px; left: 0; transition: left 0.5s; }
+.bmi-labels { display: flex; justify-content: space-between; font-size: 0.8rem; color: #888; }
+.controls { display: flex; gap: 10px; margin-top: 20px; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: #fff; color: #667eea; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
