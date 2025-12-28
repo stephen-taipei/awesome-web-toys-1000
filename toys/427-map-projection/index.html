@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Projection 地圖投影 - Web Toy 427</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Map Projection</h1><p class="subtitle">地圖投影</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="projections">
+            <button class="proj-btn active" data-proj="mercator">麥卡托</button>
+            <button class="proj-btn" data-proj="equirect">等距圓柱</button>
+            <button class="proj-btn" data-proj="sinusoidal">正弦</button>
+        </div>
+        <div class="info" id="info">麥卡托投影 - 保持角度</div>
+        <footer><p>地圖投影 | Web Toy #427</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
