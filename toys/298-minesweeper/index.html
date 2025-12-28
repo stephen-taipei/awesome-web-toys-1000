@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper 踩地雷 - Web Toy 298</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Minesweeper</h1><p class="subtitle">踩地雷</p></header>
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="info">
+            <span>地雷: <span id="mineCount">10</span></span>
+            <span id="status">點擊開始</span>
+        </div>
+        <div class="controls">
+            <button id="startBtn">新遊戲</button>
+        </div>
+        <p class="hint">長按或右鍵放置旗幟</p>
+        <footer><p>踩地雷 | Web Toy #298</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
