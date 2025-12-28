@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch 神奇畫板 - Web Toy 307</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Etch A Sketch</h1><p class="subtitle">經典神奇畫板</p></header>
+        <div class="etch-frame">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="knobs">
+            <div class="knob-wrapper">
+                <div class="knob" id="leftKnob"></div>
+                <span>水平</span>
+            </div>
+            <div class="knob-wrapper">
+                <div class="knob" id="rightKnob"></div>
+                <span>垂直</span>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="shakeBtn">搖晃清除</button>
+        </div>
+        <p class="hint">使用方向鍵或拖曳旋鈕</p>
+        <footer><p>神奇畫板 | Web Toy #307</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

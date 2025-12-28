@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirograph 萬花尺 - Web Toy 308</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Spirograph</h1><p class="subtitle">數學花紋</p></header>
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="sliders">
+            <label>R: <input type="range" id="R" min="50" max="120" value="80"></label>
+            <label>r: <input type="range" id="r" min="10" max="60" value="30"></label>
+            <label>d: <input type="range" id="d" min="10" max="80" value="50"></label>
+        </div>
+        <div class="controls">
+            <button id="drawBtn">繪製</button>
+            <button id="clearBtn">清除</button>
+        </div>
+        <footer><p>萬花尺 | Web Toy #308</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
