@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #a18cd1, #fbc2eb); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+canvas { display: block; margin: 0 auto; }
+.datasets { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.data-btn { padding: 10px 20px; background: rgba(255,255,255,0.2); border: none; border-radius: 20px; color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+.data-btn:hover { background: rgba(255,255,255,0.3); }
+.data-btn.active { background: rgba(255,255,255,0.5); transform: scale(1.05); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
