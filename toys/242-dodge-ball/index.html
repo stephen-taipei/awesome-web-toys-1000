@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge Ball 閃避球 - Web Toy 242</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dodge Ball</h1>
+            <p class="subtitle">閃避掉落的球</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">最高: <span id="highScore">0</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-over" id="gameOver">
+                <h2>遊戲結束!</h2>
+                <p>分數: <span id="finalScore">0</span></p>
+                <button id="restartBtn">再玩一次</button>
+            </div>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <footer><p>移動滑鼠或觸控閃避 | Web Toy #242</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
