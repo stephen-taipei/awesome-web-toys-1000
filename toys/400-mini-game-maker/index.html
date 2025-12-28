@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game Maker 小遊戲製作 - Web Toy 400</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Mini Game Maker</h1><p class="subtitle">小遊戲製作</p></header>
+        <div class="mode-switch">
+            <button class="mode-btn active" data-mode="edit">🎨 編輯</button>
+            <button class="mode-btn" data-mode="play">▶️ 遊玩</button>
+        </div>
+        <div class="tools" id="tools">
+            <button class="tool-btn active" data-tool="player">🟡 玩家</button>
+            <button class="tool-btn" data-tool="wall">⬛ 牆壁</button>
+            <button class="tool-btn" data-tool="coin">⭐ 金幣</button>
+            <button class="tool-btn" data-tool="goal">🚩 終點</button>
+            <button class="tool-btn" data-tool="erase">🧹 清除</button>
+        </div>
+        <canvas id="canvas" width="360" height="360"></canvas>
+        <div class="result" id="result">放置元素來創建你的遊戲!</div>
+        <button id="clear" class="action-btn">🗑️ 清空關卡</button>
+        <footer><p>小遊戲製作 | Web Toy #400</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

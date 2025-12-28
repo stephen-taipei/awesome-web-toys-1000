@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixing 調色遊戲 - Web Toy 397</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Mixing</h1><p class="subtitle">調色遊戲</p></header>
+        <div class="score">分數: <span id="score">0</span></div>
+        <div class="colors">
+            <div class="color-box">
+                <div class="color-preview" id="target"></div>
+                <p>目標顏色</p>
+            </div>
+            <div class="color-box">
+                <div class="color-preview" id="mixed"></div>
+                <p>你的顏色</p>
+            </div>
+        </div>
+        <div class="sliders">
+            <div class="slider-group">
+                <label>紅 <span id="rVal">128</span></label>
+                <input type="range" id="r" min="0" max="255" value="128">
+            </div>
+            <div class="slider-group">
+                <label>綠 <span id="gVal">128</span></label>
+                <input type="range" id="g" min="0" max="255" value="128">
+            </div>
+            <div class="slider-group">
+                <label>藍 <span id="bVal">128</span></label>
+                <input type="range" id="b" min="0" max="255" value="128">
+            </div>
+        </div>
+        <div class="match" id="match">調整滑桿來配對顏色!</div>
+        <button id="submit" class="action-btn">確認答案</button>
+        <footer><p>調色遊戲 | Web Toy #397</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #3498db, #2980b9); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.tools { display: flex; gap: 8px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+.tool-btn { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; font-size: 1.3rem; cursor: pointer; transition: all 0.2s; }
+.tool-btn:hover { background: rgba(255,255,255,0.3); }
+.tool-btn.active { background: rgba(255,255,255,0.5); transform: scale(1.1); }
+canvas { display: block; margin: 0 auto; background: #87ceeb; border-radius: 15px; }
+.action-btn { display: block; width: 100%; padding: 12px; margin-top: 10px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; color: #fff; font-size: 1rem; cursor: pointer; }
+.action-btn:hover { background: rgba(255,255,255,0.3); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
