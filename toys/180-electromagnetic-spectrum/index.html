@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromagnetic Spectrum 電磁頻譜 - Web Toy 180</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Electromagnetic Spectrum</h1>
+            <p class="subtitle">電磁頻譜互動探索</p>
+        </header>
+
+        <div class="spectrum-container">
+            <canvas id="spectrumCanvas"></canvas>
+            <div class="wave-display">
+                <canvas id="waveCanvas"></canvas>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="wave-info">
+                <h2 id="waveName">可見光</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="label">波長</span>
+                        <span id="wavelength" class="value">550 nm</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">頻率</span>
+                        <span id="frequency" class="value">5.45 × 10¹⁴ Hz</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">能量</span>
+                        <span id="energy" class="value">2.25 eV</span>
+                    </div>
+                </div>
+                <p id="description" class="description">可見光是人眼能夠感知的電磁波，波長範圍約為380-700奈米。</p>
+                <div id="applications" class="applications">
+                    <h3>應用領域</h3>
+                    <ul id="appList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="slider-container">
+                <label for="wavelengthSlider">波長調整</label>
+                <input type="range" id="wavelengthSlider" min="0" max="100" value="50">
+            </div>
+            <div class="buttons">
+                <button id="animateBtn">播放波動</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>拖曳頻譜或使用滑桿探索不同波段 | Web Toy #180</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

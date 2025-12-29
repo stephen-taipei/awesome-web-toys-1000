@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 600px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #00d4ff, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.game-area { height: 300px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: background-color 0.1s; margin: 20px 0; user-select: none; }
+.game-area.waiting { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.game-area.ready { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.game-area.go { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.game-area.idle { background: linear-gradient(135deg, #3498db, #2980b9); }
+.game-area.early { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.instruction { font-size: 2rem; font-weight: bold; text-align: center; padding: 20px; }
+.result { font-size: 4rem; font-weight: bold; }
+.stats-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+.stat { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; text-align: center; }
+.stat .label { display: block; font-size: 0.9rem; color: #888; margin-bottom: 10px; }
+.stat .value { font-size: 1.5rem; font-weight: bold; color: #00d4ff; }
+.history-panel { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; margin: 20px 0; }
+.history-panel h3 { color: #00ff88; margin-bottom: 15px; text-align: center; }
+.history-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; min-height: 40px; }
+.history-item { padding: 8px 15px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9rem; }
+.history-item.best { background: linear-gradient(135deg, #00d4ff, #00ff88); color: #000; font-weight: bold; }
+#resetBtn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #888; font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+#resetBtn:hover { background: rgba(255,255,255,0.2); color: #fff; }
+footer { text-align: center; padding: 20px; color: #666; }
+@media (max-width: 500px) { .stats-panel { grid-template-columns: 1fr; } }

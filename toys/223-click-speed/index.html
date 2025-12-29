@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Speed 點擊速度 - Web Toy 223</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Click Speed Test</h1>
+            <p class="subtitle">測試你的點擊速度</p>
+        </header>
+        <div class="game-area" id="gameArea">
+            <div class="timer-display">
+                <span id="timeLeft">10</span>
+                <span class="label">秒</span>
+            </div>
+            <div class="click-display">
+                <span id="clickCount">0</span>
+                <span class="label">點擊</span>
+            </div>
+            <div class="cps-display">
+                <span id="cps">0.0</span>
+                <span class="label">CPS</span>
+            </div>
+            <button id="clickBtn">開始點擊!</button>
+        </div>
+        <div class="duration-select">
+            <button class="duration-btn" data-duration="5">5秒</button>
+            <button class="duration-btn active" data-duration="10">10秒</button>
+            <button class="duration-btn" data-duration="30">30秒</button>
+            <button class="duration-btn" data-duration="60">60秒</button>
+        </div>
+        <div class="result-panel" id="resultPanel">
+            <h3>遊戲結果</h3>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <span class="value" id="resultClicks">0</span>
+                    <span class="label">總點擊</span>
+                </div>
+                <div class="result-stat">
+                    <span class="value" id="resultCps">0.0</span>
+                    <span class="label">每秒點擊</span>
+                </div>
+            </div>
+            <button id="restartBtn">再玩一次</button>
+        </div>
+        <footer><p>在時間內盡可能多點擊 | Web Toy #223</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

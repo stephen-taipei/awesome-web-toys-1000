@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Visualizer 頻率視覺化 - Web Toy 201</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Frequency Visualizer</h1>
+            <p class="subtitle">頻率視覺化</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="visualizerCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音源控制</h3>
+                <div class="control-row">
+                    <button id="micBtn" class="source-btn">使用麥克風</button>
+                </div>
+                <div class="control-row">
+                    <button id="toneBtn" class="source-btn">產生音調</button>
+                </div>
+                <div class="control-row">
+                    <label>頻率</label>
+                    <input type="range" id="freqSlider" min="100" max="2000" value="440">
+                    <span id="freqValue">440 Hz</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>顯示模式</h3>
+                <div class="control-row">
+                    <button id="barsBtn" class="mode-btn active" data-mode="bars">頻譜條</button>
+                    <button id="waveBtn" class="mode-btn" data-mode="wave">波形</button>
+                    <button id="circleBtn" class="mode-btn" data-mode="circle">圓形</button>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>傅立葉分析</h4>
+                <p>將複雜的聲波分解成不同頻率的正弦波組合，用以分析聲音的頻率成分。</p>
+            </div>
+        </div>
+        <footer><p>開啟麥克風或產生音調來觀察頻率分布 | Web Toy #201</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

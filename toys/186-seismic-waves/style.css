@@ -1,0 +1,354 @@
+/* 地震波模擬 - 樣式表 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff4444, #ffaa00, #ff4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.canvas-container {
+    position: relative;
+    margin: 20px 0;
+    background: linear-gradient(180deg, #87CEEB 0%, #4a90a4 30%, #654321 30%, #3d2817 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 68, 68, 0.3);
+}
+
+#seismicCanvas {
+    width: 100%;
+    height: 400px;
+    display: block;
+    cursor: crosshair;
+}
+
+.legend {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.p-wave .color-dot {
+    background: #ff4444;
+    box-shadow: 0 0 10px #ff4444;
+}
+
+.s-wave .color-dot {
+    background: #4444ff;
+    box-shadow: 0 0 10px #4444ff;
+}
+
+.surface-wave .color-dot {
+    background: #44ff44;
+    box-shadow: 0 0 10px #44ff44;
+}
+
+.controls-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.control-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.control-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    color: #ff6b6b;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.control-row:last-child {
+    margin-bottom: 0;
+}
+
+.control-row label {
+    min-width: 80px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.control-row input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.control-row input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4444, #ffaa00);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 68, 68, 0.4);
+}
+
+.control-row span {
+    min-width: 70px;
+    text-align: right;
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: #ffaa00;
+}
+
+.wave-toggle {
+    grid-column: span 1;
+}
+
+.toggle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.toggle-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.toggle-text {
+    font-size: 0.95rem;
+}
+
+.p-text { color: #ff4444; }
+.s-text { color: #4444ff; }
+.surface-text { color: #44ff44; }
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#quakeBtn {
+    background: linear-gradient(135deg, #ff4444 0%, #ff8800 100%);
+    color: #fff;
+    animation: pulse-btn 2s ease-in-out infinite;
+}
+
+@keyframes pulse-btn {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 0 15px rgba(255, 68, 68, 0); }
+}
+
+#quakeBtn:hover {
+    transform: scale(1.05);
+}
+
+#quakeBtn:active {
+    transform: scale(0.95);
+}
+
+#resetBtn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#resetBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.info-panel {
+    margin: 20px 0;
+}
+
+.wave-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.wave-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    border-left: 4px solid;
+    backdrop-filter: blur(10px);
+}
+
+.p-card {
+    border-color: #ff4444;
+}
+
+.s-card {
+    border-color: #4444ff;
+}
+
+.surface-card {
+    border-color: #44ff44;
+}
+
+.wave-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.p-card h4 { color: #ff4444; }
+.s-card h4 { color: #4444ff; }
+.surface-card h4 { color: #44ff44; }
+
+.wave-card p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.wave-stats {
+    font-size: 0.85rem;
+    color: #888;
+    font-family: monospace;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #seismicCanvas {
+        height: 300px;
+    }
+
+    .legend {
+        position: static;
+        margin-top: -50px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .legend-item {
+        margin-bottom: 0;
+    }
+
+    .controls-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* 地震動畫 */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shaking {
+    animation: shake 0.5s ease-in-out;
+}

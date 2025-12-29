@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess 猜數字 - Web Toy 226</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Number Guess</h1>
+            <p class="subtitle">猜數字遊戲</p>
+        </header>
+        <div class="game-area">
+            <div class="range-info">猜一個 <span id="minNum">1</span> 到 <span id="maxNum">100</span> 之間的數字</div>
+            <div class="input-area">
+                <input type="number" id="guessInput" placeholder="輸入數字" min="1" max="100">
+                <button id="guessBtn">猜!</button>
+            </div>
+            <div class="feedback" id="feedback"></div>
+            <div class="attempts">已猜次數: <span id="attempts">0</span></div>
+            <div class="history" id="history"></div>
+        </div>
+        <div class="difficulty-panel">
+            <h3>難度設定</h3>
+            <div class="difficulty-buttons">
+                <button class="diff-btn active" data-max="50">簡單 (1-50)</button>
+                <button class="diff-btn" data-max="100">普通 (1-100)</button>
+                <button class="diff-btn" data-max="500">困難 (1-500)</button>
+            </div>
+        </div>
+        <button id="restartBtn">重新開始</button>
+        <footer><p>根據提示猜出正確數字 | Web Toy #226</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

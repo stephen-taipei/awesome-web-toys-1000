@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Spectrum 圓形頻譜 - Web Toy 204</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Circular Spectrum</h1>
+            <p class="subtitle">圓形頻譜分析器</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="spectrumCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音源</h3>
+                <div class="control-row">
+                    <button id="micBtn" class="source-btn">開啟麥克風</button>
+                </div>
+                <div class="control-row">
+                    <button id="demoBtn" class="source-btn active">演示模式</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>視覺設定</h3>
+                <div class="control-row">
+                    <label>環數</label>
+                    <input type="range" id="ringsSlider" min="1" max="5" value="3">
+                    <span id="ringsValue">3</span>
+                </div>
+                <div class="control-row">
+                    <label>旋轉</label>
+                    <input type="range" id="rotateSlider" min="0" max="2" step="0.1" value="0.5">
+                    <span id="rotateValue">0.5</span>
+                </div>
+                <div class="control-row">
+                    <label>連結</label>
+                    <input type="checkbox" id="connectCheck" checked>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>頻譜分析</h4>
+                <p>將音頻信號分解為不同頻率成分，以圓形方式呈現，低頻在內圈，高頻在外圈。</p>
+            </div>
+        </div>
+        <footer><p>開啟麥克風感受音樂的視覺化呈現 | Web Toy #204</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

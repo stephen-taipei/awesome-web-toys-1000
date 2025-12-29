@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Inflation 氣球膨脹 - Web Toy 196</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Balloon Inflation</h1>
+            <p class="subtitle">氣球膨脹模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="balloonCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>控制面板</h3>
+                <div class="control-row">
+                    <label>充氣</label>
+                    <button id="inflateBtn" class="action-btn inflate">+</button>
+                    <button id="deflateBtn" class="action-btn deflate">-</button>
+                </div>
+                <div class="control-row">
+                    <label>溫度</label>
+                    <input type="range" id="tempSlider" min="200" max="400" value="300">
+                    <span id="tempValue">300 K</span>
+                </div>
+                <div class="control-row">
+                    <label>氣球顏色</label>
+                    <input type="color" id="colorPicker" value="#ff6b6b">
+                </div>
+            </div>
+            <div class="stats-box">
+                <h4>氣體狀態</h4>
+                <div class="stat-row"><span>壓力:</span><span id="pressure">1.00 atm</span></div>
+                <div class="stat-row"><span>體積:</span><span id="volume">1.00 L</span></div>
+                <div class="stat-row"><span>氣體量:</span><span id="moles">0.041 mol</span></div>
+                <div class="stat-row"><span>狀態:</span><span id="status">正常</span></div>
+            </div>
+            <div class="info-box">
+                <h4>理想氣體定律</h4>
+                <p class="formula">PV = nRT</p>
+                <p>氣球體積隨氣體量和溫度增加而膨脹</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="resetBtn">重置</button>
+            <button id="popBtn">戳破!</button>
+        </div>
+        <footer><p>按住充氣按鈕觀察氣球膨脹 | Web Toy #196</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

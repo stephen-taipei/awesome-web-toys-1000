@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says 記憶遊戲 - Web Toy 225</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simon Says</h1>
+            <p class="subtitle">記憶顏色序列</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">關卡: <span id="level">1</span></div>
+            <div class="stat">最高: <span id="highScore">0</span></div>
+        </div>
+        <div class="game-board">
+            <div class="simon-grid">
+                <button class="simon-btn" data-color="green"></button>
+                <button class="simon-btn" data-color="red"></button>
+                <button class="simon-btn" data-color="yellow"></button>
+                <button class="simon-btn" data-color="blue"></button>
+            </div>
+            <div class="center-display" id="centerDisplay">開始</div>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <footer><p>記住並重複顏色序列 | Web Toy #225</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

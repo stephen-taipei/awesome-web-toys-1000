@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Roll 鋼琴卷軸 - Web Toy 206</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Piano Roll</h1>
+            <p class="subtitle">互動式鋼琴卷軸</p>
+        </header>
+        <div class="piano-container">
+            <div class="keys-panel" id="keysPanel"></div>
+            <div class="roll-area">
+                <canvas id="rollCanvas"></canvas>
+            </div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>播放控制</h3>
+                <div class="control-row">
+                    <button id="playBtn">播放</button>
+                    <button id="clearBtn">清除</button>
+                </div>
+                <div class="control-row">
+                    <label>BPM</label>
+                    <input type="range" id="bpmSlider" min="60" max="200" value="120">
+                    <span id="bpmValue">120</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>預設旋律</h3>
+                <div class="control-row presets">
+                    <button class="preset-btn" data-preset="scale">音階</button>
+                    <button class="preset-btn" data-preset="twinkle">小星星</button>
+                    <button class="preset-btn" data-preset="ode">歡樂頌</button>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>使用說明</h4>
+                <p>點擊格子放置音符，再次點擊移除。按播放聆聽你的創作！</p>
+            </div>
+        </div>
+        <footer><p>創作你的旋律 | Web Toy #206</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

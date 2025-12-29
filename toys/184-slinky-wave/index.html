@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slinky Wave 彈簧波 - Web Toy 184</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Slinky Wave</h1>
+            <p class="subtitle">彈簧玩具上的波動傳播</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="slinkyCanvas"></canvas>
+        </div>
+
+        <div class="wave-type-selector">
+            <h3>波的類型</h3>
+            <div class="type-buttons">
+                <button class="type-btn active" data-type="transverse">
+                    <span class="icon">〰️</span>
+                    <span class="label">橫波</span>
+                    <span class="desc">振動方向與傳播方向垂直</span>
+                </button>
+                <button class="type-btn" data-type="longitudinal">
+                    <span class="icon">➡️⬅️</span>
+                    <span class="label">縱波</span>
+                    <span class="desc">振動方向與傳播方向平行</span>
+                </button>
+                <button class="type-btn" data-type="pulse">
+                    <span class="icon">📍</span>
+                    <span class="label">脈衝波</span>
+                    <span class="desc">單一波包傳播</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>波的參數</h3>
+                <div class="control-row">
+                    <label>振幅</label>
+                    <input type="range" id="amplitude" min="10" max="80" value="40">
+                    <span id="amplitudeValue">40</span>
+                </div>
+                <div class="control-row">
+                    <label>波速</label>
+                    <input type="range" id="waveSpeed" min="50" max="300" value="150">
+                    <span id="waveSpeedValue">150</span>
+                </div>
+                <div class="control-row">
+                    <label>頻率</label>
+                    <input type="range" id="frequency" min="0.5" max="4" step="0.1" value="1.5">
+                    <span id="frequencyValue">1.5 Hz</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>彈簧設定</h3>
+                <div class="control-row">
+                    <label>線圈數</label>
+                    <input type="range" id="coils" min="20" max="80" value="50">
+                    <span id="coilsValue">50</span>
+                </div>
+                <div class="control-row">
+                    <label>彈性</label>
+                    <input type="range" id="stiffness" min="0.1" max="1" step="0.1" value="0.5">
+                    <span id="stiffnessValue">0.5</span>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="playBtn">暫停</button>
+                <button id="resetBtn">重置</button>
+                <button id="pulseBtn">發送脈衝</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="wave-comparison">
+                <div class="wave-type-info transverse-info">
+                    <h4>橫波</h4>
+                    <p>質點在垂直於傳播方向上來回振動。例如：繩波、水波、電磁波。</p>
+                </div>
+                <div class="wave-type-info longitudinal-info">
+                    <h4>縱波</h4>
+                    <p>質點沿傳播方向來回振動，形成疏密相間的圖案。例如：聲波、地震P波。</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>點擊左端可手動產生波動 | 觀察橫波與縱波的差異 | Web Toy #184</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

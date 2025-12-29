@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 20px 0; }
+header h1 { font-size: 2.5rem; background: linear-gradient(90deg, #00d4ff, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #888; }
+.mixer { display: flex; justify-content: center; gap: 15px; padding: 30px; background: linear-gradient(180deg, #222 0%, #111 100%); border-radius: 15px; margin: 20px 0; }
+.channel { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; width: 80px; }
+.channel.master { width: 100px; background: rgba(255,100,100,0.1); border: 1px solid rgba(255,100,100,0.3); }
+.channel-name { font-size: 0.8rem; color: #888; font-weight: bold; }
+.meter { width: 20px; height: 150px; background: #111; border-radius: 3px; position: relative; overflow: hidden; }
+.meter-fill { position: absolute; bottom: 0; width: 100%; background: linear-gradient(180deg, #ff0000 0%, #ffff00 30%, #00ff00 100%); transition: height 0.1s; }
+.fader { writing-mode: bt-lr; -webkit-appearance: slider-vertical; width: 30px; height: 150px; background: transparent; }
+.pan-control { width: 100%; }
+.pan { width: 100%; height: 6px; -webkit-appearance: none; background: rgba(255,255,255,0.2); border-radius: 3px; }
+.pan::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: #00d4ff; }
+.mute-btn, .solo-btn { width: 30px; height: 25px; border: none; border-radius: 5px; font-size: 0.7rem; font-weight: bold; cursor: pointer; }
+.mute-btn { background: #333; color: #888; }
+.mute-btn.active { background: #ff4444; color: #fff; }
+.solo-btn { background: #333; color: #888; }
+.solo-btn.active { background: #ffcc00; color: #000; }
+.controls-panel { display: flex; justify-content: center; margin: 20px 0; }
+.control-group { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.control-group h3 { margin-bottom: 15px; color: #00d4ff; }
+#playBtn { padding: 15px 40px; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; background: linear-gradient(135deg, #00d4ff, #00ff88); color: #000; }
+footer { text-align: center; padding: 20px; color: #666; }

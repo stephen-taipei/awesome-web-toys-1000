@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Vibration 弦振動 - Web Toy 188</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>String Vibration</h1>
+            <p class="subtitle">琴弦振動與諧波分析</p>
+        </header>
+        <div class="canvas-container">
+            <canvas id="stringCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>弦的參數</h3>
+                <div class="control-row">
+                    <label>張力</label>
+                    <input type="range" id="tension" min="0.1" max="2" step="0.1" value="1">
+                    <span id="tensionValue">1.0</span>
+                </div>
+                <div class="control-row">
+                    <label>阻尼</label>
+                    <input type="range" id="damping" min="0" max="0.05" step="0.005" value="0.01">
+                    <span id="dampingValue">0.01</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="pluckBtn">撥弦</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+        <footer><p>點擊弦上任意位置撥弦 | Web Toy #188</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

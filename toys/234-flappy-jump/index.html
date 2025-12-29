@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Jump 跳躍小鳥 - Web Toy 234</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Flappy Jump</h1>
+            <p class="subtitle">點擊跳躍避開障礙</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">最高: <span id="highScore">0</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-overlay" id="overlay">
+                <div id="message">點擊開始</div>
+            </div>
+        </div>
+        <footer><p>點擊或按空白鍵跳躍 | Web Toy #234</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

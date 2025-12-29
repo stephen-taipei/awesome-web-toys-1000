@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper 踩地雷 - Web Toy 237</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Minesweeper</h1>
+            <p class="subtitle">經典踩地雷</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">💣 <span id="mineCount">10</span></div>
+            <div class="stat" id="status">😊</div>
+            <div class="stat">⏱️ <span id="timer">0</span></div>
+        </div>
+        <div class="game-grid" id="gameGrid"></div>
+        <div class="difficulty">
+            <button class="diff-btn active" data-size="9" data-mines="10">簡單</button>
+            <button class="diff-btn" data-size="12" data-mines="20">中等</button>
+            <button class="diff-btn" data-size="16" data-mines="40">困難</button>
+        </div>
+        <button id="newGameBtn">新遊戲</button>
+        <footer><p>點擊揭開，長按標記 | Web Toy #237</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

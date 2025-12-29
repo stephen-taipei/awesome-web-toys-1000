@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tone Generator 音調產生器 - Web Toy 218</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tone Generator</h1>
+            <p class="subtitle">精準音調產生器</p>
+        </header>
+        <div class="generator-display">
+            <div class="freq-display">
+                <input type="number" id="freqInput" value="440" min="20" max="20000">
+                <span class="unit">Hz</span>
+            </div>
+            <div class="note-display" id="noteDisplay">A4</div>
+            <canvas id="waveCanvas"></canvas>
+        </div>
+        <div class="preset-notes">
+            <button class="note-btn" data-freq="261.63" data-note="C4">C4</button>
+            <button class="note-btn" data-freq="293.66" data-note="D4">D4</button>
+            <button class="note-btn" data-freq="329.63" data-note="E4">E4</button>
+            <button class="note-btn" data-freq="349.23" data-note="F4">F4</button>
+            <button class="note-btn" data-freq="392.00" data-note="G4">G4</button>
+            <button class="note-btn active" data-freq="440.00" data-note="A4">A4</button>
+            <button class="note-btn" data-freq="493.88" data-note="B4">B4</button>
+            <button class="note-btn" data-freq="523.25" data-note="C5">C5</button>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>波形選擇</h3>
+                <div class="wave-buttons">
+                    <button class="wave-btn active" data-wave="sine">正弦波</button>
+                    <button class="wave-btn" data-wave="square">方波</button>
+                    <button class="wave-btn" data-wave="triangle">三角波</button>
+                    <button class="wave-btn" data-wave="sawtooth">鋸齒波</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>音量控制</h3>
+                <div class="control-row">
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3">
+                    <span id="volumeValue">30%</span>
+                </div>
+            </div>
+            <div class="play-control">
+                <button id="playBtn">▶ 播放</button>
+            </div>
+        </div>
+        <footer><p>輸入頻率或選擇音符 | Web Toy #218</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

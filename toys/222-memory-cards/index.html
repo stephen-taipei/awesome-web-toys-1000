@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Cards 記憶翻牌 - Web Toy 222</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Memory Cards</h1>
+            <p class="subtitle">記憶配對遊戲</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">翻牌: <span id="moves">0</span></div>
+            <div class="stat">配對: <span id="pairs">0</span>/8</div>
+            <div class="stat">時間: <span id="timer">0:00</span></div>
+        </div>
+        <div class="game-grid" id="gameGrid"></div>
+        <button id="restartBtn">重新開始</button>
+        <footer><p>翻開兩張相同的卡片配對 | Web Toy #222</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

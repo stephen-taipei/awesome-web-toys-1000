@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffraction 繞射 - Web Toy 185</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diffraction</h1>
+            <p class="subtitle">波的繞射與干涉圖案</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="diffractionCanvas"></canvas>
+        </div>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="single">單狹縫</button>
+            <button class="mode-btn" data-mode="double">雙狹縫</button>
+            <button class="mode-btn" data-mode="grating">光柵</button>
+            <button class="mode-btn" data-mode="circular">圓孔</button>
+        </div>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>波的參數</h3>
+                <div class="control-row">
+                    <label>波長</label>
+                    <input type="range" id="wavelength" min="10" max="50" value="25">
+                    <span id="wavelengthValue">25</span>
+                </div>
+                <div class="control-row">
+                    <label>振幅</label>
+                    <input type="range" id="amplitude" min="0.3" max="1" step="0.1" value="0.7">
+                    <span id="amplitudeValue">0.7</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>狹縫設定</h3>
+                <div class="control-row">
+                    <label>狹縫寬度</label>
+                    <input type="range" id="slitWidth" min="5" max="80" value="30">
+                    <span id="slitWidthValue">30</span>
+                </div>
+                <div class="control-row" id="slitSpacingRow">
+                    <label>狹縫間距</label>
+                    <input type="range" id="slitSpacing" min="20" max="150" value="60">
+                    <span id="slitSpacingValue">60</span>
+                </div>
+                <div class="control-row" id="slitCountRow" style="display: none;">
+                    <label>狹縫數量</label>
+                    <input type="range" id="slitCount" min="3" max="20" value="5">
+                    <span id="slitCountValue">5</span>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="playBtn">暫停</button>
+                <button id="resetBtn">重置</button>
+                <button id="intensityBtn">顯示強度圖</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="principle">
+                <h3>惠更斯原理</h3>
+                <p>波前上的每一點都可視為新的波源，這些次波源發出的波相互疊加，形成新的波前。當波通過狹縫時，狹縫邊緣的點成為次波源，使波在障礙物後方擴散。</p>
+            </div>
+            <div class="formula-box">
+                <h4>單狹縫繞射極小位置</h4>
+                <p class="formula">a sin θ = mλ (m = ±1, ±2, ...)</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>調整狹縫寬度與波長觀察繞射圖案變化 | Web Toy #185</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

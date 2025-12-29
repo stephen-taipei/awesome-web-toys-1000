@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Effects 音效板 - Web Toy 214</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sound Effects</h1>
+            <p class="subtitle">互動音效板</p>
+        </header>
+        <div class="effects-grid" id="effectsGrid"></div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音效設定</h3>
+                <div class="control-row">
+                    <label>音量</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+                </div>
+                <div class="control-row">
+                    <label>音調</label>
+                    <input type="range" id="pitchSlider" min="0.5" max="2" step="0.1" value="1">
+                </div>
+            </div>
+        </div>
+        <footer><p>點擊按鈕播放音效 | Web Toy #214</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

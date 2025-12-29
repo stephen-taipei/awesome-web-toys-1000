@@ -1,0 +1,341 @@
+/* 都卜勒效應視覺化 - 樣式表 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcb77);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.canvas-container {
+    position: relative;
+    margin: 20px 0;
+    background: radial-gradient(ellipse at center, #1a1a3e 0%, #0a0a1e 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#dopplerCanvas {
+    width: 100%;
+    height: 450px;
+    display: block;
+    cursor: crosshair;
+}
+
+.controls-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.control-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.control-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    color: #ffd93d;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.control-row:last-child {
+    margin-bottom: 0;
+}
+
+.control-row label {
+    min-width: 70px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.control-row input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.control-row input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 217, 61, 0.4);
+}
+
+.control-row span {
+    min-width: 80px;
+    text-align: right;
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: #ffd93d;
+}
+
+.mode-selector {
+    grid-column: span 1;
+}
+
+.mode-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mode-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+    border-color: rgba(255, 217, 61, 0.5);
+    color: #ffd93d;
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, rgba(255, 217, 61, 0.2), rgba(255, 107, 107, 0.2));
+    border-color: #ffd93d;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#playBtn {
+    background: linear-gradient(135deg, #6bcb77 0%, #4ade80 100%);
+    color: #fff;
+}
+
+#playBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(107, 203, 119, 0.4);
+}
+
+#playBtn.paused {
+    background: linear-gradient(135deg, #ffd93d 0%, #f59e0b 100%);
+}
+
+#resetBtn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#resetBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#soundBtn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+    color: #fff;
+}
+
+#soundBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+}
+
+#soundBtn.active {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+}
+
+.info-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+}
+
+.frequency-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.freq-box {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.freq-box.approaching {
+    border-color: rgba(255, 107, 107, 0.5);
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), transparent);
+}
+
+.freq-box.source {
+    border-color: rgba(255, 217, 61, 0.5);
+    background: linear-gradient(135deg, rgba(255, 217, 61, 0.1), transparent);
+}
+
+.freq-box.receding {
+    border-color: rgba(107, 203, 119, 0.5);
+    background: linear-gradient(135deg, rgba(107, 203, 119, 0.1), transparent);
+}
+
+.freq-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.freq-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.freq-box.approaching .freq-value { color: #ff6b6b; }
+.freq-box.source .freq-value { color: #ffd93d; }
+.freq-box.receding .freq-value { color: #6bcb77; }
+
+.freq-note {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.formula {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.formula h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #ffd93d;
+}
+
+.formula .math {
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.formula .explanation {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #dopplerCanvas {
+        height: 300px;
+    }
+
+    .frequency-display {
+        grid-template-columns: 1fr;
+    }
+
+    .controls-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-buttons {
+        flex-direction: column;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}

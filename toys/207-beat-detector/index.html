@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Detector 節拍偵測 - Web Toy 207</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Beat Detector</h1>
+            <p class="subtitle">節拍偵測器</p>
+        </header>
+        <div class="beat-display">
+            <div class="beat-circle" id="beatCircle"></div>
+            <div class="bpm-display">
+                <span class="bpm-value" id="bpmDisplay">---</span>
+                <span class="bpm-label">BPM</span>
+            </div>
+        </div>
+        <div class="visualization-area">
+            <canvas id="beatCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>音源</h3>
+                <div class="control-row">
+                    <button id="micBtn" class="source-btn">開啟麥克風</button>
+                </div>
+                <div class="control-row">
+                    <button id="tapBtn" class="tap-btn">手動打拍</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>偵測設定</h3>
+                <div class="control-row">
+                    <label>敏感度</label>
+                    <input type="range" id="sensitivitySlider" min="0.5" max="2" step="0.1" value="1">
+                    <span id="sensitivityValue">1.0</span>
+                </div>
+                <div class="control-row">
+                    <label>閾值</label>
+                    <input type="range" id="thresholdSlider" min="0.3" max="0.9" step="0.05" value="0.6">
+                    <span id="thresholdValue">0.6</span>
+                </div>
+            </div>
+            <div class="stats-box">
+                <h4>節拍統計</h4>
+                <div class="stat-row"><span>偵測次數:</span><span id="beatCount">0</span></div>
+                <div class="stat-row"><span>平均間隔:</span><span id="avgInterval">---</span></div>
+                <div class="stat-row"><span>穩定度:</span><span id="stability">---</span></div>
+            </div>
+        </div>
+        <footer><p>用麥克風偵測音樂節拍或手動打拍測量 BPM | Web Toy #207</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

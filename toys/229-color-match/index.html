@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match 顏色配對 - Web Toy 229</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Color Match</h1>
+            <p class="subtitle">選擇正確的顏色名稱</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">時間: <span id="timer">30</span>秒</div>
+            <div class="stat">連對: <span id="streak">0</span></div>
+        </div>
+        <div class="game-area">
+            <div class="color-word" id="colorWord">準備開始</div>
+            <div class="options" id="options"></div>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <div class="result-panel" id="resultPanel">
+            <h3>遊戲結束!</h3>
+            <div class="final-score">
+                <span id="finalScore">0</span>
+                <span class="label">最終分數</span>
+            </div>
+            <button id="restartBtn">再玩一次</button>
+        </div>
+        <footer><p>點擊與文字顏色相符的按鈕 | Web Toy #229</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

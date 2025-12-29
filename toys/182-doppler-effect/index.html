@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doppler Effect 都卜勒效應 - Web Toy 182</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Doppler Effect</h1>
+            <p class="subtitle">都卜勒效應視覺化</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="dopplerCanvas"></canvas>
+        </div>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>波源設定</h3>
+                <div class="control-row">
+                    <label>移動速度</label>
+                    <input type="range" id="sourceSpeed" min="0" max="300" step="10" value="100">
+                    <span id="sourceSpeedValue">100 m/s</span>
+                </div>
+                <div class="control-row">
+                    <label>發射頻率</label>
+                    <input type="range" id="sourceFreq" min="1" max="10" step="0.5" value="3">
+                    <span id="sourceFreqValue">3.0 Hz</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>介質設定</h3>
+                <div class="control-row">
+                    <label>波速</label>
+                    <input type="range" id="waveSpeed" min="100" max="500" step="10" value="340">
+                    <span id="waveSpeedValue">340 m/s</span>
+                </div>
+            </div>
+
+            <div class="control-group mode-selector">
+                <h3>模式選擇</h3>
+                <div class="mode-buttons">
+                    <button class="mode-btn active" data-mode="horizontal">水平移動</button>
+                    <button class="mode-btn" data-mode="circular">圓周運動</button>
+                    <button class="mode-btn" data-mode="manual">手動控制</button>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="playBtn">暫停</button>
+                <button id="resetBtn">重置</button>
+                <button id="soundBtn">開啟聲音</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="frequency-display">
+                <div class="freq-box approaching">
+                    <span class="freq-label">靠近方向</span>
+                    <span class="freq-value" id="freqApproach">3.0 Hz</span>
+                    <span class="freq-note">頻率增高</span>
+                </div>
+                <div class="freq-box source">
+                    <span class="freq-label">波源頻率</span>
+                    <span class="freq-value" id="freqSource">3.0 Hz</span>
+                    <span class="freq-note">原始頻率</span>
+                </div>
+                <div class="freq-box receding">
+                    <span class="freq-label">遠離方向</span>
+                    <span class="freq-value" id="freqRecede">3.0 Hz</span>
+                    <span class="freq-note">頻率降低</span>
+                </div>
+            </div>
+
+            <div class="formula">
+                <h3>都卜勒公式</h3>
+                <p class="math">f' = f × (v ± v<sub>o</sub>) / (v ∓ v<sub>s</sub>)</p>
+                <p class="explanation">當波源靠近觀察者時，波被壓縮，頻率升高；遠離時，波被拉伸，頻率降低。</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>手動模式：點擊並拖曳控制波源位置 | Web Toy #182</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

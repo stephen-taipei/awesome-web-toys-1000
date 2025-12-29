@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convection 對流 - Web Toy 195</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Convection</h1>
+            <p class="subtitle">熱對流模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="convectionCanvas"></canvas>
+            <div class="heat-source"></div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>控制參數</h3>
+                <div class="control-row">
+                    <label>熱源強度</label>
+                    <input type="range" id="heatSlider" min="0" max="100" value="50">
+                    <span id="heatValue">50%</span>
+                </div>
+                <div class="control-row">
+                    <label>粒子數量</label>
+                    <input type="range" id="particleSlider" min="100" max="500" value="300">
+                    <span id="particleValue">300</span>
+                </div>
+                <div class="control-row">
+                    <label>顯示溫度</label>
+                    <input type="checkbox" id="showTemp" checked>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>對流原理</h4>
+                <p>熱流體密度降低而上升，冷流體密度增加而下沉，形成對流循環。</p>
+                <div class="convection-diagram">
+                    <span class="arrow up">↑ 熱</span>
+                    <span class="arrow down">↓ 冷</span>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="resetBtn">重置</button>
+        </div>
+        <footer><p>觀察熱空氣上升、冷空氣下沉的對流現象 | Web Toy #195</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

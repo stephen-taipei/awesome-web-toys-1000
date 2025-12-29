@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Mixer 混音器 - Web Toy 213</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Audio Mixer</h1>
+            <p class="subtitle">音頻混音器</p>
+        </header>
+        <div class="mixer">
+            <div class="channel" data-channel="1">
+                <div class="channel-name">CH 1</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+                <input type="range" class="fader" min="0" max="100" value="75" orient="vertical">
+                <div class="pan-control"><input type="range" class="pan" min="-100" max="100" value="0"></div>
+                <button class="mute-btn">M</button>
+                <button class="solo-btn">S</button>
+            </div>
+            <div class="channel" data-channel="2">
+                <div class="channel-name">CH 2</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+                <input type="range" class="fader" min="0" max="100" value="75" orient="vertical">
+                <div class="pan-control"><input type="range" class="pan" min="-100" max="100" value="0"></div>
+                <button class="mute-btn">M</button>
+                <button class="solo-btn">S</button>
+            </div>
+            <div class="channel" data-channel="3">
+                <div class="channel-name">CH 3</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+                <input type="range" class="fader" min="0" max="100" value="75" orient="vertical">
+                <div class="pan-control"><input type="range" class="pan" min="-100" max="100" value="0"></div>
+                <button class="mute-btn">M</button>
+                <button class="solo-btn">S</button>
+            </div>
+            <div class="channel master" data-channel="master">
+                <div class="channel-name">MASTER</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+                <input type="range" class="fader" min="0" max="100" value="80" orient="vertical">
+                <div class="pan-control"><span>L/R</span></div>
+            </div>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>播放控制</h3>
+                <button id="playBtn">開始演示</button>
+            </div>
+        </div>
+        <footer><p>調整推桿和聲相控制混音 | Web Toy #213</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

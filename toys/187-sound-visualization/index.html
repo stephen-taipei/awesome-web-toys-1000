@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Visualization 聲波視覺化 - Web Toy 187</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sound Visualization</h1>
+            <p class="subtitle">即時聲波視覺化</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="audioCanvas"></canvas>
+            <div class="mic-status" id="micStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">點擊開始錄音</span>
+            </div>
+        </div>
+
+        <div class="visualization-modes">
+            <button class="mode-btn active" data-mode="waveform">波形圖</button>
+            <button class="mode-btn" data-mode="frequency">頻譜圖</button>
+            <button class="mode-btn" data-mode="circular">圓形</button>
+            <button class="mode-btn" data-mode="bars">長條圖</button>
+            <button class="mode-btn" data-mode="particles">粒子</button>
+        </div>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>視覺設定</h3>
+                <div class="control-row">
+                    <label>敏感度</label>
+                    <input type="range" id="sensitivity" min="0.5" max="3" step="0.1" value="1.5">
+                    <span id="sensitivityValue">1.5</span>
+                </div>
+                <div class="control-row">
+                    <label>平滑度</label>
+                    <input type="range" id="smoothing" min="0" max="0.95" step="0.05" value="0.8">
+                    <span id="smoothingValue">0.8</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>顏色主題</h3>
+                <div class="color-themes">
+                    <button class="theme-btn active" data-theme="neon">霓虹</button>
+                    <button class="theme-btn" data-theme="fire">火焰</button>
+                    <button class="theme-btn" data-theme="ocean">海洋</button>
+                    <button class="theme-btn" data-theme="rainbow">彩虹</button>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="startBtn">開始錄音</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="audio-stats">
+                <div class="stat-item">
+                    <span class="stat-label">音量</span>
+                    <div class="volume-bar">
+                        <div class="volume-level" id="volumeLevel"></div>
+                    </div>
+                    <span class="stat-value" id="volumeValue">0 dB</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">主頻率</span>
+                    <span class="stat-value" id="frequencyValue">-- Hz</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>允許麥克風存取以開始即時聲波視覺化 | Web Toy #187</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Diffusion 氣體擴散 - Web Toy 193</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gas Diffusion</h1>
+            <p class="subtitle">氣體擴散模擬</p>
+        </header>
+        <div class="simulation-area">
+            <canvas id="diffusionCanvas"></canvas>
+        </div>
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>控制面板</h3>
+                <div class="control-row">
+                    <label>溫度</label>
+                    <input type="range" id="tempSlider" min="100" max="500" value="300">
+                    <span id="tempValue">300 K</span>
+                </div>
+                <div class="control-row">
+                    <label>隔板</label>
+                    <button id="barrierBtn">移除隔板</button>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>費克定律</h4>
+                <p>氣體從高濃度向低濃度區域擴散，直到達成平衡。</p>
+                <p class="formula">J = -D∇c</p>
+            </div>
+            <div class="stats-box">
+                <h4>統計</h4>
+                <div class="stat-row"><span>左側紅色:</span><span id="leftRed">100</span></div>
+                <div class="stat-row"><span>右側紅色:</span><span id="rightRed">0</span></div>
+                <div class="stat-row"><span>左側藍色:</span><span id="leftBlue">0</span></div>
+                <div class="stat-row"><span>右側藍色:</span><span id="rightBlue">100</span></div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="resetBtn">重置</button>
+        </div>
+        <footer><p>觀察兩種氣體如何混合達到平衡 | Web Toy #193</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

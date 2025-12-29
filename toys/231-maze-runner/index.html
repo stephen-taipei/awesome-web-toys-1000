@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Runner 迷宮跑者 - Web Toy 231</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Maze Runner</h1>
+            <p class="subtitle">逃出迷宮</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">關卡: <span id="level">1</span></div>
+            <div class="stat">步數: <span id="moves">0</span></div>
+            <div class="stat">時間: <span id="timer">0:00</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="mazeCanvas"></canvas>
+        </div>
+        <div class="controls">
+            <button class="control-btn" data-dir="up">↑</button>
+            <div class="control-row">
+                <button class="control-btn" data-dir="left">←</button>
+                <button class="control-btn" data-dir="down">↓</button>
+                <button class="control-btn" data-dir="right">→</button>
+            </div>
+        </div>
+        <button id="newMazeBtn">新迷宮</button>
+        <footer><p>到達綠色出口 | Web Toy #231</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

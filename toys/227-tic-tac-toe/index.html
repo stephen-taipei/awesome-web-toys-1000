@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe 井字遊戲 - Web Toy 227</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tic Tac Toe</h1>
+            <p class="subtitle">井字遊戲</p>
+        </header>
+        <div class="score-board">
+            <div class="player x-player">
+                <span class="symbol">X</span>
+                <span class="score" id="xScore">0</span>
+            </div>
+            <div class="draws">
+                <span class="symbol">平</span>
+                <span class="score" id="draws">0</span>
+            </div>
+            <div class="player o-player">
+                <span class="symbol">O</span>
+                <span class="score" id="oScore">0</span>
+            </div>
+        </div>
+        <div class="status" id="status">X 的回合</div>
+        <div class="game-grid" id="gameGrid"></div>
+        <button id="restartBtn">重新開始</button>
+        <footer><p>輪流放置 X 和 O | Web Toy #227</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
