@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Card Flip 3D卡片翻轉 - Web Toy 607</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>3D Card Flip</h1><p class="subtitle">3D卡片翻轉</p></header>
+        <div class="demo-area">
+            <div class="cards-container">
+                <div class="card" data-flip="horizontal">
+                    <div class="card-inner">
+                        <div class="card-front">正面</div>
+                        <div class="card-back">背面</div>
+                    </div>
+                </div>
+                <div class="card" data-flip="vertical">
+                    <div class="card-inner">
+                        <div class="card-front">正面</div>
+                        <div class="card-back">背面</div>
+                    </div>
+                </div>
+                <div class="card" data-flip="diagonal">
+                    <div class="card-inner">
+                        <div class="card-front">正面</div>
+                        <div class="card-back">背面</div>
+                    </div>
+                </div>
+            </div>
+            <div class="labels">
+                <span>水平翻轉</span>
+                <span>垂直翻轉</span>
+                <span>對角翻轉</span>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="flipAll">全部翻轉</button>
+            <button id="resetAll">重置</button>
+        </div>
+        <div class="info">點擊卡片觀看翻轉效果</div>
+        <footer><p>3D卡片翻轉 | Web Toy #607</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

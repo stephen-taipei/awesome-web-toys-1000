@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Animation 邊框動畫 - Web Toy 609</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Border Animation</h1><p class="subtitle">邊框動畫</p></header>
+        <div class="demo-area">
+            <div class="border-grid">
+                <div class="border-item border-dash"><span>虛線流動</span></div>
+                <div class="border-item border-glow"><span>光暈邊框</span></div>
+                <div class="border-item border-trace"><span>描邊追蹤</span></div>
+                <div class="border-item border-gradient"><span>漸層邊框</span></div>
+                <div class="border-item border-pulse"><span>脈動邊框</span></div>
+                <div class="border-item border-corners"><span>角落效果</span></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="pauseBtn">暫停</button>
+            <label>速度:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info">各種邊框動畫效果</div>
+        <footer><p>邊框動畫 | Web Toy #609</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake Effects 搖晃效果 - Web Toy 604</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Shake Effects</h1><p class="subtitle">搖晃效果</p></header>
+        <div class="demo-area">
+            <div class="shake-grid">
+                <div class="shake-item" data-shake="horizontal"><div class="shape"></div><span>水平</span></div>
+                <div class="shake-item" data-shake="vertical"><div class="shape"></div><span>垂直</span></div>
+                <div class="shake-item" data-shake="rotate"><div class="shape"></div><span>旋轉</span></div>
+                <div class="shake-item" data-shake="crazy"><div class="shape"></div><span>瘋狂</span></div>
+                <div class="shake-item" data-shake="slow"><div class="shape"></div><span>緩慢</span></div>
+                <div class="shake-item" data-shake="hard"><div class="shape"></div><span>劇烈</span></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="shakeAll">全部搖晃</button>
+            <button id="stopAll">停止</button>
+        </div>
+        <div class="info">點擊元素觸發搖晃動畫</div>
+        <footer><p>搖晃效果 | Web Toy #604</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

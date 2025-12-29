@@ -1,0 +1,65 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #11998e, #38ef7d); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.demo-area { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; }
+.spin-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.spin-item { text-align: center; }
+.spin-item .shape { width: 50px; height: 50px; margin: 0 auto 8px; background: linear-gradient(135deg, #fff, #e0e0e0); border-radius: 8px; }
+.spin-item span { font-size: 0.75rem; color: rgba(255,255,255,0.9); }
+
+.spin-basic .shape { animation: spinBasic var(--duration, 2s) linear infinite; }
+.spin-reverse .shape { animation: spinBasic var(--duration, 2s) linear infinite reverse; }
+.spin-pulse .shape { animation: spinPulse var(--duration, 2s) ease-in-out infinite; }
+.spin-wobble .shape { animation: spinWobble var(--duration, 2s) ease-in-out infinite; }
+.spin-3d-x .shape { animation: spin3DX var(--duration, 2s) linear infinite; }
+.spin-3d-y .shape { animation: spin3DY var(--duration, 2s) linear infinite; }
+.spin-orbit .shape { animation: spinOrbit var(--duration, 2s) linear infinite; }
+.spin-swing .shape { animation: spinSwing var(--duration, 2s) ease-in-out infinite; transform-origin: top center; }
+
+@keyframes spinBasic {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinPulse {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+}
+
+@keyframes spinWobble {
+    0%, 100% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+}
+
+@keyframes spin3DX {
+    from { transform: rotateX(0deg); }
+    to { transform: rotateX(360deg); }
+}
+
+@keyframes spin3DY {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes spinOrbit {
+    from { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+}
+
+@keyframes spinSwing {
+    0%, 100% { transform: rotate(-30deg); }
+    50% { transform: rotate(30deg); }
+}
+
+.paused .shape { animation-play-state: paused; }
+
+.controls { display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.2); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(255,255,255,0.3); }
+.controls label { font-size: 0.9rem; }
+.controls input[type="range"] { width: 100px; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.8); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

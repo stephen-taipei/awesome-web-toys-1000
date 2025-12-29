@@ -1,0 +1,18 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2c3e50, #3498db); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.demo-area { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; }
+.preview-box { height: 150px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); border-radius: 10px; }
+.animated-element { width: 50px; height: 50px; background: linear-gradient(135deg, #e74c3c, #f39c12); border-radius: 10px; }
+
+.controls { margin-top: 15px; }
+.control-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+.control-row label { font-size: 0.8rem; min-width: 45px; }
+.control-row input[type="range"] { flex: 1; min-width: 60px; }
+.control-row span { font-size: 0.8rem; min-width: 30px; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

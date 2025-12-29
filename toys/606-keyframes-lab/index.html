@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Keyframes Lab Keyframes實驗室 - Web Toy 606</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Keyframes Lab</h1><p class="subtitle">Keyframes實驗室</p></header>
+        <div class="demo-area">
+            <div class="preview-box">
+                <div class="animated-element" id="animatedEl"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="control-row">
+                <label>起始X:</label>
+                <input type="range" id="startX" min="-50" max="50" value="0">
+                <label>結束X:</label>
+                <input type="range" id="endX" min="-50" max="50" value="30">
+            </div>
+            <div class="control-row">
+                <label>起始Y:</label>
+                <input type="range" id="startY" min="-50" max="50" value="0">
+                <label>結束Y:</label>
+                <input type="range" id="endY" min="-50" max="50" value="-30">
+            </div>
+            <div class="control-row">
+                <label>旋轉:</label>
+                <input type="range" id="rotation" min="0" max="720" value="360">
+                <label>縮放:</label>
+                <input type="range" id="scale" min="50" max="200" value="120">
+            </div>
+            <div class="control-row">
+                <label>時間:</label>
+                <input type="range" id="duration" min="500" max="3000" value="1000">
+                <span id="durationVal">1s</span>
+            </div>
+        </div>
+        <div class="info" id="info">自訂關鍵影格動畫</div>
+        <footer><p>Keyframes實驗室 | Web Toy #606</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

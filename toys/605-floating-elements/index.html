@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Elements 漂浮元素 - Web Toy 605</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Floating Elements</h1><p class="subtitle">漂浮元素</p></header>
+        <div class="demo-area">
+            <div class="float-container">
+                <div class="float-item float-gentle" style="--delay: 0s; --x: 30%; --y: 20%;"></div>
+                <div class="float-item float-wave" style="--delay: 0.5s; --x: 70%; --y: 30%;"></div>
+                <div class="float-item float-bob" style="--delay: 1s; --x: 20%; --y: 60%;"></div>
+                <div class="float-item float-orbit" style="--delay: 0.3s; --x: 80%; --y: 70%;"></div>
+                <div class="float-item float-drift" style="--delay: 0.7s; --x: 50%; --y: 45%;"></div>
+                <div class="float-item float-sway" style="--delay: 0.2s; --x: 40%; --y: 75%;"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="mode1" class="active">輕柔</button>
+            <button id="mode2">活潑</button>
+            <button id="mode3">夢幻</button>
+        </div>
+        <div class="info">輕柔漂浮的動畫效果</div>
+        <footer><p>漂浮元素 | Web Toy #605</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.demo-area { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; min-height: 250px; }
+.bounce-row { display: flex; justify-content: space-around; margin-bottom: 20px; }
+.bounce-item { width: 70px; height: 70px; background: linear-gradient(135deg, #fff, #e0e0e0); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.bounce-item span { color: #333; font-size: 0.75rem; font-weight: 600; }
+.bounce-item:hover { transform: scale(1.05); }
+
+.bounce-basic.active { animation: bounceBasic 0.6s ease-out; }
+.bounce-elastic.active { animation: bounceElastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.bounce-spring.active { animation: bounceSpring 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.bounce-drop.active { animation: bounceDrop 0.8s ease-out; }
+.bounce-rubber.active { animation: bounceRubber 0.6s ease-out; }
+.bounce-jelly.active { animation: bounceJelly 0.8s ease-out; }
+
+@keyframes bounceBasic {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+@keyframes bounceElastic {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25, 0.75); }
+    40% { transform: scale(0.75, 1.25); }
+    50% { transform: scale(1.15, 0.85); }
+    65% { transform: scale(0.95, 1.05); }
+    75% { transform: scale(1.05, 0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounceSpring {
+    0% { transform: translateY(0) scale(1); }
+    20% { transform: translateY(-40px) scale(1.1); }
+    40% { transform: translateY(0) scale(0.9); }
+    60% { transform: translateY(-20px) scale(1.05); }
+    80% { transform: translateY(0) scale(0.98); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes bounceDrop {
+    0% { transform: translateY(-100px); opacity: 0; }
+    50% { transform: translateY(10px); opacity: 1; }
+    70% { transform: translateY(-15px); }
+    85% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounceRubber {
+    0% { transform: scale(1); }
+    30% { transform: scaleX(1.25) scaleY(0.75); }
+    40% { transform: scaleX(0.75) scaleY(1.25); }
+    50% { transform: scaleX(1.15) scaleY(0.85); }
+    65% { transform: scaleX(0.95) scaleY(1.05); }
+    75% { transform: scaleX(1.05) scaleY(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounceJelly {
+    0%, 100% { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+}
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.2); color: #fff; font-size: 0.9rem; transition: background 0.3s; }
+.controls button:hover { background: rgba(255,255,255,0.3); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.8); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

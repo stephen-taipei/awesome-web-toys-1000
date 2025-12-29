@@ -1,0 +1,36 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #e94560; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; }
+.cards-container { display: flex; justify-content: space-around; perspective: 1000px; }
+.labels { display: flex; justify-content: space-around; margin-top: 15px; }
+.labels span { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+
+.card { width: 90px; height: 120px; cursor: pointer; }
+.card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.card-front { background: linear-gradient(135deg, #667eea, #764ba2); }
+.card-back { background: linear-gradient(135deg, #e94560, #0f3460); }
+
+/* Horizontal flip */
+.card[data-flip="horizontal"] .card-back { transform: rotateY(180deg); }
+.card[data-flip="horizontal"].flipped .card-inner { transform: rotateY(180deg); }
+
+/* Vertical flip */
+.card[data-flip="vertical"] .card-back { transform: rotateX(180deg); }
+.card[data-flip="vertical"].flipped .card-inner { transform: rotateX(180deg); }
+
+/* Diagonal flip */
+.card[data-flip="diagonal"] .card-back { transform: rotate3d(1, 1, 0, 180deg); }
+.card[data-flip="diagonal"].flipped .card-inner { transform: rotate3d(1, 1, 0, 180deg); }
+
+.card:hover .card-inner { box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3); }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(233, 69, 96, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(233, 69, 96, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
