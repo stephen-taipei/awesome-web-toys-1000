@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip Path Animation 剪裁路徑 - Web Toy 619</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Clip Path Animation</h1><p class="subtitle">剪裁路徑</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 200" id="clipSvg">
+                <defs>
+                    <linearGradient id="imgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="50%" style="stop-color:#764ba2"/>
+                        <stop offset="100%" style="stop-color:#f093fb"/>
+                    </linearGradient>
+
+                    <!-- Circle Clip -->
+                    <clipPath id="circleClip">
+                        <circle id="circleClipShape" cx="100" cy="100" r="0"/>
+                    </clipPath>
+
+                    <!-- Star Clip -->
+                    <clipPath id="starClip">
+                        <polygon id="starClipShape" points="100,100 100,100 100,100 100,100 100,100"/>
+                    </clipPath>
+
+                    <!-- Diamond Clip -->
+                    <clipPath id="diamondClip">
+                        <polygon id="diamondClipShape" points="100,100 100,100 100,100 100,100"/>
+                    </clipPath>
+
+                    <!-- Hexagon Clip -->
+                    <clipPath id="hexClip">
+                        <polygon id="hexClipShape" points="100,100 100,100 100,100 100,100 100,100 100,100"/>
+                    </clipPath>
+                </defs>
+
+                <rect id="clippedRect" x="0" y="0" width="200" height="200" fill="url(#imgGrad)" clip-path="url(#circleClip)"/>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="clip1" class="active">圓形</button>
+            <button id="clip2">星形</button>
+            <button id="clip3">菱形</button>
+            <button id="clip4">六角</button>
+            <button id="replayBtn">重播</button>
+        </div>
+        <div class="info">SVG剪裁路徑揭示動畫</div>
+        <footer><p>剪裁路徑 | Web Toy #619</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

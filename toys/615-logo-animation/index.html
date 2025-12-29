@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Animation 標誌動畫 - Web Toy 615</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Logo Animation</h1><p class="subtitle">標誌動畫</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 200" id="logoSvg">
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                </defs>
+                <g id="logoGroup" class="logo-group">
+                    <circle id="logoBg" cx="100" cy="100" r="70" fill="url(#logoGrad)" class="logo-bg"/>
+                    <path id="logoLetter" d="M70,130 L70,70 L100,100 L130,70 L130,130" class="logo-letter"/>
+                    <circle id="logoDot1" cx="70" cy="60" r="8" class="logo-dot"/>
+                    <circle id="logoDot2" cx="130" cy="60" r="8" class="logo-dot"/>
+                </g>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="anim1" class="active">淡入</button>
+            <button id="anim2">縮放</button>
+            <button id="anim3">旋轉</button>
+            <button id="anim4">拆解</button>
+            <button id="replayBtn">重播</button>
+        </div>
+        <div class="info">品牌標誌入場動畫效果</div>
+        <footer><p>標誌動畫 | Web Toy #615</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

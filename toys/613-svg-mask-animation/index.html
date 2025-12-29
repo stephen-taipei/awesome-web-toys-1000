@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Mask Animation 遮罩動畫 - Web Toy 613</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>SVG Mask Animation</h1><p class="subtitle">遮罩動畫</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 200" id="svgCanvas">
+                <defs>
+                    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                    <mask id="circleMask">
+                        <rect width="200" height="200" fill="black"/>
+                        <circle id="maskCircle" cx="100" cy="100" r="0" fill="white"/>
+                    </mask>
+                    <mask id="wipeMask">
+                        <rect id="wipeRect" x="0" y="0" width="0" height="200" fill="white"/>
+                    </mask>
+                    <mask id="radialMask">
+                        <rect width="200" height="200" fill="black"/>
+                        <ellipse id="radialEllipse" cx="100" cy="100" rx="0" ry="0" fill="white"/>
+                    </mask>
+                    <mask id="stripeMask">
+                        <g id="stripeGroup"></g>
+                    </mask>
+                </defs>
+                <rect class="bg-rect" width="200" height="200" fill="url(#bgGrad)"/>
+                <image id="maskedImage" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23ff6b6b' width='200' height='200'/%3E%3Ccircle cx='60' cy='60' r='30' fill='%23feca57'/%3E%3Ccircle cx='140' cy='60' r='30' fill='%2348dbfb'/%3E%3Ccircle cx='100' cy='130' r='40' fill='%231dd1a1'/%3E%3C/svg%3E" width="200" height="200" mask="url(#circleMask)"/>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="mask1" class="active">圓形</button>
+            <button id="mask2">擦除</button>
+            <button id="mask3">橢圓</button>
+            <button id="mask4">條紋</button>
+            <button id="replayBtn">重播</button>
+        </div>
+        <div class="info">SVG遮罩揭示動畫效果</div>
+        <footer><p>遮罩動畫 | Web Toy #613</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Charts 動態圖表 - Web Toy 617</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Animated Charts</h1><p class="subtitle">動態圖表</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 180" id="chartSvg">
+                <defs>
+                    <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#48dbfb"/>
+                        <stop offset="100%" style="stop-color:#1dd1a1"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Axis lines -->
+                <line x1="30" y1="150" x2="190" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="30" y1="150" x2="30" y2="20" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+                <!-- Chart content will be drawn by JS -->
+                <g id="chartContent"></g>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="chart1" class="active">長條圖</button>
+            <button id="chart2">折線圖</button>
+            <button id="chart3">圓餅圖</button>
+            <button id="chart4">面積圖</button>
+            <button id="replayBtn">重播</button>
+        </div>
+        <div class="info">資料視覺化動畫展示</div>
+        <footer><p>動態圖表 | Web Toy #617</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Animation 圖案動畫 - Web Toy 618</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pattern Animation</h1><p class="subtitle">圖案動畫</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 200" id="patternSvg">
+                <defs>
+                    <!-- Dots Pattern -->
+                    <pattern id="dotsPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="4" fill="#667eea">
+                            <animate attributeName="r" values="2;5;2" dur="1s" repeatCount="indefinite"/>
+                        </circle>
+                    </pattern>
+
+                    <!-- Lines Pattern -->
+                    <pattern id="linesPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <line x1="0" y1="0" x2="20" y2="20" stroke="#48dbfb" stroke-width="2">
+                            <animate attributeName="stroke-width" values="1;3;1" dur="1.5s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="20" y1="0" x2="0" y2="20" stroke="#1dd1a1" stroke-width="2">
+                            <animate attributeName="stroke-width" values="3;1;3" dur="1.5s" repeatCount="indefinite"/>
+                        </line>
+                    </pattern>
+
+                    <!-- Waves Pattern -->
+                    <pattern id="wavesPattern" x="0" y="0" width="40" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M0,10 Q10,0 20,10 T40,10" fill="none" stroke="#a78bfa" stroke-width="2">
+                            <animateTransform attributeName="transform" type="translate" values="0,0;-40,0" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M40,10 Q50,0 60,10 T80,10" fill="none" stroke="#a78bfa" stroke-width="2">
+                            <animateTransform attributeName="transform" type="translate" values="0,0;-40,0" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                    </pattern>
+
+                    <!-- Grid Pattern -->
+                    <pattern id="gridPattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="25" height="25" fill="none" stroke="#ff6b6b" stroke-width="1">
+                            <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+                        </rect>
+                        <circle cx="12.5" cy="12.5" r="3" fill="#feca57">
+                            <animate attributeName="fill-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                    </pattern>
+
+                    <!-- Hexagon Pattern -->
+                    <pattern id="hexPattern" x="0" y="0" width="30" height="26" patternUnits="userSpaceOnUse">
+                        <polygon points="15,0 30,7.5 30,22.5 15,30 0,22.5 0,7.5" fill="none" stroke="#1dd1a1" stroke-width="1">
+                            <animate attributeName="stroke" values="#1dd1a1;#48dbfb;#667eea;#1dd1a1" dur="3s" repeatCount="indefinite"/>
+                        </polygon>
+                    </pattern>
+
+                    <!-- Stars Pattern -->
+                    <pattern id="starsPattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                        <polygon class="star-poly" points="15,5 17,12 24,12 18,17 20,24 15,20 10,24 12,17 6,12 13,12" fill="#feca57">
+                            <animateTransform attributeName="transform" type="rotate" values="0 15 15;360 15 15" dur="4s" repeatCount="indefinite"/>
+                        </polygon>
+                    </pattern>
+                </defs>
+
+                <rect id="patternRect" x="10" y="10" width="180" height="180" rx="15" fill="url(#dotsPattern)"/>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="pattern1" class="active">圓點</button>
+            <button id="pattern2">交叉</button>
+            <button id="pattern3">波浪</button>
+            <button id="pattern4">方格</button>
+            <button id="pattern5">六角</button>
+            <button id="pattern6">星星</button>
+        </div>
+        <div class="info">SVG動態填充圖案效果</div>
+        <footer><p>圖案動畫 | Web Toy #618</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIL Animation 原生SVG動畫 - Web Toy 620</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>SMIL Animation</h1><p class="subtitle">原生SVG動畫</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 200" id="smilSvg">
+                <defs>
+                    <linearGradient id="smilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                </defs>
+
+                <g id="animGroup1" class="anim-group active">
+                    <!-- Animate Transform - Rotation -->
+                    <rect x="75" y="75" width="50" height="50" rx="8" fill="url(#smilGrad)">
+                        <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="3s" repeatCount="indefinite"/>
+                    </rect>
+                </g>
+
+                <g id="animGroup2" class="anim-group">
+                    <!-- Animate - Color Change -->
+                    <circle cx="100" cy="100" r="50">
+                        <animate attributeName="fill" values="#667eea;#f093fb;#48dbfb;#1dd1a1;#667eea" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="r" values="30;50;30" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <g id="animGroup3" class="anim-group">
+                    <!-- Animate Motion - Path Following -->
+                    <circle r="15" fill="#ff6b6b">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M100,50 C150,50 150,150 100,150 C50,150 50,50 100,50"/>
+                    </circle>
+                    <path d="M100,50 C150,50 150,150 100,150 C50,150 50,50 100,50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="5,5"/>
+                </g>
+
+                <g id="animGroup4" class="anim-group">
+                    <!-- Multiple Transforms -->
+                    <g>
+                        <rect x="-25" y="-25" width="50" height="50" rx="5" fill="#feca57">
+                            <animate attributeName="rx" values="5;25;5" dur="2s" repeatCount="indefinite"/>
+                        </rect>
+                        <animateTransform attributeName="transform" type="translate" values="100,100;100,100" dur="0.1s" fill="freeze"/>
+                        <animateTransform attributeName="transform" type="scale" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" additive="sum"/>
+                        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" additive="sum"/>
+                    </g>
+                </g>
+
+                <g id="animGroup5" class="anim-group">
+                    <!-- Set Animation - Discrete Changes -->
+                    <text x="100" y="105" text-anchor="middle" font-size="40" fill="#fff">
+                        <set attributeName="font-size" to="30" begin="0s" dur="0.5s"/>
+                        <set attributeName="font-size" to="40" begin="0.5s" dur="0.5s"/>
+                        <set attributeName="font-size" to="50" begin="1s" dur="0.5s"/>
+                        <set attributeName="font-size" to="40" begin="1.5s" dur="0.5s"/>
+                        <animate attributeName="fill" values="#667eea;#f093fb;#48dbfb;#667eea" dur="2s" repeatCount="indefinite"/>
+                        SMIL
+                    </text>
+                </g>
+
+                <g id="animGroup6" class="anim-group">
+                    <!-- Stroke Animation -->
+                    <path d="M30,100 Q65,50 100,100 T170,100" fill="none" stroke="#1dd1a1" stroke-width="4" stroke-linecap="round">
+                        <animate attributeName="stroke-dasharray" values="0,300;150,150;300,0;150,150;0,300" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="stroke" values="#1dd1a1;#48dbfb;#667eea;#a78bfa;#1dd1a1" dur="3s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M30,130 Q65,180 100,130 T170,130" fill="none" stroke="#ff6b6b" stroke-width="4" stroke-linecap="round">
+                        <animate attributeName="stroke-dasharray" values="300,0;150,150;0,300;150,150;300,0" dur="3s" repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="anim1" class="active">旋轉</button>
+            <button id="anim2">變色</button>
+            <button id="anim3">路徑</button>
+            <button id="anim4">組合</button>
+            <button id="anim5">文字</button>
+            <button id="anim6">線條</button>
+        </div>
+        <div class="info">SVG SMIL原生動畫效果</div>
+        <footer><p>原生SVG動畫 | Web Toy #620</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
