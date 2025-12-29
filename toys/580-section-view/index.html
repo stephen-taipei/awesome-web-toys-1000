@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section View 剖面視圖 - Web Toy 580</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Section View</h1><p class="subtitle">剖面視圖</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>剖面位置:</label>
+            <input type="range" id="sectionSlider" min="0" max="100" value="50">
+            <button id="xAxisBtn" class="active">X軸</button>
+            <button id="zAxisBtn">Z軸</button>
+        </div>
+        <div class="info" id="info">建築剖面切割視圖</div>
+        <footer><p>剖面視圖 | Web Toy #580</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

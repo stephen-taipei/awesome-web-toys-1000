@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Swapper 材質切換 - Web Toy 578</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Material Swapper</h1><p class="subtitle">材質切換</p></header>
+        <canvas id="canvas" width="360" height="260"></canvas>
+        <div class="controls">
+            <div class="material-row">
+                <label>牆面:</label>
+                <button class="wall-btn active" data-mat="brick">磚塊</button>
+                <button class="wall-btn" data-mat="wood">木板</button>
+                <button class="wall-btn" data-mat="stone">石材</button>
+            </div>
+            <div class="material-row">
+                <label>屋頂:</label>
+                <button class="roof-btn active" data-mat="tile">瓦片</button>
+                <button class="roof-btn" data-mat="metal">金屬</button>
+                <button class="roof-btn" data-mat="green">綠化</button>
+            </div>
+        </div>
+        <div class="info" id="info">快速切換建築表面材質</div>
+        <footer><p>材質切換 | Web Toy #578</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

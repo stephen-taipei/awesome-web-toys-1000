@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2a3a3a, #3a4a4e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #b39ddb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+canvas { display: block; margin: 0 auto; border-radius: 15px; background: #87ceeb; }
+.controls { margin-top: 15px; }
+.material-row { display: flex; gap: 6px; justify-content: center; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.material-row label { font-size: 0.8rem; min-width: 40px; }
+.material-row button { padding: 6px 10px; border: none; border-radius: 6px; cursor: pointer; background: rgba(179, 157, 219, 0.3); color: #fff; font-size: 0.75rem; }
+.material-row button.active { background: rgba(179, 157, 219, 0.7); }
+.material-row button:hover { background: rgba(179, 157, 219, 0.5); }
+.info { text-align: center; padding: 10px; margin-top: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
