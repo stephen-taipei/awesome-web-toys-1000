@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Mixer RGB混色器 - Web Toy 367</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>RGB Mixer</h1><p class="subtitle">RGB混色器</p></header>
+        <div class="color-display" id="colorDisplay"></div>
+        <div class="hex-display" id="hexDisplay">#6C5CE7</div>
+        <div class="sliders">
+            <div class="slider-row red">
+                <span class="label">R</span>
+                <input type="range" id="redSlider" min="0" max="255" value="108">
+                <span class="value" id="redValue">108</span>
+            </div>
+            <div class="slider-row green">
+                <span class="label">G</span>
+                <input type="range" id="greenSlider" min="0" max="255" value="92">
+                <span class="value" id="greenValue">92</span>
+            </div>
+            <div class="slider-row blue">
+                <span class="label">B</span>
+                <input type="range" id="blueSlider" min="0" max="255" value="231">
+                <span class="value" id="blueValue">231</span>
+            </div>
+        </div>
+        <button class="random-btn" id="randomBtn">🎲 隨機顏色</button>
+        <footer><p>RGB混色器 | Web Toy #367</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

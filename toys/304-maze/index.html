@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze 迷宮 - Web Toy 304</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Maze</h1><p class="subtitle">迷宮探險</p></header>
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="status" id="status">使用方向鍵移動</div>
+        <div class="controls">
+            <button id="newBtn">新迷宮</button>
+        </div>
+        <div class="mobile-controls">
+            <button id="upBtn">↑</button>
+            <div class="lr"><button id="leftBtn">←</button><button id="rightBtn">→</button></div>
+            <button id="downBtn">↓</button>
+        </div>
+        <footer><p>迷宮 | Web Toy #304</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

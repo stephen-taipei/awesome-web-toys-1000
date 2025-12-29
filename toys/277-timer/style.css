@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #00d9ff; }
+.subtitle { color: #888; }
+.timer-display { text-align: center; font-size: 4rem; font-weight: bold; color: #00d9ff; margin: 20px 0; font-family: 'Courier New', monospace; }
+.progress-ring { display: flex; justify-content: center; margin: 20px 0; }
+#gameCanvas { display: block; }
+.time-input { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px 0; }
+.time-input input { width: 60px; padding: 10px; border: 2px solid #00d9ff; border-radius: 8px; background: rgba(0,217,255,0.1); color: #fff; font-size: 1.2rem; text-align: center; }
+.time-input span { font-size: 1.5rem; color: #00d9ff; }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 12px; border: none; border-radius: 10px; background: rgba(0,217,255,0.2); color: #00d9ff; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
+.controls button:hover { background: rgba(0,217,255,0.4); }
+footer { text-align: center; padding: 15px; color: #666; }

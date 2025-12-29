@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List 待辦事項 - Web Toy 333</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Todo List</h1><p class="subtitle">待辦事項</p></header>
+        <div class="add-task">
+            <input type="text" id="taskInput" placeholder="新增待辦事項...">
+            <button id="addBtn">+</button>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="active">待完成</button>
+            <button class="filter-btn" data-filter="completed">已完成</button>
+        </div>
+        <ul class="tasks" id="tasks"></ul>
+        <div class="stats" id="stats"></div>
+        <footer><p>待辦事項 | Web Toy #333</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

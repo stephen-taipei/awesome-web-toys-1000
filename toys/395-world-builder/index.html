@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Builder 世界建造 - Web Toy 395</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>World Builder</h1><p class="subtitle">世界建造</p></header>
+        <div class="tools">
+            <button class="tool-btn active" data-block="grass">🌿</button>
+            <button class="tool-btn" data-block="water">💧</button>
+            <button class="tool-btn" data-block="sand">🏖️</button>
+            <button class="tool-btn" data-block="stone">🪨</button>
+            <button class="tool-btn" data-block="tree">🌳</button>
+            <button class="tool-btn" data-block="house">🏠</button>
+            <button class="tool-btn" data-block="erase">🧹</button>
+        </div>
+        <canvas id="canvas" width="360" height="360"></canvas>
+        <button id="clearAll" class="action-btn">清空世界</button>
+        <footer><p>世界建造 | Web Toy #395</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

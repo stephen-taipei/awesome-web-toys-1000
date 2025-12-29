@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 500px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #00d4ff; }
+.subtitle { color: #888; }
+.stats { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+.stat { text-align: center; background: rgba(0,212,255,0.1); padding: 15px 25px; border-radius: 10px; }
+.stat span { display: block; font-size: 2rem; font-weight: bold; color: #00d4ff; }
+.stat label { font-size: 0.9rem; color: #888; }
+.text-display { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; font-size: 1.3rem; line-height: 2; margin: 20px 0; min-height: 150px; font-family: monospace; }
+.text-display .correct { color: #27ae60; }
+.text-display .wrong { color: #e74c3c; text-decoration: underline; }
+.text-display .current { background: rgba(0,212,255,0.3); border-radius: 3px; }
+.input { width: 100%; padding: 18px; border: 2px solid rgba(0,212,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.05); color: #fff; font-size: 1.2rem; font-family: monospace; }
+.input:focus { outline: none; border-color: #00d4ff; }
+.input:disabled { opacity: 0.5; }
+.start-btn { width: 100%; margin-top: 15px; padding: 18px; border: none; border-radius: 10px; background: #00d4ff; color: #000; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #666; }

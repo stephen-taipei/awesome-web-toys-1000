@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Bee 拼字遊戲 - Web Toy 353</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Spelling Bee</h1><p class="subtitle">拼字遊戲</p></header>
+        <div class="score">分數: <span id="score">0</span></div>
+        <div class="hint-area">
+            <div class="hint-label">提示:</div>
+            <div class="hint" id="hint">點擊開始獲取提示</div>
+        </div>
+        <div class="letters" id="letters"></div>
+        <input type="text" id="answer" class="answer-input" placeholder="輸入答案...">
+        <div class="controls">
+            <button id="submitBtn">提交</button>
+            <button id="skipBtn">跳過</button>
+        </div>
+        <div class="result" id="result"></div>
+        <footer><p>拼字遊戲 | Web Toy #353</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

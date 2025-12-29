@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Game 計算機解謎 - Web Toy 380</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Calculator Game</h1><p class="subtitle">計算機解謎</p></header>
+        <div class="display">
+            <div class="target">目標: <span id="target">24</span></div>
+            <div class="current"><span id="current">0</span></div>
+            <div class="moves">剩餘步數: <span id="moves">4</span></div>
+        </div>
+        <div class="buttons" id="buttons"></div>
+        <div class="controls">
+            <button class="control-btn" id="resetBtn">重置</button>
+            <button class="control-btn" id="newBtn">新題目</button>
+        </div>
+        <div class="result" id="result"></div>
+        <div class="score">關卡: <span id="level">1</span></div>
+        <footer><p>計算機解謎 | Web Toy #380</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #e74c3c, #c0392b); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+canvas { display: block; margin: 0 auto 15px; background: #fff; border-radius: 15px; }
+.options { margin-bottom: 15px; }
+.option-group { margin-bottom: 12px; }
+.option-group label { display: block; margin-bottom: 6px; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+.btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.opt-btn { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; transition: all 0.2s; }
+.opt-btn:hover { background: rgba(255,255,255,0.3); }
+.opt-btn.active { background: rgba(255,255,255,0.5); transform: scale(1.1); }
+.action-btn { display: block; width: 100%; padding: 12px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; color: #fff; font-size: 1rem; cursor: pointer; }
+.action-btn:hover { background: rgba(255,255,255,0.3); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator 小費計算 - Web Toy 326</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Tip Calculator</h1><p class="subtitle">小費計算器</p></header>
+        <div class="calculator">
+            <div class="input-group">
+                <label>帳單金額</label>
+                <div class="input-with-icon">
+                    <span>$</span>
+                    <input type="number" id="bill" placeholder="0.00">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>小費比例: <span id="tipPercent">15</span>%</label>
+                <input type="range" id="tipSlider" min="0" max="30" value="15">
+            </div>
+            <div class="input-group">
+                <label>分攤人數: <span id="peopleCount">1</span></label>
+                <input type="range" id="peopleSlider" min="1" max="10" value="1">
+            </div>
+        </div>
+        <div class="results">
+            <div class="result-item">
+                <span>小費金額</span>
+                <span class="amount" id="tipAmount">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span>總計</span>
+                <span class="amount" id="totalAmount">$0.00</span>
+            </div>
+            <div class="result-item highlight">
+                <span>每人支付</span>
+                <span class="amount" id="perPerson">$0.00</span>
+            </div>
+        </div>
+        <footer><p>小費計算 | Web Toy #326</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

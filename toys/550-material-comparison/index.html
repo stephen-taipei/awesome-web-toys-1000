@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Comparison 材質比較 - Web Toy 550</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Material Comparison</h1><p class="subtitle">材質比較</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="comparisonSelect">
+                <option value="metals">金屬類</option>
+                <option value="dielectrics">非金屬</option>
+                <option value="roughness">粗糙度</option>
+                <option value="mixed">混合</option>
+            </select>
+        </div>
+        <div class="info" id="info">並排比較不同材質效果</div>
+        <footer><p>材質比較 | Web Toy #550</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

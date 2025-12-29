@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #c0392b, #e74c3c); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; color: #fff; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.etch-frame { background: #c0392b; padding: 20px; border-radius: 15px; margin: 15px 0; box-shadow: inset 0 5px 15px rgba(0,0,0,0.3); }
+#gameCanvas { display: block; margin: 0 auto; background: #bdc3c7; border-radius: 5px; }
+.knobs { display: flex; justify-content: space-around; margin: 15px 0; }
+.knob-wrapper { text-align: center; }
+.knob { width: 60px; height: 60px; background: linear-gradient(145deg, #ecf0f1, #bdc3c7); border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin: 0 auto 5px; }
+.knob:active { transform: scale(0.95); }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 12px; border: none; border-radius: 10px; background: rgba(255,255,255,0.2); color: #fff; font-size: 1rem; cursor: pointer; }
+.hint { text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 10px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

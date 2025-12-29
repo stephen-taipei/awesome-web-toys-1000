@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Counter 即時計數器 - Web Toy 471</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Live Counter</h1><p class="subtitle">即時計數器</p></header>
+        <div class="counters">
+            <div class="counter-item">
+                <span class="label">用戶數</span>
+                <div class="counter" id="users">0</div>
+            </div>
+            <div class="counter-item">
+                <span class="label">訂單數</span>
+                <div class="counter" id="orders">0</div>
+            </div>
+            <div class="counter-item">
+                <span class="label">訪問量</span>
+                <div class="counter" id="visits">0</div>
+            </div>
+        </div>
+        <div class="info" id="info">數字每秒自動更新</div>
+        <footer><p>即時計數器 | Web Toy #471</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

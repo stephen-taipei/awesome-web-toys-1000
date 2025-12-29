@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Puzzle 重力謎題 - Web Toy 390</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Gravity Puzzle</h1><p class="subtitle">重力謎題</p></header>
+        <div class="level">關卡: <span id="level">1</span></div>
+        <canvas id="canvas" width="360" height="360"></canvas>
+        <div class="controls">
+            <button class="gravity-btn" data-dir="up">⬆️</button>
+            <button class="gravity-btn" data-dir="left">⬅️</button>
+            <button class="gravity-btn" data-dir="right">➡️</button>
+            <button class="gravity-btn" data-dir="down">⬇️</button>
+        </div>
+        <div class="result" id="result">切換重力方向到達目標!</div>
+        <footer><p>重力謎題 | Web Toy #390</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

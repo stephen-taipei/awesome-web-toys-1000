@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2c3e50, #34495e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.atmosphere { text-align: center; font-size: 1.2rem; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; margin-bottom: 15px; min-height: 60px; }
+.sounds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
+.sound-btn { padding: 15px 10px; background: rgba(255,255,255,0.15); border: none; border-radius: 10px; color: #fff; font-size: 1.5rem; cursor: pointer; transition: all 0.2s; }
+.sound-btn:hover { background: rgba(255,255,255,0.25); }
+.sound-btn.active { background: rgba(46, 204, 113, 0.5); box-shadow: 0 0 15px rgba(46, 204, 113, 0.5); }
+.sound-btn span { display: block; font-size: 0.7rem; margin-top: 5px; }
+.controls { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.controls input { flex: 1; }
+.action-btn { display: block; width: 100%; padding: 12px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; color: #fff; font-size: 1rem; cursor: pointer; }
+.action-btn:hover { background: rgba(255,255,255,0.3); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

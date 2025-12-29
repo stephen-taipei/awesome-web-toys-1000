@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Bounce 彈跳球 - Web Toy 247</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ball Bounce</h1>
+            <p class="subtitle">點擊添加彈跳球</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">球數: <span id="count">0</span></div>
+            <div class="stat">重力: <span id="gravity">正常</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="controls">
+            <button id="clearBtn">清除</button>
+            <button id="gravityBtn">切換重力</button>
+        </div>
+        <footer><p>物理模擬彈跳 | Web Toy #247</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

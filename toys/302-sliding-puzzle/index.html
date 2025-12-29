@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Puzzle 滑動拼圖 - Web Toy 302</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Sliding Puzzle</h1><p class="subtitle">經典15拼圖</p></header>
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="info">
+            <span>移動: <span id="moves">0</span></span>
+            <span id="status"></span>
+        </div>
+        <div class="controls">
+            <button id="shuffleBtn">洗牌</button>
+        </div>
+        <footer><p>滑動拼圖 | Web Toy #302</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

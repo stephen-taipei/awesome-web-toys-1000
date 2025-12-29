@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Painting 光繪 - Web Toy 536</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Light Painting</h1><p class="subtitle">光繪</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <input type="color" id="colorPicker" value="#ff6b6b">
+            <button id="clearBtn">清除</button>
+            <select id="brushSize">
+                <option value="3">細</option>
+                <option value="6" selected>中</option>
+                <option value="12">粗</option>
+            </select>
+        </div>
+        <div class="info" id="info">移動滑鼠繪製光線軌跡</div>
+        <footer><p>光繪 | Web Toy #536</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

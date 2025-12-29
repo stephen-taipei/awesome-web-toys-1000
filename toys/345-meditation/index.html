@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation 冥想 - Web Toy 345</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Meditation</h1><p class="subtitle">冥想</p></header>
+        <div class="meditation-display">
+            <div class="glow-circle" id="glowCircle"></div>
+            <div class="timer-display">
+                <span class="time" id="time">05:00</span>
+                <span class="status" id="status">選擇時間開始冥想</span>
+            </div>
+        </div>
+        <div class="duration-options">
+            <button class="duration-btn active" data-mins="5">5 分鐘</button>
+            <button class="duration-btn" data-mins="10">10 分鐘</button>
+            <button class="duration-btn" data-mins="15">15 分鐘</button>
+            <button class="duration-btn" data-mins="20">20 分鐘</button>
+        </div>
+        <div class="controls">
+            <button id="startBtn">開始冥想</button>
+        </div>
+        <div class="stats">總計: <span id="totalMins">0</span> 分鐘</div>
+        <footer><p>冥想 | Web Toy #345</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

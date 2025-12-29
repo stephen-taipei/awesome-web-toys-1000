@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU Particles GPU粒子 - Web Toy 556</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>GPU Particles</h1><p class="subtitle">GPU粒子</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <label>粒子數:</label>
+            <input type="range" id="countSlider" min="5000" max="30000" step="5000" value="15000">
+            <span id="countLabel">15000</span>
+        </div>
+        <div class="info" id="info">大量粒子模擬 (Canvas優化)</div>
+        <footer><p>GPU粒子 | Web Toy #556</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

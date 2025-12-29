@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Pad 繪圖板 - Web Toy 306</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Drawing Pad</h1><p class="subtitle">自由繪圖</p></header>
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="tools">
+            <input type="color" id="colorPicker" value="#000000">
+            <input type="range" id="brushSize" min="1" max="30" value="5">
+            <span id="sizeLabel">5</span>
+        </div>
+        <div class="controls">
+            <button id="clearBtn">清除</button>
+            <button id="eraserBtn">橡皮擦</button>
+        </div>
+        <footer><p>繪圖板 | Web Toy #306</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

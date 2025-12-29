@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter 卡路里計算 - Web Toy 342</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Calorie Counter</h1><p class="subtitle">卡路里計算</p></header>
+        <div class="summary-card">
+            <div class="remaining">
+                <span class="value" id="remaining">2000</span>
+                <span class="label">剩餘卡路里</span>
+            </div>
+            <div class="breakdown">
+                <div class="item"><span>目標</span><span id="goal">2000</span></div>
+                <div class="item consumed"><span>已攝取</span><span id="consumed">0</span></div>
+            </div>
+        </div>
+        <div class="quick-add">
+            <h3>快速新增</h3>
+            <div class="food-buttons">
+                <button class="food-btn" data-cal="300">🍚 飯 300</button>
+                <button class="food-btn" data-cal="150">🍞 麵包 150</button>
+                <button class="food-btn" data-cal="200">🍜 麵 200</button>
+                <button class="food-btn" data-cal="400">🍔 漢堡 400</button>
+                <button class="food-btn" data-cal="100">🍎 水果 100</button>
+                <button class="food-btn" data-cal="50">🥗 沙拉 50</button>
+            </div>
+        </div>
+        <div class="custom-add">
+            <input type="number" id="customCal" placeholder="自訂卡路里">
+            <button id="addBtn">新增</button>
+        </div>
+        <button id="resetBtn" class="reset-btn">重置今日記錄</button>
+        <footer><p>卡路里計算 | Web Toy #342</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

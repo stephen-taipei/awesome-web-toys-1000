@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table 數據表格 - Web Toy 484</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Data Table</h1><p class="subtitle">數據表格</p></header>
+        <input type="text" id="search" placeholder="搜尋..." class="search-input">
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-col="name">名稱 ⇅</th>
+                        <th data-col="category">類別 ⇅</th>
+                        <th data-col="value">數值 ⇅</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+        <div class="pagination" id="pagination"></div>
+        <div class="info" id="info">點擊標題排序，輸入文字搜尋</div>
+        <footer><p>數據表格 | Web Toy #484</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

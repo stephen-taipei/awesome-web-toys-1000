@@ -1,0 +1,22 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2d3436, #636e72); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.gradient-display { height: 150px; border-radius: 20px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.controls { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.color-row, .direction-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.direction-row { border-bottom: none; }
+.color-row input[type="color"] { width: 60px; height: 40px; border: none; border-radius: 10px; cursor: pointer; }
+.color-row input[type="color"]::-webkit-color-swatch-wrapper { padding: 2px; }
+.color-row input[type="color"]::-webkit-color-swatch { border: none; border-radius: 8px; }
+.direction-row select { padding: 10px 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.2); color: #fff; font-size: 1rem; cursor: pointer; }
+.direction-row select option { background: #2d3436; }
+.css-output { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin: 20px 0; }
+.css-output label { font-size: 0.9rem; color: rgba(255,255,255,0.7); display: block; margin-bottom: 8px; }
+.css-output code { font-family: monospace; font-size: 0.85rem; word-break: break-all; line-height: 1.5; }
+.copy-btn { width: 100%; padding: 15px; background: #6c5ce7; border: none; border-radius: 10px; color: #fff; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+.copy-btn:hover { background: #5f50d9; transform: scale(1.02); }
+.message { text-align: center; margin-top: 15px; min-height: 24px; color: #00b894; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

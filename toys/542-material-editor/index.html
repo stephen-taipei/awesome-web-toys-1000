@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Editor 材質編輯器 - Web Toy 542</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Material Editor</h1><p class="subtitle">材質編輯器</p></header>
+        <canvas id="canvas" width="360" height="240"></canvas>
+        <div class="controls">
+            <input type="color" id="colorPicker" value="#6b8cce">
+            <label>光澤:</label>
+            <input type="range" id="shininessSlider" min="1" max="100" value="30">
+            <label>環境:</label>
+            <input type="range" id="ambientSlider" min="0" max="100" value="20">
+        </div>
+        <div class="info" id="info">調整材質參數即時預覽</div>
+        <footer><p>材質編輯器 | Web Toy #542</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

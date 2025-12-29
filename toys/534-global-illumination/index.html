@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Illumination 全域光照 - Web Toy 534</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Global Illumination</h1><p class="subtitle">全域光照</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>反彈次數:</label>
+            <select id="bounces">
+                <option value="0">0 (直接光)</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="info" id="info">模擬光線多次反射的效果</div>
+        <footer><p>全域光照 | Web Toy #534</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

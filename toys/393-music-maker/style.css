@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1abc9c, #16a085); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-bottom: 15px; }
+.cell { aspect-ratio: 1; background: rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer; transition: all 0.15s; }
+.cell:hover { background: rgba(255,255,255,0.3); }
+.cell.active { background: #f1c40f; transform: scale(1.05); }
+.cell.playing { box-shadow: 0 0 15px #fff; }
+.controls { display: flex; gap: 10px; margin-bottom: 15px; }
+.control-btn { flex: 1; padding: 12px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; color: #fff; font-size: 1rem; cursor: pointer; }
+.control-btn:hover { background: rgba(255,255,255,0.3); }
+.tempo { display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.tempo input { flex: 1; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

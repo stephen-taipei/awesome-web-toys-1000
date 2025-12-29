@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection 反射效果 - Web Toy 545</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Reflection</h1><p class="subtitle">反射效果</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>反射率:</label>
+            <input type="range" id="reflectivitySlider" min="0" max="100" value="70">
+            <select id="envSelect">
+                <option value="sunset">日落</option>
+                <option value="sky">藍天</option>
+                <option value="night">夜空</option>
+            </select>
+        </div>
+        <div class="info" id="info">環境映射反射效果</div>
+        <footer><p>反射效果 | Web Toy #545</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Controls 軌道控制 - Web Toy 512</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Orbit Controls</h1><p class="subtitle">軌道控制</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button id="resetBtn">重置視角</button>
+            <select id="objectSelect">
+                <option value="cube">立方體</option>
+                <option value="pyramid">金字塔</option>
+                <option value="diamond">鑽石</option>
+            </select>
+        </div>
+        <div class="info" id="info">拖曳旋轉 | 滾輪縮放</div>
+        <footer><p>軌道控制 | Web Toy #512</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

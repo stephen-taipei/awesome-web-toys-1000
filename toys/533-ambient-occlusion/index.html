@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Occlusion 環境遮蔽 - Web Toy 533</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Ambient Occlusion</h1><p class="subtitle">環境遮蔽</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>AO 強度:</label>
+            <input type="range" id="aoStrength" min="0" max="1" step="0.05" value="0.7">
+            <button id="toggleBtn">開啟 AO</button>
+        </div>
+        <div class="info" id="info">環境遮蔽讓角落更暗更真實</div>
+        <footer><p>環境遮蔽 | Web Toy #533</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

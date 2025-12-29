@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBR Materials PBR材質 - Web Toy 541</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>PBR Materials</h1><p class="subtitle">PBR材質</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>粗糙度:</label>
+            <input type="range" id="roughnessSlider" min="0" max="100" value="30">
+            <label>金屬度:</label>
+            <input type="range" id="metallicSlider" min="0" max="100" value="50">
+        </div>
+        <div class="info" id="info">物理渲染材質模擬</div>
+        <footer><p>PBR材質 | Web Toy #541</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

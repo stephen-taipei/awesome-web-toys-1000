@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar Chart 雷達圖 - Web Toy 406</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Radar Chart</h1><p class="subtitle">雷達圖</p></header>
+        <canvas id="canvas" width="360" height="320"></canvas>
+        <div class="legend">
+            <span class="legend-item"><span class="dot" style="background:#e74c3c"></span> 玩家A</span>
+            <span class="legend-item"><span class="dot" style="background:#3498db"></span> 玩家B</span>
+        </div>
+        <button id="randomize" class="action-btn">🎲 新數據</button>
+        <footer><p>雷達圖 | Web Toy #406</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

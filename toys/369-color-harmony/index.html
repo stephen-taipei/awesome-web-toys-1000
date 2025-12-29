@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Harmony 色彩調和 - Web Toy 369</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Harmony</h1><p class="subtitle">色彩調和</p></header>
+        <div class="base-color">
+            <label>基準色</label>
+            <input type="color" id="baseColor" value="#6c5ce7">
+        </div>
+        <div class="harmony-select">
+            <select id="harmonyType">
+                <option value="complementary">互補色 Complementary</option>
+                <option value="analogous">類似色 Analogous</option>
+                <option value="triadic">三角形 Triadic</option>
+                <option value="split">分裂互補 Split</option>
+                <option value="tetradic">四方形 Tetradic</option>
+            </select>
+        </div>
+        <div class="palette" id="palette"></div>
+        <div class="message" id="message"></div>
+        <footer><p>色彩調和 | Web Toy #369</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

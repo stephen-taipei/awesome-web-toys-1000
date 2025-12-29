@@ -1,0 +1,14 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #f39c12; }
+.subtitle { color: #888; }
+.wheel-area { position: relative; display: flex; justify-content: center; margin: 20px 0; }
+.pointer { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); font-size: 30px; color: #f39c12; z-index: 10; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+#gameCanvas { display: block; }
+.result { text-align: center; font-size: 1.8rem; font-weight: bold; color: #f39c12; margin: 20px 0; min-height: 40px; }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 18px; border: none; border-radius: 10px; background: linear-gradient(145deg, #f39c12, #e67e22); color: #fff; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+.controls button:disabled { background: #666; }
+footer { text-align: center; padding: 15px; color: #666; }

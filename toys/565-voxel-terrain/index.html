@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxel Terrain 體素地形 - Web Toy 565</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Voxel Terrain</h1><p class="subtitle">體素地形</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <button id="flatBtn">平原</button>
+            <button id="hillBtn" class="active">丘陵</button>
+            <button id="mountainBtn">山脈</button>
+            <button id="regenerateBtn">重新生成</button>
+        </div>
+        <div class="info" id="info">像素方塊風格的地形世界</div>
+        <footer><p>體素地形 | Web Toy #565</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

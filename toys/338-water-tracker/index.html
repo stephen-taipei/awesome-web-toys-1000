@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tracker 喝水追蹤 - Web Toy 338</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Water Tracker</h1><p class="subtitle">喝水追蹤</p></header>
+        <div class="water-display">
+            <div class="bottle">
+                <div class="water-fill" id="waterFill"></div>
+                <div class="water-level" id="waterLevel">0%</div>
+            </div>
+            <div class="stats">
+                <div class="current"><span id="current">0</span> ml</div>
+                <div class="goal">目標: <span id="goal">2000</span> ml</div>
+            </div>
+        </div>
+        <div class="quick-add">
+            <button class="add-btn" data-amount="100">+100ml</button>
+            <button class="add-btn" data-amount="200">+200ml</button>
+            <button class="add-btn" data-amount="250">+250ml</button>
+            <button class="add-btn" data-amount="500">+500ml</button>
+        </div>
+        <button id="resetBtn" class="reset-btn">重置</button>
+        <footer><p>喝水追蹤 | Web Toy #338</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

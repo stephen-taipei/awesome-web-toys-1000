@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caustics 焦散紋理 - Web Toy 539</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Caustics</h1><p class="subtitle">焦散紋理</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <label>波動速度:</label>
+            <input type="range" id="speedSlider" min="1" max="10" step="1" value="5">
+            <label>強度:</label>
+            <input type="range" id="intensitySlider" min="1" max="10" step="1" value="6">
+        </div>
+        <div class="info" id="info">模擬水面折射產生的光紋</div>
+        <footer><p>焦散紋理 | Web Toy #539</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

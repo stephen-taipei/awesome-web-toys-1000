@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Race 數學競速 - Web Toy 371</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Math Race</h1><p class="subtitle">數學競速</p></header>
+        <div class="stats">
+            <div class="stat"><span class="label">分數</span><span id="score">0</span></div>
+            <div class="stat"><span class="label">時間</span><span id="timer">30</span></div>
+        </div>
+        <div class="question-area">
+            <div class="question" id="question">3 + 5 = ?</div>
+            <input type="number" id="answer" placeholder="輸入答案" autofocus>
+        </div>
+        <div class="result" id="result"></div>
+        <button class="start-btn" id="startBtn">開始遊戲</button>
+        <footer><p>數學競速 | Web Toy #371</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Timer 運動計時器 - Web Toy 343</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Workout Timer</h1><p class="subtitle">運動計時器</p></header>
+        <div class="workout-display">
+            <div class="phase" id="phase">準備開始</div>
+            <div class="timer" id="timer">00:30</div>
+            <div class="round">回合 <span id="currentRound">1</span> / <span id="totalRounds">8</span></div>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label>運動時間</label>
+                <div class="input-group">
+                    <button class="adj-btn" data-target="work" data-delta="-5">-</button>
+                    <span id="workTime">30</span>秒
+                    <button class="adj-btn" data-target="work" data-delta="5">+</button>
+                </div>
+            </div>
+            <div class="setting">
+                <label>休息時間</label>
+                <div class="input-group">
+                    <button class="adj-btn" data-target="rest" data-delta="-5">-</button>
+                    <span id="restTime">10</span>秒
+                    <button class="adj-btn" data-target="rest" data-delta="5">+</button>
+                </div>
+            </div>
+            <div class="setting">
+                <label>回合數</label>
+                <div class="input-group">
+                    <button class="adj-btn" data-target="rounds" data-delta="-1">-</button>
+                    <span id="rounds">8</span>
+                    <button class="adj-btn" data-target="rounds" data-delta="1">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn">開始</button>
+            <button id="resetBtn">重置</button>
+        </div>
+        <footer><p>運動計時器 | Web Toy #343</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

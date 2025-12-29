@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Following 路徑跟隨 - Web Toy 517</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Path Following</h1><p class="subtitle">路徑跟隨</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button id="playBtn">播放</button>
+            <button id="pauseBtn">暫停</button>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+            <span id="speedLabel">速度: 5</span>
+        </div>
+        <div class="info" id="info">相機沿預設路徑自動移動</div>
+        <footer><p>路徑跟隨 | Web Toy #517</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

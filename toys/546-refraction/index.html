@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refraction 折射效果 - Web Toy 546</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Refraction</h1><p class="subtitle">折射效果</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>折射率:</label>
+            <input type="range" id="iorSlider" min="100" max="250" value="150">
+            <select id="materialSelect">
+                <option value="glass">玻璃</option>
+                <option value="water">水</option>
+                <option value="diamond">鑽石</option>
+            </select>
+        </div>
+        <div class="info" id="info">折射率 (IOR): 1.50</div>
+        <footer><p>折射效果 | Web Toy #546</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

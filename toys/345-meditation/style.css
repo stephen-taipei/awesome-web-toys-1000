@@ -1,0 +1,21 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; text-align: center; }
+header { padding: 15px 0; }
+header h1 { font-size: 2.5rem; color: #a29bfe; }
+.subtitle { color: #888; }
+.meditation-display { position: relative; margin: 40px 0; height: 250px; display: flex; align-items: center; justify-content: center; }
+.glow-circle { position: absolute; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(162,155,254,0.4) 0%, transparent 70%); animation: pulse 4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.3); opacity: 0.8; } }
+.timer-display { position: relative; z-index: 1; }
+.time { display: block; font-size: 4rem; font-weight: 200; letter-spacing: 5px; }
+.status { display: block; font-size: 1rem; color: #888; margin-top: 10px; }
+.duration-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+.duration-btn { padding: 15px; border: 2px solid rgba(162,155,254,0.3); border-radius: 10px; background: transparent; color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+.duration-btn:hover, .duration-btn.active { background: rgba(162,155,254,0.2); border-color: #a29bfe; }
+.controls { margin: 20px 0; }
+#startBtn { width: 100%; padding: 20px; border: none; border-radius: 30px; background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: #fff; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s; }
+#startBtn:hover { transform: scale(1.02); }
+.stats { font-size: 1.1rem; color: #888; margin: 20px 0; }
+footer { padding: 15px; color: #666; }
+body.meditating .glow-circle { animation-duration: 8s; }

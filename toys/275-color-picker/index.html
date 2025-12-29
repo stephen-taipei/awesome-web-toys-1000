@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker 取色器 - Web Toy 275</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Color Picker</h1>
+            <p class="subtitle">HSL色彩選擇器</p>
+        </header>
+        <div class="color-preview" id="colorPreview"></div>
+        <div class="color-values">
+            <div class="value-box">
+                <label>HEX</label>
+                <span id="hexValue">#FF0000</span>
+            </div>
+            <div class="value-box">
+                <label>RGB</label>
+                <span id="rgbValue">255, 0, 0</span>
+            </div>
+        </div>
+        <div class="sliders">
+            <div class="slider-group">
+                <label>色相 (H): <span id="hValue">0</span>°</label>
+                <input type="range" id="hSlider" min="0" max="360" value="0">
+            </div>
+            <div class="slider-group">
+                <label>飽和度 (S): <span id="sValue">100</span>%</label>
+                <input type="range" id="sSlider" min="0" max="100" value="100">
+            </div>
+            <div class="slider-group">
+                <label>亮度 (L): <span id="lValue">50</span>%</label>
+                <input type="range" id="lSlider" min="0" max="100" value="50">
+            </div>
+        </div>
+        <button id="randomBtn">隨機顏色</button>
+        <footer><p>顏色選擇器 | Web Toy #275</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

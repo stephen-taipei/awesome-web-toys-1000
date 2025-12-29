@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Jump 平台跳躍 - Web Toy 246</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Platform Jump</h1>
+            <p class="subtitle">往上跳躍不要掉落</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">高度: <span id="height">0</span>m</div>
+            <div class="stat">最高: <span id="best">0</span>m</div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <p class="hint">滑鼠/觸控左右移動</p>
+        <footer><p>跳躍平台 | Web Toy #246</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

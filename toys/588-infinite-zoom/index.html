@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Zoom 無限縮放 - Web Toy 588</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Infinite Zoom</h1><p class="subtitle">無限縮放</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <button id="inBtn" class="active">縮進</button>
+            <button id="outBtn">縮出</button>
+            <label>速度:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info" id="info">不斷放大進入更小世界</div>
+        <footer><p>無限縮放 | Web Toy #588</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

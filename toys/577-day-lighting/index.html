@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Lighting 日照分析 - Web Toy 577</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Day Lighting</h1><p class="subtitle">日照分析</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>時間:</label>
+            <input type="range" id="timeSlider" min="0" max="24" value="12" step="0.5">
+            <span id="timeLabel">12:00</span>
+        </div>
+        <div class="info" id="info">分析建築不同時間的採光</div>
+        <footer><p>日照分析 | Web Toy #577</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

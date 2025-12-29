@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum Wave 擺動波 - Web Toy 248</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pendulum Wave</h1>
+            <p class="subtitle">令人著迷的擺動波</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">時間: <span id="time">0.0</span>s</div>
+            <div class="stat">週期: <span id="cycle">60</span>s</div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="controls">
+            <button id="resetBtn">重置</button>
+            <button id="pauseBtn">暫停</button>
+        </div>
+        <footer><p>物理擺動模擬 | Web Toy #248</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

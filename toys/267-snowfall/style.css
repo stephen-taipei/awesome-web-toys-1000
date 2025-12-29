@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(180deg, #1a2a3a 0%, #2d4a5e 50%, #f0f8ff 100%); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #e0f0ff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+.subtitle { color: #aac; }
+.game-wrapper { margin: 15px 0; }
+#gameCanvas { display: block; width: 100%; background: linear-gradient(180deg, #1a2a3a 0%, #2d4a5e 50%, #a0c0e0 100%); border-radius: 10px; }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 12px; border: none; border-radius: 10px; background: rgba(255,255,255,0.2); color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+.controls button:hover { background: rgba(255,255,255,0.3); }
+.controls button.active { background: rgba(255,255,255,0.4); }
+footer { text-align: center; padding: 15px; color: #aac; }

@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0c0c1e, #1a1a3e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #dfe6e9; }
+.subtitle { color: #636e72; }
+.input-section { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.input-section input, .input-section textarea { width: 100%; padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; font-family: inherit; margin-bottom: 10px; }
+.input-section textarea { min-height: 100px; resize: none; }
+.input-section input::placeholder, .input-section textarea::placeholder { color: rgba(255,255,255,0.5); }
+.mood-select { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 15px 0; }
+.mood-select span { color: #b2bec3; }
+.mood-btn { padding: 8px 15px; border: 2px solid rgba(255,255,255,0.2); border-radius: 20px; background: transparent; color: #fff; cursor: pointer; transition: all 0.3s; }
+.mood-btn.active { background: rgba(255,255,255,0.2); border-color: #fff; }
+#saveBtn { width: 100%; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: #fff; font-size: 1rem; cursor: pointer; }
+.dreams { margin-top: 20px; }
+.dream { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 4px solid #6c5ce7; }
+.dream-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.dream-title { font-size: 1.1rem; font-weight: bold; }
+.dream-date { font-size: 0.85rem; color: #636e72; }
+.dream-content { font-size: 0.95rem; line-height: 1.6; color: #b2bec3; }
+.dream-mood { margin-top: 10px; font-size: 0.9rem; }
+.dream-delete { background: none; border: none; color: #636e72; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #636e72; }

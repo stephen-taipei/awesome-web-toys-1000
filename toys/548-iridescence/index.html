@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iridescence 虹彩效果 - Web Toy 548</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Iridescence</h1><p class="subtitle">虹彩效果</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="effectSelect">
+                <option value="bubble">肥皂泡</option>
+                <option value="oil">油膜</option>
+                <option value="beetle">甲蟲殼</option>
+                <option value="pearl">珍珠</option>
+            </select>
+            <label>薄膜厚度:</label>
+            <input type="range" id="thicknessSlider" min="1" max="100" value="50">
+        </div>
+        <div class="info" id="info">薄膜干涉產生的彩虹效果</div>
+        <footer><p>虹彩效果 | Web Toy #548</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

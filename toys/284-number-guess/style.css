@@ -1,0 +1,18 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a3a5c, #0d1f33); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #4fc3f7; }
+.subtitle { color: #888; }
+.hint { text-align: center; font-size: 1.5rem; color: #4fc3f7; margin: 20px 0; min-height: 40px; }
+.input-area { display: flex; gap: 10px; margin: 20px 0; }
+.input-area input { flex: 1; padding: 15px; border: 2px solid #4fc3f7; border-radius: 10px; background: rgba(79,195,247,0.1); color: #fff; font-size: 1.2rem; text-align: center; }
+.input-area button { padding: 15px 25px; border: none; border-radius: 10px; background: #4fc3f7; color: #000; font-size: 1rem; font-weight: bold; cursor: pointer; }
+.history { max-height: 120px; overflow-y: auto; margin: 15px 0; }
+.history div { padding: 8px 15px; background: rgba(79,195,247,0.1); margin: 5px 0; border-radius: 8px; display: flex; justify-content: space-between; }
+.history .high { color: #ff6b6b; }
+.history .low { color: #2ecc71; }
+.stats { display: flex; justify-content: center; gap: 30px; margin: 15px 0; color: #aaa; }
+.controls { display: flex; gap: 10px; }
+.controls button { flex: 1; padding: 15px; border: none; border-radius: 10px; background: rgba(79,195,247,0.2); color: #4fc3f7; font-size: 1rem; cursor: pointer; }
+footer { text-align: center; padding: 15px; color: #666; }

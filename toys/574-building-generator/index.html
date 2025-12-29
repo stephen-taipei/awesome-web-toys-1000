@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Generator 建築生成 - Web Toy 574</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Building Generator</h1><p class="subtitle">建築生成</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <button id="regenerateBtn">生成新建築</button>
+            <label>樓層:</label>
+            <input type="range" id="floorSlider" min="2" max="15" value="6">
+            <span id="floorLabel">6</span>
+        </div>
+        <div class="info" id="info">程序化生成建築外觀</div>
+        <footer><p>建築生成 | Web Toy #574</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

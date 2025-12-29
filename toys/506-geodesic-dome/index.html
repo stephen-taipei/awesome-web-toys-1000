@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geodesic Dome 測地線圓頂 - Web Toy 506</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Geodesic Dome</h1><p class="subtitle">測地線圓頂</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <label>細分層級: <input type="range" id="subdivision" min="0" max="3" value="1"></label>
+            <span id="subValue">1</span>
+        </div>
+        <div class="info" id="info">富勒圓頂結構</div>
+        <footer><p>測地線圓頂 | Web Toy #506</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

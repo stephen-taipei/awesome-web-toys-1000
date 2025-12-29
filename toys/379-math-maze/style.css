@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2d3436, #636e72); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+.level { text-align: center; font-size: 1.2rem; margin: 10px 0; }
+.maze { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin: 20px 0; }
+.cell { aspect-ratio: 1; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s; }
+.cell.wall { background: #2d3436; }
+.cell.path { background: rgba(255,255,255,0.1); cursor: pointer; }
+.cell.path:hover { background: rgba(255,255,255,0.2); }
+.cell.locked { background: #d63031; color: #fff; cursor: pointer; }
+.cell.unlocked { background: #00b894; }
+.cell.player { background: #fdcb6e; font-size: 1.5rem; }
+.cell.goal { background: #6c5ce7; font-size: 1.5rem; }
+.question-area { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 15px 0; display: none; }
+.question-area.active { display: block; }
+.question { font-size: 1.5rem; text-align: center; margin-bottom: 15px; }
+.options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.option { padding: 15px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; color: #fff; font-size: 1.2rem; cursor: pointer; transition: all 0.2s; }
+.option:hover { background: rgba(255,255,255,0.3); }
+.result { text-align: center; font-size: 1.2rem; min-height: 30px; margin: 10px 0; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }

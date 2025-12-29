@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Log 夢境日記 - Web Toy 348</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Dream Log</h1><p class="subtitle">夢境日記</p></header>
+        <div class="input-section">
+            <input type="text" id="titleInput" placeholder="夢境標題">
+            <textarea id="dreamInput" placeholder="描述你的夢境..."></textarea>
+            <div class="mood-select">
+                <span>夢境氛圍:</span>
+                <button class="mood-btn" data-mood="good">✨ 美好</button>
+                <button class="mood-btn" data-mood="strange">🌀 奇異</button>
+                <button class="mood-btn" data-mood="scary">😰 可怕</button>
+            </div>
+            <button id="saveBtn">記錄夢境</button>
+        </div>
+        <div class="dreams" id="dreams"></div>
+        <footer><p>夢境日記 | Web Toy #348</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter 進位轉換 - Web Toy 324</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Binary Converter</h1><p class="subtitle">進位制轉換器</p></header>
+        <div class="converter">
+            <div class="input-group">
+                <label>十進位</label>
+                <input type="text" id="decimal" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>二進位</label>
+                <input type="text" id="binary" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>八進位</label>
+                <input type="text" id="octal" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>十六進位</label>
+                <input type="text" id="hex" placeholder="0">
+            </div>
+        </div>
+        <div class="binary-visual" id="binaryVisual"></div>
+        <div class="controls">
+            <button id="clearBtn">清除</button>
+        </div>
+        <footer><p>進位轉換 | Web Toy #324</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

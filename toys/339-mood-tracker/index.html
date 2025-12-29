@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker 心情追蹤 - Web Toy 339</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Mood Tracker</h1><p class="subtitle">心情追蹤</p></header>
+        <div class="today">
+            <div class="date" id="today"></div>
+            <div class="prompt">今天心情如何?</div>
+        </div>
+        <div class="moods">
+            <button class="mood-btn" data-mood="great" data-emoji="😄">😄<span>很棒</span></button>
+            <button class="mood-btn" data-mood="good" data-emoji="🙂">🙂<span>不錯</span></button>
+            <button class="mood-btn" data-mood="okay" data-emoji="😐">😐<span>普通</span></button>
+            <button class="mood-btn" data-mood="bad" data-emoji="😔">😔<span>不好</span></button>
+            <button class="mood-btn" data-mood="awful" data-emoji="😢">😢<span>很差</span></button>
+        </div>
+        <div class="history" id="history"></div>
+        <footer><p>心情追蹤 | Web Toy #339</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter 太空射擊 - Web Toy 244</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Space Shooter</h1>
+            <p class="subtitle">消滅外星入侵者</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat">分數: <span id="score">0</span></div>
+            <div class="stat">生命: <span id="lives">❤️❤️❤️</span></div>
+        </div>
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <button id="startBtn">開始遊戲</button>
+        <p class="hint">滑鼠/觸控移動 | 點擊發射</p>
+        <footer><p>保衛地球 | Web Toy #244</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

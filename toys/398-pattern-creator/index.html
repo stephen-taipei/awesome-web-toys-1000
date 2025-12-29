@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Creator 圖案創建 - Web Toy 398</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pattern Creator</h1><p class="subtitle">圖案創建</p></header>
+        <div class="options">
+            <select id="shape">
+                <option value="circle">圓形</option>
+                <option value="square">方形</option>
+                <option value="triangle">三角形</option>
+                <option value="star">星形</option>
+            </select>
+            <input type="color" id="color1" value="#e74c3c">
+            <input type="color" id="color2" value="#3498db">
+        </div>
+        <canvas id="canvas" width="360" height="360"></canvas>
+        <div class="sliders">
+            <div class="slider-row">
+                <label>大小</label>
+                <input type="range" id="size" min="10" max="50" value="30">
+            </div>
+            <div class="slider-row">
+                <label>間距</label>
+                <input type="range" id="spacing" min="20" max="80" value="40">
+            </div>
+            <div class="slider-row">
+                <label>旋轉</label>
+                <input type="range" id="rotation" min="0" max="360" value="0">
+            </div>
+        </div>
+        <button id="randomize" class="action-btn">🎲 隨機圖案</button>
+        <footer><p>圖案創建 | Web Toy #398</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

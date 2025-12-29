@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Maker 音樂創作 - Web Toy 393</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Music Maker</h1><p class="subtitle">音樂創作</p></header>
+        <div class="grid" id="grid"></div>
+        <div class="controls">
+            <button id="playBtn" class="control-btn">▶️ 播放</button>
+            <button id="clearBtn" class="control-btn">🗑️ 清除</button>
+        </div>
+        <div class="tempo">
+            <span>速度:</span>
+            <input type="range" id="tempo" min="100" max="300" value="200">
+        </div>
+        <footer><p>音樂創作 | Web Toy #393</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

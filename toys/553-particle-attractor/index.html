@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Attractor 粒子吸引子 - Web Toy 553</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Particle Attractor</h1><p class="subtitle">粒子吸引子</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="controls">
+            <button id="attractBtn" class="active">吸引</button>
+            <button id="repelBtn">排斥</button>
+            <label>力量:</label>
+            <input type="range" id="forceSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info" id="info">點擊創建吸引或排斥點</div>
+        <footer><p>粒子吸引子 | Web Toy #553</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

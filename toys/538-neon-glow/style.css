@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a0a0a, #1a0a2e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+.subtitle { color: rgba(255,255,255,0.7); }
+canvas { display: block; margin: 0 auto; background: #000; border-radius: 15px; }
+.controls { display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 15px; flex-wrap: wrap; }
+.controls label { font-size: 0.85rem; }
+.controls input[type="range"] { width: 100px; }
+.controls select { padding: 6px 10px; border: none; border-radius: 6px; background: rgba(255, 0, 255, 0.3); color: #fff; cursor: pointer; }
+.info { text-align: center; padding: 10px; margin-top: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

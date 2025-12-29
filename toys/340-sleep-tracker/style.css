@@ -1,0 +1,25 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #2c3e50, #1a1a2e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2.2rem; color: #a29bfe; }
+.subtitle { color: #888; }
+.sleep-input { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.time-input { margin-bottom: 15px; }
+.time-input label { display: block; margin-bottom: 8px; color: #a29bfe; }
+.time-input input { width: 100%; padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: #fff; font-size: 1.2rem; }
+#logBtn { width: 100%; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: #fff; font-size: 1rem; cursor: pointer; margin-top: 10px; }
+.stats-card { display: flex; justify-content: space-around; background: rgba(162,155,254,0.2); padding: 20px; border-radius: 15px; margin: 20px 0; }
+.stat { text-align: center; }
+.stat-value { display: block; font-size: 2rem; font-weight: bold; color: #a29bfe; }
+.stat-label { font-size: 0.9rem; color: #888; }
+.history h3 { margin-bottom: 15px; color: #a29bfe; }
+.history-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; margin-bottom: 10px; }
+.history-item .date { color: #888; }
+.history-item .duration { font-weight: bold; color: #a29bfe; }
+.history-item .times { font-size: 0.9rem; color: #666; }
+.quality { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.quality.good { background: rgba(46,204,113,0.3); }
+.quality.okay { background: rgba(241,196,15,0.3); }
+.quality.bad { background: rgba(231,76,60,0.3); }
+footer { text-align: center; padding: 15px; color: #666; }

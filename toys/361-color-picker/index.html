@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker 色彩選擇器 - Web Toy 361</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Picker</h1><p class="subtitle">色彩選擇器</p></header>
+        <div class="color-display" id="colorDisplay"></div>
+        <div class="color-input">
+            <input type="color" id="colorPicker" value="#6c5ce7">
+        </div>
+        <div class="color-values">
+            <div class="value-row"><span>HEX</span><span id="hexValue" class="value">#6C5CE7</span></div>
+            <div class="value-row"><span>RGB</span><span id="rgbValue" class="value">rgb(108, 92, 231)</span></div>
+            <div class="value-row"><span>HSL</span><span id="hslValue" class="value">hsl(247, 75%, 63%)</span></div>
+        </div>
+        <button class="copy-btn" id="copyBtn">複製 HEX</button>
+        <div class="message" id="message"></div>
+        <footer><p>色彩選擇器 | Web Toy #361</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

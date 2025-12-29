@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Maker 漸層製作 - Web Toy 257</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gradient Maker</h1>
+            <p class="subtitle">創造美麗漸層</p>
+        </header>
+        <div class="preview" id="preview"></div>
+        <div class="color-inputs">
+            <div class="color-group">
+                <label>顏色 1</label>
+                <input type="color" id="color1" value="#ff6b6b">
+            </div>
+            <div class="color-group">
+                <label>顏色 2</label>
+                <input type="color" id="color2" value="#4ecdc4">
+            </div>
+        </div>
+        <div class="controls">
+            <button id="typeBtn">類型: 線性</button>
+            <button id="randomBtn">隨機</button>
+        </div>
+        <div class="angle-control">
+            <label>角度: <span id="angleValue">135</span>°</label>
+            <input type="range" id="angle" min="0" max="360" value="135">
+        </div>
+        <div class="css-output" id="cssOutput"></div>
+        <footer><p>漸層設計工具 | Web Toy #257</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

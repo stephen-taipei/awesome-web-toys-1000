@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Exercise 呼吸練習 - Web Toy 344</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Breathing</h1><p class="subtitle">呼吸練習</p></header>
+        <div class="breathing-display">
+            <div class="circle" id="circle">
+                <div class="inner-circle">
+                    <span class="instruction" id="instruction">準備</span>
+                    <span class="timer" id="timer"></span>
+                </div>
+            </div>
+        </div>
+        <div class="patterns">
+            <button class="pattern-btn active" data-pattern="relaxing">放鬆 4-7-8</button>
+            <button class="pattern-btn" data-pattern="energizing">提神 4-4-4</button>
+            <button class="pattern-btn" data-pattern="calming">平靜 5-5-5</button>
+        </div>
+        <div class="controls">
+            <button id="startBtn">開始</button>
+        </div>
+        <div class="cycles">完成 <span id="cycles">0</span> 個循環</div>
+        <footer><p>呼吸練習 | Web Toy #344</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsurface Scattering 次表面散射 - Web Toy 547</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Subsurface Scattering</h1><p class="subtitle">次表面散射</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="materialSelect">
+                <option value="skin">皮膚</option>
+                <option value="wax">蠟燭</option>
+                <option value="jade">玉石</option>
+                <option value="milk">牛奶</option>
+            </select>
+            <label>散射:</label>
+            <input type="range" id="scatterSlider" min="0" max="100" value="50">
+        </div>
+        <div class="info" id="info">模擬光線穿透半透明材質</div>
+        <footer><p>次表面散射 | Web Toy #547</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

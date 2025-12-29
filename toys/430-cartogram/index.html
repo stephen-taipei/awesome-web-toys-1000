@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartogram 變形地圖 - Web Toy 430</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Cartogram</h1><p class="subtitle">變形地圖</p></header>
+        <canvas id="canvas" width="360" height="300"></canvas>
+        <div class="info" id="info">區域大小依數值比例變形</div>
+        <div class="controls">
+            <button class="data-btn active" data-type="population">人口</button>
+            <button class="data-btn" data-type="gdp">GDP</button>
+            <button class="data-btn" data-type="area">面積</button>
+        </div>
+        <footer><p>變形地圖 | Web Toy #430</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

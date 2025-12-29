@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametric Shapes 參數形狀 - Web Toy 510</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Parametric Shapes</h1><p class="subtitle">參數形狀</p></header>
+        <canvas id="canvas" width="360" height="280"></canvas>
+        <div class="controls">
+            <select id="shapeSelect">
+                <option value="sphere">球面</option>
+                <option value="torus">環面</option>
+                <option value="cone">圓錐</option>
+                <option value="cylinder">圓柱</option>
+                <option value="superellipsoid">超橢球</option>
+            </select>
+        </div>
+        <div class="info" id="info">用數學公式定義的3D形狀</div>
+        <footer><p>參數形狀 | Web Toy #510</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

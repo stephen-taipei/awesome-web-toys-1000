@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #232526, #414345); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 2rem; }
+.subtitle { color: rgba(255,255,255,0.8); }
+canvas { display: block; margin: 0 auto; background: #1a1a1a; border-radius: 15px; cursor: pointer; }
+.info { text-align: center; padding: 10px; margin-top: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.controls { display: flex; gap: 10px; margin-top: 10px; justify-content: center; }
+.control-btn { width: 60px; height: 50px; background: rgba(255,255,255,0.2); border: none; border-radius: 10px; color: #fff; font-size: 1.2rem; cursor: pointer; }
+.control-btn:hover { background: rgba(255,255,255,0.3); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.6); }
