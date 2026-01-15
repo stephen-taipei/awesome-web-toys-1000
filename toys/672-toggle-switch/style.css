@@ -1,0 +1,34 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #4ecdc4; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; display: flex; flex-direction: column; gap: 25px; }
+
+.switch-group { display: flex; align-items: center; gap: 15px; }
+.switch-label { color: rgba(255,255,255,0.8); }
+
+.toggle-switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.2); transition: 0.4s; }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+.slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background: white; transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+input:checked + .slider { background: #4ecdc4; }
+input:checked + .slider:before { transform: translateX(26px); }
+
+.toggle-switch.glow input:checked + .slider { box-shadow: 0 0 20px rgba(78, 205, 196, 0.6); }
+
+.toggle-switch.bounce input:checked + .slider:before { animation: switchBounce 0.5s; }
+
+@keyframes switchBounce {
+    0%, 100% { transform: translateX(26px) scale(1); }
+    50% { transform: translateX(26px) scale(1.2); }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

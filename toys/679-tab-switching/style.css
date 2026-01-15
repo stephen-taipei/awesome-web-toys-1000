@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a29bfe; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.tabs { display: flex; position: relative; background: rgba(0,0,0,0.2); border-radius: 10px; padding: 5px; }
+
+.tab-indicator { position: absolute; height: calc(100% - 10px); background: #a29bfe; border-radius: 8px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1; }
+
+.tab { flex: 1; padding: 12px; background: transparent; border: none; color: rgba(255,255,255,0.6); font-size: 0.95rem; cursor: pointer; position: relative; z-index: 2; transition: color 0.3s; }
+.tab.active { color: #fff; }
+
+.tab-content { margin-top: 20px; position: relative; min-height: 100px; overflow: hidden; }
+
+.content { position: absolute; width: 100%; opacity: 0; transform: translateX(20px); transition: all 0.3s ease; pointer-events: none; }
+.content.active { position: relative; opacity: 1; transform: translateX(0); pointer-events: auto; }
+.content.exit-left { transform: translateX(-20px); }
+
+.content h3 { color: #a29bfe; margin-bottom: 10px; }
+.content p { color: rgba(255,255,255,0.7); }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

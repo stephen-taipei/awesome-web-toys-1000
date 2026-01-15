@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success/Error 成功/錯誤 - Web Toy 678</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Success/Error</h1><p class="subtitle">成功/錯誤動畫</p></header>
+        <div class="demo-area">
+            <div class="status-display" id="statusDisplay">
+                <div class="status-circle">
+                    <svg class="checkmark" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                    <svg class="crossmark" viewBox="0 0 52 52">
+                        <circle class="crossmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="crossmark-x" fill="none" d="M16 16 36 36 M36 16 16 36"/>
+                    </svg>
+                </div>
+                <p class="status-text" id="statusText">點擊按鈕</p>
+            </div>
+            <div class="controls">
+                <button id="successBtn">成功</button>
+                <button id="errorBtn">錯誤</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+        <div class="info">展示成功與錯誤狀態動畫</div>
+        <footer><p>成功/錯誤動畫 | Web Toy #678</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
