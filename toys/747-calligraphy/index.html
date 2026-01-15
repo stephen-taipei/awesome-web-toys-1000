@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calligraphy Brush 書法筆 - Web Toy 747</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Calligraphy</h1><p class="subtitle">書法筆刷</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <input type="color" id="color" value="#1a1a1a">
+                <label>角度 <input type="range" id="angle" min="0" max="90" value="45"><span id="angleVal">45°</span></label>
+            </div>
+            <button id="clearBtn">清除</button>
+        </div>
+        <div class="info">平頭書法筆觸</div>
+        <footer><p>書法筆刷 | Web Toy #747</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

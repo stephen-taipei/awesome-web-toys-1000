@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Brush 粒子筆 - Web Toy 748</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Particle Brush</h1><p class="subtitle">粒子筆刷</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <input type="color" id="color" value="#ff4757">
+                <label>數量 <input type="range" id="count" min="5" max="30" value="15"></label>
+            </div>
+            <button id="clearBtn">清除</button>
+        </div>
+        <div class="info">散射粒子效果</div>
+        <footer><p>粒子筆刷 | Web Toy #748</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

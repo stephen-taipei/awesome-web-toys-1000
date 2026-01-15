@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spray Paint 噴漆 - Web Toy 743</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Spray Paint</h1><p class="subtitle">噴漆筆刷</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <input type="color" id="color" value="#f39c12">
+                <label>範圍 <input type="range" id="radius" min="15" max="50" value="30"></label>
+            </div>
+            <button id="clearBtn">清除</button>
+        </div>
+        <div class="info">街頭噴漆效果</div>
+        <footer><p>噴漆筆刷 | Web Toy #743</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
