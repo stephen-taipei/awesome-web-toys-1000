@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #00b894; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.gravity-zone { position: relative; height: 250px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden; margin-bottom: 15px; }
+
+.gravity-ball { position: absolute; width: 50px; height: 50px; background: linear-gradient(135deg, #00b894, #55efc4); border-radius: 50%; left: 50%; transform: translateX(-50%); top: 10px; }
+
+.ground { position: absolute; bottom: 0; left: 0; right: 0; height: 10px; background: linear-gradient(135deg, #636e72, #b2bec3); }
+
+.drop-btn { width: 100%; padding: 12px; background: #00b894; border: none; border-radius: 8px; color: #fff; font-size: 1rem; cursor: pointer; }
+.drop-btn:hover { background: #00a187; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

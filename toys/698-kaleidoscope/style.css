@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fd79a8; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; display: flex; justify-content: center; }
+
+.kaleidoscope { position: relative; width: 200px; height: 200px; animation: kaleidoRotate 10s linear infinite; }
+
+.k-segment { position: absolute; width: 100%; height: 100%; clip-path: polygon(50% 50%, 50% 0%, 93.3% 25%); transform: rotate(calc(var(--r) * 1deg)); }
+
+.k-segment::before { content: ''; position: absolute; width: 100%; height: 100%; background: linear-gradient(135deg, #fd79a8, #a29bfe, #74b9ff, #81ecec); animation: kaleidoColors 5s ease-in-out infinite; animation-delay: calc(var(--r) * 0.02s); }
+
+@keyframes kaleidoRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes kaleidoColors {
+    0%, 100% { filter: hue-rotate(0deg); opacity: 0.8; }
+    50% { filter: hue-rotate(180deg); opacity: 1; }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

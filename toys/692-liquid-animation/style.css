@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #74b9ff; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.liquid-container { position: relative; height: 220px; filter: url('#goo'); display: flex; justify-content: center; align-items: center; }
+
+.liquid-blob { position: absolute; width: 100px; height: 100px; background: linear-gradient(135deg, #74b9ff, #0984e3); border-radius: 50%; animation: liquidMove 4s ease-in-out infinite; }
+
+.liquid-blob.delay1 { animation-delay: -1.3s; background: linear-gradient(135deg, #0984e3, #74b9ff); }
+.liquid-blob.delay2 { animation-delay: -2.6s; background: linear-gradient(135deg, #a29bfe, #74b9ff); }
+
+@keyframes liquidMove {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -30px) scale(1.1); }
+    50% { transform: translate(0, 30px) scale(0.9); }
+    75% { transform: translate(-50px, -20px) scale(1.05); }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

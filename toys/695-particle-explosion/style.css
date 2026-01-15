@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fdcb6e; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.explosion-zone { position: relative; height: 220px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 10px; background: rgba(0,0,0,0.2); }
+
+.trigger-btn { padding: 15px 30px; font-size: 1.2rem; background: linear-gradient(135deg, #fdcb6e, #e17055); border: none; border-radius: 10px; color: #fff; cursor: pointer; transition: transform 0.2s; z-index: 10; }
+.trigger-btn:hover { transform: scale(1.05); }
+.trigger-btn:active { transform: scale(0.95); }
+
+.particle { position: absolute; width: 10px; height: 10px; border-radius: 50%; pointer-events: none; animation: explode 1s ease-out forwards; }
+
+@keyframes explode {
+    0% { opacity: 1; transform: translate(0, 0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

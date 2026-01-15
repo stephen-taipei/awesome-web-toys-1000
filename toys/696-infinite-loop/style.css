@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a29bfe; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.loop-container { position: relative; height: 220px; display: flex; justify-content: center; align-items: center; }
+
+.loop-ring { position: absolute; border: 4px solid transparent; border-top-color: #a29bfe; border-radius: 50%; animation: loopSpin 2s linear infinite; }
+
+.loop-ring:nth-child(1) { width: 140px; height: 140px; animation-duration: 2s; }
+.loop-ring:nth-child(2) { width: 110px; height: 110px; animation-duration: 1.8s; animation-direction: reverse; border-top-color: #74b9ff; }
+.loop-ring:nth-child(3) { width: 80px; height: 80px; animation-duration: 1.6s; border-top-color: #81ecec; }
+.loop-ring:nth-child(4) { width: 50px; height: 50px; animation-duration: 1.4s; animation-direction: reverse; border-top-color: #55efc4; }
+
+@keyframes loopSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
