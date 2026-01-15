@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Battle 繪圖對決 - Web Toy 759</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Drawing Battle</h1><p class="subtitle">繪圖對決</p></header>
+        <div class="demo-area">
+            <div class="topic">主題: <span id="topic">---</span></div>
+            <div class="battle-area">
+                <div class="player">
+                    <canvas id="canvas1"></canvas>
+                    <span>玩家 1</span>
+                </div>
+                <div class="player">
+                    <canvas id="canvas2"></canvas>
+                    <span>玩家 2</span>
+                </div>
+            </div>
+            <button id="newTopic">新主題</button>
+        </div>
+        <div class="info">兩人同時畫同一主題</div>
+        <footer><p>繪圖對決 | Web Toy #759</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
