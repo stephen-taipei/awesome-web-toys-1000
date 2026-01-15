@@ -1,0 +1,39 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fab1a0; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; display: flex; flex-direction: column; gap: 25px; }
+
+.loader-display { text-align: center; }
+.loader-display p { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 15px; }
+
+.seq-loader { display: flex; justify-content: center; align-items: center; gap: 8px; height: 50px; }
+
+/* Dots */
+.seq-loader.dots span { width: 12px; height: 12px; background: #fab1a0; border-radius: 50%; animation: dotBounce 1s ease-in-out infinite; animation-delay: calc(var(--i) * 0.1s); }
+
+@keyframes dotBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-15px); opacity: 1; }
+}
+
+/* Bars */
+.seq-loader.bars span { width: 8px; height: 30px; background: #fab1a0; border-radius: 4px; animation: barGrow 0.8s ease-in-out infinite; animation-delay: calc(var(--i) * 0.15s); }
+
+@keyframes barGrow {
+    0%, 100% { transform: scaleY(0.5); }
+    50% { transform: scaleY(1.5); }
+}
+
+/* Squares */
+.seq-loader.squares span { width: 20px; height: 20px; background: #fab1a0; border-radius: 4px; animation: squareFlip 1.2s ease-in-out infinite; animation-delay: calc(var(--i) * 0.2s); }
+
+@keyframes squareFlip {
+    0%, 100% { transform: rotateY(0deg); opacity: 1; }
+    50% { transform: rotateY(180deg); opacity: 0.5; }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bars 進度條 - Web Toy 632</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Progress Bars</h1><p class="subtitle">進度條動畫</p></header>
+        <div class="demo-area">
+            <div class="progress-item">
+                <span>Basic</span>
+                <div class="progress-bar basic"><div class="progress-fill" data-progress="75"></div></div>
+            </div>
+            <div class="progress-item">
+                <span>Striped</span>
+                <div class="progress-bar striped"><div class="progress-fill" data-progress="60"></div></div>
+            </div>
+            <div class="progress-item">
+                <span>Gradient</span>
+                <div class="progress-bar gradient"><div class="progress-fill" data-progress="85"></div></div>
+            </div>
+            <div class="progress-item">
+                <span>Glow</span>
+                <div class="progress-bar glow"><div class="progress-fill" data-progress="50"></div></div>
+            </div>
+            <div class="progress-item">
+                <span>Indeterminate</span>
+                <div class="progress-bar indeterminate"><div class="progress-fill"></div></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="animateBtn">動畫載入</button>
+            <button id="resetBtn">重置</button>
+        </div>
+        <div class="info">各種風格的進度條動畫</div>
+        <footer><p>進度條動畫 | Web Toy #632</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

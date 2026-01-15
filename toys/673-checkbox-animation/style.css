@@ -1,0 +1,53 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #f093fb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+
+.custom-checkbox { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.custom-checkbox input { display: none; }
+.label { color: rgba(255,255,255,0.8); font-size: 1rem; }
+
+.checkmark { width: 28px; height: 28px; border: 2px solid rgba(240, 147, 251, 0.5); border-radius: 6px; position: relative; transition: all 0.3s; }
+
+.checkmark::after { content: ''; position: absolute; display: none; }
+
+/* Stroke animation */
+.checkmark.stroke::after { left: 9px; top: 4px; width: 6px; height: 12px; border: solid #f093fb; border-width: 0 3px 3px 0; transform: rotate(45deg) scale(0); transition: transform 0.2s ease-out; }
+input:checked + .checkmark.stroke { border-color: #f093fb; background: rgba(240, 147, 251, 0.2); }
+input:checked + .checkmark.stroke::after { display: block; transform: rotate(45deg) scale(1); }
+
+/* Scale animation */
+.checkmark.scale::after { left: 9px; top: 4px; width: 6px; height: 12px; border: solid #f093fb; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+input:checked + .checkmark.scale { border-color: #f093fb; animation: scaleCheck 0.3s ease-out; }
+input:checked + .checkmark.scale::after { display: block; }
+
+@keyframes scaleCheck {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Bounce animation */
+.checkmark.bounce::after { left: 9px; top: 4px; width: 6px; height: 12px; border: solid #f093fb; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+input:checked + .checkmark.bounce { border-color: #f093fb; animation: bounceCheck 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+input:checked + .checkmark.bounce::after { display: block; }
+
+@keyframes bounceCheck {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Fill animation */
+.checkmark.fill { overflow: hidden; }
+.checkmark.fill::before { content: ''; position: absolute; width: 100%; height: 100%; background: #f093fb; transform: translateY(100%); transition: transform 0.3s; }
+.checkmark.fill::after { left: 9px; top: 4px; width: 6px; height: 12px; border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg); z-index: 1; }
+input:checked + .checkmark.fill { border-color: #f093fb; }
+input:checked + .checkmark.fill::before { transform: translateY(0); }
+input:checked + .checkmark.fill::after { display: block; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undo History 歷史記錄 - Web Toy 705</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Undo History</h1><p class="subtitle">歷史記錄</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="toolbar">
+                <button id="undoBtn" disabled>↩ 復原</button>
+                <button id="redoBtn" disabled>↪ 重做</button>
+                <input type="color" id="colorPicker" value="#e17055">
+                <button id="clearBtn">清除</button>
+            </div>
+            <div class="history-info">
+                <span id="historyCount">歷史: 0</span>
+            </div>
+        </div>
+        <div class="info">支援復原和重做功能</div>
+        <footer><p>歷史記錄 | Web Toy #705</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

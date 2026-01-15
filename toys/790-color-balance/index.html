@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Balance 色彩平衡 - Web Toy 790</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Balance</h1><p class="subtitle">色彩平衡</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <div class="slider-row">
+                    <span class="label-left">青</span>
+                    <input type="range" id="cyan-red" min="-100" max="100" value="0">
+                    <span class="label-right">紅</span>
+                </div>
+                <div class="slider-row">
+                    <span class="label-left">洋紅</span>
+                    <input type="range" id="magenta-green" min="-100" max="100" value="0">
+                    <span class="label-right">綠</span>
+                </div>
+                <div class="slider-row">
+                    <span class="label-left">黃</span>
+                    <input type="range" id="yellow-blue" min="-100" max="100" value="0">
+                    <span class="label-right">藍</span>
+                </div>
+            </div>
+            <button id="resetBtn">重置</button>
+        </div>
+        <div class="info">調整RGB色彩平衡</div>
+        <footer><p>色彩平衡 | Web Toy #790</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

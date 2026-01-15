@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #e74c3c; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+
+.timer-bar { height: 10px; background: rgba(255,255,255,0.2); border-radius: 5px; overflow: hidden; margin-bottom: 10px; }
+#timerFill { height: 100%; background: #e74c3c; width: 100%; transition: width 0.1s linear; }
+
+.prompt { text-align: center; font-size: 1.2rem; margin-bottom: 10px; }
+#word { color: #e74c3c; font-weight: bold; font-size: 1.4rem; }
+
+#canvas { width: 100%; height: 200px; background: #fff; border-radius: 10px; cursor: crosshair; }
+
+.score { text-align: center; margin: 10px 0; font-size: 1.1rem; }
+#count { color: #2ecc71; font-weight: bold; font-size: 1.3rem; }
+
+#startBtn { width: 100%; padding: 12px; background: #e74c3c; border: none; border-radius: 8px; color: #fff; cursor: pointer; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

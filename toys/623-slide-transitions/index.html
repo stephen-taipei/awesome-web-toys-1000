@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Transitions 滑動過渡 - Web Toy 623</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Slide Transitions</h1><p class="subtitle">滑動過渡效果</p></header>
+        <div class="demo-area">
+            <div class="slider-container">
+                <div class="slides-wrapper">
+                    <div class="slide active" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <span>Slide 1</span>
+                    </div>
+                    <div class="slide" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <span>Slide 2</span>
+                    </div>
+                    <div class="slide" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <span>Slide 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <select id="direction">
+                <option value="horizontal">水平</option>
+                <option value="vertical">垂直</option>
+            </select>
+            <button id="prevBtn">◀</button>
+            <button id="nextBtn">▶</button>
+        </div>
+        <div class="info">選擇方向並滑動切換</div>
+        <footer><p>滑動過渡效果 | Web Toy #623</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

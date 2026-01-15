@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Quantize 色彩量化 - Web Toy 788</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Quantize</h1><p class="subtitle">色彩量化</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>色彩數量: <span id="colorCount">8</span></label>
+                <input type="range" id="colors" min="2" max="32" value="8">
+            </div>
+            <button id="generateBtn">生成新圖</button>
+        </div>
+        <div class="info">減少圖像色彩數量</div>
+        <footer><p>色彩量化 | Web Toy #788</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

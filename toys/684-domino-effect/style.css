@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #ffeaa7; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.domino-row { display: flex; justify-content: center; align-items: flex-end; gap: 12px; height: 150px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px solid rgba(255,255,255,0.1); }
+
+.domino { width: 20px; height: 80px; background: linear-gradient(180deg, #ffeaa7, #fdcb6e); border-radius: 4px; transform-origin: bottom center; transition: transform 0.3s ease-out; }
+
+.domino.fall { animation: dominoFall 0.4s ease-in forwards; animation-delay: calc(var(--i) * 0.1s); }
+
+@keyframes dominoFall {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(80deg); }
+}
+
+.play-btn { width: 100%; padding: 12px; background: #fdcb6e; border: none; border-radius: 8px; color: #333; font-size: 1rem; cursor: pointer; font-weight: 600; }
+.play-btn:hover { background: #f9c03f; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

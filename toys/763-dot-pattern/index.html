@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Pattern 點陣圖案 - Web Toy 763</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Dot Pattern</h1><p class="subtitle">點陣圖案</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>間距 <input type="range" id="spacing" min="15" max="40" value="25"></label>
+                <label>大小 <input type="range" id="dotSize" min="2" max="15" value="6"></label>
+            </div>
+            <button id="generateBtn">生成</button>
+        </div>
+        <div class="info">規律點陣圖案</div>
+        <footer><p>點陣圖案 | Web Toy #763</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

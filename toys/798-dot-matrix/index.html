@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Matrix 點陣畫 - Web Toy 798</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Dot Matrix</h1><p class="subtitle">點陣畫</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>點大小: <input type="range" id="dotSize" min="3" max="15" value="8"></label>
+                <label>間距: <input type="range" id="spacing" min="0" max="5" value="2"></label>
+            </div>
+            <button id="generateBtn">生成點陣</button>
+        </div>
+        <div class="info">半色調點陣效果</div>
+        <footer><p>點陣畫 | Web Toy #798</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

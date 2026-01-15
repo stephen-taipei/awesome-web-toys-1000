@@ -1,0 +1,42 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #48dbfb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+svg { width: 100%; height: auto; display: block; }
+
+.bar-rect {
+    fill: url(#barGrad);
+    transform-origin: bottom;
+}
+
+.line-path {
+    fill: none;
+    stroke: url(#lineGrad);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.area-path {
+    fill: rgba(72, 219, 251, 0.3);
+    stroke: #48dbfb;
+    stroke-width: 2;
+}
+
+.pie-slice {
+    transform-origin: 100px 90px;
+}
+
+.chart-dot {
+    fill: #fff;
+}
+
+.controls { display: flex; gap: 8px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 8px 14px; border: none; border-radius: 8px; cursor: pointer; background: rgba(72, 219, 251, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(72, 219, 251, 0.7); }
+.controls button:hover { background: rgba(72, 219, 251, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

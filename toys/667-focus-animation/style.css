@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a18cd1; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; display: flex; flex-direction: column; gap: 30px; }
+
+.input-group { position: relative; }
+
+/* Floating Label */
+.input-group.floating input { width: 100%; padding: 15px; background: transparent; border: 2px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 1rem; transition: border-color 0.3s; }
+.input-group.floating label { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.5); transition: all 0.3s; pointer-events: none; }
+.input-group.floating input:focus { border-color: #667eea; outline: none; }
+.input-group.floating input:focus + label, .input-group.floating input:valid + label { top: 0; transform: translateY(-50%); background: #1a1a2e; padding: 0 5px; font-size: 0.8rem; color: #667eea; }
+
+/* Underline Effect */
+.input-group.underline input { width: 100%; padding: 15px 0; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.2); color: #fff; font-size: 1rem; }
+.input-group.underline label { position: absolute; left: 0; top: 15px; color: rgba(255,255,255,0.5); transition: all 0.3s; pointer-events: none; }
+.input-group.underline .line { position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #f093fb; transition: all 0.3s; }
+.input-group.underline input:focus { outline: none; }
+.input-group.underline input:focus ~ .line { left: 0; width: 100%; }
+.input-group.underline input:focus + label, .input-group.underline input:not(:placeholder-shown) + label { top: -10px; font-size: 0.8rem; color: #f093fb; }
+
+/* Glow Effect */
+.input-group.glow input { width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: none; border-radius: 8px; color: #fff; font-size: 1rem; transition: all 0.3s; }
+.input-group.glow input::placeholder { color: rgba(255,255,255,0.5); }
+.input-group.glow input:focus { outline: none; box-shadow: 0 0 20px rgba(67, 233, 123, 0.5); background: rgba(255,255,255,0.15); }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Animation 脈動動畫 - Web Toy 603</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pulse Animation</h1><p class="subtitle">脈動動畫</p></header>
+        <div class="demo-area">
+            <div class="pulse-grid">
+                <div class="pulse-item pulse-heart"><div class="shape">❤</div><span>心跳</span></div>
+                <div class="pulse-item pulse-ripple"><div class="shape"></div><span>漣漪</span></div>
+                <div class="pulse-item pulse-glow"><div class="shape"></div><span>光暈</span></div>
+                <div class="pulse-item pulse-breath"><div class="shape"></div><span>呼吸</span></div>
+                <div class="pulse-item pulse-radar"><div class="shape"></div><span>雷達</span></div>
+                <div class="pulse-item pulse-ping"><div class="shape"></div><span>通知</span></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="pauseBtn">暫停</button>
+            <label>速度:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info">各種脈動和心跳效果</div>
+        <footer><p>脈動動畫 | Web Toy #603</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

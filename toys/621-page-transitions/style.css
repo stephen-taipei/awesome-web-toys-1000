@@ -1,0 +1,40 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; perspective: 1000px; }
+
+.pages-container { position: relative; width: 100%; height: 200px; overflow: hidden; border-radius: 10px; }
+.page { position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: all 0.5s ease; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; }
+.page.active { opacity: 1; pointer-events: auto; transform: none; }
+.page-content { text-align: center; }
+.page-content h2 { font-size: 1.5rem; margin-bottom: 10px; }
+
+.page[data-page="2"] { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.page[data-page="3"] { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+/* Transition Types */
+.transition-slide .page { transform: translateX(100%); }
+.transition-slide .page.active { transform: translateX(0); }
+.transition-slide .page.prev { transform: translateX(-100%); }
+
+.transition-scale .page { transform: scale(0.8); }
+.transition-scale .page.active { transform: scale(1); }
+
+.transition-flip .page { transform: rotateY(90deg); transform-style: preserve-3d; }
+.transition-flip .page.active { transform: rotateY(0); }
+
+.transition-cube .page { transform: translateZ(-100px) rotateY(90deg); transform-style: preserve-3d; }
+.transition-cube .page.active { transform: translateZ(0) rotateY(0); }
+
+.page-dots { display: flex; justify-content: center; gap: 8px; margin-top: 15px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; }
+.dot.active { background: #667eea; transform: scale(1.2); }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls select, .controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(102, 126, 234, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover, .controls select:hover { background: rgba(102, 126, 234, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

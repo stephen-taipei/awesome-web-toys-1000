@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Tree 碎形樹 - Web Toy 739</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Fractal Tree</h1><p class="subtitle">碎形樹</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>角度 <input type="range" id="angle" min="10" max="60" value="25"><span id="angleVal">25°</span></label>
+            </div>
+            <div class="controls">
+                <label>深度 <input type="range" id="depth" min="3" max="12" value="8"><span id="depthVal">8</span></label>
+            </div>
+            <button id="drawBtn">繪製</button>
+        </div>
+        <div class="info">遞迴碎形樹圖案</div>
+        <footer><p>碎形樹 | Web Toy #739</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

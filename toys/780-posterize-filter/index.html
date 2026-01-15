@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posterize Filter 色階濾鏡 - Web Toy 780</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Posterize Filter</h1><p class="subtitle">色階濾鏡</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>色階數 <input type="range" id="levels" min="2" max="16" value="16"><span id="levelVal">16</span></label>
+            </div>
+            <button id="generateBtn">生成新圖</button>
+        </div>
+        <div class="info">減少色階海報效果</div>
+        <footer><p>色階濾鏡 | Web Toy #780</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

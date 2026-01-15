@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a18cd1; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.loader-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.loader-box { text-align: center; }
+.loader-box p { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 10px; }
+
+.loader { width: 60px; height: 60px; margin: 0 auto; position: relative; }
+
+/* Hourglass */
+.loader.hourglass { animation: hourglassFlip 2s ease-in-out infinite; }
+.hourglass .top, .hourglass .bottom { position: absolute; width: 0; height: 0; left: 50%; transform: translateX(-50%); }
+.hourglass .top { border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 30px solid #667eea; top: 0; }
+.hourglass .bottom { border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 30px solid #667eea; bottom: 0; }
+
+/* Orbit */
+.loader.orbit { border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); }
+.orbit .planet { position: absolute; width: 15px; height: 15px; background: #f093fb; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.orbit .moon { position: absolute; width: 8px; height: 8px; background: #43e97b; border-radius: 50%; animation: orbitMoon 1.5s linear infinite; }
+
+/* DNA */
+.loader.dna { display: flex; justify-content: center; align-items: center; gap: 4px; }
+.dna span { width: 8px; height: 30px; background: linear-gradient(to bottom, #fa709a 50%, #fee140 50%); border-radius: 4px; animation: dnaRotate 1s ease-in-out infinite; }
+.dna span:nth-child(2) { animation-delay: 0.1s; }
+.dna span:nth-child(3) { animation-delay: 0.2s; }
+.dna span:nth-child(4) { animation-delay: 0.3s; }
+.dna span:nth-child(5) { animation-delay: 0.4s; }
+
+/* 3D Cube */
+.loader.cube3d { transform-style: preserve-3d; animation: cubeRotate 2s linear infinite; }
+.cube3d .face { position: absolute; width: 30px; height: 30px; top: 15px; left: 15px; }
+.cube3d .front { background: rgba(102, 126, 234, 0.8); transform: translateZ(15px); }
+.cube3d .back { background: rgba(102, 126, 234, 0.8); transform: translateZ(-15px); }
+.cube3d .left { background: rgba(67, 233, 123, 0.8); transform: rotateY(-90deg) translateZ(15px); }
+.cube3d .right { background: rgba(67, 233, 123, 0.8); transform: rotateY(90deg) translateZ(15px); }
+
+@keyframes hourglassFlip { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(180deg); } }
+@keyframes orbitMoon { from { transform: rotate(0) translateX(25px); } to { transform: rotate(360deg) translateX(25px); } }
+@keyframes dnaRotate { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(-1); } }
+@keyframes cubeRotate { from { transform: rotateX(0) rotateY(0); } to { transform: rotateX(360deg) rotateY(360deg); } }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

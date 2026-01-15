@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Filter Effects 濾鏡效果 - Web Toy 616</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>SVG Filter Effects</h1><p class="subtitle">濾鏡效果</p></header>
+        <div class="demo-area">
+            <svg viewBox="0 0 200 200" id="svgCanvas">
+                <defs>
+                    <linearGradient id="shapeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+
+                    <!-- Blur Filter -->
+                    <filter id="blurFilter">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0">
+                            <animate id="blurAnim" attributeName="stdDeviation" values="0;8;0" dur="2s" repeatCount="indefinite"/>
+                        </feGaussianBlur>
+                    </filter>
+
+                    <!-- Glow Filter -->
+                    <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+                        <feFlood flood-color="#667eea" flood-opacity="0.8" result="color"/>
+                        <feComposite in="color" in2="blur" operator="in" result="glow"/>
+                        <feMerge>
+                            <feMergeNode in="glow"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                        <animate attributeName="flood-opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+                    </filter>
+
+                    <!-- Turbulence Filter -->
+                    <filter id="turbulenceFilter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise">
+                            <animate attributeName="baseFrequency" values="0.01;0.05;0.01" dur="3s" repeatCount="indefinite"/>
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+                    </filter>
+
+                    <!-- Color Matrix Filter -->
+                    <filter id="colorFilter">
+                        <feColorMatrix type="hueRotate" values="0">
+                            <animate attributeName="values" values="0;360" dur="3s" repeatCount="indefinite"/>
+                        </feColorMatrix>
+                    </filter>
+
+                    <!-- Morphology Filter -->
+                    <filter id="morphFilter">
+                        <feMorphology operator="dilate" radius="0">
+                            <animate attributeName="radius" values="0;3;0" dur="2s" repeatCount="indefinite"/>
+                        </feMorphology>
+                    </filter>
+
+                    <!-- Drop Shadow Filter -->
+                    <filter id="shadowFilter" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#000" flood-opacity="0.5">
+                            <animate attributeName="dx" values="0;10;0;-10;0" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="dy" values="0;-10;0;10;0" dur="2s" repeatCount="indefinite"/>
+                        </feDropShadow>
+                    </filter>
+                </defs>
+
+                <rect id="filterShape" x="40" y="40" width="120" height="120" rx="20" fill="url(#shapeGrad)" filter="url(#blurFilter)"/>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="filter1" class="active">模糊</button>
+            <button id="filter2">發光</button>
+            <button id="filter3">扭曲</button>
+            <button id="filter4">色相</button>
+            <button id="filter5">膨脹</button>
+            <button id="filter6">陰影</button>
+        </div>
+        <div class="info">SVG動態濾鏡效果展示</div>
+        <footer><p>濾鏡效果 | Web Toy #616</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

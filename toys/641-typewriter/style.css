@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; min-height: 120px; display: flex; align-items: center; justify-content: center; }
+
+.typewriter-display { font-family: 'Courier New', monospace; font-size: 1.5rem; color: #43e97b; }
+.cursor { animation: blink 0.8s infinite; }
+@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+.controls { display: flex; gap: 10px; margin-top: 15px; }
+.controls input[type="text"] { flex: 1; padding: 10px; border: none; border-radius: 8px; background: rgba(255,255,255,0.1); color: #fff; font-size: 0.9rem; }
+.controls input[type="text"]::placeholder { color: rgba(255,255,255,0.5); }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(102, 126, 234, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(102, 126, 234, 0.5); }
+
+.speed-control { text-align: center; margin-top: 15px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.speed-control input[type="range"] { width: 150px; vertical-align: middle; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

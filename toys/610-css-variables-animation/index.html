@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Animation 變數動畫 - Web Toy 610</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>CSS Variables Animation</h1><p class="subtitle">變數動畫</p></header>
+        <div class="demo-area">
+            <div class="var-demo" id="varDemo">
+                <div class="dynamic-box"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="control-row">
+                <label>色相:</label>
+                <input type="range" id="hueSlider" min="0" max="360" value="200">
+                <span id="hueVal">200</span>
+            </div>
+            <div class="control-row">
+                <label>大小:</label>
+                <input type="range" id="sizeSlider" min="30" max="100" value="60">
+                <span id="sizeVal">60</span>
+            </div>
+            <div class="control-row">
+                <label>圓角:</label>
+                <input type="range" id="radiusSlider" min="0" max="50" value="10">
+                <span id="radiusVal">10</span>
+            </div>
+            <div class="control-row">
+                <label>旋轉:</label>
+                <input type="range" id="rotateSlider" min="0" max="360" value="0">
+                <span id="rotateVal">0</span>
+            </div>
+            <div class="button-row">
+                <button id="animateBtn">自動動畫</button>
+                <button id="randomBtn">隨機</button>
+            </div>
+        </div>
+        <div class="info">使用CSS變數的動態動畫</div>
+        <footer><p>變數動畫 | Web Toy #610</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

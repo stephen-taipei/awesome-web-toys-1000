@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprite Creator 精靈創作 - Web Toy 712</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Sprite Creator</h1><p class="subtitle">精靈創作</p></header>
+        <div class="demo-area">
+            <div class="editor-preview">
+                <canvas id="editor"></canvas>
+                <div class="preview-section">
+                    <p>預覽 (1x, 2x, 4x)</p>
+                    <div class="previews">
+                        <canvas id="preview1" width="16" height="16"></canvas>
+                        <canvas id="preview2" width="32" height="32"></canvas>
+                        <canvas id="preview4" width="64" height="64"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar">
+                <input type="color" id="colorPicker" value="#2ecc71">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">創作遊戲精靈圖</div>
+        <footer><p>精靈創作 | Web Toy #712</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

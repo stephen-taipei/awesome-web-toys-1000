@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fd79a8; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.accordion { display: flex; flex-direction: column; gap: 10px; }
+
+.accordion-item { background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; }
+
+.accordion-header { width: 100%; padding: 15px 20px; background: transparent; border: none; color: #fff; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+.accordion-header:hover { background: rgba(253, 121, 168, 0.1); }
+
+.accordion-item.active .accordion-header { background: rgba(253, 121, 168, 0.2); color: #fd79a8; }
+
+.icon { font-size: 1.5rem; transition: transform 0.3s; }
+.accordion-item.active .icon { transform: rotate(45deg); }
+
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+
+.accordion-item.active .accordion-content { max-height: 200px; }
+
+.accordion-body { padding: 15px 20px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

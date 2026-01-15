@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.progress-grid { display: flex; justify-content: space-around; align-items: center; }
+
+.circular-progress { position: relative; width: 100px; height: 100px; }
+.circular-progress svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.circular-progress circle { fill: none; stroke-width: 8; stroke-linecap: round; }
+.circular-progress .bg { stroke: rgba(255,255,255,0.1); }
+.circular-progress .progress { stroke: #667eea; stroke-dasharray: 283; stroke-dashoffset: 283; transition: stroke-dashoffset 1s ease-out; }
+
+.circular-progress.gradient .progress { stroke-width: 8; }
+.circular-progress.thick circle { stroke-width: 15; }
+.circular-progress.thick .progress { stroke: #43e97b; }
+
+.circular-progress .value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.2rem; font-weight: 600; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(102, 126, 234, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(102, 126, 234, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Fill 漸層填充 - Web Toy 726</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Gradient Fill</h1><p class="subtitle">漸層填充</p></header>
+        <div class="demo-area">
+            <svg id="svgDemo" viewBox="0 0 360 200">
+                <defs>
+                    <linearGradient id="linearGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" id="stop1"/>
+                        <stop offset="100%" id="stop2"/>
+                    </linearGradient>
+                    <radialGradient id="radialGrad">
+                        <stop offset="0%" id="stop3"/>
+                        <stop offset="100%" id="stop4"/>
+                    </radialGradient>
+                </defs>
+                <rect x="20" y="30" width="150" height="140" rx="10" fill="url(#linearGrad)"/>
+                <circle cx="270" cy="100" r="70" fill="url(#radialGrad)"/>
+            </svg>
+            <div class="controls">
+                <div class="color-row">
+                    <label>顏色1 <input type="color" id="color1" value="#667eea"></label>
+                    <label>顏色2 <input type="color" id="color2" value="#764ba2"></label>
+                </div>
+                <label>角度 <input type="range" id="angle" min="0" max="360" value="0"></label>
+            </div>
+        </div>
+        <div class="info">編輯SVG漸層填充</div>
+        <footer><p>漸層填充 | Web Toy #726</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

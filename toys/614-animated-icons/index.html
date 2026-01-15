@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Icons 動態圖標 - Web Toy 614</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Animated Icons</h1><p class="subtitle">動態圖標</p></header>
+        <div class="demo-area">
+            <div class="icons-grid">
+                <div class="icon-item" data-icon="menu">
+                    <svg viewBox="0 0 50 50" class="icon-svg">
+                        <line class="menu-line menu-top" x1="10" y1="15" x2="40" y2="15"/>
+                        <line class="menu-line menu-mid" x1="10" y1="25" x2="40" y2="25"/>
+                        <line class="menu-line menu-bot" x1="10" y1="35" x2="40" y2="35"/>
+                    </svg>
+                    <span>選單</span>
+                </div>
+                <div class="icon-item" data-icon="play">
+                    <svg viewBox="0 0 50 50" class="icon-svg">
+                        <polygon class="play-icon" points="15,10 40,25 15,40"/>
+                        <rect class="pause-bar1" x="14" y="12" width="8" height="26" opacity="0"/>
+                        <rect class="pause-bar2" x="28" y="12" width="8" height="26" opacity="0"/>
+                    </svg>
+                    <span>播放</span>
+                </div>
+                <div class="icon-item" data-icon="heart">
+                    <svg viewBox="0 0 50 50" class="icon-svg">
+                        <path class="heart-path" d="M25,40 L12,27 C5,20 5,12 12,8 C19,4 25,10 25,15 C25,10 31,4 38,8 C45,12 45,20 38,27 Z"/>
+                    </svg>
+                    <span>愛心</span>
+                </div>
+                <div class="icon-item" data-icon="loading">
+                    <svg viewBox="0 0 50 50" class="icon-svg">
+                        <circle class="loading-circle" cx="25" cy="25" r="18"/>
+                    </svg>
+                    <span>載入</span>
+                </div>
+                <div class="icon-item" data-icon="check">
+                    <svg viewBox="0 0 50 50" class="icon-svg">
+                        <circle class="check-circle" cx="25" cy="25" r="20"/>
+                        <polyline class="check-mark" points="15,25 22,33 36,18"/>
+                    </svg>
+                    <span>完成</span>
+                </div>
+                <div class="icon-item" data-icon="bell">
+                    <svg viewBox="0 0 50 50" class="icon-svg">
+                        <path class="bell-body" d="M25,8 C18,8 13,14 13,22 L13,32 L10,36 L40,36 L37,32 L37,22 C37,14 32,8 25,8 Z"/>
+                        <circle class="bell-clapper" cx="25" cy="42" r="4"/>
+                    </svg>
+                    <span>通知</span>
+                </div>
+            </div>
+        </div>
+        <div class="info">點擊圖標觸發動畫效果</div>
+        <footer><p>動態圖標 | Web Toy #614</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

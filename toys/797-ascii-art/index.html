@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art 字符畫 - Web Toy 797</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>ASCII Art</h1><p class="subtitle">字符畫</p></header>
+        <div class="demo-area">
+            <canvas id="sourceCanvas" style="display:none;"></canvas>
+            <pre id="asciiOutput"></pre>
+            <div class="controls">
+                <label>解析度: <input type="range" id="resolution" min="4" max="12" value="6"></label>
+            </div>
+            <button id="generateBtn">生成新圖</button>
+        </div>
+        <div class="info">將圖像轉為ASCII字符</div>
+        <footer><p>字符畫 | Web Toy #797</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

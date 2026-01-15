@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #43e97b; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.progress-item { margin-bottom: 15px; }
+.progress-item span { font-size: 0.85rem; color: rgba(255,255,255,0.7); display: block; margin-bottom: 5px; }
+
+.progress-bar { height: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; transition: width 1s ease-out; }
+
+.basic .progress-fill { background: #667eea; }
+.striped .progress-fill { background: repeating-linear-gradient(45deg, #f093fb, #f093fb 10px, #f5576c 10px, #f5576c 20px); background-size: 200% 100%; animation: stripeMove 1s linear infinite; }
+.gradient .progress-fill { background: linear-gradient(90deg, #43e97b, #38f9d7, #4facfe); }
+.glow .progress-fill { background: #fa709a; box-shadow: 0 0 20px #fa709a; }
+.indeterminate .progress-fill { width: 30% !important; animation: indeterminate 1.5s ease-in-out infinite; }
+
+@keyframes stripeMove { to { background-position: 40px 0; } }
+@keyframes indeterminate { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(67, 233, 123, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(67, 233, 123, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

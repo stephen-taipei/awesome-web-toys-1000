@@ -1,0 +1,37 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #764ba2; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.liquid-svg { width: 100%; height: auto; display: block; }
+
+.blob { transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+.blob1.merged { cx: 150; }
+.blob2.merged { cx: 150; }
+
+.blob1.split { cx: 80; }
+.blob2.split { cx: 220; }
+
+@keyframes blobAuto {
+    0%, 100% { cx: 100; }
+    50% { cx: 150; }
+}
+
+@keyframes blobAuto2 {
+    0%, 100% { cx: 200; }
+    50% { cx: 150; }
+}
+
+.blob1.auto { animation: blobAuto 2s ease-in-out infinite; }
+.blob2.auto { animation: blobAuto2 2s ease-in-out infinite; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(118, 75, 162, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(118, 75, 162, 0.5); }
+.controls button.active { background: rgba(118, 75, 162, 0.7); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

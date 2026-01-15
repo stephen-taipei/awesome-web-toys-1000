@@ -1,0 +1,22 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #fff; }
+
+.story-container { }
+
+.story-section { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+
+.story-section.visible { opacity: 1; transform: translateY(0); }
+
+.story-section h1 { font-size: 3rem; margin-bottom: 20px; }
+.story-section h2 { font-size: 2rem; margin-bottom: 15px; }
+.story-section p { font-size: 1.2rem; opacity: 0.8; max-width: 300px; }
+
+.intro { background: linear-gradient(135deg, #667eea, #764ba2); }
+.chapter1 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.chapter2 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.chapter3 { background: linear-gradient(135deg, #fa709a, #fee140); }
+.ending { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+.scroll-hint { font-size: 2rem; margin-top: 30px; animation: bounce 1s ease-in-out infinite; }
+
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }

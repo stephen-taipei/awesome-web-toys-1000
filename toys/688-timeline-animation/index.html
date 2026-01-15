@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Animation 時間軸動畫 - Web Toy 688</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Timeline Animation</h1><p class="subtitle">時間軸動畫</p></header>
+        <div class="demo-area">
+            <div class="timeline" id="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item" style="--i:0">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">事件 1</div>
+                </div>
+                <div class="timeline-item" style="--i:1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">事件 2</div>
+                </div>
+                <div class="timeline-item" style="--i:2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">事件 3</div>
+                </div>
+                <div class="timeline-item" style="--i:3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">事件 4</div>
+                </div>
+            </div>
+            <button class="play-btn" id="playBtn">播放時間軸</button>
+        </div>
+        <div class="info">時間軸序列顯示動畫</div>
+        <footer><p>時間軸動畫 | Web Toy #688</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

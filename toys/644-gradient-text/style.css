@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+.gradient-text { font-size: 2.5rem; font-weight: 900; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: none; }
+.gradient-text.active { display: block; }
+
+.gradient-text.animated { background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #667eea); background-size: 300% 100%; animation: gradientMove 3s ease infinite; }
+
+.gradient-text.rainbow { background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000); background-size: 400% 100%; animation: gradientMove 5s linear infinite; }
+
+.gradient-text.shine { background: linear-gradient(90deg, #333 0%, #333 40%, #fff 50%, #333 60%, #333 100%); background-size: 200% 100%; animation: shineMove 2s linear infinite; }
+
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes shineMove { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(102, 126, 234, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(102, 126, 234, 0.7); }
+.controls button:hover { background: rgba(102, 126, 234, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

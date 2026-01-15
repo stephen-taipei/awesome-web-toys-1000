@@ -1,0 +1,59 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0c0c0c, #1a1a2e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #00d9ff; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.border-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.border-item { height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; position: relative; background: #1a1a2e; }
+.border-item span { font-size: 0.7rem; text-align: center; }
+
+/* Dashed border animation */
+.border-dash { border: 2px dashed #00d9ff; animation: borderDash var(--duration, 1s) linear infinite; }
+@keyframes borderDash { to { stroke-dashoffset: 100; } }
+.border-dash { background: linear-gradient(90deg, transparent 50%, #1a1a2e 50%); background-size: 20px 100%; animation: dashMove var(--duration, 1s) linear infinite; border: none; outline: 2px dashed #00d9ff; outline-offset: -2px; }
+@keyframes dashMove { to { outline-offset: 18px; } }
+
+/* Glow border */
+.border-glow { border: 2px solid #00d9ff; animation: borderGlow var(--duration, 2s) ease-in-out infinite; }
+@keyframes borderGlow {
+    0%, 100% { box-shadow: 0 0 5px #00d9ff, 0 0 10px #00d9ff; }
+    50% { box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff, 0 0 60px #00d9ff; }
+}
+
+/* Trace border */
+.border-trace { border: 2px solid transparent; }
+.border-trace::before { content: ''; position: absolute; inset: -2px; border-radius: 12px; padding: 2px; background: conic-gradient(from var(--angle, 0deg), #00d9ff, #ff00d9, #00d9ff); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; animation: borderTrace var(--duration, 2s) linear infinite; }
+@keyframes borderTrace { to { --angle: 360deg; } }
+@property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+/* Gradient border */
+.border-gradient { border: 3px solid transparent; background: linear-gradient(#1a1a2e, #1a1a2e) padding-box, linear-gradient(var(--angle2, 0deg), #00d9ff, #ff00d9, #ffd900) border-box; animation: borderGradientRotate var(--duration, 3s) linear infinite; }
+@keyframes borderGradientRotate { to { --angle2: 360deg; } }
+@property --angle2 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+/* Pulse border */
+.border-pulse { border: 2px solid #00d9ff; animation: borderPulse var(--duration, 1s) ease-in-out infinite; }
+@keyframes borderPulse {
+    0%, 100% { border-width: 2px; }
+    50% { border-width: 5px; }
+}
+
+/* Corner effects */
+.border-corners { border: none; }
+.border-corners::before, .border-corners::after { content: ''; position: absolute; width: 20px; height: 20px; border: 3px solid #00d9ff; }
+.border-corners::before { top: 5px; left: 5px; border-right: none; border-bottom: none; animation: cornerTL var(--duration, 1s) ease-in-out infinite; }
+.border-corners::after { bottom: 5px; right: 5px; border-left: none; border-top: none; animation: cornerBR var(--duration, 1s) ease-in-out infinite; }
+@keyframes cornerTL { 50% { top: 0; left: 0; } }
+@keyframes cornerBR { 50% { bottom: 0; right: 0; } }
+
+.paused, .paused::before, .paused::after { animation-play-state: paused !important; }
+
+.controls { display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(0, 217, 255, 0.2); color: #fff; }
+.controls button:hover { background: rgba(0, 217, 255, 0.3); }
+.controls label { font-size: 0.9rem; }
+.controls input[type="range"] { width: 100px; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,51 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #232526, #414345); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.6rem; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.var-demo { height: 150px; display: flex; align-items: center; justify-content: center; }
+
+.dynamic-box {
+    --hue: 200;
+    --size: 60px;
+    --radius: 10px;
+    --rotate: 0deg;
+
+    width: var(--size);
+    height: var(--size);
+    background: hsl(var(--hue), 70%, 50%);
+    border-radius: var(--radius);
+    transform: rotate(var(--rotate));
+    box-shadow: 0 0 30px hsla(var(--hue), 70%, 50%, 0.5);
+    transition: all 0.3s ease;
+}
+
+.dynamic-box.animating {
+    animation: varAnimation 3s ease-in-out infinite;
+}
+
+@keyframes varAnimation {
+    0%, 100% { --hue: 200; --size: 60px; --radius: 10px; --rotate: 0deg; }
+    25% { --hue: 280; --size: 80px; --radius: 40px; --rotate: 90deg; }
+    50% { --hue: 50; --size: 50px; --radius: 5px; --rotate: 180deg; }
+    75% { --hue: 120; --size: 70px; --radius: 35px; --rotate: 270deg; }
+}
+
+@property --hue { syntax: '<number>'; initial-value: 200; inherits: false; }
+@property --size { syntax: '<length>'; initial-value: 60px; inherits: false; }
+@property --radius { syntax: '<length>'; initial-value: 10px; inherits: false; }
+@property --rotate { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+.controls { margin-top: 15px; }
+.control-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.control-row label { font-size: 0.85rem; min-width: 40px; }
+.control-row input[type="range"] { flex: 1; }
+.control-row span { font-size: 0.85rem; min-width: 35px; text-align: right; }
+.button-row { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.button-row button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.15); color: #fff; font-size: 0.9rem; }
+.button-row button:hover { background: rgba(255,255,255,0.25); }
+.button-row button.active { background: rgba(255,255,255,0.35); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,49 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3); background-clip: text; -webkit-background-clip: text; color: transparent; animation: headerGradient 3s ease infinite; background-size: 300%; }
+.subtitle { color: rgba(255,255,255,0.7); }
+
+@keyframes headerGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+.gradient-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.gradient-item { height: 100px; border-radius: 12px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px; }
+.gradient-item span { background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; }
+
+/* Rainbow theme (default) */
+.gradient-shift { background: linear-gradient(135deg, var(--c1, #ff6b6b), var(--c2, #feca57), var(--c3, #48dbfb)); background-size: 200% 200%; animation: gradientShift 3s ease infinite; }
+.gradient-wave { background: linear-gradient(90deg, var(--c1, #ff6b6b), var(--c2, #feca57), var(--c3, #48dbfb), var(--c2, #feca57), var(--c1, #ff6b6b)); background-size: 400% 100%; animation: gradientWave 4s linear infinite; }
+.gradient-pulse { background: radial-gradient(circle, var(--c1, #ff6b6b), var(--c2, #feca57), var(--c3, #48dbfb)); background-size: 200% 200%; animation: gradientPulse 3s ease-in-out infinite; }
+.gradient-rotate { background: conic-gradient(from 0deg, var(--c1, #ff6b6b), var(--c2, #feca57), var(--c3, #48dbfb), var(--c1, #ff6b6b)); animation: gradientRotate 4s linear infinite; }
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes gradientWave {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes gradientPulse {
+    0%, 100% { background-position: 50% 50%; background-size: 100% 100%; }
+    50% { background-position: 50% 50%; background-size: 200% 200%; }
+}
+
+@keyframes gradientRotate {
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
+}
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.1); color: #fff; font-size: 0.9rem; }
+.controls button.active { background: rgba(255,255,255,0.3); }
+.controls button:hover { background: rgba(255,255,255,0.2); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

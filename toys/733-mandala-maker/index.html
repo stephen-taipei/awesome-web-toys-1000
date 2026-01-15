@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandala Maker 曼陀羅 - Web Toy 733</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Mandala Maker</h1><p class="subtitle">曼陀羅繪製</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>分割 <input type="range" id="divisions" min="4" max="24" value="12"><span id="divVal">12</span></label>
+            </div>
+            <div class="controls">
+                <input type="color" id="color" value="#e91e63">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">繪製對稱曼陀羅圖案</div>
+        <footer><p>曼陀羅繪製 | Web Toy #733</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

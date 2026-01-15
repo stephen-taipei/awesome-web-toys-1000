@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Loaders 無限載入 - Web Toy 640</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Infinite Loaders</h1><p class="subtitle">無限循環載入動畫</p></header>
+        <div class="demo-area">
+            <div class="loader-grid">
+                <div class="loader-box">
+                    <div class="loader infinity">
+                        <svg viewBox="0 0 100 50">
+                            <path class="infinity-path" d="M25,25 C25,10 10,10 10,25 C10,40 25,40 25,25 C25,10 40,10 40,25 C40,40 25,40 25,25" fill="none" stroke="#667eea" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <p>Infinity</p>
+                </div>
+                <div class="loader-box">
+                    <div class="loader mobius">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <p>Möbius</p>
+                </div>
+                <div class="loader-box">
+                    <div class="loader pendulum">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <p>Pendulum</p>
+                </div>
+                <div class="loader-box">
+                    <div class="loader snake">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <p>Snake</p>
+                </div>
+            </div>
+        </div>
+        <div class="info">無縫循環的載入動畫</div>
+        <footer><p>無限循環載入動畫 | Web Toy #640</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

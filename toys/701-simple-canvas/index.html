@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Canvas 簡易畫布 - Web Toy 701</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Simple Canvas</h1><p class="subtitle">簡易畫布</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="toolbar">
+                <button class="tool active" data-tool="pencil">✏️</button>
+                <button class="tool" data-tool="eraser">🧹</button>
+                <input type="color" id="colorPicker" value="#ff6b6b">
+                <input type="range" id="sizeSlider" min="1" max="30" value="5">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">使用鉛筆和橡皮繪圖</div>
+        <footer><p>簡易畫布 | Web Toy #701</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

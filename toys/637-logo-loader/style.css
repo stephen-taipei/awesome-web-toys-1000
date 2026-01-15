@@ -1,0 +1,37 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #f093fb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; display: flex; justify-content: space-around; }
+
+.logo-showcase { text-align: center; }
+.logo-showcase p { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 10px; }
+
+.logo-loader { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; }
+.logo-shape { font-size: 2.5rem; font-weight: 900; }
+
+.logo-loader.pulse .logo-shape { color: #667eea; animation: logoPulse 1.5s ease-in-out infinite; }
+.logo-loader.rotate .logo-shape { color: #43e97b; animation: logoRotate 2s linear infinite; }
+.logo-loader.morph .logo-shape { width: 40px; height: 40px; background: linear-gradient(135deg, #fa709a, #fee140); animation: logoMorph 2s ease-in-out infinite; }
+
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+@keyframes logoRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes logoMorph {
+    0%, 100% { border-radius: 20%; transform: rotate(0deg); }
+    25% { border-radius: 50%; }
+    50% { border-radius: 20%; transform: rotate(180deg); }
+    75% { border-radius: 50%; }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

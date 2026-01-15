@@ -1,0 +1,34 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a0a0a, #1a1a2e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #ff6b9d; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(0,0,0,0.3); border-radius: 15px; padding: 30px 20px; }
+
+.neon-text { font-size: 3.5rem; font-weight: 900; text-align: center; color: #fff; text-shadow: 0 0 10px #ff6b9d, 0 0 20px #ff6b9d, 0 0 40px #ff6b9d, 0 0 80px #ff6b9d; animation: neonFlicker 2s infinite; margin-bottom: 30px; }
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px #ff6b9d, 0 0 20px #ff6b9d, 0 0 40px #ff6b9d, 0 0 80px #ff6b9d;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.neon-shapes { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; }
+
+.neon-circle { width: 60px; height: 60px; border: 3px solid #00ffff; border-radius: 50%; box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, inset 0 0 10px #00ffff; animation: neonPulse 2s ease-in-out infinite; }
+
+.neon-square { width: 50px; height: 50px; border: 3px solid #ff00ff; box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, inset 0 0 10px #ff00ff; animation: neonPulse 2s ease-in-out infinite 0.5s; }
+
+.neon-line { width: 60px; height: 3px; background: #ffff00; box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 40px #ffff00; animation: neonPulse 2s ease-in-out infinite 1s; }
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

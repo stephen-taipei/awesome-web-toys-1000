@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Transition 液態過渡 - Web Toy 630</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Liquid Transition</h1><p class="subtitle">液態過渡效果</p></header>
+        <div class="demo-area">
+            <svg class="liquid-svg" viewBox="0 0 300 200">
+                <defs>
+                    <filter id="liquid">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="liquid"/>
+                    </filter>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                </defs>
+                <g filter="url(#liquid)">
+                    <circle class="blob blob1" cx="100" cy="100" r="40" fill="url(#grad1)"/>
+                    <circle class="blob blob2" cx="200" cy="100" r="40" fill="url(#grad1)"/>
+                </g>
+            </svg>
+        </div>
+        <div class="controls">
+            <button id="mergeBtn">合併</button>
+            <button id="splitBtn">分離</button>
+            <button id="autoBtn">自動</button>
+        </div>
+        <div class="info">液體般的融合分離效果</div>
+        <footer><p>液態過渡效果 | Web Toy #630</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

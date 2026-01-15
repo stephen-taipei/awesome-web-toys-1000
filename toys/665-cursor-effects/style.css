@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; cursor: none; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #4facfe; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 40px 20px; text-align: center; }
+.demo-area p { margin-bottom: 20px; }
+
+.hover-target { padding: 30px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; font-weight: 600; }
+
+.cursor, .cursor-trail { position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s; }
+
+.cursor { width: 10px; height: 10px; background: #4facfe; border-radius: 50%; }
+
+.cursor-trail { width: 30px; height: 30px; border: 2px solid rgba(79, 172, 254, 0.5); border-radius: 50%; transition: transform 0.15s, width 0.2s, height 0.2s; }
+
+body.cursor-dot .cursor { background: #f093fb; }
+body.cursor-dot .cursor-trail { display: none; }
+
+body.cursor-ring .cursor { width: 5px; height: 5px; }
+body.cursor-ring .cursor-trail { width: 40px; height: 40px; border-color: #43e97b; }
+
+body.cursor-default .cursor, body.cursor-default .cursor-trail { display: none; }
+body.cursor-default { cursor: auto; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: none; background: rgba(79, 172, 254, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(79, 172, 254, 0.7); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

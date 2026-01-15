@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Variations 旋轉變體 - Web Toy 602</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Spin Variations</h1><p class="subtitle">旋轉變體</p></header>
+        <div class="demo-area">
+            <div class="spin-grid">
+                <div class="spin-item spin-basic"><div class="shape"></div><span>基本</span></div>
+                <div class="spin-item spin-reverse"><div class="shape"></div><span>反轉</span></div>
+                <div class="spin-item spin-pulse"><div class="shape"></div><span>脈衝</span></div>
+                <div class="spin-item spin-wobble"><div class="shape"></div><span>搖擺</span></div>
+                <div class="spin-item spin-3d-x"><div class="shape"></div><span>X軸</span></div>
+                <div class="spin-item spin-3d-y"><div class="shape"></div><span>Y軸</span></div>
+                <div class="spin-item spin-orbit"><div class="shape"></div><span>軌道</span></div>
+                <div class="spin-item spin-swing"><div class="shape"></div><span>擺盪</span></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="pauseBtn">暫停</button>
+            <label>速度:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+        </div>
+        <div class="info">多種旋轉動畫效果展示</div>
+        <footer><p>旋轉變體 | Web Toy #602</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

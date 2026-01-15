@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Paint 油畫筆 - Web Toy 742</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Oil Paint</h1><p class="subtitle">油畫筆刷</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <input type="color" id="color" value="#e74c3c">
+                <label>筆觸 <input type="range" id="size" min="10" max="40" value="20"></label>
+            </div>
+            <button id="clearBtn">清除</button>
+        </div>
+        <div class="info">厚重油畫質感</div>
+        <footer><p>油畫筆刷 | Web Toy #742</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

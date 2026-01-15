@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Upscaler 像素放大 - Web Toy 720</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pixel Upscaler</h1><p class="subtitle">像素放大演算法</p></header>
+        <div class="demo-area">
+            <div class="preview-row">
+                <div class="preview-item">
+                    <canvas id="original"></canvas>
+                    <span>原始 8x8</span>
+                </div>
+                <div class="preview-item">
+                    <canvas id="nearest"></canvas>
+                    <span>最近鄰</span>
+                </div>
+                <div class="preview-item">
+                    <canvas id="scale2x"></canvas>
+                    <span>Scale2x</span>
+                </div>
+            </div>
+            <button id="randomBtn">隨機圖案</button>
+        </div>
+        <div class="info">比較不同放大演算法</div>
+        <footer><p>像素放大演算法 | Web Toy #720</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

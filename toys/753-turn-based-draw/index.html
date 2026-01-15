@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn Based Draw 輪流繪圖 - Web Toy 753</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Turn Based Draw</h1><p class="subtitle">輪流繪圖</p></header>
+        <div class="demo-area">
+            <div class="turn-info">
+                <span id="currentPlayer">玩家 1</span> 的回合
+                <span id="timer">10</span>秒
+            </div>
+            <canvas id="canvas"></canvas>
+            <button id="passBtn">傳給下一位</button>
+        </div>
+        <div class="info">計時輪流繪圖</div>
+        <footer><p>輪流繪圖 | Web Toy #753</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise Reduce 降噪 - Web Toy 787</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Noise Reduce</h1><p class="subtitle">降噪</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>降噪強度: <input type="range" id="strength" min="1" max="5" value="2"></label>
+            </div>
+            <div class="buttons">
+                <button id="addNoise">加噪點</button>
+                <button id="reduce">降噪</button>
+                <button id="reset">重置</button>
+            </div>
+        </div>
+        <div class="info">中值濾波降噪處理</div>
+        <footer><p>降噪 | Web Toy #787</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

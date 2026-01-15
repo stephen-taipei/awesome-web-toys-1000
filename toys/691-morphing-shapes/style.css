@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #ff7675; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.morph-container { display: flex; justify-content: center; align-items: center; height: 200px; margin-bottom: 20px; }
+
+.morph-shape { width: 120px; height: 120px; background: linear-gradient(135deg, #ff7675, #d63031); transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+.morph-shape.circle { border-radius: 50%; clip-path: none; }
+.morph-shape.square { border-radius: 15px; clip-path: none; }
+.morph-shape.triangle { border-radius: 0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.morph-shape.star { border-radius: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+
+.controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.controls button { padding: 10px 15px; border: 2px solid rgba(255, 118, 117, 0.3); background: transparent; border-radius: 8px; color: rgba(255,255,255,0.7); cursor: pointer; transition: all 0.3s; }
+.controls button:hover { border-color: #ff7675; color: #fff; }
+.controls button.active { background: #ff7675; border-color: #ff7675; color: #fff; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

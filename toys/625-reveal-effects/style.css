@@ -1,0 +1,32 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fa709a; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.reveal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.reveal-box { height: 100px; border-radius: 10px; cursor: pointer; overflow: hidden; position: relative; }
+.reveal-content { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+
+.reveal-box[data-effect="circle"] .reveal-content { background: linear-gradient(135deg, #667eea, #764ba2); clip-path: circle(0% at 50% 50%); }
+.reveal-box[data-effect="inset"] .reveal-content { background: linear-gradient(135deg, #f093fb, #f5576c); clip-path: inset(50%); }
+.reveal-box[data-effect="polygon"] .reveal-content { background: linear-gradient(135deg, #43e97b, #38f9d7); clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+.reveal-box[data-effect="wipe"] .reveal-content { background: linear-gradient(135deg, #fa709a, #fee140); clip-path: inset(0 100% 0 0); }
+
+.reveal-box.animate[data-effect="circle"] .reveal-content { animation: revealCircle 0.8s ease forwards; }
+.reveal-box.animate[data-effect="inset"] .reveal-content { animation: revealInset 0.8s ease forwards; }
+.reveal-box.animate[data-effect="polygon"] .reveal-content { animation: revealPolygon 0.8s ease forwards; }
+.reveal-box.animate[data-effect="wipe"] .reveal-content { animation: revealWipe 0.8s ease forwards; }
+
+@keyframes revealCircle { to { clip-path: circle(100% at 50% 50%); } }
+@keyframes revealInset { to { clip-path: inset(0%); } }
+@keyframes revealPolygon { to { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); } }
+@keyframes revealWipe { to { clip-path: inset(0 0% 0 0); } }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(250, 112, 154, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(250, 112, 154, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

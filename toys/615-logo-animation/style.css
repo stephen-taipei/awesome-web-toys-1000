@@ -1,0 +1,95 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+svg { width: 100%; height: auto; display: block; }
+
+.logo-group { transform-origin: 100px 100px; }
+.logo-bg { transform-origin: 100px 100px; }
+.logo-letter {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 100px 100px;
+}
+.logo-dot { fill: white; transform-origin: center; }
+#logoDot1 { transform-origin: 70px 60px; }
+#logoDot2 { transform-origin: 130px 60px; }
+
+/* Fade In Animation */
+.anim-fade .logo-bg { animation: fadeIn 0.8s ease-out forwards; }
+.anim-fade .logo-letter { animation: fadeIn 0.8s ease-out 0.3s forwards; opacity: 0; }
+.anim-fade .logo-dot { animation: fadeIn 0.5s ease-out 0.6s forwards; opacity: 0; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Scale Animation */
+.anim-scale .logo-bg { animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+.anim-scale .logo-letter { animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards; transform: scale(0); }
+.anim-scale .logo-dot { animation: scaleBounce 0.4s ease 0.4s forwards; transform: scale(0); }
+
+@keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleBounce {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Rotate Animation */
+.anim-rotate .logo-group { animation: rotateIn 0.8s ease-out forwards; }
+.anim-rotate .logo-letter { animation: drawLetter 1s ease-out 0.5s forwards; stroke-dasharray: 200; stroke-dashoffset: 200; }
+
+@keyframes rotateIn {
+    from { transform: rotate(-180deg) scale(0); opacity: 0; }
+    to { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+@keyframes drawLetter {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Explode Animation */
+.anim-explode .logo-bg { animation: explodeBg 0.8s ease-out forwards; transform: scale(0); }
+.anim-explode .logo-letter { animation: explodeLetter 0.6s ease-out 0.3s forwards; transform: translateY(50px); opacity: 0; }
+.anim-explode #logoDot1 { animation: explodeDot1 0.5s ease-out 0.5s forwards; transform: translate(-30px, -30px); opacity: 0; }
+.anim-explode #logoDot2 { animation: explodeDot2 0.5s ease-out 0.5s forwards; transform: translate(30px, -30px); opacity: 0; }
+
+@keyframes explodeBg {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes explodeLetter {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes explodeDot1 {
+    from { transform: translate(-30px, -30px); opacity: 0; }
+    to { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes explodeDot2 {
+    from { transform: translate(30px, -30px); opacity: 0; }
+    to { transform: translate(0, 0); opacity: 1; }
+}
+
+.controls { display: flex; gap: 8px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 8px 14px; border: none; border-radius: 8px; cursor: pointer; background: rgba(102, 126, 234, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(102, 126, 234, 0.7); }
+.controls button:hover { background: rgba(102, 126, 234, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #00cec9; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+
+#canvas { width: 100%; height: 250px; background: #fff; border-radius: 10px; cursor: crosshair; touch-action: none; }
+
+.toolbar { display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+.shape { width: 40px; height: 40px; border: 2px solid rgba(255,255,255,0.3); background: transparent; border-radius: 8px; cursor: pointer; font-size: 1.2rem; color: #fff; }
+.shape.active { border-color: #00cec9; background: rgba(0, 206, 201, 0.3); }
+#colorPicker { width: 40px; height: 35px; border: none; border-radius: 8px; cursor: pointer; }
+label { color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
+#clearBtn { padding: 8px 12px; background: #00cec9; border: none; border-radius: 8px; color: #fff; cursor: pointer; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

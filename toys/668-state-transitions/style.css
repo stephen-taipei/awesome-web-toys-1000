@@ -1,0 +1,37 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #48dbfb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; display: flex; flex-direction: column; gap: 25px; }
+
+.state-item { display: flex; align-items: center; gap: 15px; }
+.state-item > span { flex: 1; text-align: right; color: rgba(255,255,255,0.7); }
+
+/* Toggle Switch */
+.toggle { position: relative; width: 60px; height: 30px; }
+.toggle input { display: none; }
+.toggle .slider { position: absolute; inset: 0; background: rgba(255,255,255,0.2); border-radius: 30px; cursor: pointer; transition: 0.3s; }
+.toggle .slider::before { content: ''; position: absolute; width: 24px; height: 24px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: 0.3s; }
+.toggle input:checked + .slider { background: #667eea; }
+.toggle input:checked + .slider::before { transform: translateX(30px); }
+
+/* Checkbox */
+.checkbox { position: relative; width: 30px; height: 30px; }
+.checkbox input { display: none; }
+.checkbox .checkmark { position: absolute; inset: 0; background: rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer; transition: 0.3s; }
+.checkbox .checkmark::after { content: ''; position: absolute; display: none; left: 10px; top: 5px; width: 8px; height: 15px; border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+.checkbox input:checked + .checkmark { background: #43e97b; }
+.checkbox input:checked + .checkmark::after { display: block; }
+
+/* Radio */
+.radio { position: relative; width: 24px; height: 24px; }
+.radio input { display: none; }
+.radio .dot { position: absolute; inset: 0; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; transition: 0.3s; }
+.radio .dot::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: #fa709a; border-radius: 50%; transform: translate(-50%, -50%); transition: 0.2s; }
+.radio input:checked + .dot { border-color: #fa709a; }
+.radio input:checked + .dot::after { width: 12px; height: 12px; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

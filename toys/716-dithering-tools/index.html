@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dithering Tools 抖色工具 - Web Toy 716</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Dithering Tools</h1><p class="subtitle">抖色工具</p></header>
+        <div class="demo-area">
+            <div class="preview-row">
+                <div class="preview-item">
+                    <canvas id="original"></canvas>
+                    <span>原圖</span>
+                </div>
+                <div class="preview-item">
+                    <canvas id="dithered"></canvas>
+                    <span>抖色後</span>
+                </div>
+            </div>
+            <div class="controls">
+                <select id="ditherType">
+                    <option value="ordered">有序抖色</option>
+                    <option value="floyd">Floyd-Steinberg</option>
+                    <option value="pattern">圖案抖色</option>
+                </select>
+                <input type="range" id="threshold" min="1" max="8" value="4">
+            </div>
+            <button id="generateBtn">生成漸層</button>
+        </div>
+        <div class="info">各種像素抖色演算法</div>
+        <footer><p>抖色工具 | Web Toy #716</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

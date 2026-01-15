@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Switching 標籤切換 - Web Toy 679</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Tab Switching</h1><p class="subtitle">標籤切換動畫</p></header>
+        <div class="demo-area">
+            <div class="tabs">
+                <div class="tab-indicator" id="indicator"></div>
+                <button class="tab active" data-tab="1">首頁</button>
+                <button class="tab" data-tab="2">產品</button>
+                <button class="tab" data-tab="3">關於</button>
+            </div>
+            <div class="tab-content">
+                <div class="content active" data-content="1">
+                    <h3>首頁內容</h3>
+                    <p>歡迎來到首頁</p>
+                </div>
+                <div class="content" data-content="2">
+                    <h3>產品內容</h3>
+                    <p>這是產品頁面</p>
+                </div>
+                <div class="content" data-content="3">
+                    <h3>關於內容</h3>
+                    <p>關於我們的資訊</p>
+                </div>
+            </div>
+        </div>
+        <div class="info">點擊標籤切換內容</div>
+        <footer><p>標籤切換動畫 | Web Toy #679</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

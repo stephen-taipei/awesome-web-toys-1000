@@ -1,0 +1,34 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a18cd1; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; perspective: 1000px; }
+
+.flip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.flip-card { height: 100px; cursor: pointer; perspective: 1000px; }
+.flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-front, .flip-back { position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 600; border-radius: 10px; backface-visibility: hidden; }
+
+.flip-card[data-direction="horizontal"] .flip-front { background: linear-gradient(135deg, #667eea, #764ba2); }
+.flip-card[data-direction="horizontal"] .flip-back { background: linear-gradient(135deg, #764ba2, #667eea); transform: rotateY(180deg); }
+.flip-card[data-direction="horizontal"].flipped .flip-inner { transform: rotateY(180deg); }
+
+.flip-card[data-direction="vertical"] .flip-front { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.flip-card[data-direction="vertical"] .flip-back { background: linear-gradient(135deg, #f5576c, #f093fb); transform: rotateX(180deg); }
+.flip-card[data-direction="vertical"].flipped .flip-inner { transform: rotateX(180deg); }
+
+.flip-card[data-direction="diagonal"] .flip-front { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.flip-card[data-direction="diagonal"] .flip-back { background: linear-gradient(135deg, #38f9d7, #43e97b); transform: rotate3d(1, 1, 0, 180deg); }
+.flip-card[data-direction="diagonal"].flipped .flip-inner { transform: rotate3d(1, 1, 0, 180deg); }
+
+.flip-card[data-direction="swing"] .flip-front { background: linear-gradient(135deg, #fa709a, #fee140); transform-origin: left center; }
+.flip-card[data-direction="swing"] .flip-back { background: linear-gradient(135deg, #fee140, #fa709a); transform: rotateY(180deg); transform-origin: left center; }
+.flip-card[data-direction="swing"].flipped .flip-inner { transform: rotateY(-180deg); transform-origin: right center; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(161, 140, 209, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(161, 140, 209, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

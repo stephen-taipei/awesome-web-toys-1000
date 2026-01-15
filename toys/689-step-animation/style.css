@@ -1,0 +1,32 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #55efc4; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px 20px; }
+
+.steps-container { display: flex; justify-content: space-between; position: relative; margin-bottom: 30px; }
+
+.steps-progress { position: absolute; top: 20px; left: 30px; right: 30px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; z-index: 0; }
+
+.progress-bar { height: 100%; background: #55efc4; border-radius: 2px; width: 0; transition: width 0.4s ease; }
+
+.step { display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 1; }
+
+.step-circle { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; transition: all 0.3s; }
+
+.step.active .step-circle { background: #55efc4; border-color: #55efc4; color: #333; transform: scale(1.1); }
+
+.step.completed .step-circle { background: #55efc4; border-color: #55efc4; color: #333; }
+
+.step span { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+.step.active span, .step.completed span { color: #55efc4; }
+
+.controls { display: flex; gap: 10px; justify-content: center; }
+.controls button { padding: 10px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95rem; }
+#prevBtn { background: rgba(255,255,255,0.2); color: #fff; }
+#nextBtn { background: #55efc4; color: #333; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.hover-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.hover-box { height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
+
+.hover-box.grow { background: linear-gradient(135deg, #667eea, #764ba2); }
+.hover-box.grow:hover { transform: scale(1.1); }
+
+.hover-box.shrink { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.hover-box.shrink:hover { transform: scale(0.9); }
+
+.hover-box.rotate { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.hover-box.rotate:hover { transform: rotate(10deg); }
+
+.hover-box.skew { background: linear-gradient(135deg, #fa709a, #fee140); }
+.hover-box.skew:hover { transform: skewX(-10deg); }
+
+.hover-box.glow { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.hover-box.glow:hover { box-shadow: 0 0 30px rgba(79, 172, 254, 0.6); }
+
+.hover-box.border { background: transparent; border: 3px solid #a18cd1; }
+.hover-box.border:hover { background: #a18cd1; border-color: transparent; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

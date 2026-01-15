@@ -1,0 +1,50 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #00cec9; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; }
+
+.glitch-container { text-align: center; margin-bottom: 30px; }
+
+.glitch-text { font-size: 3rem; font-weight: 900; color: #fff; position: relative; display: inline-block; }
+
+.glitch-text::before, .glitch-text::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.glitch-text::before { color: #ff0080; animation: glitchTop 1s infinite linear alternate-reverse; clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%); }
+
+.glitch-text::after { color: #00ffff; animation: glitchBottom 1.5s infinite linear alternate-reverse; clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%); }
+
+@keyframes glitchTop {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0); }
+    20% { transform: translate(3px, -3px); }
+    40% { transform: translate(3px, 3px); }
+    60% { transform: translate(-3px, -3px); }
+    80% { transform: translate(-3px, 3px); }
+    100% { transform: translate(0); }
+}
+
+.glitch-box-demo { display: flex; justify-content: center; }
+
+.glitch-box { width: 100px; height: 100px; background: linear-gradient(135deg, #00cec9, #0984e3); position: relative; animation: boxGlitch 2s infinite; }
+
+@keyframes boxGlitch {
+    0%, 90%, 100% { transform: translate(0); filter: none; }
+    92% { transform: translate(-5px, 3px); filter: hue-rotate(90deg); }
+    94% { transform: translate(5px, -3px); filter: hue-rotate(180deg); }
+    96% { transform: translate(-3px, -5px); filter: hue-rotate(270deg); }
+    98% { transform: translate(3px, 5px); filter: hue-rotate(360deg); }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

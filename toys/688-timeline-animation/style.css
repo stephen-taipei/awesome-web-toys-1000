@@ -1,0 +1,35 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #dfe6e9; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.timeline { position: relative; padding-left: 30px; margin-bottom: 20px; }
+
+.timeline-line { position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.2); transform-origin: top; transform: scaleY(0); }
+
+.timeline.animate .timeline-line { animation: lineGrow 0.5s ease-out forwards; }
+
+@keyframes lineGrow {
+    to { transform: scaleY(1); }
+}
+
+.timeline-item { position: relative; padding: 15px 0; opacity: 0; transform: translateX(-20px); }
+
+.timeline.animate .timeline-item { animation: itemReveal 0.4s ease-out forwards; animation-delay: calc(0.3s + var(--i) * 0.2s); }
+
+@keyframes itemReveal {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.timeline-dot { position: absolute; left: -24px; top: 18px; width: 12px; height: 12px; background: #dfe6e9; border-radius: 50%; }
+
+.timeline-content { background: rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 8px; color: rgba(255,255,255,0.9); }
+
+.play-btn { width: 100%; padding: 12px; background: #dfe6e9; border: none; border-radius: 8px; color: #333; font-size: 1rem; cursor: pointer; font-weight: 600; }
+.play-btn:hover { background: #c8d6db; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

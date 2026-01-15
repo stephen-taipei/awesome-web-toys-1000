@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Transitions 頁面過渡 - Web Toy 621</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Page Transitions</h1><p class="subtitle">頁面過渡效果</p></header>
+        <div class="demo-area">
+            <div class="pages-container">
+                <div class="page active" data-page="1">
+                    <div class="page-content">
+                        <h2>Page 1</h2>
+                        <p>First page content</p>
+                    </div>
+                </div>
+                <div class="page" data-page="2">
+                    <div class="page-content">
+                        <h2>Page 2</h2>
+                        <p>Second page content</p>
+                    </div>
+                </div>
+                <div class="page" data-page="3">
+                    <div class="page-content">
+                        <h2>Page 3</h2>
+                        <p>Third page content</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-dots">
+                <span class="dot active" data-page="1"></span>
+                <span class="dot" data-page="2"></span>
+                <span class="dot" data-page="3"></span>
+            </div>
+        </div>
+        <div class="controls">
+            <select id="transitionType">
+                <option value="fade">淡入淡出</option>
+                <option value="slide">滑動</option>
+                <option value="scale">縮放</option>
+                <option value="flip">翻轉</option>
+                <option value="cube">立方體</option>
+            </select>
+            <button id="prevBtn">上一頁</button>
+            <button id="nextBtn">下一頁</button>
+        </div>
+        <div class="info">選擇過渡效果並切換頁面</div>
+        <footer><p>頁面過渡效果 | Web Toy #621</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

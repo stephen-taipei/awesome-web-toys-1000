@@ -1,0 +1,22 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+
+.progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea, #764ba2, #f093fb); width: 0%; z-index: 100; transition: width 0.1s; }
+
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+
+.content { padding: 20px 0; }
+.content p { text-align: center; font-size: 1.2rem; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; margin: 20px 0; }
+.spacer { height: 50vh; }
+
+.progress-circle { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; }
+.progress-circle svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.progress-circle circle { fill: none; stroke-width: 8; }
+.progress-circle .bg { stroke: rgba(255,255,255,0.1); }
+.progress-circle .progress { stroke: #667eea; stroke-dasharray: 283; stroke-dashoffset: 283; transition: stroke-dashoffset 0.1s; }
+.progress-circle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.7rem; font-weight: 600; }
+
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
