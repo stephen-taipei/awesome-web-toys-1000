@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Styles 線條樣式 - Web Toy 725</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Stroke Styles</h1><p class="subtitle">線條樣式</p></header>
+        <div class="demo-area">
+            <svg id="svgDemo" viewBox="0 0 360 200">
+                <line id="line1" x1="30" y1="30" x2="330" y2="30"/>
+                <line id="line2" x1="30" y1="70" x2="330" y2="70"/>
+                <line id="line3" x1="30" y1="110" x2="330" y2="110"/>
+                <line id="line4" x1="30" y1="150" x2="330" y2="150"/>
+            </svg>
+            <div class="controls">
+                <label>線寬 <input type="range" id="strokeWidth" min="1" max="10" value="3"></label>
+                <label>虛線 <input type="range" id="dashArray" min="0" max="20" value="0"></label>
+                <select id="lineCap">
+                    <option value="butt">Butt</option>
+                    <option value="round">Round</option>
+                    <option value="square">Square</option>
+                </select>
+                <input type="color" id="colorPicker" value="#e74c3c">
+            </div>
+        </div>
+        <div class="info">調整各種線條屬性</div>
+        <footer><p>線條樣式 | Web Toy #725</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text on Path 路徑文字 - Web Toy 728</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Text on Path</h1><p class="subtitle">路徑文字</p></header>
+        <div class="demo-area">
+            <svg id="svgDemo" viewBox="0 0 360 280">
+                <defs>
+                    <path id="curvePath" d="M 30,200 Q 180,50 330,200" fill="none"/>
+                    <path id="circlePath" d="M 180,140 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" fill="none"/>
+                    <path id="wavePath" d="M 30,140 Q 90,80 150,140 T 270,140 T 330,140" fill="none"/>
+                </defs>
+                <use href="#curvePath" stroke="#ddd" stroke-width="1"/>
+                <text>
+                    <textPath href="#curvePath" id="textOnPath">沿著路徑排列的文字</textPath>
+                </text>
+            </svg>
+            <div class="toolbar">
+                <button data-path="curvePath" class="active">曲線</button>
+                <button data-path="circlePath">圓形</button>
+                <button data-path="wavePath">波浪</button>
+            </div>
+            <input type="text" id="textInput" value="沿著路徑排列的文字" maxlength="20">
+        </div>
+        <div class="info">文字沿路徑排列</div>
+        <footer><p>路徑文字 | Web Toy #728</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Editor 路徑編輯器 - Web Toy 722</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Path Editor</h1><p class="subtitle">路徑編輯器</p></header>
+        <div class="demo-area">
+            <svg id="svgCanvas" viewBox="0 0 360 280">
+                <path id="mainPath" fill="none" stroke="#3498db" stroke-width="3"/>
+            </svg>
+            <div class="toolbar">
+                <button id="addPoint">＋節點</button>
+                <button id="closePath">封閉路徑</button>
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">點擊添加節點，拖曳移動</div>
+        <footer><p>路徑編輯器 | Web Toy #722</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

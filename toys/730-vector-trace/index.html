@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Trace 向量描圖 - Web Toy 730</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Vector Trace</h1><p class="subtitle">向量描圖</p></header>
+        <div class="demo-area">
+            <div class="preview-row">
+                <div class="preview-item">
+                    <canvas id="original"></canvas>
+                    <span>原始圖</span>
+                </div>
+                <div class="preview-item">
+                    <canvas id="traced"></canvas>
+                    <span>描圖結果</span>
+                </div>
+            </div>
+            <div class="controls">
+                <label>閾值 <input type="range" id="threshold" min="0" max="255" value="128"></label>
+            </div>
+            <button id="generateBtn">生成圖案</button>
+        </div>
+        <div class="info">簡易邊緣偵測描圖</div>
+        <footer><p>向量描圖 | Web Toy #730</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

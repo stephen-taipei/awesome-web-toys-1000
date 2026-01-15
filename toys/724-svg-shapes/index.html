@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Shapes SVG形狀 - Web Toy 724</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>SVG Shapes</h1><p class="subtitle">SVG形狀繪製</p></header>
+        <div class="demo-area">
+            <svg id="svgCanvas" viewBox="0 0 360 280"></svg>
+            <div class="toolbar">
+                <button class="shape active" data-shape="rect">▢</button>
+                <button class="shape" data-shape="circle">○</button>
+                <button class="shape" data-shape="ellipse">⬭</button>
+                <button class="shape" data-shape="polygon">⬡</button>
+                <input type="color" id="colorPicker" value="#2ecc71">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">拖曳繪製SVG形狀</div>
+        <footer><p>SVG形狀繪製 | Web Toy #724</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
