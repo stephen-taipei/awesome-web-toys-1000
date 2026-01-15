@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a18cd1; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; }
+
+.stroke-svg { width: 100%; height: auto; }
+
+.stroke-text { font-family: 'Arial Black', sans-serif; font-size: 48px; font-weight: 900; fill: transparent; stroke: #a18cd1; stroke-width: 2; stroke-dasharray: 500; stroke-dashoffset: 500; transition: stroke-dashoffset 2s ease, fill 0.5s ease; }
+
+.stroke-text.animate { stroke-dashoffset: 0; }
+.stroke-text.filled { fill: #a18cd1; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(161, 140, 209, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(161, 140, 209, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

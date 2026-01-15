@@ -1,0 +1,56 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a0a0a, #1a1a2e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #00ff88; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(0,0,0,0.5); border-radius: 15px; padding: 50px 20px; display: flex; justify-content: center; align-items: center; }
+
+.glitch-text { font-size: 3rem; font-weight: 900; color: #fff; position: relative; text-transform: uppercase; letter-spacing: 4px; }
+
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    color: #ff0000;
+    animation: glitch1 0.5s infinite;
+    z-index: -1;
+}
+
+.glitch-text::after {
+    color: #00ffff;
+    animation: glitch2 0.5s infinite;
+    z-index: -2;
+}
+
+@keyframes glitch1 {
+    0% { clip-path: inset(40% 0 61% 0); transform: translate(-3px, -3px); }
+    20% { clip-path: inset(92% 0 1% 0); transform: translate(3px, 3px); }
+    40% { clip-path: inset(43% 0 1% 0); transform: translate(-3px, 3px); }
+    60% { clip-path: inset(25% 0 58% 0); transform: translate(3px, -3px); }
+    80% { clip-path: inset(54% 0 7% 0); transform: translate(-3px, 3px); }
+    100% { clip-path: inset(58% 0 43% 0); transform: translate(3px, -3px); }
+}
+
+@keyframes glitch2 {
+    0% { clip-path: inset(25% 0 58% 0); transform: translate(3px, 3px); }
+    20% { clip-path: inset(54% 0 7% 0); transform: translate(-3px, -3px); }
+    40% { clip-path: inset(58% 0 43% 0); transform: translate(3px, -3px); }
+    60% { clip-path: inset(40% 0 61% 0); transform: translate(-3px, 3px); }
+    80% { clip-path: inset(92% 0 1% 0); transform: translate(3px, 3px); }
+    100% { clip-path: inset(43% 0 1% 0); transform: translate(-3px, -3px); }
+}
+
+.controls { display: flex; gap: 10px; margin-top: 15px; }
+.controls input { flex: 1; padding: 10px; border: none; border-radius: 8px; background: rgba(255,255,255,0.1); color: #fff; font-size: 0.9rem; }
+.controls input::placeholder { color: rgba(255,255,255,0.5); }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(0, 255, 136, 0.3); color: #fff; }
+.controls button:hover { background: rgba(0, 255, 136, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

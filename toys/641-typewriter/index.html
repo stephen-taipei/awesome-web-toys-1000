@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter 打字機效果 - Web Toy 641</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Typewriter</h1><p class="subtitle">打字機效果</p></header>
+        <div class="demo-area">
+            <div class="typewriter-display">
+                <span id="typeText"></span><span class="cursor">|</span>
+            </div>
+        </div>
+        <div class="controls">
+            <input type="text" id="customText" placeholder="輸入自訂文字...">
+            <button id="typeBtn">打字</button>
+            <button id="clearBtn">清除</button>
+        </div>
+        <div class="speed-control">
+            <label>速度: <input type="range" id="speed" min="30" max="200" value="80"></label>
+        </div>
+        <div class="info">逐字出現的打字效果</div>
+        <footer><p>打字機效果 | Web Toy #641</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

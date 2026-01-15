@@ -1,0 +1,42 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fa709a; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 50px 20px; display: flex; justify-content: center; }
+
+.split-text { font-size: 3rem; font-weight: 900; display: flex; gap: 5px; }
+.split-text span { display: inline-block; color: #fff; transition: all 0.5s ease; }
+
+.split-text.scatter span { animation: scatter 0.6s ease forwards; }
+.split-text.scatter span:nth-child(1) { --x: -30px; --y: -20px; }
+.split-text.scatter span:nth-child(2) { --x: 10px; --y: -40px; }
+.split-text.scatter span:nth-child(3) { --x: 20px; --y: 30px; }
+.split-text.scatter span:nth-child(4) { --x: -20px; --y: 40px; }
+.split-text.scatter span:nth-child(5) { --x: 30px; --y: -10px; }
+
+.split-text.wave span { animation: waveChar 1s ease-in-out infinite; }
+.split-text.wave span:nth-child(1) { animation-delay: 0s; color: #667eea; }
+.split-text.wave span:nth-child(2) { animation-delay: 0.1s; color: #764ba2; }
+.split-text.wave span:nth-child(3) { animation-delay: 0.2s; color: #f093fb; }
+.split-text.wave span:nth-child(4) { animation-delay: 0.3s; color: #fa709a; }
+.split-text.wave span:nth-child(5) { animation-delay: 0.4s; color: #fee140; }
+
+.split-text.rotate span { animation: rotateChar 0.6s ease forwards; }
+.split-text.rotate span:nth-child(1) { animation-delay: 0s; }
+.split-text.rotate span:nth-child(2) { animation-delay: 0.1s; }
+.split-text.rotate span:nth-child(3) { animation-delay: 0.2s; }
+.split-text.rotate span:nth-child(4) { animation-delay: 0.3s; }
+.split-text.rotate span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes scatter { to { transform: translate(var(--x), var(--y)) rotate(15deg); opacity: 0.7; } }
+@keyframes waveChar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes rotateChar { from { transform: rotateY(0); } to { transform: rotateY(360deg); } }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(250, 112, 154, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(250, 112, 154, 0.7); }
+.controls button:hover { background: rgba(250, 112, 154, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

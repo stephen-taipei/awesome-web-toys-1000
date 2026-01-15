@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #ff6b6b; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px 20px; min-height: 200px; display: flex; align-items: center; justify-content: center; }
+
+.kinetic-stage { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+.word { font-size: 1.5rem; font-weight: 900; opacity: 0; transform: translateY(30px); }
+
+.word:nth-child(1) { color: #667eea; }
+.word:nth-child(2) { color: #f093fb; }
+.word:nth-child(3) { color: #43e97b; }
+.word:nth-child(4) { color: #ff6b6b; }
+
+.kinetic-stage.bounce .word { animation: kineticBounce 0.6s ease forwards; }
+.kinetic-stage.zoom .word { animation: kineticZoom 0.6s ease forwards; }
+.kinetic-stage.rotate .word { animation: kineticRotate 0.6s ease forwards; }
+
+.kinetic-stage .word:nth-child(1) { animation-delay: 0s; }
+.kinetic-stage .word:nth-child(2) { animation-delay: 0.3s; }
+.kinetic-stage .word:nth-child(3) { animation-delay: 0.6s; }
+.kinetic-stage .word:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes kineticBounce {
+    0% { opacity: 0; transform: translateY(50px); }
+    60% { opacity: 1; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes kineticZoom {
+    0% { opacity: 0; transform: scale(3); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes kineticRotate {
+    0% { opacity: 0; transform: rotate(-180deg) scale(0); }
+    100% { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255, 107, 107, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(255, 107, 107, 0.7); }
+.controls button:hover { background: rgba(255, 107, 107, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
