@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Progress 滾動進度 - Web Toy 653</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="container">
+        <header><h1>Scroll Progress</h1><p class="subtitle">滾動進度指示</p></header>
+        <div class="content">
+            <p>向下滾動查看進度條</p>
+            <div class="spacer"></div>
+            <p>繼續滾動...</p>
+            <div class="spacer"></div>
+            <p>快到了！</p>
+            <div class="spacer"></div>
+            <p>已到達底部 ✓</p>
+        </div>
+        <div class="progress-circle" id="progressCircle">
+            <svg viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"/>
+                <circle class="progress" cx="50" cy="50" r="45" id="circleProgress"/>
+            </svg>
+            <span id="progressText">0%</span>
+        </div>
+        <footer><p>滾動進度指示 | Web Toy #653</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

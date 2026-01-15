@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; position: sticky; top: 0; background: rgba(26, 26, 46, 0.95); z-index: 10; }
+header h1 { font-size: 1.8rem; color: #a18cd1; }
+.subtitle { color: rgba(255,255,255,0.7); }
+
+.demo-sticky { position: sticky; top: 80px; background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; margin-bottom: 20px; display: flex; justify-content: center; }
+
+.animated-box { width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 700; transition: none; }
+
+.scroll-track { }
+.scroll-content p { text-align: center; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; margin: 20px 0; }
+.spacer { height: 50vh; }
+
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
