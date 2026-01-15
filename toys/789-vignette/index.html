@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignette 暈影效果 - Web Toy 789</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Vignette</h1><p class="subtitle">暈影效果</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>強度: <input type="range" id="intensity" min="0" max="100" value="50"></label>
+                <label>大小: <input type="range" id="size" min="20" max="100" value="60"></label>
+            </div>
+            <button id="generateBtn">生成新圖</button>
+        </div>
+        <div class="info">添加邊緣暗角效果</div>
+        <footer><p>暈影效果 | Web Toy #789</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

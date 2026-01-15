@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram 直方圖 - Web Toy 786</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Histogram</h1><p class="subtitle">直方圖</p></header>
+        <div class="demo-area">
+            <canvas id="imageCanvas"></canvas>
+            <canvas id="histCanvas"></canvas>
+            <div class="controls">
+                <button id="red" class="active">紅</button>
+                <button id="green">綠</button>
+                <button id="blue">藍</button>
+                <button id="luma">亮度</button>
+            </div>
+            <button id="generateBtn">生成新圖</button>
+        </div>
+        <div class="info">分析圖像色彩分布</div>
+        <footer><p>直方圖 | Web Toy #786</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

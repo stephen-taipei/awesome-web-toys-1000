@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Detect 邊緣偵測 - Web Toy 781</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Edge Detect</h1><p class="subtitle">邊緣偵測</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>閾值 <input type="range" id="threshold" min="10" max="200" value="50"></label>
+            </div>
+            <button id="generateBtn">生成新圖</button>
+        </div>
+        <div class="info">Sobel邊緣偵測</div>
+        <footer><p>邊緣偵測 | Web Toy #781</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
