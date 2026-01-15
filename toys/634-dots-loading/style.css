@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #48dbfb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.dots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dots-box { text-align: center; }
+.dots-box p { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 10px; }
+
+.dots { display: flex; gap: 6px; justify-content: center; height: 40px; align-items: center; }
+.dots span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+.dots.bounce span { background: #667eea; animation: dotBounce 0.6s ease-in-out infinite; }
+.dots.bounce span:nth-child(2) { animation-delay: 0.1s; }
+.dots.bounce span:nth-child(3) { animation-delay: 0.2s; }
+
+.dots.pulse span { background: #f093fb; animation: dotPulse 1s ease-in-out infinite; }
+.dots.pulse span:nth-child(2) { animation-delay: 0.2s; }
+.dots.pulse span:nth-child(3) { animation-delay: 0.4s; }
+
+.dots.fade span { background: #43e97b; animation: dotFade 1s ease-in-out infinite; }
+.dots.fade span:nth-child(2) { animation-delay: 0.33s; }
+.dots.fade span:nth-child(3) { animation-delay: 0.66s; }
+
+.dots.scale span { background: #fa709a; animation: dotScale 1s ease-in-out infinite; }
+.dots.scale span:nth-child(2) { animation-delay: 0.15s; }
+.dots.scale span:nth-child(3) { animation-delay: 0.3s; }
+
+.dots.elastic span { background: #feca57; animation: dotElastic 0.8s ease-in-out infinite; }
+.dots.elastic span:nth-child(2) { animation-delay: 0.1s; }
+.dots.elastic span:nth-child(3) { animation-delay: 0.2s; }
+
+.dots.typing span { background: #48dbfb; animation: dotTyping 1.2s ease-in-out infinite; }
+.dots.typing span:nth-child(2) { animation-delay: 0.2s; }
+.dots.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes dotPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.5); opacity: 0.5; } }
+@keyframes dotFade { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+@keyframes dotScale { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }
+@keyframes dotElastic { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(2); } }
+@keyframes dotTyping { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

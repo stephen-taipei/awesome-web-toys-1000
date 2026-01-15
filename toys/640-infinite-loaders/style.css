@@ -1,0 +1,46 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #48dbfb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.loader-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.loader-box { text-align: center; }
+.loader-box p { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 10px; }
+
+.loader { width: 60px; height: 60px; margin: 0 auto; position: relative; }
+
+/* Infinity */
+.loader.infinity svg { width: 80px; height: 50px; }
+.infinity-path { stroke-dasharray: 200; stroke-dashoffset: 200; animation: infinityDraw 2s linear infinite; }
+
+/* Möbius */
+.loader.mobius { display: flex; align-items: center; justify-content: center; }
+.mobius .ring { position: absolute; width: 40px; height: 40px; border: 3px solid transparent; border-top-color: #f093fb; border-radius: 50%; animation: mobiusSpin 1.5s linear infinite; }
+.mobius .ring:nth-child(2) { width: 30px; height: 30px; border-top-color: #43e97b; animation-direction: reverse; animation-duration: 1s; }
+
+/* Pendulum */
+.loader.pendulum { display: flex; align-items: flex-end; justify-content: center; gap: 4px; height: 50px; }
+.pendulum span { width: 10px; height: 10px; background: #fa709a; border-radius: 50%; animation: pendulumSwing 0.5s ease-in-out infinite alternate; }
+.pendulum span:nth-child(1) { animation-delay: -0.4s; }
+.pendulum span:nth-child(2) { animation-delay: -0.3s; }
+.pendulum span:nth-child(3) { animation-delay: -0.2s; }
+.pendulum span:nth-child(4) { animation-delay: -0.1s; }
+.pendulum span:nth-child(5) { animation-delay: 0s; }
+
+/* Snake */
+.loader.snake { display: flex; gap: 5px; align-items: center; justify-content: center; }
+.snake span { width: 12px; height: 12px; background: #feca57; border-radius: 2px; animation: snakeMove 1s ease-in-out infinite; }
+.snake span:nth-child(2) { animation-delay: 0.1s; }
+.snake span:nth-child(3) { animation-delay: 0.2s; }
+.snake span:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes infinityDraw { to { stroke-dashoffset: 0; } }
+@keyframes mobiusSpin { to { transform: rotate(360deg); } }
+@keyframes pendulumSwing { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+@keyframes snakeMove { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.3) translateY(-10px); } }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

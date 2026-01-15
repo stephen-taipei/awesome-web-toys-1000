@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Progress 圓形進度 - Web Toy 636</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Circular Progress</h1><p class="subtitle">圓形進度指示</p></header>
+        <div class="demo-area">
+            <div class="progress-grid">
+                <div class="circular-progress" data-value="75">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="bg" cx="50" cy="50" r="45"/>
+                        <circle class="progress" cx="50" cy="50" r="45"/>
+                    </svg>
+                    <span class="value">75%</span>
+                </div>
+                <div class="circular-progress gradient" data-value="60">
+                    <svg viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#f093fb"/>
+                                <stop offset="100%" style="stop-color:#f5576c"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="bg" cx="50" cy="50" r="45"/>
+                        <circle class="progress" cx="50" cy="50" r="45" stroke="url(#grad)"/>
+                    </svg>
+                    <span class="value">60%</span>
+                </div>
+                <div class="circular-progress thick" data-value="85">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="bg" cx="50" cy="50" r="40"/>
+                        <circle class="progress" cx="50" cy="50" r="40"/>
+                    </svg>
+                    <span class="value">85%</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="animateBtn">動畫</button>
+            <button id="resetBtn">重置</button>
+        </div>
+        <div class="info">環形進度指示動畫</div>
+        <footer><p>圓形進度指示 | Web Toy #636</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

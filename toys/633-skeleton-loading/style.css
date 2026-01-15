@@ -1,0 +1,33 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #a18cd1; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.card-skeleton { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+.card-skeleton:last-child { margin-bottom: 0; }
+
+.skeleton-avatar { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; float: left; margin-right: 15px; }
+
+.skeleton-content { overflow: hidden; }
+.skeleton-line { height: 12px; background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; margin-bottom: 10px; }
+.skeleton-line.title { width: 60%; height: 16px; }
+.skeleton-line.short { width: 40%; }
+
+.skeleton-image { height: 120px; background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; margin-bottom: 15px; }
+
+.skeleton-body .skeleton-line:last-child { margin-bottom: 0; width: 80%; }
+
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+.card-skeleton.loaded .skeleton-avatar,
+.card-skeleton.loaded .skeleton-line,
+.card-skeleton.loaded .skeleton-image { animation: none; background: rgba(255,255,255,0.3); }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(161, 140, 209, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(161, 140, 209, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

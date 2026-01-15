@@ -1,0 +1,42 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #667eea; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.spinner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.spinner-box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.spinner-box span { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+
+.spinner { width: 40px; height: 40px; }
+
+.spinner-circle { border: 3px solid rgba(102, 126, 234, 0.2); border-top-color: #667eea; border-radius: 50%; animation: spin 1s linear infinite; }
+
+.spinner-dual { border: 3px solid transparent; border-top-color: #f093fb; border-bottom-color: #f093fb; border-radius: 50%; animation: spin 1s linear infinite; }
+
+.spinner-dots { display: flex; gap: 5px; align-items: center; justify-content: center; }
+.spinner-dots div { width: 10px; height: 10px; background: #43e97b; border-radius: 50%; animation: bounce 0.6s ease-in-out infinite; }
+.spinner-dots div:nth-child(2) { animation-delay: 0.1s; }
+.spinner-dots div:nth-child(3) { animation-delay: 0.2s; }
+
+.spinner-pulse { background: #4facfe; border-radius: 50%; animation: pulse 1s ease-in-out infinite; }
+
+.spinner-chase { position: relative; }
+.spinner-chase div { position: absolute; width: 10px; height: 10px; background: #fa709a; border-radius: 50%; animation: chase 1.2s linear infinite; }
+.spinner-chase div:nth-child(1) { top: 0; left: 15px; }
+.spinner-chase div:nth-child(2) { top: 15px; right: 0; animation-delay: 0.3s; }
+.spinner-chase div:nth-child(3) { bottom: 0; left: 15px; animation-delay: 0.6s; }
+.spinner-chase div:nth-child(4) { top: 15px; left: 0; animation-delay: 0.9s; }
+
+.spinner-square { background: #feca57; animation: squareSpin 1.2s ease-in-out infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulse { 0%, 100% { transform: scale(0.5); opacity: 0.5; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes chase { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes squareSpin { 0% { transform: rotate(0) scale(1); } 50% { transform: rotate(180deg) scale(0.5); } 100% { transform: rotate(360deg) scale(1); } }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
