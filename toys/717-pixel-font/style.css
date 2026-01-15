@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #3498db; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; text-align: center; }
+
+#fontEditor { width: 150px; height: 210px; background: #222; border-radius: 5px; cursor: crosshair; image-rendering: pixelated; margin-bottom: 15px; }
+
+.char-selector { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px; }
+#currentChar { font-size: 2rem; font-weight: bold; color: #3498db; width: 40px; }
+.char-selector button { padding: 8px 15px; background: #3498db; border: none; border-radius: 8px; color: #fff; cursor: pointer; }
+
+#preview { width: 100%; height: 50px; background: #222; border-radius: 5px; image-rendering: pixelated; margin-bottom: 10px; }
+
+#previewText { width: 100%; padding: 10px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: #fff; text-align: center; font-size: 1rem; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

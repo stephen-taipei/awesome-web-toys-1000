@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #2ecc71; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+
+.editor-preview { display: flex; gap: 15px; align-items: flex-start; }
+
+#editor { width: 200px; height: 200px; background: #222; border-radius: 5px; cursor: crosshair; image-rendering: pixelated; }
+
+.preview-section { flex: 1; }
+.preview-section p { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+.previews { display: flex; gap: 10px; align-items: flex-end; }
+.previews canvas { background: #222; border-radius: 3px; image-rendering: pixelated; }
+
+.toolbar { display: flex; gap: 10px; align-items: center; margin-top: 15px; justify-content: center; }
+#colorPicker { width: 50px; height: 40px; border: none; border-radius: 8px; cursor: pointer; }
+button { padding: 10px 15px; background: #2ecc71; border: none; border-radius: 8px; color: #fff; cursor: pointer; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

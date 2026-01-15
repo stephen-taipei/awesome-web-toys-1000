@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Manager 調色盤管理 - Web Toy 713</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Palette Manager</h1><p class="subtitle">調色盤管理</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="palette" id="palette"></div>
+            <div class="toolbar">
+                <button id="clearBtn">清除</button>
+                <select id="paletteSelect">
+                    <option value="gameboy">Game Boy</option>
+                    <option value="nes">NES</option>
+                    <option value="pico8">PICO-8</option>
+                </select>
+            </div>
+        </div>
+        <div class="info">使用限定調色盤繪圖</div>
+        <footer><p>調色盤管理 | Web Toy #713</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
