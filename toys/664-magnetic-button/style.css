@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fa709a; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 60px 20px; display: flex; justify-content: center; align-items: center; }
+
+.magnetic-btn { position: relative; padding: 20px 50px; border: none; border-radius: 50px; background: linear-gradient(135deg, #fa709a, #fee140); color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; transition: transform 0.2s ease-out; }
+
+.magnetic-btn span { display: block; transition: transform 0.2s ease-out; }
+
+.magnetic-btn:hover { box-shadow: 0 10px 30px rgba(250, 112, 154, 0.4); }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

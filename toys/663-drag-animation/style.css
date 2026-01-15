@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #43e97b; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.drag-zone { position: relative; height: 250px; border: 2px dashed rgba(255,255,255,0.2); border-radius: 10px; overflow: hidden; }
+
+.draggable { position: absolute; width: 100px; height: 100px; background: linear-gradient(135deg, #43e97b, #38f9d7); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; cursor: grab; user-select: none; transition: transform 0.1s, box-shadow 0.2s; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.draggable.dragging { cursor: grabbing; box-shadow: 0 10px 30px rgba(67, 233, 123, 0.4); transform: scale(1.05); }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

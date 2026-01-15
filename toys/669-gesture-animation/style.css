@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #ff6b6b; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.gesture-zone { position: relative; height: 200px; overflow: hidden; }
+
+.gesture-card { position: absolute; width: 80%; left: 10%; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 15px; padding: 30px; text-align: center; cursor: grab; transition: transform 0.3s ease, opacity 0.3s ease; user-select: none; }
+
+.gesture-card.dragging { cursor: grabbing; transition: none; }
+
+.gesture-card.swipe-left { transform: translateY(-50%) translateX(-150%) rotate(-30deg); opacity: 0; }
+.gesture-card.swipe-right { transform: translateY(-50%) translateX(150%) rotate(30deg); opacity: 0; }
+
+.card-content h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.card-content p { opacity: 0.8; }
+
+.gesture-hint { text-align: center; margin-top: 15px; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255, 107, 107, 0.3); color: #fff; font-size: 0.9rem; }
+.controls button:hover { background: rgba(255, 107, 107, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
