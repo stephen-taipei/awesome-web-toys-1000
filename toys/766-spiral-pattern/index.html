@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral Pattern 螺旋圖案 - Web Toy 766</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Spiral Pattern</h1><p class="subtitle">螺旋圖案</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="controls">
+                <label>圈數 <input type="range" id="turns" min="3" max="15" value="8"></label>
+                <label>密度 <input type="range" id="density" min="1" max="5" value="2"></label>
+            </div>
+            <button id="generateBtn">生成</button>
+        </div>
+        <div class="info">向外延伸螺旋線</div>
+        <footer><p>螺旋圖案 | Web Toy #766</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
