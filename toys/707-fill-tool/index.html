@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Tool 填充工具 - Web Toy 707</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Fill Tool</h1><p class="subtitle">填充工具</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="toolbar">
+                <button class="tool active" data-tool="pencil">✏️ 畫筆</button>
+                <button class="tool" data-tool="fill">🪣 填充</button>
+                <input type="color" id="colorPicker" value="#fdcb6e">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">先畫區域，再用填充工具上色</div>
+        <footer><p>填充工具 | Web Toy #707</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

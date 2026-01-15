@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brush Collection 畫筆集合 - Web Toy 702</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Brush Collection</h1><p class="subtitle">畫筆集合</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="toolbar">
+                <button class="brush active" data-brush="pencil">鉛筆</button>
+                <button class="brush" data-brush="marker">麥克筆</button>
+                <button class="brush" data-brush="spray">噴槍</button>
+                <button class="brush" data-brush="watercolor">水彩</button>
+            </div>
+            <div class="toolbar">
+                <input type="color" id="colorPicker" value="#6c5ce7">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">選擇不同畫筆效果</div>
+        <footer><p>畫筆集合 | Web Toy #702</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

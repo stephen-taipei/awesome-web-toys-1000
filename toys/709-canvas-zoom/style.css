@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #55efc4; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+
+.canvas-wrapper { width: 100%; height: 220px; overflow: hidden; background: #ddd; border-radius: 10px; position: relative; }
+#canvas { background: #fff; cursor: crosshair; touch-action: none; transform-origin: center center; transition: transform 0.2s; }
+
+.toolbar { display: flex; gap: 8px; align-items: center; margin-top: 10px; justify-content: center; }
+.toolbar button { padding: 8px 12px; border: none; border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.2); color: #fff; }
+#zoomLevel { padding: 8px; background: rgba(85, 239, 196, 0.3); border-radius: 8px; min-width: 60px; text-align: center; }
+#colorPicker { width: 40px; height: 35px; border: none; border-radius: 8px; cursor: pointer; }
+#clearBtn { background: #55efc4; color: #333; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

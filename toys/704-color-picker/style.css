@@ -1,0 +1,25 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fd79a8; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.color-display { height: 60px; border-radius: 10px; margin-bottom: 15px; background: #ff0000; transition: background 0.2s; }
+
+.picker-modes { display: flex; gap: 20px; align-items: center; }
+
+.color-wheel-container { flex-shrink: 0; }
+#colorWheel { cursor: crosshair; border-radius: 50%; }
+
+.sliders { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.slider-group { display: flex; align-items: center; gap: 10px; }
+.slider-group label { width: 20px; font-weight: 600; color: rgba(255,255,255,0.7); }
+.slider-group input { flex: 1; }
+
+.color-values { display: flex; gap: 15px; justify-content: center; margin-top: 15px; }
+.color-values span { padding: 8px 15px; background: rgba(255,255,255,0.1); border-radius: 8px; font-family: monospace; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

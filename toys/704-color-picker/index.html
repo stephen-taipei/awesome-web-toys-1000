@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker 取色器 - Web Toy 704</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Color Picker</h1><p class="subtitle">取色器</p></header>
+        <div class="demo-area">
+            <div class="color-display" id="colorDisplay"></div>
+            <div class="picker-modes">
+                <div class="color-wheel-container">
+                    <canvas id="colorWheel" width="200" height="200"></canvas>
+                </div>
+                <div class="sliders">
+                    <div class="slider-group">
+                        <label>H</label>
+                        <input type="range" id="hueSlider" min="0" max="360" value="0">
+                    </div>
+                    <div class="slider-group">
+                        <label>S</label>
+                        <input type="range" id="satSlider" min="0" max="100" value="100">
+                    </div>
+                    <div class="slider-group">
+                        <label>L</label>
+                        <input type="range" id="lightSlider" min="0" max="100" value="50">
+                    </div>
+                </div>
+            </div>
+            <div class="color-values">
+                <span id="hexValue">#ff0000</span>
+                <span id="rgbValue">rgb(255, 0, 0)</span>
+            </div>
+        </div>
+        <div class="info">選擇和調整顏色</div>
+        <footer><p>取色器 | Web Toy #704</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

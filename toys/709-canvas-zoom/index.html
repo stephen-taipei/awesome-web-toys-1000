@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Zoom 畫布縮放 - Web Toy 709</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Canvas Zoom</h1><p class="subtitle">畫布縮放</p></header>
+        <div class="demo-area">
+            <div class="canvas-wrapper" id="wrapper">
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="toolbar">
+                <button id="zoomIn">🔍+</button>
+                <button id="zoomOut">🔍-</button>
+                <button id="resetZoom">重置</button>
+                <span id="zoomLevel">100%</span>
+            </div>
+            <div class="toolbar">
+                <input type="color" id="colorPicker" value="#55efc4">
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">縮放和拖曳畫布</div>
+        <footer><p>畫布縮放 | Web Toy #709</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Sensitive 壓力感應 - Web Toy 708</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pressure Sensitive</h1><p class="subtitle">壓力感應畫筆</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="toolbar">
+                <input type="color" id="colorPicker" value="#a29bfe">
+                <button id="clearBtn">清除</button>
+            </div>
+            <div class="pressure-info">
+                <span>壓力: <span id="pressureValue">0.5</span></span>
+            </div>
+        </div>
+        <div class="info">支援繪圖板壓力感應（或模擬）</div>
+        <footer><p>壓力感應畫筆 | Web Toy #708</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

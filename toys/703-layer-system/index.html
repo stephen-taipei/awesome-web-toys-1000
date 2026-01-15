@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer System 圖層系統 - Web Toy 703</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Layer System</h1><p class="subtitle">圖層系統</p></header>
+        <div class="demo-area">
+            <div class="canvas-container">
+                <canvas id="layer1" class="layer"></canvas>
+                <canvas id="layer2" class="layer"></canvas>
+                <canvas id="layer3" class="layer"></canvas>
+            </div>
+            <div class="layers-panel">
+                <div class="layer-item active" data-layer="3">圖層 3</div>
+                <div class="layer-item" data-layer="2">圖層 2</div>
+                <div class="layer-item" data-layer="1">圖層 1</div>
+            </div>
+            <div class="toolbar">
+                <input type="color" id="colorPicker" value="#00b894">
+                <button id="clearBtn">清除當前圖層</button>
+            </div>
+        </div>
+        <div class="info">在不同圖層上繪圖</div>
+        <footer><p>圖層系統 | Web Toy #703</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

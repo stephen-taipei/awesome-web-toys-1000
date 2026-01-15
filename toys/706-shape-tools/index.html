@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Tools 形狀工具 - Web Toy 706</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Shape Tools</h1><p class="subtitle">形狀工具</p></header>
+        <div class="demo-area">
+            <canvas id="canvas"></canvas>
+            <div class="toolbar">
+                <button class="shape active" data-shape="rect">▢</button>
+                <button class="shape" data-shape="circle">○</button>
+                <button class="shape" data-shape="triangle">△</button>
+                <button class="shape" data-shape="line">╱</button>
+                <input type="color" id="colorPicker" value="#00cec9">
+                <label><input type="checkbox" id="fillCheck" checked> 填滿</label>
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+        <div class="info">拖曳繪製幾何形狀</div>
+        <footer><p>形狀工具 | Web Toy #706</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
