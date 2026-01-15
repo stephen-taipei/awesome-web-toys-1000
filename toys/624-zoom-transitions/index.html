@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Transitions 縮放過渡 - Web Toy 624</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Zoom Transitions</h1><p class="subtitle">縮放過渡效果</p></header>
+        <div class="demo-area">
+            <div class="zoom-grid">
+                <div class="zoom-box" data-effect="zoom-in">
+                    <div class="box-inner">Zoom In</div>
+                </div>
+                <div class="zoom-box" data-effect="zoom-out">
+                    <div class="box-inner">Zoom Out</div>
+                </div>
+                <div class="zoom-box" data-effect="zoom-rotate">
+                    <div class="box-inner">Zoom Rotate</div>
+                </div>
+                <div class="zoom-box" data-effect="zoom-bounce">
+                    <div class="box-inner">Zoom Bounce</div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="playAll">播放全部</button>
+            <button id="resetAll">重置</button>
+        </div>
+        <div class="info">點擊方塊觸發縮放效果</div>
+        <footer><p>縮放過渡效果 | Web Toy #624</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

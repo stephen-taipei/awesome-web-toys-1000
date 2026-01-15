@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Transitions 翻頁過渡 - Web Toy 626</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Flip Transitions</h1><p class="subtitle">翻頁過渡效果</p></header>
+        <div class="demo-area">
+            <div class="flip-grid">
+                <div class="flip-card" data-direction="horizontal">
+                    <div class="flip-inner">
+                        <div class="flip-front">Front</div>
+                        <div class="flip-back">Back</div>
+                    </div>
+                </div>
+                <div class="flip-card" data-direction="vertical">
+                    <div class="flip-inner">
+                        <div class="flip-front">Front</div>
+                        <div class="flip-back">Back</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-grid" style="margin-top: 15px;">
+                <div class="flip-card" data-direction="diagonal">
+                    <div class="flip-inner">
+                        <div class="flip-front">Front</div>
+                        <div class="flip-back">Back</div>
+                    </div>
+                </div>
+                <div class="flip-card" data-direction="swing">
+                    <div class="flip-inner">
+                        <div class="flip-front">Front</div>
+                        <div class="flip-back">Back</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="flipAll">翻轉全部</button>
+            <button id="resetAll">重置</button>
+        </div>
+        <div class="info">點擊卡片翻轉</div>
+        <footer><p>翻頁過渡效果 | Web Toy #626</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

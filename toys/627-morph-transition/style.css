@@ -1,0 +1,25 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #48dbfb; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.morph-container { display: flex; justify-content: center; align-items: center; height: 200px; }
+.morph-shape { width: 120px; height: 120px; background: linear-gradient(135deg, #667eea, #764ba2); transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+.morph-shape.circle { border-radius: 50%; clip-path: none; }
+.morph-shape.square { border-radius: 10px; clip-path: none; }
+.morph-shape.triangle { border-radius: 0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); background: linear-gradient(135deg, #f093fb, #f5576c); }
+.morph-shape.star { border-radius: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.morph-shape.heart { border-radius: 0; clip-path: polygon(50% 15%, 61% 0%, 80% 0%, 100% 20%, 100% 45%, 50% 100%, 0% 45%, 0% 20%, 20% 0%, 39% 0%); background: linear-gradient(135deg, #fa709a, #fee140); }
+
+.shape-info { text-align: center; margin-top: 15px; font-size: 1.2rem; font-weight: 600; color: #48dbfb; }
+
+.controls { display: flex; gap: 8px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+.controls button { padding: 8px 14px; border: none; border-radius: 8px; cursor: pointer; background: rgba(72, 219, 251, 0.3); color: #fff; font-size: 0.85rem; }
+.controls button.active { background: rgba(72, 219, 251, 0.7); }
+.controls button:hover { background: rgba(72, 219, 251, 0.5); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
