@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #6c5ce7; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; }
+
+.cascade-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.cascade-item { padding: 15px 20px; background: linear-gradient(135deg, rgba(108, 92, 231, 0.3), rgba(162, 155, 254, 0.2)); border-radius: 10px; border-left: 4px solid #6c5ce7; opacity: 0; transform: translateX(-30px); }
+
+.cascade-item.animate { animation: cascadeIn 0.5s ease-out forwards; animation-delay: calc(var(--i) * 0.15s); }
+
+@keyframes cascadeIn {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.play-btn { width: 100%; padding: 12px; background: #6c5ce7; border: none; border-radius: 8px; color: #fff; font-size: 1rem; cursor: pointer; }
+.play-btn:hover { background: #5b4cdb; }
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

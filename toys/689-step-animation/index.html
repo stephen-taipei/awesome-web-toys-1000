@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Animation 步驟動畫 - Web Toy 689</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Step Animation</h1><p class="subtitle">步驟進度動畫</p></header>
+        <div class="demo-area">
+            <div class="steps-container">
+                <div class="steps-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="step" data-step="1">
+                    <div class="step-circle">1</div>
+                    <span>步驟一</span>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-circle">2</div>
+                    <span>步驟二</span>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <span>步驟三</span>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-circle">4</div>
+                    <span>完成</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prevBtn">上一步</button>
+                <button id="nextBtn">下一步</button>
+            </div>
+        </div>
+        <div class="info">點擊按鈕切換步驟</div>
+        <footer><p>步驟進度動畫 | Web Toy #689</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

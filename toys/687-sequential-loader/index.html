@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequential Loader 序列載入 - Web Toy 687</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Sequential Loader</h1><p class="subtitle">序列載入動畫</p></header>
+        <div class="demo-area">
+            <div class="loader-display">
+                <div class="seq-loader dots">
+                    <span style="--i:0"></span>
+                    <span style="--i:1"></span>
+                    <span style="--i:2"></span>
+                    <span style="--i:3"></span>
+                    <span style="--i:4"></span>
+                </div>
+                <p>點狀載入</p>
+            </div>
+            <div class="loader-display">
+                <div class="seq-loader bars">
+                    <span style="--i:0"></span>
+                    <span style="--i:1"></span>
+                    <span style="--i:2"></span>
+                    <span style="--i:3"></span>
+                </div>
+                <p>條狀載入</p>
+            </div>
+            <div class="loader-display">
+                <div class="seq-loader squares">
+                    <span style="--i:0"></span>
+                    <span style="--i:1"></span>
+                    <span style="--i:2"></span>
+                </div>
+                <p>方塊載入</p>
+            </div>
+        </div>
+        <div class="info">各種序列載入動畫樣式</div>
+        <footer><p>序列載入動畫 | Web Toy #687</p></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #fd79a8; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 40px 20px; }
+
+.wave-container { display: flex; justify-content: center; align-items: center; gap: 8px; height: 150px; }
+
+.wave-bar { width: 20px; height: 60px; background: linear-gradient(180deg, #fd79a8, #e84393); border-radius: 10px; animation: waveSequence 1.2s ease-in-out infinite; animation-delay: calc(var(--i) * 0.1s); }
+
+@keyframes waveSequence {
+    0%, 100% { height: 60px; }
+    50% { height: 120px; }
+}
+
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
