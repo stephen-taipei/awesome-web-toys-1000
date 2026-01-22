@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #E91E63; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#story { min-height: 200px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; margin-bottom: 15px; font-size: 14px; line-height: 1.6; }
+#choices { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+#choices button { padding: 12px; background: rgba(233,30,99,0.3); border: 1px solid #E91E63; border-radius: 8px; color: #fff; cursor: pointer; text-align: left; transition: all 0.3s; }
+#choices button:hover { background: rgba(233,30,99,0.5); }
+#restartBtn { width: 100%; padding: 12px; background: #E91E63; border: none; border-radius: 8px; color: #fff; cursor: pointer; font-weight: bold; }
+#restartBtn:hover { background: #C2185B; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

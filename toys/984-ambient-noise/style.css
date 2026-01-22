@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a2a1a, #0a150a); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #8BC34A; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#canvas { width: 100%; height: 200px; border-radius: 10px; background: #0a150a; margin-bottom: 15px; }
+#soundButtons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+#soundButtons button { padding: 15px 10px; background: rgba(139,195,74,0.3); border: 1px solid #8BC34A; border-radius: 8px; color: #fff; cursor: pointer; font-size: 12px; transition: all 0.3s; }
+#soundButtons button:hover, #soundButtons button.active { background: rgba(139,195,74,0.6); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

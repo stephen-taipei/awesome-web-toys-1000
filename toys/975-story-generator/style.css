@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', serif; background: linear-gradient(135deg, #2d1b1b, #1a0a0a); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #FF8A65; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#storyOutput { min-height: 250px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 10px; margin-bottom: 15px; font-size: 15px; line-height: 1.8; border-left: 3px solid #FF8A65; }
+#generateBtn { width: 100%; padding: 12px; background: #FF8A65; border: none; border-radius: 8px; color: #333; cursor: pointer; font-weight: bold; }
+#generateBtn:hover { background: #FF7043; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

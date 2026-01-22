@@ -1,0 +1,14 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a2a3a, #0a1520); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #29B6F6; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#moodDisplay { text-align: center; font-size: 48px; padding: 15px; }
+#moodButtons { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+#moodButtons button { width: 50px; height: 50px; font-size: 24px; border: none; border-radius: 50%; cursor: pointer; transition: transform 0.2s; background: rgba(255,255,255,0.1); }
+#moodButtons button:hover { transform: scale(1.2); }
+#canvas { width: 100%; height: 150px; border-radius: 10px; background: rgba(0,0,0,0.3); }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
