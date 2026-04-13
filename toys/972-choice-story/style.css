@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a2a1a, #0a150a); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #66BB6A; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#narrative { min-height: 180px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; margin-bottom: 15px; font-size: 14px; line-height: 1.6; }
+#options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+#options button { padding: 12px; background: rgba(102,187,106,0.3); border: 1px solid #66BB6A; border-radius: 8px; color: #fff; cursor: pointer; text-align: left; transition: all 0.3s; }
+#options button:hover { background: rgba(102,187,106,0.5); }
+#newStoryBtn { width: 100%; padding: 12px; background: #66BB6A; border: none; border-radius: 8px; color: #333; cursor: pointer; font-weight: bold; }
+#newStoryBtn:hover { background: #43A047; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

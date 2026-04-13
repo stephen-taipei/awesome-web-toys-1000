@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #87CEEB, #E0F6FF); min-height: 100vh; color: #333; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #4169E1; }
+.subtitle { color: rgba(0,0,0,0.6); }
+.demo-area { background: rgba(255,255,255,0.3); border-radius: 15px; padding: 15px; }
+#canvas { width: 100%; height: 300px; border-radius: 10px; background: linear-gradient(180deg, #87CEEB, #E0F6FF); cursor: pointer; }
+#blowBtn { width: 100%; padding: 12px; margin-top: 15px; background: #4169E1; border: none; border-radius: 8px; color: #fff; cursor: pointer; font-weight: bold; }
+#blowBtn:hover { background: #3158D0; }
+.info { text-align: center; padding: 15px; color: rgba(0,0,0,0.6); }
+footer { text-align: center; padding: 15px; color: rgba(0,0,0,0.4); }

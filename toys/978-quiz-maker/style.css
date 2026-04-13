@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a2e1a, #0a1a0a); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #4CAF50; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#quizArea { min-height: 200px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; margin-bottom: 15px; }
+.question { font-size: 16px; margin-bottom: 15px; font-weight: bold; }
+.answers { display: flex; flex-direction: column; gap: 10px; }
+.answers button { padding: 12px; background: rgba(76,175,80,0.3); border: 1px solid #4CAF50; border-radius: 8px; color: #fff; cursor: pointer; text-align: left; transition: all 0.3s; }
+.answers button:hover { background: rgba(76,175,80,0.5); }
+.answers button.correct { background: #4CAF50; }
+.answers button.wrong { background: #f44336; }
+#score { text-align: center; font-size: 18px; padding: 15px; color: #4CAF50; }
+#newQuizBtn { width: 100%; padding: 12px; background: #4CAF50; border: none; border-radius: 8px; color: #fff; cursor: pointer; font-weight: bold; }
+#newQuizBtn:hover { background: #43A047; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }

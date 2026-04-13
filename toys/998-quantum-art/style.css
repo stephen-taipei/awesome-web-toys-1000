@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a0a1a, #2e0a2e); min-height: 100vh; color: #fff; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 15px 0; }
+header h1 { font-size: 1.8rem; color: #EA80FC; }
+.subtitle { color: rgba(255,255,255,0.7); }
+.demo-area { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; }
+#canvas { width: 100%; height: 280px; border-radius: 10px; background: #05000a; }
+#quantumBtn { width: 100%; padding: 12px; margin-top: 15px; background: #EA80FC; border: none; border-radius: 8px; color: #333; cursor: pointer; font-weight: bold; }
+#quantumBtn:hover { background: #E040FB; }
+.info { text-align: center; padding: 15px; color: rgba(255,255,255,0.7); }
+footer { text-align: center; padding: 15px; color: rgba(255,255,255,0.5); }
