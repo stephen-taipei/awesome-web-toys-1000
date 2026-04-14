@@ -1,0 +1,24 @@
+# Awesome Web Toys 1000
+
+Last updated: 2026-04-14
+
+## Summary (English)
+1000 interactive web toys exploring generative art, simulation, animation, 3D, and playful frontend experiments.
+
+## Summary (Traditional Chinese)
+1000 interactive web toys exploring generative art, simulation, animation, 3D, and playful frontend experiments.
+
+## Summary (Japanese)
+1000 interactive web toys exploring generative art, simulation, animation, 3D, and playful frontend experiments.
+
+## Key Pages
+- / : project landing page
+- /llms.txt : AI-readable summary
+- /sitemap.xml : full crawl map
+- /news-sitemap.xml : recently refreshed pages
+
+## Topics
+- Generative art
+- Physics simulations
+- 3D and animation experiments
+- Interactive frontend play
