@@ -64,3 +64,8 @@ proxy.conf.json
 AGENTS.md
 MIGRATION.md
 ARCHITECTURE.md
+
+# Local quality evidence and isolated test dependencies
+audit-evidence/
+.venv/
+__pycache__/
