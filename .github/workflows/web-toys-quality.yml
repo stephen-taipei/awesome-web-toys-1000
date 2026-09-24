@@ -1,0 +1,46 @@
+name: Web toys quality
+on:
+  push:
+    branches: [audit/web-toys-2026-09-24]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: web-toys-quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Capture read-only audit inventory
+        run: |
+          mkdir -p audit-evidence
+          git archive --format=zip HEAD -o audit-evidence/source.zip
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import vm from 'node:vm';
+          const files = [];
+          function walk(dir) { for (const e of fs.readdirSync(dir, {withFileTypes:true})) { const p = path.join(dir,e.name); if (e.isDirectory()) walk(p); else files.push(p); } }
+          walk('toys');
+          const errors = [];
+          for (const f of files.filter(f => f.endsWith('.js'))) {
+            const text = fs.readFileSync(f,'utf8');
+            if (!/^\s*(?:import|export)\s/m.test(text)) {
+              try { new vm.Script(text,{filename:f}); } catch (e) { errors.push({file:f,error:e.message}); }
+            }
+          }
+          const inventory = {files:files.length, pages:files.filter(f=>f.endsWith('.html')).length, scripts:files.filter(f=>f.endsWith('.js')).length, errors, paths:files};
+          fs.writeFileSync('audit-evidence/inventory.json',JSON.stringify(inventory,null,2));
+          console.log(JSON.stringify({...inventory,paths:undefined},null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web-toys-audit-evidence
+          path: audit-evidence/
+          retention-days: 7
