@@ -1,0 +1,48 @@
+name: Apply verified audit repair
+on:
+  push:
+    branches: [audit/web-toys-2026-09-24]
+    paths: ['.audit-publish/**', '.github/workflows/apply-audit-repair.yml']
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.repository == 'stephen-taipei/awesome-web-toys-1000' && github.ref == 'refs/heads/audit/web-toys-2026-09-24' && github.event.head_commit.message == 'chore: stage verified audit repair payload'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Apply only to the verified source snapshot
+        run: |
+          set -euo pipefail
+          git diff --exit-code 4b201af72903534aa6229de46ac0cfcf1c3e4404 -- toys index.html
+          python3 .audit-publish/fixes.py
+          python3 .audit-publish/media.py
+          python3 .audit-publish/more-media.py
+          python3 .audit-publish/edge.py
+          cp .audit-publish/web-codecs.js toys/999-web-codecs/script.js
+          git add toys index.html
+          tree=$(git write-tree)
+          test "$(git rev-parse "$tree:toys")" = 2abcb854d82183c2cc1256540c2a1fe1ceeff993
+          test "$(git rev-parse :index.html)" = 2d949bc72a099c07e41c8eaae777dda9a7364f91
+          git diff --cached --check
+          node <<'NODE'
+          const fs=require('node:fs'),vm=require('node:vm');
+          for(const directory of fs.readdirSync('toys')) {
+            const file=`toys/${directory}/script.js`;
+            if(fs.existsSync(file)) new vm.Script(fs.readFileSync(file,'utf8'),{filename:file});
+          }
+          NODE
+          git config user.name 'Stephen'
+          git config user.email '6315361+stephen-taipei@users.noreply.github.com'
+          git commit -m 'fix: repair toy startup, microphone lifecycle, media queues and accessible labels'
+      - name: Fast-forward only the isolated audit branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" push origin HEAD:refs/heads/audit/web-toys-2026-09-24
