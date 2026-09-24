@@ -121,7 +121,7 @@ function draw() {
         ctx.fillText(`${child.name} (${(child.value / total * 100).toFixed(0)}%)`, x + 16, legendY + 10);
     });
 
-    infoEl.textContent = child ? '點擊區塊深入查看' : '已達最底層';
+    infoEl.textContent = '點擊區塊深入查看';
 }
 
 function updateBreadcrumb() {
@@ -144,8 +144,8 @@ canvas.addEventListener('click', (e) => {
     if (!currentLevel.children) return;
 
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = (e.clientX - rect.left) * canvas.width / rect.width;
+    const y = (e.clientY - rect.top) * canvas.height / rect.height;
     const cx = canvas.width / 2;
     const cy = canvas.height / 2 + 10;
 

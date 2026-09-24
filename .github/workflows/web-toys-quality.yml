@@ -1,0 +1,45 @@
+name: Web toys quality
+on:
+  push:
+    branches: [main, audit/web-toys-2026-09-24]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: web-toys-quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Record environment
+        run: |
+          node --version
+          python3 --version
+          git rev-parse HEAD
+      - name: Static and negative regression gates
+        run: |
+          python3 scripts/audit.py
+          python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Install isolated browser test tools
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r tests/requirements.txt
+          .venv/bin/python -m playwright install --with-deps chromium
+      - name: Browser interaction regressions
+        run: .venv/bin/python tests/ci_browser.py --suite regressions
+      - name: All-toy startup sweep
+        run: .venv/bin/python tests/ci_browser.py --suite smoke --workers 2
+      - name: Preserve reports on success or failure
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: web-toys-quality-${{ github.run_id }}
+          path: audit-evidence/
+          retention-days: 7
+          if-no-files-found: warn

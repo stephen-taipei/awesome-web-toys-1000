@@ -159,7 +159,7 @@ function draw() {
             fireworks.push(new Firework());
         }
 
-        fireworks = fireworks.filter(f => !f.exploded || particles.some(p => p.life > 0));
+        fireworks = fireworks.filter(f => !f.exploded);
         fireworks.forEach(f => {
             f.update();
             f.draw();

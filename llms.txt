@@ -1,24 +1,22 @@
 # Awesome Web Toys 1000
 
-Last updated: 2026-04-14
+Last updated: 2026-09-24
 
 ## Summary (English)
-1000 interactive web toys exploring generative art, simulation, animation, 3D, and playful frontend experiments.
+1,005 standalone browser toy pages covering 1,000 numbered themes in generative art, simulation, audio visualization, animation, games, and experimental browser APIs. Five alternate experiments share numbers 996-1000, with distinct directory slugs.
 
 ## Summary (Traditional Chinese)
-1000 interactive web toys exploring generative art, simulation, animation, 3D, and playful frontend experiments.
+1,005 個可獨立開啟的瀏覽器互動子項目，涵蓋 1,000 個主題編號。內容包含生成藝術、模擬、音訊視覺化、動畫、遊戲及實驗性瀏覽器 API。#996 至 #1000 各有兩個不同 slug 的主題。
 
 ## Summary (Japanese)
-1000 interactive web toys exploring generative art, simulation, animation, 3D, and playful frontend experiments.
+生成アート、シミュレーション、音声の可視化、アニメーション、ゲーム、実験的なブラウザー API を扱う、1,005 個の独立したページです。テーマ番号は 1,000 個あり、996-1000 には別のディレクトリを持つ追加作品があります。
 
-## Key Pages
-- / : project landing page
-- /llms.txt : AI-readable summary
-- /sitemap.xml : full crawl map
-- /news-sitemap.xml : recently refreshed pages
+## Key Pages (relative to this project)
+- ./ : project landing page
+- ./toys/001-fractal-tree/index.html : example standalone toy
+- ./llms.txt : this summary
+- ./sitemap.xml : full crawl map
+- ./docs/audit-2026-09-24.md : quality checks and known limitations
 
-## Topics
-- Generative art
-- Physics simulations
-- 3D and animation experiments
-- Interactive frontend play
+## Runtime and verification
+No package installation or build is needed to serve the toys. Use HTTPS for APIs requiring a secure context. Device and browser support vary. Automated startup checks do not certify every interaction or hardware feature.

@@ -9,6 +9,10 @@
 // 全域變數
 let canvas, ctx;
 let audioCtx = null;
+let microphoneStream = null;
+let microphoneStarting = false;
+let microphoneRequest = 0;
+
 let analyser = null;
 let microphone = null;
 let isRecording = false;
@@ -163,8 +167,22 @@ async function toggleRecording() {
 
 // 開始錄音
 async function startRecording() {
+    if (microphoneStarting || isRecording) return false;
+    const request = ++microphoneRequest;
+    const button = document.getElementById('startBtn');
+    microphoneStarting = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    button.removeAttribute('title');
     try {
+        if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone API unavailable');
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        // A permission prompt may resolve after stop, demo mode, or pagehide.
+        if (request !== microphoneRequest) {
+            stream.getTracks().forEach(track => track.stop());
+            return false;
+        }
+        microphoneStream = stream;
 
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         analyser = audioCtx.createAnalyser();
@@ -181,27 +199,30 @@ async function startRecording() {
         isRecording = true;
         return true;
     } catch (error) {
-        console.error('無法存取麥克風:', error);
-        alert('無法存取麥克風，請確認已授予權限。');
+        if (request !== microphoneRequest) return false;
+        stopRecording();
+        console.warn('Microphone unavailable:', error.message);
+        button.textContent = '重試麥克風';
+        button.title = '請使用 HTTPS，確認裝置與麥克風權限後重試。';
         return false;
+    } finally {
+        if (request === microphoneRequest) {
+            microphoneStarting = false;
+            button.disabled = false;
+            button.removeAttribute('aria-busy');
+        }
     }
 }
 
 // 停止錄音
 function stopRecording() {
-    isRecording = false;
-
-    if (microphone) {
-        microphone.disconnect();
-        microphone = null;
-    }
-
-    if (audioCtx) {
-        audioCtx.close();
-        audioCtx = null;
-    }
-
-    analyser = null;
+    releaseMicrophone();
+    const button = document.getElementById('startBtn');
+    button.textContent = '開始錄音';
+    button.classList.remove('recording');
+    const status = document.getElementById('micStatus');
+    status.classList.remove('active');
+    status.querySelector('.status-text').textContent = '點擊開始錄音';
 }
 
 // 重置
@@ -493,3 +514,27 @@ function animate() {
 
 // 啟動
 document.addEventListener('DOMContentLoaded', init);
+
+
+// Release the capture tracks, not only the Web Audio graph.
+function releaseMicrophone() {
+    microphoneRequest++;
+    microphoneStarting = false;
+    isRecording = false;
+    if (microphoneStream) {
+        microphoneStream.getTracks().forEach(track => track.stop());
+        microphoneStream = null;
+    }
+    if (microphone) { microphone.disconnect(); microphone = null; }
+    const previousContext = audioCtx;
+    audioCtx = null;
+    analyser = null;
+    if (previousContext && previousContext.state !== 'closed') {
+        previousContext.close().catch(error => console.warn('Audio cleanup:', error.message));
+    }
+    const button = document.getElementById('startBtn');
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+}
+
+window.addEventListener('pagehide', stopRecording);

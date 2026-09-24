@@ -1,0 +1,2 @@
+# Browser test dependency only. Toys have no runtime package dependencies.
+playwright==1.57.0

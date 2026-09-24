@@ -11,6 +11,9 @@
  * - 粒子系統與物理模擬
  */
 
+(function () {
+'use strict';
+
 // ==================== WebGL 設定 ====================
 
 const canvas = document.getElementById('galaxyCanvas');
@@ -20,8 +23,18 @@ const gl = canvas.getContext('webgl', {
     preserveDrawingBuffer: false
 });
 
+function showGraphicsError(message) {
+    const notice = document.createElement('p');
+    notice.setAttribute('role', 'status');
+    notice.textContent = message;
+    const controls = document.querySelector('.controls') || document.body;
+    controls.prepend(notice);
+    controls.querySelectorAll('input, select, button').forEach(control => { control.disabled = true; });
+}
+
 if (!gl) {
-    alert('您的瀏覽器不支援 WebGL，請使用現代瀏覽器');
+    showGraphicsError('目前無法使用 WebGL，請確認瀏覽器與硬體加速設定後重新載入。');
+    return;
 }
 
 // ==================== 著色器程式碼 ====================
@@ -99,6 +112,7 @@ function createProgram(gl, vertexShader, fragmentShader) {
 
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
         console.error('程式連結失敗:', gl.getProgramInfoLog(program));
+        gl.deleteProgram(program);
         return null;
     }
     return program;
@@ -108,7 +122,19 @@ function createProgram(gl, vertexShader, fragmentShader) {
 
 const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
 const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+if (!vertexShader || !fragmentShader) {
+    if (vertexShader) gl.deleteShader(vertexShader);
+    if (fragmentShader) gl.deleteShader(fragmentShader);
+    showGraphicsError('圖形著色器無法編譯，請更新瀏覽器或圖形驅動程式後重試。');
+    return;
+}
 const program = createProgram(gl, vertexShader, fragmentShader);
+gl.deleteShader(vertexShader);
+gl.deleteShader(fragmentShader);
+if (!program) {
+    showGraphicsError('圖形程式初始化失敗，請更新瀏覽器後重試。');
+    return;
+}
 
 // 取得 attribute 和 uniform 位置
 const positionLocation = gl.getAttribLocation(program, 'a_position');
@@ -530,3 +556,5 @@ document.getElementById('supernovaBtn').addEventListener('click', () => {
 
 resizeCanvas();
 requestAnimationFrame(animate);
+
+})();
