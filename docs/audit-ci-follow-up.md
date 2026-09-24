@@ -15,3 +15,9 @@ Initialize current/target frequency to the configured minimum and use a bounded,
 Two deterministic source regressions execute the real script with a strict Canvas gradient double. Both fail against the unpatched source and pass against the repair. The source regression suite now contains six tests. The browser interaction matrix remains 83 cases, and the full startup sweep still covers all 1,005 toys.
 
 The primary audit's local metrics describe its original tested snapshot. HTTP results are recorded in each workflow artifact. A first-run failure or a pending rerun must not be reported as successful. No test was skipped or relaxed to handle this finding.
+
+## CI navigation capacity
+
+The next PR run, `35965855938` on commit `429136ff4b1bb341fd71cefcf778007e0db3deac`, recorded no JavaScript exceptions. Of 1,005 startup cases, 1,002 passed and three (`012-mouse-trail`, `013-gravity-points`, `014-particle-text`) exceeded the 15-second navigation deadline. Those timeouts are retained as failures, not counted as successful loads. The six source tests and 83 HTTP interaction regressions passed.
+
+To reduce contention on shared software-rendering runners, CI now uses two concurrent smoke-test pages and an HTTP fixture listen backlog of 128. `tests/ci_browser.py` only configures the standard-library server before calling the existing browser runner. The 15-second load timeout, 200-ms dwell, full 1,005-page scope and all assertion/error conditions remain unchanged. No retry or failure allowlist was added. The resulting rerun is independently recorded in its artifact.
