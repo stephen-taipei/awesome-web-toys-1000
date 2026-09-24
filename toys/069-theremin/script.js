@@ -38,9 +38,9 @@ let isPlaying = false;
 // 滑鼠/觸控位置
 let mouseX = 0;
 let mouseY = 0;
-let targetFreq = 0;
+let targetFreq = config.minFreq;
 let targetVolume = 0;
-let currentFreq = 0;
+let currentFreq = config.minFreq;
 let currentVolume = 0;
 
 // 音符名稱
@@ -70,7 +70,7 @@ function initAudio() {
     // 主振盪器
     oscillator = audioContext.createOscillator();
     oscillator.type = config.waveform;
-    oscillator.frequency.value = 440;
+    oscillator.frequency.value = currentFreq;
 
     // 顫音振盪器
     vibratoOsc = audioContext.createOscillator();
@@ -112,13 +112,22 @@ function updateAudio() {
 // ==================== 頻率/音符計算 ====================
 
 function frequencyToNote(freq) {
-    if (freq <= 0) return '--';
+    if (!Number.isFinite(freq) || freq <= 0) return '--';
 
     const noteNum = 12 * (Math.log2(freq / 440)) + 69;
-    const noteIndex = Math.round(noteNum) % 12;
+    const noteIndex = ((Math.round(noteNum) % 12) + 12) % 12;
     const octave = Math.floor(Math.round(noteNum) / 12) - 1;
 
     return noteNames[noteIndex] + octave;
+}
+
+// Keep logarithmic drawing coordinates finite before the first audio update
+// and when both frequency sliders meet at their shared 500 Hz endpoint.
+function frequencyPosition(freq) {
+    const span = Math.log2(config.maxFreq) - Math.log2(config.minFreq);
+    if (!Number.isFinite(freq) || freq <= 0 || !Number.isFinite(span) || span <= 0) return 0;
+    const position = (Math.log2(freq) - Math.log2(config.minFreq)) / span;
+    return Math.max(0, Math.min(1, position));
 }
 
 function getNoteFrequencies() {
@@ -173,8 +182,7 @@ function drawGuides() {
     const notes = getNoteFrequencies();
 
     notes.forEach(note => {
-        const x = ((Math.log2(note.freq) - Math.log2(config.minFreq)) /
-            (Math.log2(config.maxFreq) - Math.log2(config.minFreq))) * canvas.width;
+        const x = frequencyPosition(note.freq) * canvas.width;
 
         ctx.strokeStyle = note.isWhite ? 'rgba(100, 200, 255, 0.15)' : 'rgba(200, 100, 255, 0.1)';
         ctx.lineWidth = note.isWhite ? 1 : 0.5;
@@ -227,8 +235,7 @@ function drawTrails() {
             continue;
         }
 
-        const hue = ((Math.log2(trail.freq) - Math.log2(config.minFreq)) /
-            (Math.log2(config.maxFreq) - Math.log2(config.minFreq))) * 270;
+        const hue = frequencyPosition(trail.freq) * 270;
 
         const size = 5 + trail.volume * 20;
 
@@ -247,8 +254,7 @@ function drawTrails() {
 function drawIndicator() {
     if (!isPlaying) return;
 
-    const hue = ((Math.log2(currentFreq) - Math.log2(config.minFreq)) /
-        (Math.log2(config.maxFreq) - Math.log2(config.minFreq))) * 270;
+    const hue = frequencyPosition(currentFreq) * 270;
 
     // 外圈發光
     const glowSize = 30 + currentVolume * 50;
