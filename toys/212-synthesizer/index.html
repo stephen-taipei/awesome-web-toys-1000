@@ -17,7 +17,7 @@
             <div class="control-group">
                 <h3>音色設定</h3>
                 <div class="control-row">
-                    <label>波形</label>
+                    <label for="waveType">波形</label>
                     <select id="waveType">
                         <option value="sine">正弦波</option>
                         <option value="square">方波</option>
@@ -26,22 +26,22 @@
                     </select>
                 </div>
                 <div class="control-row">
-                    <label>Attack</label>
+                    <label for="attackSlider">Attack</label>
                     <input type="range" id="attackSlider" min="0" max="1" step="0.01" value="0.1">
                 </div>
                 <div class="control-row">
-                    <label>Release</label>
+                    <label for="releaseSlider">Release</label>
                     <input type="range" id="releaseSlider" min="0" max="2" step="0.1" value="0.5">
                 </div>
             </div>
             <div class="control-group">
                 <h3>效果器</h3>
                 <div class="control-row">
-                    <label>音量</label>
+                    <label for="volumeSlider">音量</label>
                     <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
                 </div>
                 <div class="control-row">
-                    <label>顫音</label>
+                    <label for="vibratoSlider">顫音</label>
                     <input type="range" id="vibratoSlider" min="0" max="10" step="0.5" value="0">
                 </div>
             </div>

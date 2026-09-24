@@ -3,6 +3,10 @@ const ctx = canvas.getContext('2d');
 
 let width, height, centerX, centerY;
 let audioContext = null;
+let microphoneStream = null;
+let microphoneStarting = false;
+let microphoneRequest = 0;
+
 let analyser = null;
 let dataArray = null;
 let isRunning = false;
@@ -10,11 +14,11 @@ let isRunning = false;
 let displayMode = 'vu';
 let smoothing = 0.85;
 
-let currentLevel = 0;
-let smoothedLevel = 0;
-let peakLevel = 0;
+let currentLevel = -60;
+let smoothedLevel = -60;
+let peakLevel = -60;
 let peakHoldTime = 0;
-let avgLevel = 0;
+let avgLevel = -60;
 let levelHistory = [];
 const maxHistory = 100;
 
@@ -28,24 +32,46 @@ function resize() {
 }
 
 async function startMicrophone() {
-    if (audioContext) return;
-
+    if (microphoneStarting) return false;
+    if (audioContext) { stopMicrophone(); return false; }
+    const request = ++microphoneRequest;
+    const button = document.getElementById('startBtn');
+    microphoneStarting = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    button.removeAttribute('title');
     try {
+        if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone API unavailable');
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
         analyser = audioContext.createAnalyser();
         analyser.fftSize = 2048;
         analyser.smoothingTimeConstant = 0.3;
 
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        // A permission prompt may resolve after stop, demo mode, or pagehide.
+        if (request !== microphoneRequest) {
+            stream.getTracks().forEach(track => track.stop());
+            return false;
+        }
+        microphoneStream = stream;
         const source = audioContext.createMediaStreamSource(stream);
         source.connect(analyser);
 
         dataArray = new Float32Array(analyser.fftSize);
         isRunning = true;
-        document.getElementById('startBtn').textContent = '運行中';
-    } catch (err) {
-        console.error('Microphone error:', err);
-        alert('無法存取麥克風');
+        document.getElementById('startBtn').textContent = '停止麥克風';
+    } catch (error) {
+        if (request !== microphoneRequest) return false;
+        stopMicrophone();
+        console.warn('Microphone unavailable:', error.message);
+        button.textContent = '重試麥克風';
+        button.title = '請使用 HTTPS，確認裝置與麥克風權限後重試。';
+    } finally {
+        if (request === microphoneRequest) {
+            microphoneStarting = false;
+            button.disabled = false;
+            button.removeAttribute('aria-busy');
+        }
     }
 }
 
@@ -375,3 +401,31 @@ window.addEventListener('resize', resize);
 // Initialize
 resize();
 animate();
+
+function stopMicrophone() {
+    releaseMicrophone();
+    document.getElementById('startBtn').textContent = '開始麥克風';
+}
+
+
+// Release the capture tracks, not only the Web Audio graph.
+function releaseMicrophone() {
+    microphoneRequest++;
+    microphoneStarting = false;
+    isRunning = false;
+    if (microphoneStream) {
+        microphoneStream.getTracks().forEach(track => track.stop());
+        microphoneStream = null;
+    }
+    const previousContext = audioContext;
+    audioContext = null;
+    analyser = null;
+    if (previousContext && previousContext.state !== 'closed') {
+        previousContext.close().catch(error => console.warn('Audio cleanup:', error.message));
+    }
+    const button = document.getElementById('startBtn');
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+}
+
+window.addEventListener('pagehide', stopMicrophone);

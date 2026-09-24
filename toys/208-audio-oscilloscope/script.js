@@ -1,3 +1,5 @@
+let microphoneRequest = 0;
+let microphoneStarting = false;
 let canvas, ctx;
 let audioContext, analyser, oscillator, gainNode, micStream, source;
 let dataArray;
@@ -77,6 +79,7 @@ function setupControls() {
 }
 
 function setMode(newMode) {
+    if (newMode !== 'mic') releaseMicrophone();
     mode = newMode;
     document.querySelectorAll('.source-btn').forEach(btn => btn.classList.remove('active'));
 
@@ -123,15 +126,37 @@ function stopTone() {
 }
 
 async function startMicrophone() {
-    setupAudio();
-
+    if (microphoneStarting || micStream) return;
+    const request = ++microphoneRequest;
+    const button = document.getElementById('micBtn');
+    microphoneStarting = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
     try {
-        micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        setupAudio();
+        // Do not route live microphone input back to the speakers.
+        analyser.disconnect();
+        if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone API unavailable');
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (request !== microphoneRequest) {
+            stream.getTracks().forEach(track => track.stop());
+            return;
+        }
+        micStream = stream;
         source = audioContext.createMediaStreamSource(micStream);
         source.connect(analyser);
     } catch (err) {
-        alert('無法存取麥克風');
+        if (request !== microphoneRequest) return;
+        releaseMicrophone();
+        button.title = '請確認 HTTPS、麥克風裝置與使用權限後重試。';
+        console.warn('Microphone unavailable:', err.message);
         setMode('tone');
+    } finally {
+        if (request === microphoneRequest) {
+            microphoneStarting = false;
+            button.disabled = false;
+            button.removeAttribute('aria-busy');
+        }
     }
 }
 
@@ -254,3 +279,28 @@ function animate() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// A mode change invalidates pending permission results as well as active capture.
+function releaseMicrophone() {
+    microphoneRequest++;
+    microphoneStarting = false;
+    if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+    }
+    if (source) { source.disconnect(); source = null; }
+    const button = document.getElementById('micBtn');
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+}
+
+window.addEventListener('pagehide', () => {
+    releaseMicrophone();
+    if (oscillator) { oscillator.stop(); oscillator = null; }
+    const previousContext = audioContext;
+    audioContext = null;
+    analyser = null;
+    if (previousContext && previousContext.state !== 'closed') {
+        previousContext.close().catch(error => console.warn('Audio cleanup:', error.message));
+    }
+});

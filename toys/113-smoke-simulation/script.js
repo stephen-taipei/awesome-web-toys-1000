@@ -35,7 +35,7 @@ class SimplexNoise {
     noise2D(x, y) {
         const F2 = 0.5 * (Math.sqrt(3) - 1);
         const G2 = (3 - Math.sqrt(3)) / 6;
-        const grad3 = [[1,1],[−1,1],[1,−1],[−1,−1],[1,0],[−1,0],[0,1],[0,−1]];
+        const grad3 = [[1,1],[-1,1],[1,-1],[-1,-1],[1,0],[-1,0],[0,1],[0,-1]];
 
         let s = (x + y) * F2;
         let i = Math.floor(x + s);

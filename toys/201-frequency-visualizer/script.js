@@ -1,3 +1,5 @@
+let microphoneRequest = 0;
+let microphoneStarting = false;
 let canvas, ctx;
 let audioContext, analyser, source;
 let oscillator = null;
@@ -55,10 +57,11 @@ function initAudio() {
 }
 
 async function toggleMicrophone() {
-    initAudio();
+    if (microphoneStarting) return;
     const btn = document.getElementById('micBtn');
 
     if (isMicActive) {
+        releaseMicrophone();
         if (micStream) {
             micStream.getTracks().forEach(track => track.stop());
             micStream = null;
@@ -80,20 +83,42 @@ async function toggleMicrophone() {
             document.getElementById('toneBtn').textContent = '產生音調';
         }
 
+        const request = ++microphoneRequest;
+        microphoneStarting = true;
+        btn.disabled = true;
+        btn.setAttribute('aria-busy', 'true');
         try {
-            micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            initAudio();
+            analyser.disconnect();
+            if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone API unavailable');
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            if (request !== microphoneRequest) {
+                stream.getTracks().forEach(track => track.stop());
+                return;
+            }
+            micStream = stream;
             source = audioContext.createMediaStreamSource(micStream);
             source.connect(analyser);
             isMicActive = true;
             btn.classList.add('active');
             btn.textContent = '停止麥克風';
         } catch (err) {
-            alert('無法存取麥克風: ' + err.message);
+            if (request !== microphoneRequest) return;
+            releaseMicrophone();
+            btn.title = '請確認 HTTPS、麥克風裝置與使用權限後重試。';
+            console.warn('Microphone unavailable:', err.message);
+        } finally {
+            if (request === microphoneRequest) {
+                microphoneStarting = false;
+                btn.disabled = false;
+                btn.removeAttribute('aria-busy');
+            }
         }
     }
 }
 
 function toggleTone() {
+    if (microphoneStarting) releaseMicrophone();
     initAudio();
     const btn = document.getElementById('toneBtn');
 
@@ -253,3 +278,30 @@ function animate() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// A mode change invalidates pending permission results as well as active capture.
+function releaseMicrophone() {
+    microphoneRequest++;
+    microphoneStarting = false;
+    if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+    }
+    if (source) { source.disconnect(); source = null; }
+    const button = document.getElementById('micBtn');
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+}
+
+window.addEventListener('pagehide', () => {
+    releaseMicrophone();
+    isMicActive = false;
+    if (oscillator) { oscillator.stop(); oscillator = null; }
+    isPlaying = false;
+    const previousContext = audioContext;
+    audioContext = null;
+    analyser = null;
+    if (previousContext && previousContext.state !== 'closed') {
+        previousContext.close().catch(error => console.warn('Audio cleanup:', error.message));
+    }
+});

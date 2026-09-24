@@ -1,3 +1,5 @@
+let microphoneRequest = 0;
+let microphoneStarting = false;
 let canvas, ctx;
 let audioContext, analyser, micStream, source;
 let dataArray;
@@ -49,9 +51,11 @@ function setupControls() {
 }
 
 async function toggleMicrophone() {
+    if (microphoneStarting) return;
     const btn = document.getElementById('micBtn');
 
     if (isMicActive) {
+        releaseMicrophone();
         if (micStream) {
             micStream.getTracks().forEach(track => track.stop());
             micStream = null;
@@ -60,6 +64,10 @@ async function toggleMicrophone() {
         btn.classList.remove('active');
         btn.textContent = '開啟麥克風';
     } else {
+        const request = ++microphoneRequest;
+        microphoneStarting = true;
+        btn.disabled = true;
+        btn.setAttribute('aria-busy', 'true');
         try {
             if (!audioContext) {
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -68,7 +76,13 @@ async function toggleMicrophone() {
                 dataArray = new Uint8Array(analyser.frequencyBinCount);
             }
 
-            micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone API unavailable');
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            if (request !== microphoneRequest) {
+                stream.getTracks().forEach(track => track.stop());
+                return;
+            }
+            micStream = stream;
             source = audioContext.createMediaStreamSource(micStream);
             source.connect(analyser);
 
@@ -76,7 +90,16 @@ async function toggleMicrophone() {
             btn.classList.add('active');
             btn.textContent = '關閉麥克風';
         } catch (err) {
-            alert('無法存取麥克風');
+            if (request !== microphoneRequest) return;
+            releaseMicrophone();
+            btn.title = '請確認 HTTPS、麥克風裝置與使用權限後重試。';
+            console.warn('Microphone unavailable:', err.message);
+        } finally {
+            if (request === microphoneRequest) {
+                microphoneStarting = false;
+                btn.disabled = false;
+                btn.removeAttribute('aria-busy');
+            }
         }
     }
 }
@@ -229,3 +252,28 @@ function animate() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// A mode change invalidates pending permission results as well as active capture.
+function releaseMicrophone() {
+    microphoneRequest++;
+    microphoneStarting = false;
+    if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+    }
+    if (source) { source.disconnect(); source = null; }
+    const button = document.getElementById('micBtn');
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+}
+
+window.addEventListener('pagehide', () => {
+    releaseMicrophone();
+    isMicActive = false;
+    const previousContext = audioContext;
+    audioContext = null;
+    analyser = null;
+    if (previousContext && previousContext.state !== 'closed') {
+        previousContext.close().catch(error => console.warn('Audio cleanup:', error.message));
+    }
+});

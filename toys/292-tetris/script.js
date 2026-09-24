@@ -10,7 +10,8 @@ const shapes = [
 ];
 const colors = ['#00d4ff', '#ffd700', '#9b59b6', '#e74c3c', '#f39c12', '#2ecc71', '#ff6b9d'];
 
-let board = [], current = null, currentX = 0, currentY = 0, currentColor = 0;
+let board = Array.from({ length: rows }, () => Array(cols).fill(0)), current = null, currentX = 0, currentY = 0, currentColor = 0;
+let hasStarted = false;
 let score = 0, lines = 0, isPlaying = false, gameInterval = null;
 
 function init() {
@@ -25,6 +26,7 @@ function init() {
 
 function handleKey(e) {
     if (!isPlaying) return;
+    if (['ArrowLeft', 'ArrowRight', 'ArrowDown', 'ArrowUp'].includes(e.key)) e.preventDefault();
     switch(e.key) {
         case 'ArrowLeft': move(-1); break;
         case 'ArrowRight': move(1); break;
@@ -38,8 +40,10 @@ function startGame() {
     score = 0; lines = 0;
     document.getElementById('score').textContent = score;
     document.getElementById('lines').textContent = lines;
-    spawnPiece();
+    hasStarted = true;
     isPlaying = true;
+    spawnPiece();
+    draw();
     clearInterval(gameInterval);
     gameInterval = setInterval(gameLoop, 500);
 }
@@ -54,6 +58,7 @@ function spawnPiece() {
 }
 
 function canMove(dx, dy, piece = current) {
+    if (!piece) return false;
     for (let y = 0; y < piece.length; y++) {
         for (let x = 0; x < piece[y].length; x++) {
             if (piece[y][x]) {
@@ -68,17 +73,20 @@ function canMove(dx, dy, piece = current) {
 }
 
 function move(dx) {
+    if (!isPlaying || !current) return;
     if (canMove(dx, 0)) currentX += dx;
     draw();
 }
 
 function rotate() {
+    if (!isPlaying || !current) return;
     const rotated = current[0].map((_, i) => current.map(row => row[i]).reverse());
     if (canMove(0, 0, rotated)) current = rotated;
     draw();
 }
 
 function drop() {
+    if (!isPlaying || !current) return;
     if (canMove(0, 1)) currentY++;
     else lockPiece();
     draw();
@@ -121,6 +129,8 @@ function gameLoop() {
 function endGame() {
     clearInterval(gameInterval);
     isPlaying = false;
+    current = null;
+    draw();
 }
 
 function draw() {
@@ -147,7 +157,7 @@ function draw() {
         }
     }
 
-    if (!isPlaying && score > 0) {
+    if (!isPlaying && hasStarted) {
         ctx.fillStyle = 'rgba(0,0,0,0.7)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = '#fff';
@@ -158,3 +168,5 @@ function draw() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+window.addEventListener('pagehide', endGame);

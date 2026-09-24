@@ -47,10 +47,20 @@ function renderFontList(fontData) {
 
     displayFonts.forEach(font => {
         const li = document.createElement('li');
-        li.innerHTML = `
-            <span>${font.fullName}</span>
-            <span class="font-meta">${font.family}</span>
-        `;
+        const name = document.createElement('span');
+        name.textContent = font.fullName;
+        const family = document.createElement('span');
+        family.className = 'font-meta';
+        family.textContent = font.family;
+        li.append(name, family);
+        li.tabIndex = 0;
+        li.setAttribute('role', 'button');
+        li.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectFont(font, li);
+            }
+        });
         li.addEventListener('click', () => selectFont(font, li));
         fontList.appendChild(li);
     });

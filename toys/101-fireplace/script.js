@@ -533,7 +533,7 @@ class FireplaceApp {
         // 木紋
         ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
         ctx.lineWidth = 1;
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 5 && width / 2 - i * 8 > 0 && height / 2 - i * 3 > 0; i++) {
             ctx.beginPath();
             ctx.ellipse(x, y, width / 2 - i * 8, height / 2 - i * 3, 0, 0, Math.PI * 2);
             ctx.stroke();
@@ -546,7 +546,7 @@ class FireplaceApp {
         ctx.fill();
 
         ctx.strokeStyle = 'rgba(60, 40, 20, 0.5)';
-        for (let i = 1; i < 4; i++) {
+        for (let i = 1; i < 4 && height / 2 - i * 3 > 0; i++) {
             ctx.beginPath();
             ctx.arc(x + width / 2, y, height / 2 - i * 3, 0, Math.PI * 2);
             ctx.stroke();

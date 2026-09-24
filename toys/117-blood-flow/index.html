@@ -14,23 +14,23 @@
         <p class="hint">觀察血管中的血液流動</p>
 
         <div class="control-group">
-            <label>血流速度</label>
+            <label for="speedSlider">血流速度</label>
             <input type="range" id="speedSlider" min="1" max="10" value="5">
         </div>
 
         <div class="control-group">
-            <label>血管直徑</label>
+            <label for="diameterSlider">血管直徑</label>
             <input type="range" id="diameterSlider" min="50" max="150" value="100">
         </div>
 
         <div class="control-group">
-            <label>縮放比例</label>
+            <label for="zoomSlider">縮放比例</label>
             <input type="range" id="zoomSlider" min="1" max="5" value="1" step="0.5">
             <span id="zoomValue">1x</span>
         </div>
 
         <div class="control-group">
-            <label>顯示模式</label>
+            <label for="viewSelect">顯示模式</label>
             <select id="viewSelect">
                 <option value="normal">正常視圖</option>
                 <option value="cells">細胞視圖</option>

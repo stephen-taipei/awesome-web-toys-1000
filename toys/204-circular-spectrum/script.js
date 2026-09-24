@@ -1,3 +1,5 @@
+let microphoneRequest = 0;
+let microphoneStarting = false;
 let canvas, ctx;
 let numRings = 3;
 let rotateSpeed = 0.5;
@@ -44,6 +46,7 @@ function setupControls() {
 }
 
 function setMode(newMode) {
+    if (newMode !== 'mic') releaseMicrophone();
     mode = newMode;
     document.querySelectorAll('.source-btn').forEach(btn => btn.classList.remove('active'));
 
@@ -60,6 +63,12 @@ function setMode(newMode) {
 }
 
 async function startMicrophone() {
+    if (microphoneStarting || micStream) return;
+    const request = ++microphoneRequest;
+    const button = document.getElementById('micBtn');
+    microphoneStarting = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
     try {
         if (!audioContext) {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -68,13 +77,28 @@ async function startMicrophone() {
             dataArray = new Uint8Array(analyser.frequencyBinCount);
         }
 
-        micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone API unavailable');
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (request !== microphoneRequest) {
+            stream.getTracks().forEach(track => track.stop());
+            return;
+        }
+        micStream = stream;
         source = audioContext.createMediaStreamSource(micStream);
         source.connect(analyser);
         document.getElementById('micBtn').textContent = '麥克風開啟中';
     } catch (err) {
-        alert('無法存取麥克風');
+        if (request !== microphoneRequest) return;
+        releaseMicrophone();
+        button.title = '請確認 HTTPS、麥克風裝置與使用權限後重試。';
+        console.warn('Microphone unavailable:', err.message);
         setMode('demo');
+    } finally {
+        if (request === microphoneRequest) {
+            microphoneStarting = false;
+            button.disabled = false;
+            button.removeAttribute('aria-busy');
+        }
     }
 }
 
@@ -207,3 +231,27 @@ function animate() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// A mode change invalidates pending permission results as well as active capture.
+function releaseMicrophone() {
+    microphoneRequest++;
+    microphoneStarting = false;
+    if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+    }
+    if (source) { source.disconnect(); source = null; }
+    const button = document.getElementById('micBtn');
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+}
+
+window.addEventListener('pagehide', () => {
+    releaseMicrophone();
+    const previousContext = audioContext;
+    audioContext = null;
+    analyser = null;
+    if (previousContext && previousContext.state !== 'closed') {
+        previousContext.close().catch(error => console.warn('Audio cleanup:', error.message));
+    }
+});

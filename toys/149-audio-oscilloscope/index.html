@@ -14,22 +14,22 @@
         <p class="hint">專業級音頻波形顯示</p>
 
         <div class="control-group">
-            <label>時基: <span id="timebaseValue">10</span> ms/格</label>
+            <label for="timebaseSlider">時基: <span id="timebaseValue">10</span> ms/格</label>
             <input type="range" id="timebaseSlider" min="1" max="50" value="10" step="1">
         </div>
 
         <div class="control-group">
-            <label>垂直縮放: <span id="vscaleValue">1.0</span>x</label>
+            <label for="vscaleSlider">垂直縮放: <span id="vscaleValue">1.0</span>x</label>
             <input type="range" id="vscaleSlider" min="0.5" max="3" value="1" step="0.1">
         </div>
 
         <div class="control-group">
-            <label>觸發電平: <span id="triggerValue">0.0</span></label>
+            <label for="triggerSlider">觸發電平: <span id="triggerValue">0.0</span></label>
             <input type="range" id="triggerSlider" min="-1" max="1" value="0" step="0.05">
         </div>
 
         <div class="control-group">
-            <label>顯示模式:</label>
+            <label for="displayMode">顯示模式:</label>
             <select id="displayMode">
                 <option value="normal">正常</option>
                 <option value="xy">X-Y 模式</option>

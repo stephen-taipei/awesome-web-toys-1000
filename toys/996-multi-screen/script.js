@@ -6,25 +6,41 @@ const template = document.getElementById('screenTemplate');
 // Check support
 if (!('getScreenDetails' in window)) {
     scanBtn.disabled = true;
-    statusEl.innerHTML = 'Window Management API not supported.<br>Enable <b>chrome://flags/#window-placement</b> if available.';
+    statusEl.textContent = 'Window Management API unavailable. Use HTTPS and a supporting browser.';
     statusEl.style.color = '#ff7675';
 }
 
+let activeScreenDetails = null;
+let screenRequest = 0;
+const onScreensChange = () => {
+    if (!activeScreenDetails) return;
+    renderScreens(activeScreenDetails);
+    statusEl.textContent = `Found ${activeScreenDetails.screens.length} display(s).`;
+};
+
 scanBtn.addEventListener('click', async () => {
+    if (scanBtn.disabled) return;
+    const request = ++screenRequest;
+    scanBtn.disabled = true;
     try {
-        const screenDetails = await window.getScreenDetails();
-        renderScreens(screenDetails);
-        
-        // Listen for changes (plug/unplug monitors)
-        screenDetails.addEventListener('screenschange', () => {
-            renderScreens(screenDetails);
-        });
-        
-        statusEl.textContent = `Found ${screenDetails.screens.length} display(s).`;
-    } catch (err) {
-        console.error(err);
-        statusEl.textContent = `Error: ${err.message}. Permission denied?`;
+        const details = await window.getScreenDetails();
+        if (request !== screenRequest) return;
+        activeScreenDetails?.removeEventListener('screenschange', onScreensChange);
+        activeScreenDetails = details;
+        activeScreenDetails.addEventListener('screenschange', onScreensChange);
+        onScreensChange();
+    } catch (error) {
+        if (request === screenRequest) statusEl.textContent = `Error: ${error.message}. Check permission and HTTPS.`;
+    } finally {
+        if (request === screenRequest) scanBtn.disabled = false;
     }
+});
+
+window.addEventListener('pagehide', () => {
+    screenRequest++;
+    activeScreenDetails?.removeEventListener('screenschange', onScreensChange);
+    activeScreenDetails = null;
+    scanBtn.disabled = !('getScreenDetails' in window);
 });
 
 function renderScreens(screenDetails) {
@@ -69,18 +85,25 @@ function openWindowOnScreen(screen) {
     const win = window.open('', `_blank${Date.now()}`, features);
     
     if (win) {
-        win.document.write(`
-            <html>
-                <body style="background: #0984e3; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; margin: 0;">
-                    <div style="text-align: center;">
-                        <h1>Hello!</h1>
-                        <p>I was placed on ${screen.label || 'this screen'}</p>
-                        <p>Coords: ${screen.left}, ${screen.top}</p>
-                        <button onclick="window.close()" style="padding: 10px 20px; cursor: pointer;">Close</button>
-                    </div>
-                </body>
-            </html>
-        `);
+        // Screen labels are device metadata, never HTML.
+        const document = win.document;
+        document.title = 'Display preview';
+        document.body.style.cssText = 'background: #0984e3; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; margin: 0;';
+        const container = document.createElement('div');
+        container.style.textAlign = 'center';
+        const heading = document.createElement('h1');
+        heading.textContent = 'Hello!';
+        const label = document.createElement('p');
+        label.textContent = `I was placed on ${screen.label || 'this screen'}`;
+        const coordinates = document.createElement('p');
+        coordinates.textContent = `Coords: ${screen.left}, ${screen.top}`;
+        const close = document.createElement('button');
+        close.textContent = 'Close';
+        close.style.cssText = 'padding: 10px 20px; cursor: pointer;';
+        close.addEventListener('click', () => win.close());
+        container.append(heading, label, coordinates, close);
+        document.body.replaceChildren(container);
+        win.opener = null;
     } else {
         alert('Popup blocked! Please allow popups for this site.');
     }
