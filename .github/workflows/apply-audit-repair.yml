@@ -7,7 +7,8 @@ permissions:
   contents: write
 jobs:
   apply:
-    if: github.repository == 'stephen-taipei/awesome-web-toys-1000' && github.ref == 'refs/heads/audit/web-toys-2026-09-24' && github.event.head_commit.message == 'chore: stage verified audit repair payload'
+    if: >-
+      github.repository == 'stephen-taipei/awesome-web-toys-1000' && github.ref == 'refs/heads/audit/web-toys-2026-09-24' && github.event.head_commit.message == 'chore: stage verified audit repair payload'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
